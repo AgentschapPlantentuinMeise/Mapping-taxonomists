@@ -1,0 +1,5 @@
+# ignore raw and intermediate data
+data/raw
+data/interim
+data/external
+notebooks/.ipynb_checkpoints
