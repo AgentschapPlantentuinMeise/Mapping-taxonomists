@@ -1,6 +1,8 @@
 # ignore raw and intermediate data
 __pycache__/
+src/data/__pycache__/
 data/raw
 data/interim
 data/external
 notebooks/.ipynb_checkpoints
+src/data/test_tax.py
