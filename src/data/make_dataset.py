@@ -1,9 +1,13 @@
 # get all European taxonomic articles from taxonomic journals
 import pandas as pd
-import download_from_openalex
-import prep_articles
 import glob
 import os
+
+# custom
+import download
+import prep_articles
+import taxonomy
+
 
 # run make_list_journals.py first
 # list of journals found in /data/processed
@@ -15,7 +19,7 @@ oaids = list(set(journals[journals["dissolved"]!=True]["openAlexID"]))
 
 # clear directory
 files = glob.glob("../../data/raw/articles/*")
-files.extend(glob.glob("../../data/interim/eu_keyword-filtered_articles/*")
+files.extend(glob.glob("../../data/interim/eu_keyword-filtered_articles/*"))
 for f in files:
     os.remove(f)
 
@@ -62,3 +66,31 @@ eu_articles = prep_articles.filter_eu_articles(filtered_articles)
 eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
 #eu_articles.to_csv("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".tsv", sep="\t")
 
+eu_articles = pd.concat(eu_articles, ignore_index=True)
+eu_articles.to_pickle("../../data/interim/eu_filtered_articles.pkl")
+eu_articles.to_csv("../../data/interim/eu_filtered_articles.tsv", sep="\t")             
+
+eu_articles = pd.read_pickle("../../data/interim/eu_filtered_articles.pkl")
+
+# parse articles for taxonomic information
+
+# convert abstract to text for every article
+abstracts = []
+# convert abstract to text for every article
+for article in eu_articles.itertuples():
+    if article.abstract_inverted_index: # check if abstract is indexed
+        abstract_full_text = taxonomy.inverted_index_to_text(article.abstract_inverted_index)
+        abstracts.append(abstract_full_text)
+    else:
+        abstracts.append(None)
+
+eu_articles["abstract_full_text"] = pd.DataFrame(abstracts)
+print("Abstract inverted indices converted to texts")
+
+backbone = taxonomy.preprocess_backbone()
+eu_articles = taxonomy.parse_for_taxonomy(eu_articles, backbone)
+eu_articles = prep_articles.flatten_works(eu_articles)
+
+eu_articles.to_pickle("../../data/processed/european_taxonomic_articles.pkl")
+eu_articles.to_csv("../../data/processed/european_taxonomic_articles.tsv", sep="\t")
+print("European taxonomic articles filtered and parsed. Results in /data/processed.")
