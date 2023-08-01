@@ -1,4 +1,5 @@
 # ignore raw and intermediate data
+__pycache__/
 data/raw
 data/interim
 data/external
