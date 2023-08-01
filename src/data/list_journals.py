@@ -101,4 +101,4 @@ journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID", "openAl
           "dissolved", "source"]].drop_duplicates(subset=["wikidataURL","openAlexID"],
                                                   ignore_index=True).to_csv("../../data/processed/journals_deduplicated.csv", index=False)
 
-print("Journals saved in /data/processed")
+print("Journals saved in data/processed/journals.csv")

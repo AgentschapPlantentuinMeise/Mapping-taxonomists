@@ -43,12 +43,10 @@ def get_single_authors(df_input): # input: authors with doubles
         most_recent = publications["publication_date"].max()
         keep += publications[publications["publication_date"]==most_recent].values.tolist()
     
-    keep_df = pd.DataFrame(keep,
-                           columns = df_input.columns)
-    
+    keep_df = pd.DataFrame(keep, columns = df_input.columns)
     # drop duplicates because some articles may have been found twice through different queries 
     # and some authors have published multiple relevant articles on the same day
-    return keep_df.drop_duplicates(subset=["author_id"])
+    return keep_df.drop_duplicates(subset=["author_id"], ignore_index=True)
 
 
 # filter a list of authors for authors who are asscociated with at least one European institution
@@ -69,4 +67,4 @@ def get_eu_authors(df_input): # input: authors
         if author.inst_country_code in eu_codes:
             keep.append(author)
     
-    return pd.DataFrame(keep)
+    return pd.DataFrame(keep).drop(columns="Index") # drop old index
