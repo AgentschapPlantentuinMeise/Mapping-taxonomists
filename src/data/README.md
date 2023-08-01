@@ -14,5 +14,5 @@ The following scripts are packages:
  
  "European" is defined as coming from the countries in black on this map:
  
-![European countries, according to https://en.wikipedia.org/wiki/Europe#Contemporary_definition](Screenshot Wikipedia Europe contemporary definition 2023-08-01.png)
+![European countries, according to https://en.wikipedia.org/wiki/Europe#Contemporary_definition](./Screenshot Wikipedia Europe contemporary definition 2023-08-01.png)
   

@@ -112,12 +112,7 @@ def species_to_tree(df):
             seen_species[species.canonicalName] = list(species)[2:]
     
     # associate the full tree with a certain author or article
-    genera = []
-    families = []
-    orders = []
-    classes = []
-    phyla = []
-    kingdoms = []
+    genera, families, orders, classes, phyla, kingdoms = [], [], [], [], [], []
 
     for row in df.itertuples():
         genus, family, order, tclass, phylum, kingdom = [], [], [], [], [], []
