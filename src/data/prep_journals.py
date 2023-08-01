@@ -1,100 +1,5 @@
-# Make a list of taxonomic journals from Wikidata and OpenAlex
-
 import pandas as pd
-import sys
-import requests
-from SPARQLWrapper import SPARQLWrapper, JSON
 
-
-# GET DATA 
-
-# BUILD SPARQL QUERIES FOR MULTIPLE SUBJECTS
-def build_sparql_query(subjects):
-    # instance of (P31) scientific (Q5633421) or academic journal (Q737498)
-    query_begin = """SELECT DISTINCT ?item ?itemLabel ?openAlexID ?issnL ?issn 
-    ?IPNIpubID ?ZooBankPubID ?dissolved ?country
-WHERE {
-    VALUES ?journaltype {wd:Q5633421 wd:Q737498}
-    ?item wdt:P31/wdt:P279* ?journaltype .""" 
-    
-    # include, if available: OpenAlex, IPNI and ZooBank Publication IDs, ISSN and ISSN-Ls, 
-    # when (if ever) the journal was dissolved, and country of publication
-    query_end = """
-    OPTIONAL{?item wdt:P10283 ?openAlexID}
-    OPTIONAL{?item wdt:P7363 ?issnL}
-    OPTIONAL{?item wdt:P236 ?issn}
-    OPTIONAL{?item wdt:P2008 ?IPNIpubID}
-    OPTIONAL{?item wdt:P2007 ?ZooBankPubID}
-    OPTIONAL{?item wdt:P576 ?dissolved}
-    OPTIONAL{?item wdt:P495 ?country}
-    
-    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-}"""
-    
-    # add specified requirements (taxonomy,...) for field of work (P101) or main subject (P921)
-    for i, subject in enumerate(subjects):
-        i = 2 + i*2
-        addition = """
-        {
-        ?item p:P921 ?statement""" + str(i) + """.
-        ?statement""" + str(i) + """ (ps:P921/(wdt:P279*)) wd:""" + subject + """.
-      }
-      UNION
-      {
-        ?item p:P101 ?statement""" + str(i+1) + """.
-        ?statement""" + str(i+1) + """ (ps:P101/(wdt:P279*)) wd:""" + subject + """.
-      }"""
-        if i != 2:
-            addition = """
-      UNION""" + addition
-        
-        query_begin += addition
-    
-    # paste query together
-    query = query_begin + query_end
-    return query
-
-
-# GET RESULTS OF SPARQLE QUERY (code from WikiData's query service)
-endpoint_url = "https://query.wikidata.org/sparql"
-
-def get_sparql_results(query, endpoint_url=endpoint_url):
-    user_agent = "WDQS-example Python/%s.%s" % (sys.version_info[0], sys.version_info[1])
-    # TODO adjust user agent; see https://w.wiki/CX6
-    sparql = SPARQLWrapper(endpoint_url, agent=user_agent)
-    sparql.setQuery(query)
-    sparql.setReturnFormat(JSON)
-    
-    results = sparql.query().convert()
-    return pd.DataFrame.from_dict(results["results"]["bindings"])
-
-
-# GET ALL SOURCES (JOURNALS) FROM OPENALEX API WITH SPECIFIED REQUIREMENTS
-def request_sources(filter_string, email):
-    # build query (e-mail included for "polite pool")
-    query = "https://api.openalex.org/sources?per-page=200&filter="+filter_string+"&mailto="+email
-            
-    # open persistent session to shorten processing time between requests
-    s = requests.Session()
-    # FIRST PAGE
-    sources = s.get(query+"&cursor=*")
-    next_sources = sources.json()
-    next_cursor = next_sources["meta"]["next_cursor"]
-    sources_results = next_sources["results"]
-    
-    # RETRIEVE ALL PAGES
-    while next_sources["meta"]["next_cursor"] != None:
-        # get next page
-        next_sources = s.get(query+"&cursor="+next_cursor)
-        next_sources = next_sources.json()
-        next_cursor = next_sources["meta"]["next_cursor"] # remember next cursor
-        sources_results.extend(next_sources["results"])
-    
-    sources_df = pd.DataFrame.from_dict(sources_results)
-    return sources_df
-
-
-# PREPROCESSING 
 
 # wikidata objects of countries often have a ISO 3166-1 alpha-2 code (P297): 
 # use this unambiguous code instead of the wikidata ID, just like OpenALex
@@ -120,14 +25,8 @@ def get_country_codes():
 
 # Wikidata query results are tables with most values locked in dictionaries: get them out 
 def get_values_wikidata(df):
-    # get two-letter country code for each country
+    # get two-letter country code for every country
     countries = get_country_codes()
-#    country_set = {x["value"] for x in df["country"] if x==x}
-#    for country in country_set:
-#        if country==country:
-            # get wikidata Q-number from URL and retrieve the object's two-letter country code
-#            countries[country] = get_country_code(country.split("/")[-1])
-
     # replace every column with the values locked inside it
     for column in df.columns:
         values = []
@@ -167,7 +66,7 @@ def get_values_wikidata(df):
         
 
 # homogenize OpenAlex table with Wikidata tables
-def homogenize_oa(df):
+def homogenize_openalex(df):
     df["dissolved"] = None
     df["IPNIpubID"] = None
     df["ZooBankPubID"] = None

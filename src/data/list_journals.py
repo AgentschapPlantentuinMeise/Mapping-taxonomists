@@ -1,28 +1,28 @@
 # Make a list of taxonomic journals from Wikidata and OpenAlex
-
 import pandas as pd
 import requests
 import time
-import gather_journals
+import download
+import prep_journals
 
 # GET JOURNALS
 # 1. wikidata: journals with taxonomy (and similar concepts) as subject
 
-query = gather_journals.build_sparql_query(["Q8269924", 	# taxonomy
-                                     	    "Q11398", 		# biological classification
-                                     	    "Q1138178", 	# plant taxonomy
-                                     	    "Q1469725", 	# animal taxonomy
-                                     	    "Q522190", 		# biological nomenclature
-                                     	    "Q3310776", 	# botanical nomenclature
-                                     	    "Q3343211"]) 	# zoological nomenclature
+query = download.build_sparql_query(["Q8269924", 	# taxonomy
+                                     "Q11398", 		# biological classification
+                                     "Q1138178", 	# plant taxonomy
+                                     "Q1469725", 	# animal taxonomy
+                                     "Q522190", 	# biological nomenclature
+                                     "Q3310776", 	# botanical nomenclature
+                                     "Q3343211"]) 	# zoological nomenclature
 # query is too long, split in two
-query2 = gather_journals.build_sparql_query(["Q3516404", 	# systematics
-                                      	     "Q171184", 	# phylogenetics
-                                      	     "Q115135896"]) 	# animal phylogeny
+query2 = download.build_sparql_query(["Q3516404", 	# systematics
+                                      "Q171184", 	# phylogenetics
+                                      "Q115135896"])# animal phylogeny
 
 # get the results of the query
-results = gather_journals.get_sparql_results(query)
-results2 = gather_journals.get_sparql_results(query2)
+results = download.get_sparql_results(query)
+results2 = download.get_sparql_results(query2)
 wikidata_subjects_results = pd.concat([results, results2])
 wikidata_subjects_results["source"] = "Wikidata taxonomic subject"
 
@@ -55,7 +55,7 @@ WHERE {
     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }"""
 
-ipni_zoobank_results = gather_journals.get_sparql_results(query3)
+ipni_zoobank_results = download.get_sparql_results(query3)
 ipni_zoobank_results["source"] = "IPNI or ZooBank ID"
 print("Wikidata journals by IPNI or ZooBank ID: done")
 
@@ -63,7 +63,7 @@ print("Wikidata journals by IPNI or ZooBank ID: done")
 # 3. openalex: sources associated with the taxonomy concept
 
 email = input("Enter e-mail address for OpenAlex API: ")
-openalex_results = gather_journals.request_sources("concepts.id:C58642233", email)
+openalex_results = download.request_sources("concepts.id:C58642233", email)
 # only journals, no e-book platforms etc
 openalex_results = openalex_results[openalex_results["type"]=="journal"].reset_index(drop=True)
 openalex_results["source"] =  "OpenAlex taxonomy concept"
@@ -78,11 +78,11 @@ print("Preprocessing data... ")
 
 # wikidata values are hidden in dictionaries: get them out
 # and convert country Q-number to two-letter code and update old OpenAlex-IDs (e.g. V123 to S123)
-gather_journals.get_values_wikidata(wikidata_subjects_results)
-gather_journals.get_values_wikidata(ipni_zoobank_results)
+prep_journals.get_values_wikidata(wikidata_subjects_results)
+prep_journals.get_values_wikidata(ipni_zoobank_results)
 
 # OpenAlex IDs
-openalex_results = gather_journals.homogenize_oa(openalex_results)
+openalex_results = prep_journals.homogenize_oa(openalex_results)
 
 # putting it together
 journals = pd.concat([wikidata_subjects_results, ipni_zoobank_results, openalex_results], 
@@ -91,13 +91,14 @@ journals.columns = ["wikidataURL", "openAlexID", "ISSN-L", "ISSN",
                     "ZooBankPubID", "country", "title", "IPNIpubID", "dissolvedYear", "source"]
 
 # translate dissolved year to True/False
-journals = gather_journals.dissolved_bool(journals)
+journals = prep_journals.dissolved_bool(journals)
 print("done!")
 
 journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID", "openAlexID", "dissolvedYear", 
           "dissolved", "source"]].to_csv("../../data/processed/journals.csv", index=False)
+# remove duplicates with same wikidata ID and OpenALex ID
 journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID", "openAlexID", "dissolvedYear", 
           "dissolved", "source"]].drop_duplicates(subset=["wikidataURL","openAlexID"],
-                                                  ignore_index=True).to_csv("../../data/processed/journals_disambiguated.csv", index=False)
+                                                  ignore_index=True).to_csv("../../data/processed/journals_deduplicated.csv", index=False)
 
 print("Journals saved in /data/processed")
