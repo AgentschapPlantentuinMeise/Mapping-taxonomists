@@ -10,8 +10,6 @@ import prep_articles
 journals = pd.read_csv("../../data/processed/journals.csv")
 
 # clear directory
-print("Make sure the directories data/raw/articles and data/interim/eu_keyword-filtered_articles exist")
-
 files = glob.glob("../../data/raw/articles/*")
 files.extend(glob.glob("../../data/interim/eu_keyword-filtered_articles/*"))
 for f in files:
@@ -24,10 +22,20 @@ email = input("Enter e-mail address for OpenAlex API: ")
 articles = []
 n = 0; m = 0
 
+# deal with PLOS ONE now
+plosone_articles = download.request_works("primary_location.source.id:S202381698", email, to_date="2022-12-31")
+
+filtered_articles = prep_articles.filter_keywords(plosone_articles)
+filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/articles"+str(m)+".pkl")
+eu_articles = prep_articles.filter_eu_articles(plosone_articles)
+eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
+m += 1
+
+# download recent articles from every taxonomic journal
 for oaid in oaids:
     if oaid != oaid: # check if nan
         continue
-    if oaid == "S202381698": # deal with PLOS ONE separately
+    if oaid == "S202381698": # dealt with PLOS ONE separately
         continue # (returns ~240 000 articles)
     
     # search by confirmed OpenAlex ID (from OpenAlex itself or Wikidata) 
@@ -40,40 +48,42 @@ for oaid in oaids:
         print("Another "+str(n)+" articles found")
         # save raw data
         articles_df = pd.concat(articles, ignore_index=True)
-        articles_df.to_pickle("../../data/raw/articles/articles"+str(m)+".pkl")
+        #articles_df.to_pickle("../../data/raw/articles/articles"+str(m)+".pkl")
         #articles_df.to_csv("../../data/raw/articles/articles"+str(m)+".tsv", sep="\t")
         
-        # save European, keyword-filtered articles
+        # save (European) keyword-filtered articles
         filtered_articles = prep_articles.filter_keywords(articles_df)
         eu_articles = prep_articles.filter_eu_articles(filtered_articles)
         
+        filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/eu_articles"+str(m)+".pkl")
         eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
-        #eu_articles.to_csv("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".tsv", sep="\t")
+        
         articles = []
         n = 0; m += 1
 
 # same procedure for last articles
 articles_df = pd.concat(articles, ignore_index=True)
-articles_df.to_csv("../../data/raw/articles/articles"+str(m)+".tsv", sep="\t")
+#articles_df.to_csv("../../data/raw/articles/articles"+str(m)+".tsv", sep="\t")
 
 filtered_articles = prep_articles.filter_keywords(articles_df)
+filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/articles"+str(m)+".pkl")
 eu_articles = prep_articles.filter_eu_articles(filtered_articles)
 eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
-#eu_articles.to_csv("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".tsv", sep="\t")
-
+m += 1
 
 # putting it together
-articles = []
+articles = merge_pkls("../../data/interim/keyword-filtered_articles/")
+eu_articles = merge_pkls("../../data/interim/eu_keyword-filtered_articles/")
 
-files = glob.glob("../../data/interim/eu_keyword-filtered_articles/*")
-for f in files:
-    if f[-4:]==".pkl":
-        articles.append(pd.read_pickle(f))
-
-# save final version of all European, keyword-filtered taxonomic articles together
-eu_articles = pd.concat(articles, ignore_index=True)
+# preprocess
+articles = prep_articles.flatten_works(articles)
 eu_articles = prep_articles.flatten_works(eu_articles)
+
+# save final version of all (European) keyword-filtered taxonomic articles together
+articles.to_pickle("../../data/interim/filtered_articles.pkl")
+articles.to_csv("../../data/interim/filtered_articles.tsv", sep="\t")
 
 eu_articles.to_pickle("../../data/interim/eu_filtered_articles.pkl")
 eu_articles.to_csv("../../data/interim/eu_filtered_articles.tsv", sep="\t")
+
 print("European taxonomic articles filtered. Results in data/interim/eu_filtered_articles.tsv.")

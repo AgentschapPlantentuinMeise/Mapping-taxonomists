@@ -149,3 +149,15 @@ def filter_keywords(articles):
                 break
     
     return pd.DataFrame(keep).drop_duplicates(subset="id", ignore_index=True).iloc[:,1:]
+
+
+# put together separate files with articles
+def merge_pkls(directory):
+    articles = []
+
+    files = glob.glob(directory+"*")
+    for f in files:
+        if f[-4:]==".pkl":
+            articles.append(pd.read_pickle(f))
+    
+    return pd.concat(articles, ignore_index=True)
