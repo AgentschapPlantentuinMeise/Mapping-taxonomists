@@ -27,7 +27,7 @@ plosone_articles = download.request_works("primary_location.source.id:S202381698
 
 filtered_articles = prep_articles.filter_keywords(plosone_articles)
 filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/articles"+str(m)+".pkl")
-eu_articles = prep_articles.filter_eu_articles(plosone_articles)
+eu_articles = prep_articles.filter_eu_articles(filtered_articles)
 eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
 m += 1
 
@@ -72,8 +72,8 @@ eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articl
 m += 1
 
 # putting it together
-articles = merge_pkls("../../data/interim/keyword-filtered_articles/")
-eu_articles = merge_pkls("../../data/interim/eu_keyword-filtered_articles/")
+articles = prep_articles.merge_pkls("../../data/interim/keyword-filtered_articles/")
+eu_articles = prep_articles.merge_pkls("../../data/interim/eu_keyword-filtered_articles/")
 
 # preprocess
 articles = prep_articles.flatten_works(articles)

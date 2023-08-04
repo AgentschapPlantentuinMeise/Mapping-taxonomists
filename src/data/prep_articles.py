@@ -1,6 +1,6 @@
 # FUNCTIONS TO FILTER AND PREPROCESS ARTICLES FROM OPENALEX 
 import pandas as pd
-
+import glob
 
 # release information locked in dictionaries inside the dataframe: open access, host (journal)
 def flatten_works(df_input): # input: articles straight from openalex
