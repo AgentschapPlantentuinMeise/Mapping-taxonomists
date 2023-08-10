@@ -28,3 +28,4 @@ eu_articles = taxonomy.parse_for_taxonomy(eu_articles, backbone)
 eu_articles.to_pickle("../../data/processed/european_taxonomic_articles_with_subjects.pkl")
 eu_articles.to_csv("../../data/processed/european_taxonomic_articles_with_subjects.tsv", sep="\t")
 print("European taxonomic articles parsed for taxonomic subjects. Results in data/processed/european_taxonomic_articles.tsv.")
+ 

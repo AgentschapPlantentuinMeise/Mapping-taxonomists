@@ -26,14 +26,13 @@ def wordcloud_abstracts(df, name):
                 frequencies[word] = len(indices)
     
     # make wordcloud of abstract word frequencies
-    wordcloud = WordCloud(stopwords=stopwords, background_color="white").fit_words(frequencies)
-
+    wordcloud = WordCloud(stopwords=stopwords, background_color="white",
+                          width=2000, height=1000).fit_words(frequencies)
+    
     plt.imshow(wordcloud, interpolation="bilinear")
     plt.axis("off")
     # save wordcloud for this concept
-    plt.savefig("../../reports/figures/wordcloud_"+name+".png", format="png")
-
-    plt.show()
+    plt.savefig("../../reports/figures/wordcloud_"+name+".png", format="png", dpi=600, bbox_inches='tight')
     
 
 articles = pd.read_pickle("../../data/processed/european_taxonomic_articles_with_subjects.pkl")

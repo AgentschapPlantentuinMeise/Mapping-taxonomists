@@ -46,15 +46,17 @@ def flatten_works(df_input): # input: articles straight from openalex
 def filter_eu_articles(df_input, eu27 = False):
     # two-letter country codes of all European countries
     # from map: https://en.wikipedia.org/wiki/Europe#Contemporary_definition
-    eu_codes = ["IS", "SV", "FO", "NO", "FI", "SE", "DK", # Scandinavia
-                "EE", "LV", "LT", # Baltic countries
+    eu_codes = ["IS", "SE", "FO", "NO", "FI", "SE", "DK", # Nordic
+                "EE", "LV", "LT", # Baltic 
                 "IE", "IM", "GB", "GI", # Great Britain
                 "NL", "BE", "LU", # Benelux
-                "ES", "PT", "MT", "FR", "IT", "GR", # mediterranean
-                "BA", "HR", "SI", "ME", "RS", "MK", "AL", # balkan
-                "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # central
-                "BY", "UA", "MD", "RO", "BG" # eastern
-                "SM", "VA", "LI", "AD", "MC"] # micronations
+                "ES", "PT", "MT", "FR", "IT", "GR", "CY", "TR", # Mediterranean
+                "BA", "HR", "SI", "ME", "RS", "MK", "AL", "XK", # Balkan
+                "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # Central
+                "BY", "UA", "MD", "RO", "BG" # Eastern
+                "SM", "VA", "LI", "AD", "MC", # Micronations
+                "GG", "JE", "SJ", "AX", # Dependencies
+                "AZ", "GE", "AM"] # Caucasus    
     if eu27:
         eu_codes = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", # EU
                     "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"] # EU

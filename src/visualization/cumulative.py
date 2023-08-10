@@ -2,13 +2,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import pickle
-import openalex
 
 
-authors = pd.read_pickle("../../data/interim/european_authors_with_all_taxonomic_articles.tsv", sep="\t")
+authors = pd.read_pickle("../../data/interim/all_authors_of_european_taxonomic_articles.pkl")
 # get unique authors per journal
 authors = authors.drop_duplicates(subset=["author_id", "source_display_name"])
-
+"""
 # count number of authors per journal
 article_counts = authors[["article_id", 
                           "source_display_name"]].groupby(["source_display_name"]) \
@@ -17,11 +16,12 @@ article_counts = authors[["article_id",
                                                  .sort_values(["article_id"], ascending=False)
 article_counts.columns = ["journalName", "numberOfArticles"]
 article_counts.to_csv("../../data/processed/european_authors_counts_per_journal.csv")
-
+"""
 # start with Zootaxa (has most authors)
 nr_authors_path = [len(authors[authors["source_display_name"]=="Zootaxa"]),] 
 journal_path = ["Zootaxa",]
-unexplored = list(set(authors["source_display_name"])).remove("Zootaxa")
+unexplored = list(set(authors["source_display_name"]))
+unexplored.remove("Zootaxa")
 authors_seen = list(authors[authors["source_display_name"]=="Zootaxa"]["author_id"])
 
 # dictionary with journal name and author ids in that journal
@@ -42,7 +42,7 @@ def not_in_common(authors1, journal2):
 nr_journals = len(set(authors["source_display_name"]))
 
 # find path of least resistance through journals
-while len(journal_path) < nr_journals:
+while unexplored != None:
     best_journal = ""
     best_author_nr = 0
 

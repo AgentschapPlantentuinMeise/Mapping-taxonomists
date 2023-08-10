@@ -52,15 +52,18 @@ def get_single_authors(df_input): # input: authors with doubles
 # filter a list of authors for authors who are asscociated with at least one European institution
 def get_eu_authors(df_input): # input: authors
     keep = []
-    eu_codes = ["IS", "SV", "FO", "NO", "FI", "SE", "DK", # Nordic
+    eu_codes = ["IS", "SE", "FO", "NO", "FI", "SE", "DK", # Nordic
                 "EE", "LV", "LT", # Baltic 
                 "IE", "IM", "GB", "GI", # Great Britain
                 "NL", "BE", "LU", # Benelux
-                "ES", "PT", "MT", "FR", "IT", "GR", # Mediterranean
-                "BA", "HR", "SI", "ME", "RS", "MK", "AL", # Balkan
+                "ES", "PT", "MT", "FR", "IT", "GR", "CY", "TR", # Mediterranean
+                "BA", "HR", "SI", "ME", "RS", "MK", "AL", "XK", # Balkan
                 "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # Central
                 "BY", "UA", "MD", "RO", "BG" # Eastern
-                "SM", "VA", "LI", "AD", "MC"] # Micronations
+                "SM", "VA", "LI", "AD", "MC", # Micronations
+                "GG", "JE", "SJ", "AX", # Dependencies
+                "AZ", "GE", "AM"] # Caucasus                 
+                
 
     for author in df_input.itertuples():
         # check every affiliated institute
