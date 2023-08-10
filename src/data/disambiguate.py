@@ -4,6 +4,7 @@ import time
 
 
 # PREPROCESSING
+levels = ["genus", "family", "order", "class", "phylum", "kingdom"]
 
 ## AUTHORS
 authors = pd.read_pickle("../../data/interim/european_taxonomic_authors_no_duplicates.pkl")
@@ -41,7 +42,6 @@ for species in backbone.itertuples():
 
 ## LINK AUTHORS TO BACKBONE
 # start with empty list for every taxonomic level 
-levels = ["genus", "family", "order", "class", "phylum", "kingdom"]
 for level in levels:
     authors[level] = [list() for x in range(len(authors.index))]
     
@@ -58,64 +58,74 @@ for i, author in authors.iterrows():
                     
 
 # DISAMBIGUATE
-# get everyone whose truncated name occurs more than once
-#duplicates = authors[authors.duplicated(subset="author_display_name", keep=False)]
-duplicates = authors[authors.duplicated(subset=["truncatedName"], keep=False)]
+def match(a, b):
+    same = False
+    # if no known orders for one of them, just use institution 
+    if a.order == [] or b.order == []:
+        if a.inst_id == b.inst_id:
+            same = True
+    # if both have known orders, orders and institution must match
+    else:
+        if a.inst_id == b.inst_id and len(set(a.order).intersection(set(b.order))) > 0:
+            same = True
+    
+    return same
+
+
+def cluster(matches):
+    clusters = []
+    
+    for match in matches:
+        # check if it matches any existing groups
+        match_with_groups = []
+        for i, group in enumerate(clusters):
+            if len(set(match).intersection(set(group))) > 0:
+                match_with_groups.append(i)
+        
+        # if it fits with no existing group, add it by itself
+        if len(match_with_groups) == 0:
+            clusters.append(match)
+        # if it fits with one existing group, add it to that group
+        elif len(match_with_groups) == 1:
+            clusters[match_with_groups[0]].extend(match)
+        # if it fits with multiple groups, mash those groups together
+        else:
+            print(clusters) # apparently this never happens
+            supergroup = []
+            # remove each group and add its contents to the new supergroup
+            for j in match_with_groups.sort(reverse=True):
+                supergroup.extend(clusters.pop(j))
+            supergroup.extend(match)
+            clusters.append(supergroup)
+            print(clusters)
+    
+    # turn into a list of sets to get unique values
+    clusters = [set(x) for x in clusters] 
+    return clusters
 
 
 # emergency meeting: go over every duplicated name
 true_people = []
+duplicates = authors[authors.duplicated(subset=["truncatedName"], keep=False)]
 
-#for name in set(duplicates["author_display_name"]): 
 for name in set(duplicates["truncatedName"]):
     # get all trund names that are exact string matches to this name
     #same_names = duplicates[duplicates["author_display_name"]==name]
     same_names = duplicates[duplicates["truncatedName"]==name]
+    matches = []
     
-    for person in same_names.itertuples():
-        # check institution first
-        # this way, even authors without known expertise can be disambiguated first
-        person_ids = [person.Index,]
-        orders = person.order.copy()
-        institutions = [person.inst_id,]
+    for person_a in same_names.itertuples():
+        aliases = [person_a.Index,]
         
-        for cousin in same_names.itertuples():
-            # if they work at the same institution, they're probably the same person
-            if cousin.inst_id in institutions:
-                person_ids.append(cousin.Index)
-                orders.extend(cousin.order)
-                institutions.append(cousin.inst_id)
+        for person_b in same_names.itertuples():
+            if match(person_a, person_b) and person_a.Index!=person_b.Index:
+                aliases.append(person_b.Index)
                 
-                # try if anyone else looks like this person
-                for second_cousin in same_names.itertuples():
-                    if second_cousin.inst_id in institutions:
-                        person_ids.append(second_cousin.Index)
-                        orders.extend(second_cousin.order)    
-                        institutions.append(second_cousin.inst_id)
-                        # we could go on...
-        
-        # check institutions and taxonomic expertise second, simultaneously
-        if person.species_subject != list():
-            for cousin in same_names.itertuples():
-                if len(set(orders).intersection(set(cousin.order))) > 0 or cousin.inst_id in institutions:
-                    person_ids.append(cousin.Index)
-                    orders.extend(cousin.order)
-                    institutions.append(cousin.inst_id)
-                    # try if anyone else looks like this person
-                    for second_cousin in same_names.itertuples():
-                        if len(set(orders).intersection(second_cousin.order)) > 0 \
-    or second_cousin.inst_id in institutions:
-                            person_ids.append(second_cousin.Index)
-                            orders.extend(second_cousin.order)    
-                            institutions.append(second_cousin.inst_id)
-                            # we could go on...
-        
-        person_ids = set(person_ids)
-        if person_ids not in true_people:
-            true_people.append(person_ids)
-            
+        matches.append(aliases)
 
-#true_authors = authors[-(authors.duplicated(subset="author_display_name", keep=False))].reset_index()
+    true_people.extend(cluster(matches))
+
+
 true_authors = authors[-(authors.duplicated(subset="truncatedName", keep=False))].reset_index()
 
 merged_people = []
