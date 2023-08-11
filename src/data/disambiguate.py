@@ -1,11 +1,8 @@
 import pandas as pd
 import numpy as np
-import time
-
+import re
 
 # PREPROCESSING
-levels = ["genus", "family", "order", "class", "phylum", "kingdom"]
-
 ## AUTHORS
 authors = pd.read_pickle("../../data/interim/european_taxonomic_authors_no_duplicates.pkl")
 # less columns and author ID as index quicken processing
@@ -15,54 +12,60 @@ authors = authors.set_index("author_id")
 
 # get initial first name + last name for every author
 truncated_names = []
+stripped_names = []
 
 for author in authors.itertuples():
     first_initial = author.author_display_name[0]
     last_name = author.author_display_name.split(" ")[-1]
     truncated_names.append(first_initial + " " + last_name)
     
+    stripped_name = re.sub('[ .-]', '', author.author_display_name)
+    stripped_names.append(stripped_name)
+    
 authors["truncatedName"] = truncated_names
+authors["strippedName"] = stripped_names
 
 
 ## GBIF TAXONOMIC BACKBONE
-backbone = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip')
+backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip')
 # reduce size of backbone for easier searching
-backbone = backbone[backbone["taxonomicStatus"]!="doubtful"]
-backbone = backbone[["canonicalName",] + levels]
-# remove taxa with no known species name, genus, family,...
-backbone = backbone.dropna().drop_duplicates(ignore_index=True).reset_index(drop=True)
+backbone = backbone_original[backbone_original["taxonomicStatus"]!="doubtful"]
+backbone = backbone[["canonicalName", "order", "family"]]
+# remove taxa with no known species name and remove duplicates
+backbone = backbone.dropna(subset="canonicalName").drop_duplicates(ignore_index=True).reset_index(drop=True)
 
 # backbone to dictionary for quicker processing
 seen_species = {}
 
 for species in backbone.itertuples():
     if species.canonicalName not in seen_species:
-        seen_species[species.canonicalName] = list(species)[2:]
-
+        if isinstance(species.order,str):
+            seen_species[species.canonicalName] = species.order
+        # take family if order is not available        
+        elif isinstance(species.family, str):
+            seen_species[species.canonicalName] = species.family
 
 ## LINK AUTHORS TO BACKBONE
-# start with empty list for every taxonomic level 
-for level in levels:
-    authors[level] = [list() for x in range(len(authors.index))]
+# start with empty list for order
+authors["order"] = [list() for x in range(len(authors.index))]
     
-# for every author, break down every species they study into different taxonomic levels
+# for every author, get order for every species they study
 for i, author in authors.iterrows():
     for species in author["species_subject"]:
         if species in seen_species:
-            for l, level in enumerate(levels):
-                # get genus (or family, order,...) name according to GBIF
-                taxon_name = seen_species[species][l]
-                # add this genus (etc) to the list of genera studied by the author (no duplicates)
-                if taxon_name not in author[level]:
-                    authors.loc[i, level].append(taxon_name)
+            # get order name according to GBIF
+            order_name = seen_species[species]
+            # add this order to the list of orders studied by the author (no duplicates)
+            if order_name not in author["order"]:
+                authors.loc[i, "order"].append(order_name)            
                     
 
 # DISAMBIGUATE
 def match(a, b):
     same = False
-    # if no known orders for one of them, just use institution 
+    # if no known orders for one of them, institution and full name must match 
     if a.order == [] or b.order == []:
-        if a.inst_id == b.inst_id:
+        if a.inst_id == b.inst_id and a.strippedName==b.strippedName:
             same = True
     # if both have known orders, orders and institution must match
     else:
@@ -138,7 +141,7 @@ def collect_values(df, person_ids, column):
         for duplicate in person_ids:
             imposter = df.loc[duplicate]
             if imposter[column] not in values and imposter[column] != None:
-                if column in levels or column == "species_subject":
+                if column == "order" or column == "species_subject":
                     values.extend(imposter[column])
                 else:
                     values.append(imposter[column])
