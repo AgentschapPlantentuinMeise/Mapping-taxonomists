@@ -1,33 +1,28 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import pickle
 
 
-authors = pd.read_pickle("../../data/interim/all_authors_of_european_taxonomic_articles.pkl")
+authors = pd.read_pickle("../../data/interim/european_authors_with_all_taxonomic_articles.pkl")
 # get unique authors per journal
-authors = authors.drop_duplicates(subset=["author_id", "source_display_name"])
-"""
-# count number of authors per journal
-article_counts = authors[["article_id", 
-                          "source_display_name"]].groupby(["source_display_name"]) \
-                                                 .count() \
-                                                 .reset_index() \
-                                                 .sort_values(["article_id"], ascending=False)
-article_counts.columns = ["journalName", "numberOfArticles"]
-article_counts.to_csv("../../data/processed/european_authors_counts_per_journal.csv")
-"""
-# start with Zootaxa (has most authors)
-nr_authors_path = [len(authors[authors["source_display_name"]=="Zootaxa"]),] 
-journal_path = ["Zootaxa",]
-unexplored = list(set(authors["source_display_name"]))
-unexplored.remove("Zootaxa")
-authors_seen = list(authors[authors["source_display_name"]=="Zootaxa"]["author_id"])
+authors = authors.drop_duplicates(subset=["author_id", "source_id"])
 
-# dictionary with journal name and author ids in that journal
+# disambiguate
+
+# start with journal that has most authors
+first_journal = max(authors["source_id"],key=list(authors["source_id"]).count)
+journal_path = [first_journal,]
+
+authors_seen = list(authors[authors["source_id"]==first_journal]["author_id"])
+nr_authors_path = [len(authors_seen),]
+
+unexplored = list(set(authors["source_id"]))
+unexplored.remove(first_journal)
+
+# dictionary with journal name and author ids per journal
 journal_authors = {}
-for journal in set(authors["source_display_name"]):
-    journal_authors[journal] = list(authors[authors["source_display_name"]==journal]["author_id"])
+for journal in set(authors["source_id"]):
+    journal_authors[journal] = list(authors[authors["source_id"]==journal]["author_id"])
 
 # find out how many of the authors in a proposed journal have already been seen
 def not_in_common(authors1, journal2):
@@ -38,8 +33,6 @@ def not_in_common(authors1, journal2):
         if author not in authors1:
             n += 1
     return n
-
-nr_journals = len(set(authors["source_display_name"]))
 
 # find path of least resistance through journals
 while unexplored != None:
@@ -54,6 +47,7 @@ while unexplored != None:
             best_author_nr = new_blood
             best_journal = j
     
+    # if none of the journals add new authors, stop
     if best_author_nr == 0:
         break
         
@@ -70,16 +64,26 @@ while unexplored != None:
 fig, ax = plt.subplots()
 cumulative_path = np.cumsum(nr_authors_path)
 
-plt.bar(x=journal_path, height=cumulative_path)
-plt.xticks(rotation=90, ha="center", fontsize=4)
+plt.bar(x=range(1,len(journal_path)+1), height=cumulative_path)
 ax.set_title("Number of European authors published in journals (cumulative)")
 
 # add 95% line
 value_95 = cumulative_path[-1]*0.95
 plt.axhline(y=value_95, color="red", label="95%")
-ax.text(0.5, value_95+200,"95%", color="red")
-plt.show()
+ax.text(0.5, value_95+400,"95%", color="red")
 
 plt.savefig("../../reports/figures/cumulative_graph_european_authors_in_journals.png")
 
-len(journal_path)
+# save the path we took
+journal_id_names = authors[["source_display_name", "source_id"]].drop_duplicates()
+journal_id_names = journal_id_names.set_index("source_id")
+
+with open("../../data/interim/journals_cumulative_path.txt", "w", encoding="utf-8") as f:
+    for journal_id in journal_path:
+        # write each item on a new line
+        journal_name = journal_id_names.loc[journal_id]
+        f.write(journal_name[0]+"\n")
+    # add last journals too
+    for journal_id in unexplored:
+        journal_name = journal_id_names.loc[journal_id]
+        f.write(journal_name[0]+"\n")
