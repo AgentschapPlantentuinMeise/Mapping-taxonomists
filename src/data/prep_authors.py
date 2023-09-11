@@ -6,28 +6,44 @@ def get_authors(df_input): # input: articles after get_dict_info
     # create empty dataframe with all authorship attributes
     df = pd.DataFrame()
     authors_list = []
-    
+
+    # find an example row to infer column names from
+    i = 0
+    example_row = None
+    while example_row is None:
+        row = df_input.iloc[i]
+        # needs to have an available source with all expected fields
+        if len(row["authorships"]) != 0:
+            if len(row["authorships"][0]["institutions"]) != 0:
+                example_row = row
+                length_inst = len(row["authorships"][0]["institutions"][0])
+        else:
+            i += 1
+
     for article in df_input.itertuples():
         authors = pd.DataFrame(article.authorships)
-        
+
         if len(authors) != 0:
             # disassemble author info
             for author in authors.itertuples():
-                new_info = [article.id]+[author.author_position]+list(author.author.values())+[author.raw_affiliation_string]
-                
+                new_info = [article.id,] + list(author)[1:] + \
+                           list(author.author.values())
+
                 # add institution info
                 if len(author.institutions) != 0:
                     new_info += list(author.institutions[0].values()) 
                 else:
                     # no institution, no info
-                    new_info += [None, None, None, None, None]
+                    new_info += [None,] * length_inst
+
+                new_info.append(author.countries)
                 authors_list.append(new_info) 
-    
+
     new_df = pd.DataFrame(authors_list, 
-                          columns=["article_id", "author_position", "author_id", "author_display_name", "orcid",
-                                   "raw_affiliation_string",
-                                   "inst_id", "inst_display_name", "ror", "inst_country_code", "inst_type",
-                                   "inst_lineage"])
+                          columns = ["article_id",] + list(example_row["authorships"][0].keys()) + \
+                                    ["author_"+x for x in example_row["authorships"][0]["author"]] + \
+                                    ["inst_"+x for x in example_row["authorships"][0]["institutions"][0]] + \
+                                    ["countries_list",])
     df = pd.concat([df, new_df])
     
     return pd.merge(df, df_input, left_on="article_id", right_on="id")

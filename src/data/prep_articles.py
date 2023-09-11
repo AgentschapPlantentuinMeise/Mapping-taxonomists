@@ -4,22 +4,35 @@ import glob
 
 # release information locked in dictionaries inside the dataframe: open access, host (journal)
 def flatten_works(df_input): # input: articles straight from openalex
-    newcols = ["location_is_oa", "location_landing_page_url", "location_pdf_url", 
-               "location_source", "location_license", "location_version", 
-               "location_is_accepted", "location_is_published",               
-               "source_id", "source_display_name", "source_issn_l", "source_issn", 
-               "source_is_oa", "source_is_in_doaj",
-               "source_host_organization", "source_host_organization_name", 
-               "source_host_organization_lineage", "source_host_organization_lineage_names", "source_type",
-               "is_oa", "oa_status", "oa_url", "any_repository_has_fulltext"]
-    
+    # find an example row to infer column names from
+    i = 0
+    example_row = None
+    while example_row is None:
+        row = df_input.iloc[i]
+        # needs to have an available source with all expected fields
+        if row["primary_location"]["source"] != None:
+            if "is_oa" in row["primary_location"]["source"] \
+            and "is_in_doaj" in row["primary_location"]["source"]:
+                example_row = row
+                length_source = len(row["primary_location"]["source"])
+        else:
+            i += 1
+            
+    new_cols = ["location_" + x for x in example_row["primary_location"].keys()] + \
+               ["source_" + x for x in example_row["primary_location"]["source"].keys()] + \
+               ["oa_" + x for x in example_row["open_access"].keys()] 
     new_rows = []
     
     for article in df_input.itertuples():
         # get host (journal) info
         # if there is a list within the dictionary, pandas will turn it into two rows
+        # LOCATION
+        l_location = list(article.primary_location.values())
+        
+        # SOURCE
         if article.primary_location["source"] != None:
             if article.primary_location["source"]["issn"] != None and len(article.primary_location["source"]["issn"]) != 1:
+                # get everything about source
                 article.primary_location["source"]["issn"] = '\n'.join(article.primary_location["source"]["issn"])
             l_source = list(article.primary_location["source"].values())
             
@@ -30,16 +43,17 @@ def flatten_works(df_input): # input: articles straight from openalex
                 l_source.insert(5, "unknown")
 
         else:
-            l_source = [None,] * 10
-            
-        l_location = list(article.primary_location.values())
+            l_source = [None,] * length_source
+        
+        # OPEN ACCESS
         l_oa = list(article.open_access.values())
-        # unite open access and journal info from this article and previous articles
+        
+        # UNITE
         l_new = l_location + l_source + l_oa
         new_rows.append(l_new)
         
     # unite data in dictionaries with accessible data
-    new_df = pd.DataFrame(new_rows, columns=newcols)
+    new_df = pd.DataFrame(new_rows, columns=new_cols)
     return df_input.merge(new_df, left_index=True, right_index=True)
 
 
