@@ -56,11 +56,12 @@ def parse_for_taxonomy(articles, backbone):
 
         # IN TITLE
         # find full species name
-        candidates = re.findall("[A-Z][a-z]+ [a-z]+", article.title) # anything that looks like "Abcd efg"
-        for candidate in candidates:
-            # check if Abcd efg matches a known species name
-            if candidate not in taxa_list and candidate in all_names:
-                taxa_list.append(candidate); found = True
+        if article.title:
+            candidates = re.findall("[A-Z][a-z]+ [a-z]+", article.title) # anything that looks like "Abcd efg"
+            for candidate in candidates:
+                # check if Abcd efg matches a known species name
+                if candidate not in taxa_list and candidate in all_names:
+                    taxa_list.append(candidate); found = True
 
         if found:
             all_found_taxa.append(taxa_list)
@@ -112,10 +113,10 @@ def species_to_tree(df):
             seen_species[species.canonicalName] = list(species)[2:]
     
     # associate the full tree with a certain author or article
-    genera, families, orders, classes, phyla, kingdoms = [], [], [], [], [], []
+    genera, families, orders, classes, phyla, kingdoms, lineages = [], [], [], [], [], [], []
 
     for row in df.itertuples():
-        genus, family, order, tclass, phylum, kingdom = [], [], [], [], [], []
+        genus, family, order, tclass, phylum, kingdom, lineage = [], [], [], [], [], [], []
                             # python won't allow class as a variable name
 
         for species in row.species_subjects:
@@ -126,6 +127,8 @@ def species_to_tree(df):
                 tclass.append(seen_species[species][3])
                 phylum.append(seen_species[species][4])
                 kingdom.append(seen_species[species][5])
+                
+                lineage.append(seen_species[species])
 
         genera.append(set(genus))
         families.append(set(family))
@@ -133,6 +136,7 @@ def species_to_tree(df):
         classes.append(set(tclass))
         phyla.append(set(phylum))
         kingdoms.append(set(kingdom))
+        lineages.append(lineage)
 
     df["genera_subjects"] = genera
     df["families_subjects"] = families
@@ -140,5 +144,6 @@ def species_to_tree(df):
     df["classes_subjects"] = classes
     df["phyla_subjects"] = phyla
     df["kingdoms_subjects"] = kingdoms
+    df["lineages_subjects"] = lineages
     
     return df

@@ -25,8 +25,9 @@ def get_authors(df_input): # input: articles after get_dict_info
     
     new_df = pd.DataFrame(authors_list, 
                           columns=["article_id", "author_position", "author_id", "author_display_name", "orcid",
-                                   "raw_affiliation_string", 
-                                   "inst_id", "inst_display_name", "ror", "inst_country_code", "inst_type"])
+                                   "raw_affiliation_string",
+                                   "inst_id", "inst_display_name", "ror", "inst_country_code", "inst_type",
+                                   "inst_lineage"])
     df = pd.concat([df, new_df])
     
     return pd.merge(df, df_input, left_on="article_id", right_on="id")
@@ -59,15 +60,14 @@ def get_eu_authors(df_input): # input: authors
                 "ES", "PT", "MT", "FR", "IT", "GR", "CY", "TR", # Mediterranean
                 "BA", "HR", "SI", "ME", "RS", "MK", "AL", "XK", # Balkan
                 "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # Central
-                "BY", "UA", "MD", "RO", "BG" # Eastern
+                "UA", "MD", "RO", "BG", # Eastern
                 "SM", "VA", "LI", "AD", "MC", # Micronations
                 "GG", "JE", "SJ", "AX", # Dependencies
-                "AZ", "GE", "AM"] # Caucasus                 
+                "AZ", "GE", "AM"] # Caucasus                
                 
-
     for author in df_input.itertuples():
         # check every affiliated institute
         if author.inst_country_code in eu_codes:
             keep.append(author)
     
-    return pd.DataFrame(keep).drop(columns="Index") # drop old index
+    return pd.DataFrame(keep)#.drop(columns="Index") # drop old index

@@ -82,7 +82,7 @@ prep_journals.get_values_wikidata(wikidata_subjects_results)
 prep_journals.get_values_wikidata(ipni_zoobank_results)
 
 # OpenAlex IDs
-openalex_results = prep_journals.homogenize_oa(openalex_results)
+openalex_results = prep_journals.homogenize_openalex(openalex_results)
 
 # putting it together
 journals = pd.concat([wikidata_subjects_results, ipni_zoobank_results, openalex_results], 

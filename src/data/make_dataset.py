@@ -9,6 +9,8 @@ if not os.path.exists("../../data/external/backbone/Taxon.tsv"):
     exit()
 
 if not os.path.exists("../../data/raw/articles"): os.makedirs("../../data/raw/articles")
+if not os.path.exists("../../data/interim/keyword-filtered_articles"):
+    os.makedirs("../../data/interim/keyword-filtered_articles")
 if not os.path.exists("../../data/interim/eu_keyword-filtered_articles"):
     os.makedirs("../../data/interim/eu_keyword-filtered_articles")
 if not os.path.exists("../../data/processed"): os.makedirs("../../data/processed")

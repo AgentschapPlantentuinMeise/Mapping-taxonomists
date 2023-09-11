@@ -1,5 +1,5 @@
 import pandas as pd
-
+import download
 
 # wikidata objects of countries often have a ISO 3166-1 alpha-2 code (P297): 
 # use this unambiguous code instead of the wikidata ID, just like OpenALex
@@ -16,7 +16,7 @@ def get_country_codes():
     }
   }
 }"""
-    results = get_sparql_results(query)
+    results = download.get_sparql_results(query)
     
     countries = {}
     for country in results.itertuples():

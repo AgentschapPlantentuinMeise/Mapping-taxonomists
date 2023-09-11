@@ -25,13 +25,13 @@ for subjects in authors["species_subject"]:
     if len(subjects) != 0: 
         for species in subjects:
             if species in available_species:
-                backbone.loc[species] += 1
+                backbone.loc[species, "numberOfAuthors"] += 1
 
 # propagate synonyms
-for i, row in backbone.itertuples(index=True):
+for row in backbone.itertuples():
     if row.taxonomicStatus == "synonym":
         backbone.loc[backbone["taxonID"]==row.acceptedNameUsageID,"numberOfAuthors"] += row.numberOfAuthors
-        backbone.drop(index=i)
+        backbone.drop(index=row.Index)
 
 backbone.to_pickle("../../data/processed/backbone_with_author_counts.pkl")
 backbone.to_csv("../../data/processed/backbone_with_author_counts.tsv", sep="\t")

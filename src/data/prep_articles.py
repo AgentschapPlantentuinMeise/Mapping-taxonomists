@@ -6,6 +6,7 @@ import glob
 def flatten_works(df_input): # input: articles straight from openalex
     newcols = ["location_is_oa", "location_landing_page_url", "location_pdf_url", 
                "location_source", "location_license", "location_version", 
+               "location_is_accepted", "location_is_published",               
                "source_id", "source_display_name", "source_issn_l", "source_issn", 
                "source_is_oa", "source_is_in_doaj",
                "source_host_organization", "source_host_organization_name", 
@@ -43,7 +44,7 @@ def flatten_works(df_input): # input: articles straight from openalex
 
 
 # filter all articles: at least one of the institutions associated with one of the authors, must be EU
-def filter_eu_articles(df_input, eu27 = False):
+def filter_eu_articles(df_input):
     # two-letter country codes of all European countries
     # from map: https://en.wikipedia.org/wiki/Europe#Contemporary_definition
     eu_codes = ["IS", "SE", "FO", "NO", "FI", "SE", "DK", # Nordic
@@ -53,13 +54,10 @@ def filter_eu_articles(df_input, eu27 = False):
                 "ES", "PT", "MT", "FR", "IT", "GR", "CY", "TR", # Mediterranean
                 "BA", "HR", "SI", "ME", "RS", "MK", "AL", "XK", # Balkan
                 "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # Central
-                "BY", "UA", "MD", "RO", "BG" # Eastern
+                "UA", "MD", "RO", "BG", # Eastern
                 "SM", "VA", "LI", "AD", "MC", # Micronations
                 "GG", "JE", "SJ", "AX", # Dependencies
-                "AZ", "GE", "AM"] # Caucasus    
-    if eu27:
-        eu_codes = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", # EU
-                    "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"] # EU
+                "AZ", "GE", "AM"] # Caucasus
     eu_articles = []
 
     for article in df_input.itertuples():
