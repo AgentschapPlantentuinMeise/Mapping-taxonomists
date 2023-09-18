@@ -64,7 +64,7 @@ while unexplored != None:
 fig, ax = plt.subplots()
 cumulative_path = np.cumsum(nr_authors_path)
 
-plt.bar(x=range(1,len(journal_path)+1), height=cumulative_path)
+plt.bar(x=range(1,len(journal_path)+1), height=cumulative_path, width=1.0)
 ax.set_title("Number of European authors published in journals (cumulative)")
 
 # add 95% line

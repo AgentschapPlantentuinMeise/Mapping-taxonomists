@@ -104,7 +104,7 @@ def parse_for_taxonomy(articles, backbone):
     return articles
 
 
-def species_to_tree(df):
+def species_to_tree(df, backbone):
     # make dictionary of genus, family, order, class, phylum, kingdom for every species
     seen_species = {}
 
@@ -119,16 +119,16 @@ def species_to_tree(df):
         genus, family, order, tclass, phylum, kingdom, lineage = [], [], [], [], [], [], []
                             # python won't allow class as a variable name
 
-        for species in row.species_subjects:
+        for species in row.species_subject:
             if species in seen_species:
-                genus.append(seen_species[species][0])
-                family.append(seen_species[species][1])
-                order.append(seen_species[species][2])
-                tclass.append(seen_species[species][3])
-                phylum.append(seen_species[species][4])
-                kingdom.append(seen_species[species][5])
+                genus.append(seen_species[species][-1])
+                family.append(seen_species[species][-2])
+                order.append(seen_species[species][-3])
+                tclass.append(seen_species[species][-4])
+                phylum.append(seen_species[species][-5])
+                kingdom.append(seen_species[species][-6])
                 
-                lineage.append(seen_species[species])
+                lineage.append(seen_species[species][-6:])
 
         genera.append(set(genus))
         families.append(set(family))

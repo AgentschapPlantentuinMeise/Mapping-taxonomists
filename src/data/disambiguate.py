@@ -6,7 +6,7 @@ import re
 ## AUTHORS
 authors = pd.read_pickle("../../data/interim/european_taxonomic_authors_no_duplicates.pkl")
 # less columns and author ID as index quicken processing
-authors = authors[["author_id", "author_display_name", "orcid",
+authors = authors[["author_id", "author_display_name", "author_orcid",
                    "inst_id", "inst_display_name",  "species_subject"]]
 authors = authors.set_index("author_id")
 

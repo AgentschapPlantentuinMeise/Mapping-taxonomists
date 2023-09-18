@@ -24,7 +24,7 @@ def get_authors(df_input): # input: articles after get_dict_info
         authors = pd.DataFrame(article.authorships)
 
         if len(authors) != 0:
-            # disassemble author info
+            # disassemble author infprio
             for author in authors.itertuples():
                 new_info = [article.id,] + list(author)[1:] + \
                            list(author.author.values())
@@ -35,8 +35,11 @@ def get_authors(df_input): # input: articles after get_dict_info
                 else:
                     # no institution, no info
                     new_info += [None,] * length_inst
-
-                new_info.append(author.countries)
+                
+                if "countries" in str(author):
+                    new_info.append(author.countries)
+                else:
+                    new_info += [None,]
                 authors_list.append(new_info) 
 
     new_df = pd.DataFrame(authors_list, 
