@@ -33,3 +33,6 @@ with open("parse_taxonomy.py") as f:
     
 with open("get_authors.py") as f:
     exec(f.read())
+
+with open("disambiguate.py") as f:
+    exec(f.read())

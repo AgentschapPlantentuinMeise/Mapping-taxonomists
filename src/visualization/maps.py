@@ -68,8 +68,14 @@ def plot_country_freqs(freqs, map_path, europe=False, dpi='figure', relative=Fal
         plt.xticks([])
         plt.yticks([])
         
-        worldmap.plot(column='freq', ax=ax, legend=True, cmap="viridis",
-                      missing_kwds={"color":"lightgrey"})
+        if not relative:
+            worldmap.plot(column='freq', ax=ax, legend=True, cmap="viridis",
+                          missing_kwds={"color":"lightgrey"})
+        else:
+            worldmap.plot(column='freq', ax=ax, legend=True, cmap="viridis",
+                          missing_kwds={"color":"lightgrey"}, 
+                          legend_kwds={"label":"percentage of population"})
+        
         plt.savefig(map_path+"_europe.png", dpi=dpi)
 
 
