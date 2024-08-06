@@ -4,7 +4,7 @@ import re
 
 # PREPROCESSING
 ## AUTHORS
-authors = pd.read_pickle("../../data/interim/european_taxonomic_authors_no_duplicates.pkl")
+authors = pd.read_pickle("../../data/interim/country_taxonomic_authors_no_duplicates.pkl")
 # less columns and author ID as index quicken processing
 authors = authors[["author_id", "author_display_name", "author_orcid",
                    "inst_id", "inst_display_name",  "species_subject"]]
@@ -174,5 +174,5 @@ for person in true_people:
 merged_df = pd.concat(merged_people, ignore_index=True)        
 merged_df.to_csv("../../data/interim/merged_people_truncated.csv")
 
-true_authors.to_pickle("../../data/processed/european_authors_disambiguated_truncated.pkl")
-true_authors.to_csv("../../data/processed/european_authors_disambiguated_truncated.tsv", sep="\t")
+true_authors.to_pickle("../../data/processed/authors_disambiguated_truncated.pkl")
+true_authors.to_csv("../../data/processed/authors_disambiguated_truncated.tsv", sep="\t")

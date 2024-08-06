@@ -17,7 +17,7 @@ backbone["numberOfAuthors"] = [0,]*len(backbone.index)
 
 
 # get disambiguated, European authors of taxonomic articles
-authors = pd.read_pickle("../../data/processed/european_authors_disambiguated_truncated.pkl")
+authors = pd.read_pickle("../../data/processed/authors_disambiguated_truncated.pkl")
 
 # link the author's expertise to the taxonomic backbone
 available_species = set(backbone.index)

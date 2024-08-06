@@ -11,17 +11,14 @@ if not os.path.exists("../../data/external/backbone/Taxon.tsv"):
 if not os.path.exists("../../data/raw/articles"): os.makedirs("../../data/raw/articles")
 if not os.path.exists("../../data/interim/keyword-filtered_articles"):
     os.makedirs("../../data/interim/keyword-filtered_articles")
-if not os.path.exists("../../data/interim/eu_keyword-filtered_articles"):
-    os.makedirs("../../data/interim/eu_keyword-filtered_articles")
 if not os.path.exists("../../data/processed"): os.makedirs("../../data/processed")
 
 # clear directory
 files = glob.glob("../../data/raw/articles/*")
-files.extend(glob.glob("../../data/interim/eu_keyword-filtered_articles/*"))
 for f in files:
     os.remove(f)
 
-# run scripts consecutively  
+# run scripts consecutively   
 with open("list_journals.py") as f:
     exec(f.read())
 
@@ -36,3 +33,4 @@ with open("get_authors.py") as f:
 
 with open("disambiguate.py") as f:
     exec(f.read())
+

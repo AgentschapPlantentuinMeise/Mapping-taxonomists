@@ -12,7 +12,7 @@ import time
 def build_sparql_query(subjects):
     # instance of (P31) scientific (Q5633421) or academic journal (Q737498)
     query = """SELECT DISTINCT ?item ?itemLabel ?openAlexID ?issnL ?issn 
-    ?IPNIpubID ?ZooBankPubID ?dissolved ?country
+    ?IPNIpubID ?ZooBankPubID ?IndexFungorumID ?dissolved ?country
 WHERE {
     VALUES ?journaltype {wd:Q5633421 wd:Q737498}
     ?item wdt:P31/wdt:P279* ?journaltype .""" 
@@ -105,10 +105,15 @@ def pitstop(df_request, query, timeout):
     return df_request
 
 
+with open("included_countries.txt", "r") as file:
+    countries = [line[:-1] for line in file]
+    countries = "|".join(map(str, countries))
+
+
 # RETRIEVE ALL RECENT ARTICLES WITH A FILTER
 def request_works(filter_string, email, from_date="2013-01-01", to_date=None, print_number=True):
     # build query
-    query = "https://api.openalex.org/works?per-page=200&filter="+filter_string+",from_publication_date:"+from_date
+    query = "https://api.openalex.org/works?per-page=200&filter=authorships.countries:"+countries+","+filter_string+",from_publication_date:"+from_date
     if to_date != None:
         query += ",to_publication_date:"+to_date+"&mailto="+email
     else:

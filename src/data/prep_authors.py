@@ -69,24 +69,16 @@ def get_single_authors(df_input): # input: authors with doubles
     return keep_df.drop_duplicates(subset=["author_id"], ignore_index=True)
 
 
-# filter a list of authors for authors who are asscociated with at least one European institution
-def get_eu_authors(df_input): # input: authors
-    keep = []
-    eu_codes = ["IS", "SE", "FO", "NO", "FI", "SE", "DK", # Nordic
-                "EE", "LV", "LT", # Baltic 
-                "IE", "IM", "GB", "GI", # Great Britain
-                "NL", "BE", "LU", # Benelux
-                "ES", "PT", "MT", "FR", "IT", "GR", "CY", "TR", # Mediterranean
-                "BA", "HR", "SI", "ME", "RS", "MK", "AL", "XK", # Balkan
-                "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # Central
-                "UA", "MD", "RO", "BG", # Eastern
-                "SM", "VA", "LI", "AD", "MC", # Micronations
-                "GG", "JE", "SJ", "AX", # Dependencies
-                "AZ", "GE", "AM"] # Caucasus                
+with open("included_countries.txt", "r") as file:
+    countries = [line[:-1] for line in file]
+
+# filter a list of authors for authors who are asscociated with at least one institution from one of the chosen countries
+def get_country_authors(df_input): # input: authors
+    keep = []              
                 
     for author in df_input.itertuples():
         # check every affiliated institute
-        if author.inst_country_code in eu_codes:
+        if author.inst_country_code in countries:
             keep.append(author)
     
     return pd.DataFrame(keep)#.drop(columns="Index") # drop old index

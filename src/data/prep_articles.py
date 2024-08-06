@@ -1,6 +1,7 @@
 # FUNCTIONS TO FILTER AND PREPROCESS ARTICLES FROM OPENALEX 
 import pandas as pd
 import glob
+import prep_taxonomy
 
 # release information locked in dictionaries inside the dataframe: open access, host (journal)
 def flatten_works(df_input): # input: articles straight from openalex
@@ -143,8 +144,10 @@ def filter_keywords(articles):
                 continue # move on to next article
                     
             # two-word queries
+            abstract_full_text = prep_taxonomy.inverted_index_to_text(article.abstract_inverted_index)
             for query in queries2:
-                if query.split()[0] in abstract_words and query.split()[1] in abstract_words:
+                # match query to article abstract
+                if abstract_full_text.find(query) != -1:
                     keep.append(article)
                     cont = True
                     break
