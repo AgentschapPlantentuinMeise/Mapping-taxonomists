@@ -1,12 +1,20 @@
 import pandas as pd
+import sys
 import os
 import glob
 
+# Define paths
+backbone_dir = os.path.join("..", "..", "data", "external", "backbone")
+backbone_file = os.path.join(backbone_dir, "Taxon.tsv")
+
 # check if these directories exist, or create them
-if not os.path.exists("../../data/external/backbone/Taxon.tsv"):
-    os.makedirs("../../data/external/backbone")
+
+# Ensure necessary directories and files exist
+if not os.path.exists(backbone_file):
+    if not os.path.exists(backbone_dir):
+        os.makedirs(backbone_dir)
     print("Download the GBIF taxonomic backbone and put it in data/external/backbone.")
-    exit()
+    sys.exit()
 
 if not os.path.exists("../../data/raw/articles"): os.makedirs("../../data/raw/articles")
 if not os.path.exists("../../data/interim/keyword-filtered_articles"):
