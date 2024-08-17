@@ -11,6 +11,8 @@ You may also need to install SPARQLWrapper to your Python installation.
 
 i.e. using `pip install SPARQLWrapper`
 
+The countries included in the analysis are listed by there two-letter ISO code (ISO 3166-1) in file `included_countries.txt`, in directory `.\src\data`.
+
 This analysis can be replicated by copying the repository and running `make_dataset.py` from the `src` folder. This file runs, in order, the following files:
 1.  `list_journals.py` which finds possible taxonomic journals through WikiData and OpenAlex
 2.  `get_articles.py` which extracts the articles from these journals and filters out articles about taxonomy, as well as filtering out  
