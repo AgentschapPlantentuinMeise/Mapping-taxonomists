@@ -27,7 +27,22 @@ authors["strippedName"] = stripped_names
 
 
 ## GBIF TAXONOMIC BACKBONE
-backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip')
+#backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip')
+backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", 
+                       dtype={'scientificNameAuthorship': 'str', 
+                              'infraspecificEpithet': 'str',
+                              'canonicalName': 'str',
+                              'genericName': 'str',
+                              'specificEpithet': 'str',
+                              'namePublishedIn': 'str',
+                              'taxonomicStatus': 'str',
+                              'taxonRank': 'str',
+                              'taxonRemarks': 'str',
+                              'kingdom': 'str',
+                              'phylum': 'str',
+                              'family': 'str',
+                              'genus': 'str'},
+                       on_bad_lines='skip')
 # reduce size of backbone for easier searching
 backbone = backbone_original[backbone_original["taxonomicStatus"]!="doubtful"]
 backbone = backbone[["canonicalName", "order", "family"]]
