@@ -1,6 +1,10 @@
 import pandas as pd
+import os
 
+os.makedirs("../../data/external/", exist_ok=True)
 # David's gender data from WikiData
+# https://github.com/DavidFichtmueller/TETTRIs-given-name-analysis
+urllib.request.urlretrieve("https://raw.githubusercontent.com/DavidFichtmueller/TETTRIs-given-name-analysis/main/given-names-by-prevalence-in-WD-15000.openrefine.tsv", "../../data/external/given-names-by-prevalence-in-WD-15000.tsv")
 gender_names = pd.read_csv("../../data/external/given-names-by-prevalence-in-WD-15000.tsv", sep="\t")
 
 # normalize men and women by library size
