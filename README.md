@@ -7,7 +7,7 @@ The backbone DOI should be cited in any resulting publication. An example citati
 
 > GBIF Secretariat (2023). GBIF Backbone Taxonomy. Checklist dataset https://doi.org/10.15468/39omei accessed via GBIF.org on 2024-08-14.
 
-You may also need to install SPARQLWrapper, and fiona to your Python installation.
+You may also need to install SPARQLWrapper, geopandas and fiona to your Python installation.
 
 i.e. using `pip install SPARQLWrapper`
 
