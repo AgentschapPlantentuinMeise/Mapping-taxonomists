@@ -80,5 +80,86 @@ Cross-referenced these mentions with the GBIF backbone to confirm if the mention
 The function added metadata to the articles, indicating which species or taxonomic subjects were identified in each article.
 
 ## 4.  `get_authors.py` which extracts the authors from these articles
+### Global Author Extraction
+1. **Loading Taxonomic Articles**:  
+   The script begins by loading a pre-processed dataset of taxonomic articles, which includes articles where taxonomic subjects, such as species, have been identified. This dataset is stored in the `taxonomic_articles_with_subjects.pkl` file and contains the necessary metadata, including author information.
+
+2. **Extracting Authors**:
+   The next step is to extract the **author information** from each article using the `get_authors` function from the custom `prep_authors` package. This function scans through the articles and compiles a list of all contributing authors.
+
+3. **Isolating Single Authors**:  
+   Once the complete list of authors is generated, we use the `get_single_authors` function to filter out instances where an author is listed multiple times across different articles. This function ensures that each author appears only once in the output, allowing us to obtain a unique list of taxonomic authors.
+
+4. **Storing Global Author Data**:  
+   The global author data is saved in two intermediate files:
+   - **`all_authors_of_taxonomic_articles.pkl`**: This file contains the complete list of authors across all taxonomic articles.
+   - **`single_authors_of_taxonomic_articles.pkl`**: This file contains the deduplicated list of authors, ensuring each author appears only once.
+
+   These files are stored in the **`interim`** directory for further analysis or processing.
+
+### European Author Extraction
+
+5. **Processing European Articles**:  
+   Although the section processing European taxonomic articles is commented out, the intended steps are as follows:
+   - A separate dataset of **European taxonomic articles** (stored in `european_taxonomic_articles_with_subjects.pkl`) would be loaded.
+   - Similar to the global workflow, the authors of these articles would be extracted using the `get_authors` function, and single authors would be isolated using `get_single_authors`.
+
+6. **Filtering by Country**:  
+   The key feature of this section is the extraction of authors based on their country of affiliation. The **`get_country_authors`** function filters the global author dataset to retain only those authors associated with specific countries (likely European countries). This allows for a geographically-targeted analysis of taxonomic research.
+
+7. **Deduplicating European Authors**:  
+   The **`get_single_authors`** function is applied again, this time on the European dataset, to ensure that authors are uniquely represented. This deduplicated list of European authors is particularly valuable for generating insights into regional taxonomic research.
+
+8. **Storing European Author Data**:  
+   The results for the European authors are saved in the following files:
+   - **`country_authors_with_all_taxonomic_articles.pkl`**: This file contains all the authors from selected countries.
+   - **`country_taxonomic_authors_no_duplicates.pkl`**: This file contains the deduplicated list of country-specific authors.
+   - **`country_taxonomic_authors_no_duplicates.tsv`**: The deduplicated list is also saved as a TSV file for easy sharing and inspection.
+
 ## 5.  `disambiguate.py` which disambiguates said authors
 
+This script aims to disambiguate authors from taxonomic articles and link them to the GBIF taxonomic backbone. The workflow involves preprocessing author names, linking them to species they study, and resolving duplicates by matching authors based on their affiliations and taxonomic subjects. The process also involves clustering similar authors to eliminate redundant entries while retaining accurate information about their research.
+
+### Authors
+
+1. **Loading and Simplifying the Dataset**:  
+   The dataset containing taxonomic authors is loaded from the `country_taxonomic_authors_no_duplicates.pkl` file. Unnecessary columns are dropped, and the remaining columns include key fields like `author_id`, `author_display_name`, `author_orcid`, `inst_id` (institution ID), and `species_subject`.
+
+2. **Generating Truncated and Stripped Names**:  
+   For each author, the script generates two new forms of their name:
+   - **Truncated Name**: This consists of the first initial and the last name.
+   - **Stripped Name**: This is the author’s full name with spaces, periods, and hyphens removed, ensuring consistency across variations of the same name.
+   
+   These names help in matching authors with minor variations in name formatting.
+
+### GBIF Taxonomic Backbone
+
+3. **Loading the Taxonomic Backbone**:  
+   The GBIF taxonomic backbone, containing species names and taxonomic ranks, is loaded from the `Taxon.tsv` file. Unnecessary columns are dropped, and only species with non-ambiguous taxonomic statuses are retained.
+
+4. **Building a Dictionary for Faster Lookup**:  
+   A dictionary (`seen_species`) is created where species names are keys, and their taxonomic order or family is the value. This allows for efficient matching between species names and taxonomic orders in later steps.
+
+5. **Linking Authors to Taxonomic Orders**:  
+   Each author is linked to the taxonomic orders of the species they study. The script iterates over every author and, for each species they study, adds the corresponding taxonomic order (or family if no order is available) from the GBIF backbone. Duplicate taxonomic orders are avoided.
+
+6. **Matching Authors**:  
+   The `match` function compares two authors to determine if they are likely the same person. The matching criteria are:
+   - If both authors have no taxonomic orders associated with them, they are considered the same only if their institution and full name match.
+   - If both have known taxonomic orders, they are considered the same if they share both an institution and at least one taxonomic order.
+
+7. **Clustering Similar Authors**:  
+   The `cluster` function groups similar authors into clusters based on their names, institutions, and taxonomic orders. These clusters represent potential duplicates of the same author.
+
+8. **Resolving Duplicates**:  
+   The script identifies duplicate authors by checking for matching truncated names. For each set of duplicates, it uses the `match` function to determine which authors are the same and clusters them together.
+
+9. **Merging Author Information**:  
+   For each cluster of duplicate authors, the script merges the information into a single record. The `collect_values` function ensures that information from all duplicates is combined without redundancy, especially for taxonomic orders and species subjects.
+
+10. **Saving the Results**:  
+    - The **merged people** (authors identified as duplicates and merged) are stored in `merged_people_truncated.csv`.
+    - The final, disambiguated list of authors is saved as:
+      - `authors_disambiguated_truncated.pkl`
+      - `authors_disambiguated_truncated.tsv`
+  
