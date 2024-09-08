@@ -14,7 +14,7 @@ i.e. using `pip install SPARQLWrapper`
 The countries included in the analysis are listed by there two-letter ISO code (ISO 3166-1) in file `included_countries.txt`, in directory `.\src\data`.
 
 This analysis can be replicated by copying the repository and running `make_dataset.py` from the `src` folder. This file runs, in order, the following files:
-1.  `list_journals.py` which finds possible taxonomic journals through WikiData and OpenAlex
+## 1.  `list_journals.py` which finds possible taxonomic journals through WikiData and OpenAlex
 
 ### Data Retrieval
 We employed a two-fold approach to gather taxonomic journals:
@@ -39,7 +39,7 @@ To prevent redundancy, we performed deduplication based on unique combinations o
 
 The final dataset was saved in two formats: a complete list and a deduplicated list, ensuring a clean and comprehensive repository of taxonomic journals.
 
-2.  `get_articles.py` which extracts the articles from these journals and filters out articles about taxonomy, as well as filtering out  
+## 2.  `get_articles.py` which extracts the articles from these journals and filters out articles about taxonomy, as well as filtering out  
 
 ### Data Collection
 The process of obtaining taxonomic articles was divided into several steps:
@@ -58,7 +58,27 @@ Once all articles had been downloaded and filtered, the following processing ste
 1. Merging and Flattening: The keyword-filtered articles were merged into a single dataframe using the merge_pkls function from the prep_articles module. The resulting articles were then "flattened" to create a clean structure, ensuring that nested metadata was properly extracted and that the articles were formatted uniformly for analysis.
 2. European Taxonomic Articles: Although not fully implemented in the provided code, a filter for European articles (filter_eu_articles) could be applied to isolate articles relevant to European taxonomic research. This step would involve filtering based on geographical information or institutional affiliations.
 
-3.  `parse_taxonomy.py` which parses the abstracts of these articles for species names
-4.  `get_authors.py` which extracts the authors from these articles
-5.  `disambiguate.py` which disambiguates said authors
+## 3.  `parse_taxonomy.py` which parses the abstracts of these articles for species names
+
+### Data Preparation
+1. Loading Filtered Articles: The dataset containing filtered taxonomic articles was loaded from a pre-processed pickle file (filtered_articles.pkl). This dataset includes articles that had already been filtered based on their relevance to taxonomy through a keyword-based process.
+
+2. Abstract Conversion: The abstracts in the dataset were stored in an inverted index format, which is a structured and compressed representation of the text. To facilitate the parsing process, these indexed abstracts needed to be converted back into plain text. The script iterated over each article and checked if the abstract was available in an inverted index format.
+* If the abstract was present, the `inverted_index_to_text` function from the `prep_taxonomy` package was used to reconstruct the full abstract text.
+* If no abstract was available, a `None` value was assigned to that entry.
+The converted abstracts were then added to the dataframe in a new column, `abstract_full_text`, providing easy access to the full text for subsequent processing.
+
+### Taxonomic Subject Parsing
+3. GBIF Taxonomic Backbone: The GBIF (Global Biodiversity Information Facility) taxonomic backbone was used as the reference for identifying taxonomic subjects within the articles. This backbone includes a comprehensive list of species names and higher taxa, which are crucial for determining if an article mentions a recognized species.
+
+The backbone was pre-processed using the `preprocess_backbone` function from the `prep_taxonomy` package, ensuring that the data was clean and structured for efficient parsing.
+
+4. Parsing Articles for Taxonomy: The core of the workflow involved parsing both the abstract and title of each article for mentions of species recorded in the GBIF taxonomic backbone. This was achieved through the `parse_for_taxonomy` function, which:
+
+Searched each article's title and abstract for references to species or other taxonomic entities.
+Cross-referenced these mentions with the GBIF backbone to confirm if the mentioned species or taxa were officially recognized.
+The function added metadata to the articles, indicating which species or taxonomic subjects were identified in each article.
+
+## 4.  `get_authors.py` which extracts the authors from these articles
+## 5.  `disambiguate.py` which disambiguates said authors
 
