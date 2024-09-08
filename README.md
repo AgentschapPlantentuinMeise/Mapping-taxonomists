@@ -40,6 +40,24 @@ To prevent redundancy, we performed deduplication based on unique combinations o
 The final dataset was saved in two formats: a complete list and a deduplicated list, ensuring a clean and comprehensive repository of taxonomic journals.
 
 2.  `get_articles.py` which extracts the articles from these journals and filters out articles about taxonomy, as well as filtering out  
+
+### Data Collection
+The process of obtaining taxonomic articles was divided into several steps:
+1. Journals Data Preparation: We began by loading a previously curated dataset of taxonomic journals from Wikidata and OpenAlex. This dataset, stored in journals.csv, contained key metadata about journals, including their OpenAlex IDs and dissolution status. Only journals that had valid OpenAlex IDs and were still active during the study period (i.e., not dissolved) were included in the query process.
+2. Directory Cleanup: To ensure that the new data collected was clean and not mixed with previous results, we cleared the directory containing raw article files by removing all files stored in the articles directory.
+3. Querying OpenAlex for Journal Articles: The next step involved querying the OpenAlex API to obtain articles from each taxonomic journal. This was done for journals with valid OpenAlex IDs and for articles published between 2013 and 2022. We excluded PLOS ONE from the general search as it has a large number of taxonomic articles (~240,000) and handled it separately.
+4. Handling PLOS ONE: Due to its high volume of taxonomic articles, PLOS ONE articles were retrieved first and filtered using a custom keyword filter to identify taxonomic articles that met specific criteria. These filtered articles were stored in intermediate files for further processing.
+5. Downloading Articles in Batches: For each journal in the dataset, we queried OpenAlex for articles using the journal's OpenAlex ID. We kept track of the total number of articles downloaded in each batch, splitting the dataset every time 10,000 articles were retrieved. For each batch of articles:
+* The raw data was saved.
+* A keyword filter was applied to extract taxonomic articles based on predefined keywords.
+* The keyword-filtered articles were stored in intermediate files.
+6. Final Download and Processing: After downloading all articles from the selected journals, the final batch of articles was processed similarly by applying the keyword filter and saving the results. All keyword-filtered articles were merged to create a single unified dataset of taxonomic articles.
+
+### Data Processing and Filtering
+Once all articles had been downloaded and filtered, the following processing steps were applied:
+1. Merging and Flattening: The keyword-filtered articles were merged into a single dataframe using the merge_pkls function from the prep_articles module. The resulting articles were then "flattened" to create a clean structure, ensuring that nested metadata was properly extracted and that the articles were formatted uniformly for analysis.
+2. European Taxonomic Articles: Although not fully implemented in the provided code, a filter for European articles (filter_eu_articles) could be applied to isolate articles relevant to European taxonomic research. This step would involve filtering based on geographical information or institutional affiliations.
+
 3.  `parse_taxonomy.py` which parses the abstracts of these articles for species names
 4.  `get_authors.py` which extracts the authors from these articles
 5.  `disambiguate.py` which disambiguates said authors
