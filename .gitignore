@@ -1,7 +1,7 @@
 # ignore raw and intermediate data
 __pycache__/
-data/external/
 data/processed/
+data/external/backbone
 data/raw/
 data/interim
 src/data/__pycache__/
