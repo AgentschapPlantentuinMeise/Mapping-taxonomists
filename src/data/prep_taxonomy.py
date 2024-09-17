@@ -24,7 +24,22 @@ def inverted_index_to_text(aii):
 # reduce size of backbone for easier searching
 def preprocess_backbone(path="../../data/external/backbone/Taxon.tsv", no_blanks=False):
     # GBIF taxonomic bakcbone
-    backbone = pd.read_csv(path, sep="\t", on_bad_lines='skip')
+    # backbone = pd.read_csv(path, sep="\t", on_bad_lines='skip')
+    backbone = pd.read_csv(path, sep="\t", 
+                       dtype={'scientificNameAuthorship': 'str', 
+                              'infraspecificEpithet': 'str',
+                              'canonicalName': 'str',
+                              'genericName': 'str',
+                              'specificEpithet': 'str',
+                              'namePublishedIn': 'str',
+                              'taxonomicStatus': 'str',
+                              'taxonRank': 'str',
+                              'taxonRemarks': 'str',
+                              'kingdom': 'str',
+                              'phylum': 'str',
+                              'family': 'str',
+                              'genus': 'str'},
+                       on_bad_lines='skip')
 
     # only Eukarya
     backbone = backbone[(backbone["kingdom"]=="Animalia") | 
