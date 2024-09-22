@@ -3,6 +3,7 @@ setwd("C:/Users/melanie/Documents/GitHub/TETTRIs-mapping-taxonomists")
 library(metacoder)
 library(rcartocolor)
 library(grid)
+library(gridExtra)
 
 
 data <- readr::read_tsv("data/processed/supply_and_demand_order_level.tsv")
@@ -23,7 +24,7 @@ my_plots <- lapply(c("nr_authors","taxonomicResearchNeeded","cropWildRelatives",
     heat_tree(obj, 
               node_label = taxon_names,
               node_size = n_obs,
-              node_color_range=carto_pal(n=10, "Mint"),
+              node_color_range=colorRampPalette(c("#c9edde", "#21614A"))(10),
               node_size_range = c(0.01, 0.05),
               edge_size_range = c(0.004, 0.004),
               node_color = total_leaf, 
@@ -40,7 +41,7 @@ my_plots <- lapply(c("nr_authors","taxonomicResearchNeeded","cropWildRelatives",
   } else {
     heat_tree(obj, 
               node_size = n_obs,
-              node_color_range=carto_pal(n=10, "BurgYl"),
+              node_color_range=colorRampPalette(c("#ffd2b2", "#7f3500"))(10),
               node_size_range = c(0.01, 0.05),
               edge_size_range = c(0.005, 0.005),
               node_color = total_leaf, 
@@ -93,7 +94,7 @@ my_plots <- lapply(c("nr_authors","taxonomicResearchNeeded","horizonInvasives"),
               node_label = taxon_names,#ifelse(total>5,taxon_names,NA),
               node_label_max=1000000,
               node_size = n_obs,
-              node_color_range=carto_pal(n=10, "Mint"),
+              node_color_range=colorRampPalette(c("#c9edde", "#21614A"))(10),
               node_size_range = c(0.01, 0.05),
               edge_size_range = c(0.003, 0.003),
               node_color = total_leaf, 
@@ -106,7 +107,7 @@ my_plots <- lapply(c("nr_authors","taxonomicResearchNeeded","horizonInvasives"),
   } else {
     heat_tree(obj, 
               node_size = n_obs,
-              node_color_range=carto_pal(n=10, "BurgYl"),
+              node_color_range=colorRampPalette(c("#ffd2b2", "#7f3500"))(10),
               node_size_range = c(0.01, 0.05),
               edge_size_range = c(0.005, 0.005),
               node_color = total_leaf, 
