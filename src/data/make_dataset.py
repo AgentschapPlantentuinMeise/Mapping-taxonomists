@@ -27,18 +27,30 @@ for f in files:
     os.remove(f)
 
 # run scripts consecutively   
+print("Running list_journals.py...")
 with open("list_journals.py") as f:
     exec(f.read())
+print("list_journals.py successfully run")
 
+print("Running get_articles.py...")
 with open("get_articles.py") as f:
     exec(f.read())
+print("get_articles.py successfully run")
 
+print("Running parse_taxonomy.py...")
 with open("parse_taxonomy.py") as f:
     exec(f.read())
-    
+print("parse_taxonomy.py successfully run")
+
+print("Running get_authors.py...")
 with open("get_authors.py") as f:
     exec(f.read())
+print("get_authors.py successfully run")
 
+print("Running disambiguate.py...")
 with open("disambiguate.py") as f:
     exec(f.read())
+print("disambiguate.py successfully run")
+
+print("make_dataset.py successfully run")
 
