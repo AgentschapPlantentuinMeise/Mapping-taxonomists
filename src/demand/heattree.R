@@ -123,3 +123,4 @@ grid.arrange(my_plots[[1]],
              arrangeGrob(my_plots[[3]], 
                          right=textGrob("Invasive species on horizon", rot=270)),
              layout_matrix=rbind(c(1,1,2),c(1,1,3)))
+
