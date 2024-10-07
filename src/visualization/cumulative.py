@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-authors = pd.read_pickle("../../data/interim/european_authors_with_all_taxonomic_articles.pkl")
+authors = pd.read_pickle("../../data/interim/country_authors_with_all_taxonomic_articles.pkl")
 # get unique authors per journal
 authors = authors.drop_duplicates(subset=["author_id", "source_id"])
 
@@ -74,7 +74,7 @@ ax.text(0.5, value_95+400,"95%", color="red")
 
 plt.savefig("../../reports/figures/cumulative_graph_european_authors_in_journals.png")
 
-# save the path we took
+# save the path we took as journals_cumulative_path.txt
 journal_id_names = authors[["source_display_name", "source_id"]].drop_duplicates()
 journal_id_names = journal_id_names.set_index("source_id")
 
