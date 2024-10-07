@@ -6,7 +6,11 @@ import download
 import prep_articles
 import prep_authors
 import time
+import os
 
+
+if not os.path.exists("../../data/raw/rlit"): os.makedirs("../../data/raw/rlit")
+if not os.path.exists("../../data/interim/rlit"): os.makedirs("../../data/interim/rlit")
 
 email = input("Enter e-mail address for OpenAlex API: ")
 
@@ -91,7 +95,7 @@ insect_articles.to_pickle("../../data/raw/rlit/openalex_articles.pkl")
 #singles_insects.to_pickle("./data/rlit/authors_no_duplicates.pkl")
 
 
-insect_eu_articles = prep_articles.filter_eu_articles(insect_articles, eu27=True)
+insect_eu_articles = prep_articles.filter_eu_articles(insect_articles)
 insect_eu_articles.to_pickle("../../data/interim/rlit/openalex_EU27_articles.pkl")
 
 #eu_insect_articles = prep_articles.flatten_works(eu_insect_articles)
