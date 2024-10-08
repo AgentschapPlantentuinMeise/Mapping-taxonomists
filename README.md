@@ -162,4 +162,46 @@ This script aims to disambiguate authors from taxonomic articles and link them t
     - The final, disambiguated list of authors is saved as:
       - `authors_disambiguated_truncated.pkl`
       - `authors_disambiguated_truncated.tsv`
+
+
+########################################################################################
+
+# Visulization
   
+## maps.py Country Frequency
+
+This Python script analyzes and visualizes the geographic distribution of authors' institutions by plotting country frequencies on maps. It processes the input data, calculates the frequency of authors by country, and generates maps displaying these distributions using **Geopandas** and **Matplotlib**.
+
+### Key Features
+
+1. **Frequency Calculation**: 
+   The script includes a function `freq_countries` that processes a dataset of authors' institution country codes and calculates how frequently each country appears. It returns this information in a dictionary that links country codes to their respective author counts.
+
+2. **Map Generation**:
+   The core functionality of the script is to visualize these frequencies on maps. Using **GeoPandas**, the script loads a world map and maps each country’s author frequency onto it. Additionally, it supports generating maps that focus on Europe, as well as creating visualizations based on the relative frequency of authors (e.g., percentage of the population).
+
+3. **Custom Color Mapping**:
+   The script includes a custom color gradient, ranging from light green to dark blue, that is used in the maps to represent the frequency data, making it easier to differentiate regions with higher author counts.
+
+### Input Data
+
+The script requires two main input datasets, which are expected to be in pickle format:
+1. **`single_authors_of_taxonomic_articles.pkl`**: This dataset contains information about authors of taxonomic articles, including the countries of their institutions.
+2. **`country_taxonomic_authors_no_duplicates.pkl`**: This dataset is similar but contains a filtered version without duplicates, focusing on European authors.
+
+Additionally, a **country codes** file (`country_codes.tsv`) is used to convert between different country code formats for proper map plotting.
+
+### Output
+
+The script produces several types of maps:
+- A **global map** that shows the number of authors per country.
+- A **European map** that zooms in on Europe and highlights country frequencies.
+- A **relative map** for Europe that shows author frequencies as a percentage of the country’s population.
+- Specialized maps for authors from the **EUJOT journal**, again including both absolute and relative frequencies.
+
+All of these maps are saved as PNG files and stored in the `../../reports/figures/` directory.
+
+### Conclusion
+
+Once the script is run, you’ll find a series of maps that visually represent where authors of taxonomic articles are based, both globally and within Europe. The resulting visualizations offer an insightful view into the geographic distribution of the academic community in this field.
+
