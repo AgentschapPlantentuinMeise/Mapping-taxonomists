@@ -1,0 +1,27 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - given-names: Melanie
+    family-names: De Nolf
+    email: melanie.denolf@plantentuinmeise.be 
+    affiliation: Meise Botanic Garden
+    orcid: 'https://orcid.org/0000-0001-6032-5198'
+  - given-names: Sofie
+    family-names: Meeus
+    email: sofie.meeus@plantentuinmeise.be
+    affiliation: Meise Botanic Garden
+    orcid: 'https://orcid.org/0000-0003-0715-8647'
+  - given-names: Quentin
+    family-names: Groom
+    email: quentin.groom@plantentuinmeise.be
+    affiliation: Meise Botanic Garden
+    orcid: 'https://orcid.org/0000-0002-0596-5376'
+title:
+version: 0.1.0
+date-released: 2024-08-16
+keywords:
+  - taxonomy
+  - bibliographic
+  - scientific impact
+  - research prioritization
+license: MIT
