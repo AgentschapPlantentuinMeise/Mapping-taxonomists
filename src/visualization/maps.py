@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt # version 3.5.2
+from matplotlib import cm
+from matplotlib.colors import ListedColormap, LinearSegmentedColormap, to_rgb
 import fiona
 import geopandas as gpd
 import pickle
@@ -22,6 +24,11 @@ def freq_countries(df):
         freqs_dict[country] = freqs[i]
 
     return freqs_dict
+
+
+
+newcmp = LinearSegmentedColormap.from_list("TETTRIs", [to_rgb('#78d3ac'), to_rgb('#05041d')], N=10)
+
 
 
 # get worldmap 
@@ -54,8 +61,9 @@ def plot_country_freqs(freqs, map_path, europe=False, dpi='figure', relative=Fal
     # plot frequencies
     if not europe:
         fig, ax = plt.subplots(1,1)
-        worldmap.plot(column='freq', cmap="viridis", ax=ax, legend=True,
-                      missing_kwds={"color":"lightgrey"})
+        worldmap.plot(column='freq', ax=ax, legend=True,
+                      missing_kwds={"color":"lightgrey"},
+                      cmap = newcmp)
         plt.savefig(map_path+".png", dpi=dpi)
     
     if europe:
@@ -69,25 +77,27 @@ def plot_country_freqs(freqs, map_path, europe=False, dpi='figure', relative=Fal
         plt.yticks([])
         
         if not relative:
-            worldmap.plot(column='freq', ax=ax, legend=True, cmap="viridis",
-                          missing_kwds={"color":"lightgrey"})
+            worldmap.plot(column='freq', ax=ax, legend=True,
+                          missing_kwds={"color":"lightgrey"},
+                          cmap = newcmp)
         else:
-            worldmap.plot(column='freq', ax=ax, legend=True, cmap="viridis",
+            worldmap.plot(column='freq', ax=ax, legend=True,
                           missing_kwds={"color":"lightgrey"}, 
-                          legend_kwds={"label":"percentage of population"})
+                          legend_kwds={"label":"percentage of population"},
+                          cmap = newcmp)
         
         plt.savefig(map_path+"_europe.png", dpi=dpi)
 
 
-authors = pd.read_pickle("../../data/interim/single_authors_of_european_taxonomic_articles.pkl")
+authors = pd.read_pickle("../../data/interim/single_authors_of_taxonomic_articles.pkl")
 
 countries_freq = freq_countries(authors)
-plot_country_freqs(countries_freq, "../../reports/figures/map_authors_of_european_articles")
+plot_country_freqs(countries_freq, "../../reports/figures/map_authors")
 
-eu_authors = pd.read_pickle("../../data/interim/european_taxonomic_authors_no_duplicates.pkl")
+eu_authors = pd.read_pickle("../../data/interim/country_taxonomic_authors_no_duplicates.pkl")
 countries_freq = freq_countries(eu_authors)
-plot_country_freqs(countries_freq, "../../reports/figures/map_european_authors", europe=True)
-plot_country_freqs(countries_freq, "../../reports/figures/map_european_authors_relative", europe=True,
+plot_country_freqs(countries_freq, "../../reports/figures/map_authors_europe", europe=True)
+plot_country_freqs(countries_freq, "../../reports/figures/map_authors_europe_relative", europe=True,
                    relative=True) 
 
 eujot_freq = freq_countries(eu_authors[eu_authors["source_issn_l"]=="2118-9773"])
