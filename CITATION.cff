@@ -1,9 +1,14 @@
-cff-version: 1.1.0
-message: "If you use this software, please cite it as below."
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: European taxonomy in profile
+message: 'If you use this software, please cite it as below.'
+type: software
 authors:
   - given-names: Melanie
     family-names: De Nolf
-    email: melanie.denolf@plantentuinmeise.be 
+    email: melanie.denolf@plantentuinmeise.be
     affiliation: Meise Botanic Garden
     orcid: 'https://orcid.org/0000-0001-6032-5198'
   - given-names: Sofie
@@ -16,12 +21,11 @@ authors:
     email: quentin.groom@plantentuinmeise.be
     affiliation: Meise Botanic Garden
     orcid: 'https://orcid.org/0000-0002-0596-5376'
-title:
-version: 0.1.0
-date-released: 2024-08-16
 keywords:
   - taxonomy
   - bibliographic
   - scientific impact
   - research prioritization
 license: MIT
+version: 0.1.0
+date-released: '2024-08-16'
