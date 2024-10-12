@@ -33,6 +33,7 @@ gender_names["prevalent_gender_norm"] = prevalent_gender_norm
 gender_names["confidence_norm"] = confidence_norm
 
 # apply to our author data
+"""
 authors = pd.read_pickle("../../data/interim/european_taxonomic_authors_no_duplicates_50_years.pkl")
 
 def first_name_date(authors):
@@ -52,6 +53,28 @@ def first_name_date(authors):
     return year_authors
 
 first_names = first_name_date(authors)
+"""
+
+
+def first_name(authors):
+    authors = authors[["author_id", "author_display_name"]].reset_index(drop=True)  
+    first_names_list = []
+
+    for author in authors.itertuples():
+        if author.author_display_name:
+            # first name of each author is the first word of their display name (before space)
+            first_name = str(author.author_display_name).split()[0]
+            first_names_list.append(first_name)
+        else:
+            first_names_list.append(None)
+
+    authors["firstName"] = first_names_list
+    return authors
+
+
+authors = pd.read_pickle("../../data/processed/authors_disambiguated_truncated.pkl")
+first_names = first_name(authors)
+
 
 
 def infer_gender(first_names, gender_names=gender_names, confidence=0.9):
@@ -73,5 +96,5 @@ def infer_gender(first_names, gender_names=gender_names, confidence=0.9):
     return first_names
 
 first_names = infer_gender(first_names)
-first_names.to_csv("../../data/processed/gender_per_author.tsv", sep="\t")
-print("Genders inferred. Results in data/processed/gender_per_author.tsv.")
+first_names.to_csv("../../data/processed/gender_per_author_now.tsv", sep="\t")
+print("Genders inferred. Results in data/processed/gender_per_author_now.tsv.")

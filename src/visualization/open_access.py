@@ -6,7 +6,9 @@ import operator
 from itertools import groupby
 
 
-articles = pd.read_pickle("../../data/processed/european_taxonomic_articles_with_subjects.pkl")
+articles = pd.read_pickle("../../data/processed/taxonomic_articles_with_subjects.pkl")
+
+print(articles["oa_is_oa"].value_counts())
 
 # get oa statuses of articles PER JOURNAL
 data_plot = pd.DataFrame()
@@ -15,7 +17,7 @@ for j in set(articles["source_id"]):
     # select articles published in this journal
     journal_df = articles[articles["source_id"]==j]
     # get open access statuses of those articles
-    oa_statuses = list(journal_df["oa_status"].fillna("unknown"))
+    oa_statuses = list(journal_df["oa_oa_status"].fillna("unknown"))
     oa_statuses = sorted(oa_statuses)
     
     # count frequency of oa statuses
@@ -51,8 +53,6 @@ ax.bar(labels, data_plot["gold"],
 ax.legend()
 
 plt.xticks(rotation=90, ha="center", fontsize=8)
-plt.show()
-
 plt.savefig("../../reports/figures/absolute_oa_status_journals.png")
 
 percentages_oa = pd.DataFrame()
@@ -81,6 +81,21 @@ ax.bar(labels, percentages_oa["gold"],
 ax.legend()
 
 plt.xticks(rotation=90, ha="center", fontsize=8)
-plt.show()
-
 plt.savefig("../../reports/figures/relative_oa_status_journals.png")
+
+
+# pie chart of total percentages of each status
+labels = ["closed","hybrid","bronze","green","gold"]
+total = np.array([sum(data_plot["closed"]),
+                  sum(data_plot["hybrid"]),
+                  sum(data_plot["bronze"]),
+                  sum(data_plot["green"]),
+                  sum(data_plot["gold"])])
+colors= ["red","blue","brown","green","gold"]
+
+plt.pie(total,
+        labels=labels,
+        colors=colors,
+        autopct='%1.1f%%')
+plt.savefig("../../reports/figures/pie_chart_oa_status.png")
+

@@ -85,7 +85,8 @@ def request_sources(filter_string, email):
         next_sources = s.get(query+"&cursor="+next_cursor)
         next_sources = next_sources.json()
         next_cursor = next_sources["meta"]["next_cursor"] # remember next cursor
-        sources_results.extend(next_sources["results"])
+        if next_sources["results"]:
+            sources_results.extend(next_sources["results"])
     
     sources_df = pd.DataFrame.from_dict(sources_results)
     return sources_df
@@ -111,7 +112,7 @@ with open("included_countries.txt", "r") as file:
 
 
 # RETRIEVE ALL RECENT ARTICLES WITH A FILTER
-def request_works(filter_string, email, from_date="2013-01-01", to_date=None, print_number=True):
+def request_works(filter_string, email, from_date="2014-01-01", to_date=None, print_number=True):
     # build query
     query = "https://api.openalex.org/works?per-page=200&filter=authorships.countries:"+countries+","+filter_string+",from_publication_date:"+from_date
     if to_date != None:

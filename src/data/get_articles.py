@@ -15,7 +15,7 @@ files = glob.glob("../../data/raw/articles/*")
 for f in files:
     os.remove(f)
 
-# ask OpenAlex (nicely) for all articles from these journals from 2013-2022
+# ask OpenAlex (nicely) for all articles from these journals from 2014-2023
 # can only use journals that have OpenAlex IDs and that are not dissolved
 oaids = list(set(journals[journals["dissolved"]!=True]["openAlexID"]))
 email = input("Enter e-mail address for OpenAlex API: ")
@@ -23,7 +23,7 @@ articles = []
 n = 0; m = 0
 
 # deal with PLOS ONE now
-plosone_articles = download.request_works("primary_location.source.id:S202381698", email, to_date="2022-12-31")
+plosone_articles = download.request_works("primary_location.source.id:S202381698", email, to_date="2023-12-31")
 
 filtered_articles = prep_articles.filter_keywords(plosone_articles)
 filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/articles"+str(m)+".pkl")
@@ -39,7 +39,7 @@ for oaid in oaids:
         continue # (returns ~240 000 articles)
     
     # search by confirmed OpenAlex ID (from OpenAlex itself or Wikidata) 
-    journal_articles = download.request_works("primary_location.source.id:"+oaid, email, to_date="2022-12-31")
+    journal_articles = download.request_works("primary_location.source.id:"+oaid, email, to_date="2023-12-31")
     n += len(journal_articles)
     articles.append(journal_articles)
     

@@ -12,7 +12,7 @@ with open("../../data/interim/journals_cumulative_path.txt", "r", encoding="utf8
 journals = [x[:-1] for x in journals][1:101]
 
 oaids = []
-articles=pd.read_pickle("../../data/processed/european_taxonomic_articles_with_subjects.pkl")
+articles=pd.read_pickle("../../data/processed/taxonomic_articles_with_subjects.pkl")
 
 for journal in journals:
     oaids.append(articles[articles["source_display_name"]==journal].iloc[0]["source_id"])
