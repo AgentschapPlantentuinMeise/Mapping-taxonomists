@@ -175,8 +175,9 @@ The crop wild relatives data where downloaded from the following dataset and pla
 
 ## IUCN Red List of Threatened Species
 
-The "Research needed: taxonomy" data were downloaded from the website cited below as file `assessments.csv`. These data are available under the IUCN Red List Terms and Conditions for non-commertial use, but not for redistribution so we are unable provide an input data here.
-But are used as is from the website as a CSV file  with the header...
+The "Research needed: taxonomy" data were downloaded from the IUCN Red List website as the file assessments.csv. These data are made available under the IUCN Red List Terms and Conditions for non-commercial use only, and redistribution is not permitted. Therefore, we cannot provide the input data directly here.
+
+However, the data are used in their original format, as provided in the CSV file, with the following headers:
 `assessmentId,internalTaxonId,scientificName,redlistCategory,redlistCriteria,yearPublished,assessmentDate,criteriaVersion,language,rationale,habitat,threats,population,populationTrend,range,useTrade,systems,conservationActions,realm,yearLastSeen,possiblyExtinct,possiblyExtinctInTheWild,scopes`
 
 > IUCN. 2024. The IUCN Red List of Threatened Species. Version 2024-1. https://www.iucnredlist.org/. Accessed on [day month year].
