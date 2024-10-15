@@ -61,13 +61,12 @@ ax.bar(labels, data_plot["diamond"],
 ax.set_xticklabels([])
 ax.set_xticks([])
 
-ax.set_title("Open acces status of articles in taxonomic journals")
 ax.set_ylabel("Number of articles")
 ax.set_xlabel("Journals")
 
 ax.legend()
 
-plt.savefig("../../reports/figures/absolute_oa_status_journals.png", dpi=1200)
+plt.savefig("../../reports/figures/absolute_oa_status_journals.jpg", dpi=1200)
 plt.figure()
 
 
@@ -106,13 +105,13 @@ ax.bar(labels, percentages_oa["diamond"], 1,
 ax.set_xticklabels([])
 ax.set_xticks([])
 
-ax.set_title("Open acces status of articles in taxonomic journals")
-ax.set_ylabel("Percentage of articles")
-ax.set_xlabel("Journals")
+ax.set_ylabel("Articles (%)", fontsize=20)
+ax.set_xlabel("Journals", fontsize=20)
+ax.tick_params(axis='y', labelsize=14)
 
-ax.legend(loc="lower left")
+ax.legend(loc="lower left", fontsize=16)
 
-plt.savefig("../../reports/figures/relative_oa_status_journals.png", dpi=1200)
+plt.savefig("../../reports/figures/relative_oa_status_journals.jpg", dpi=1200)
 plt.figure()
 
 
@@ -123,13 +122,12 @@ labels = ["closed","hybrid","bronze","green","gold","diamond"]
 total = np.array(articles["oa_oa_status"].value_counts()[labels])
 colors= ["#AD1831","#A087FF","#B7803E","#72C352","#FFDE7A","#98CFFF"]
 
-plt.title("Open access status of articles in taxonomic journals")
 plt.pie(total,
         labels=labels,
         colors=colors,
         autopct='%1.1f%%')
 
-plt.savefig("../../reports/figures/pie_chart_oa_status.png", dpi=1200)
+plt.savefig("../../reports/figures/pie_chart_oa_status.jpg", dpi=1200)
 plt.figure()
 
 
