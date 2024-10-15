@@ -165,11 +165,14 @@ This script aims to disambiguate authors from taxonomic articles and link them t
 
 #######################################################################################
 
-# Demand
+# Demand for taxonomists
 
 ## Crop Wild Relatives
 
 > USDA, Agricultural Research Service, National Plant Germplasm System. 2024. Germplasm Resources Information Network (GRIN Taxonomy). National Germplasm Resources Laboratory, Beltsville, Maryland. URL: https://npgsweb.ars-grin.gov/gringlobal/taxon/taxonomysearchcwr. Accessed 15 October 2024.
+> This is public domain data
+
+
 
 ########################################################################################
 
