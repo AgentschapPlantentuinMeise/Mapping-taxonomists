@@ -169,10 +169,9 @@ This script aims to disambiguate authors from taxonomic articles and link them t
 
 ## Crop Wild Relatives
 
+The crop wild relatives data where downloaded from the following dataset and placed in data/external/crop wild relatives europe.xlsx. These are public domain data, but are included here as a test dataset. We recommend anyone useing these scripts updates this file from source.
+
 > USDA, Agricultural Research Service, National Plant Germplasm System. 2024. Germplasm Resources Information Network (GRIN Taxonomy). National Germplasm Resources Laboratory, Beltsville, Maryland. URL: https://npgsweb.ars-grin.gov/gringlobal/taxon/taxonomysearchcwr. Accessed 15 October 2024.
-> This is public domain data
-
-
 
 ########################################################################################
 
