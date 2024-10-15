@@ -184,6 +184,9 @@ However, the data are used in their original format, as provided in the CSV file
 
 ## Invasive alien species on the horizon in the European Union
 
+
+Roy HE, Bacher S, Essl F, et al. Developing a list of invasive alien species likely to threaten biodiversity and ecosystems in the European Union. *Glob Change Biol.* 2019; 25: 1032–1048. https://doi.org/10.1111/gcb.14527
+
 ########################################################################################
 
 # Visualization
