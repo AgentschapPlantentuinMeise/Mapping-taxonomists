@@ -173,6 +173,16 @@ The crop wild relatives data where downloaded from the following dataset and pla
 
 > USDA, Agricultural Research Service, National Plant Germplasm System. 2024. Germplasm Resources Information Network (GRIN Taxonomy). National Germplasm Resources Laboratory, Beltsville, Maryland. URL: https://npgsweb.ars-grin.gov/gringlobal/taxon/taxonomysearchcwr. Accessed 15 October 2024.
 
+## IUCN Red List of Threatened Species
+
+The "Research needed: taxonomy" data were downloaded from the website cited below as file `assessments.csv`. These data are available under the IUCN Red List Terms and Conditions for non-commertial use, but not for redistribution so we are unable provide an input data here.
+But are used as is from the website as a CSV file  with the header...
+`assessmentId,internalTaxonId,scientificName,redlistCategory,redlistCriteria,yearPublished,assessmentDate,criteriaVersion,language,rationale,habitat,threats,population,populationTrend,range,useTrade,systems,conservationActions,realm,yearLastSeen,possiblyExtinct,possiblyExtinctInTheWild,scopes`
+
+> IUCN. 2024. The IUCN Red List of Threatened Species. Version 2024-1. https://www.iucnredlist.org/. Accessed on [day month year].
+
+## Invasive alien species on the horizon in the European Union
+
 ########################################################################################
 
 # Visualization
