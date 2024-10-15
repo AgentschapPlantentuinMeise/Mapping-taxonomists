@@ -228,3 +228,6 @@ All of these maps are saved as PNG files and stored in the `../../reports/figure
 
 Once the script is run, you’ll find a series of maps that visually represent where authors of taxonomic articles are based, both globally and within Europe. The resulting visualizations offer an insightful view into the geographic distribution of the academic community in this field.
 
+## Open Access status of taxonomic articles
+
+
