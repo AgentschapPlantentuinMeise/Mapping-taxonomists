@@ -46,7 +46,7 @@ backbone = backbone.merge(sp_authors_df, on="canonicalName", how="left")
 
 redlist = pd.read_csv("../../data/external/redlist_species_data_europe_taxonomy_needed_oct_15/assessments.csv")
 cwr = pd.read_excel("../../data/external/crop wild relatives europe.xlsx", skiprows=1)
-horizon = pd.read_csv("../../data/external/invasive horizon species europe.tsv", sep="\t")
+horizon = pd.read_csv("../../data/external/IAS_horizon_scanning.tsv", sep="\t")
 
 # get canonical names
 #redlist = redlist.rename(columns={"scientificName":"canonicalName"})
@@ -75,7 +75,7 @@ def count_species(backbone, species_list, countname):
 
 backbone = count_species(backbone, redlist["scientificName"], "taxonomicResearchNeeded")
 backbone = count_species(backbone, cwr["canonicalName"], "cropWildRelatives")
-backbone = count_species(backbone, horizon["species"], "horizonInvasives")
+backbone = count_species(backbone, horizon["Scientific name"], "horizonInvasives")
 
 
 ## COUNT ON ORDER LEVEL
