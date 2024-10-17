@@ -11,5 +11,9 @@ data_backup/
 src/demand/BACKUP/
 .RData
 .RHistory
-data/external/redlist_species_data_europe_taxonomy_needed_oct_15
+data/external/redlist_species_data_europe_taxonomy_needed_oct_15/
 Exploration.ipynb
+reports/.ipynb_checkpoints/2 Articles-checkpoint.ipynb
+reports/.ipynb_checkpoints/summary-checkpoint.ipynb
+src/data/.ipynb_checkpoints/Exploration-checkpoint.ipynb
+src/visualization/.ipynb_checkpoints/Exploration visualizations-checkpoint.ipynb

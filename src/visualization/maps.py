@@ -7,6 +7,7 @@ import fiona
 import geopandas as gpd
 import pickle
 from itertools import groupby
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
 def freq_countries(df):
@@ -32,7 +33,7 @@ newcmp = LinearSegmentedColormap.from_list("TETTRIs", [to_rgb('#78d3ac'), to_rgb
 
 
 # get worldmap 
-def plot_country_freqs(freqs, map_path, europe=False, dpi='figure', relative=False):
+def plot_country_freqs(freqs, map_path, europe=False, dpi=1200, relative=False):
     worldmap = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
     worldmap = worldmap.to_crs("ESRI:54009") # Mollweide projection
 
@@ -61,32 +62,50 @@ def plot_country_freqs(freqs, map_path, europe=False, dpi='figure', relative=Fal
     # plot frequencies
     if not europe:
         fig, ax = plt.subplots(1,1)
+
+        ax.set_xticks([])
+        ax.set_yticks([])
+        
+        divider = make_axes_locatable(ax) # make legend same size as plot
+        cax = divider.append_axes("right", size="5%", pad=0.1)
+        
         worldmap.plot(column='freq', ax=ax, legend=True,
                       missing_kwds={"color":"lightgrey"},
+                      cax=cax,
                       cmap = newcmp)
-        plt.savefig(map_path+".png", dpi=dpi)
+        plt.savefig(map_path+".jpg", dpi=dpi)
     
     if europe:
         fig, ax = plt.subplots(1, 1)
+        
+        divider = make_axes_locatable(ax) # make legend same size as plot
+        cax = divider.append_axes("right", size="5%", pad=0.1)
+        
         # limit scope of map to europe
         minx, miny, maxx, maxy = [-1500000, 4000000, 4300000, 8500000]
         ax.set_xlim(minx, maxx)
         ax.set_ylim(miny, maxy)
-        
+
+        ax.set_xticks([])
+        ax.set_yticks([])
+
         plt.xticks([])
         plt.yticks([])
         
         if not relative:
             worldmap.plot(column='freq', ax=ax, legend=True,
                           missing_kwds={"color":"lightgrey"},
+                          legend_kwds={"label":"number of taxonomists"},
+                          cax=cax,
                           cmap = newcmp)
         else:
             worldmap.plot(column='freq', ax=ax, legend=True,
                           missing_kwds={"color":"lightgrey"}, 
                           legend_kwds={"label":"percentage of population"},
+                          cax=cax,
                           cmap = newcmp)
         
-        plt.savefig(map_path+"_europe.png", dpi=dpi)
+        plt.savefig(map_path+"_europe.jpg", dpi=dpi)
 
 
 authors = pd.read_pickle("../../data/interim/single_authors_of_taxonomic_articles.pkl")
