@@ -1,0 +1,67 @@
+Species Name 	Common Name 	Thematic Group 	Functional Group 	CBD Pathway 	Native range 	Biogeographic regions threatened 	Combined Risk Score 	Competition 	Predation 	Hybridization 	Disease Transmission 	Poisoning or toxicity 	Bio-fouling 	Grazing/herbivory/browsing 	Interactions with invasive alien species 	Nutrient cycling 	Physical modification 	Natural succession 	Disruption to food webs
+Channa argus 	Northern snakehead 	Freshwater fish 	Predator 	Escape, Release 	At 	MAC, MED, ATL, CON, STE 	383 	X 	X 	  	X 	  	  	  	  	  	  	  	X
+Limnoperna fortunei 	Golden mussel 	Freshwater invertebrate 	Filter feeder 	Stowaway, Corridor, Unaided 	As 	MED, ATL, CON, STE 	500 	X 	  	  	  	  	X 	X 	X 	X 	X 	  	X
+Orconectes rusticus 	Rusty crayfish 	Freshwater invertebrate 	Omnivore 	Escape, Release, Stowaway, Corridor, Unaided 	NAm 	MED, ATL, CON, STE 	500 	X 	X 	  	X 	  	  	X 	X 	X 	X 	  	X
+Plotosus lineatus 	Striped eel catfish 	Marine 	Predator 	Unaided 	WIP, TeNWP, CIP, TeAu 	MED, MAC 	456 	X 	X 	  	  	X 	  	  	  	  	  	  	X
+Codium parvulum 	A green alga 	Marine 	Primary producer 	Unaided 	WIP 	MED, MAC 	400 	X 	  	  	  	  	X 	  	X 	X 	X 	  	 
+Crepidula onyx 	Onyx slippersnail 	Marine 	Filter feeder 	Escape, Stowaway 	TrEP 	ATL, MED, MAC 	240 	X 	  	  	  	  	X 	  	  	X 	X 	  	 
+Mytilopsis sallei 	Black striped mussel 	Marine 	Filter filter 	Stowaway 	TrWA 	MED, MAC, ATL, BAL, BLK 	216 	X 	  	  	  	  	X 	  	  	X 	X 	X 	X
+Sciurus niger 	Fox squirrel 	Vertebrate 	Herbivore 	Escape, Release 	NAm 	ATL, MED, CON 	405 	X 	X 	  	  	  	  	X 	X 	  	X 	  	X
+Morone americana 	White perch 	Freshwater fish 	Predator 	Escape 	NAm 	MAC, MED, ATL, CON, STE 	221 	  	X 	  	X 	  	  	  	  	  	  	  	X
+Albizia lebbeck 	Indian siris 	Plant 	Primary producer 	Escape 	At 	MAC, ATL, MED 	300 	X 	  	  	  	  	  	  	  	X 	X 	X 	 
+Celastrus orbiculatus 	Oriental bittersweet 	Plant 	Primary producer 	Escape 	As 	ATL, BOR, CON, (MED) 	500 	  	  	  	  	  	  	  	  	  	  	  	 
+Chromolaena odorata 	 Siam weed 	Plant 	Primary producer 	Contaminant 	SAm 	MAC, MED 	320 	X 	  	  	X 	  	  	  	  	  	X 	X 	 
+Cinnamomum camphora 	Camphor tree 	Plant 	Primary producer 	Escape 	As, At 	MAC, ATL 	400 	X 	  	  	  	X 	  	  	  	  	X 	  	X
+Clematis terniflora 	Leather leaf clematis 	Plant 	Primary producer 	Escape 	As, At 	MAC, ATL 	400 	X 	  	  	  	  	  	  	  	  	X 	  	 
+Cortaderia jubata 	Purple pampas grass 	Plant 	Primary producer 	Escape 	SAm 	ATL, MAC, MED 	500 	X 	  	  	  	  	  	  	  	  	X 	X 	 
+Cryptostegia grandiflora 	 Rubber vine 	Plant 	Primary producer 	Escape 	SAm 	MAC, ATL, MED 	320 	X 	  	  	  	X 	X 	  	  	  	X 	X 	 
+Gymnocoronis spilanthoides 	Senegal tea 	Plant 	Primary producer 	Escape 	As, SAm 	MAC, (MED) 	625 	X 	  	  	  	  	  	  	  	X 	X 	X 	 
+Lespedeza juncea ssp. sericea (= L. cuneata) 	 Chinese lespedeza 	Plant 	Primary producer 	Escape 	As, Aus 	ATL, CON, MAC, MED 	500 	X 	  	  	  	X 	  	  	  	  	X 	  	 
+Lonicera maackii 	Amur honeysuckle 	Plant 	Primary producer 	Escape, Release 	As 	ATL, CON, MAC, MED 	500 	X 	  	  	  	  	  	  	  	  	X 	  	X
+Lonicera morrowii 	Morrow's honeysuckle 	Plant 	Primary producer 	Escape, Release 	As 	ATL, CON, MAC, MED 	500 	X 	  	  	  	  	  	  	  	  	X 	  	X
+Lygodium japonicum 	Japanese climbing fern 	Plant 	Primary producer 	Escape 	At 	MAC, (MED) 	625 	X 	  	  	  	  	  	  	  	  	X 	X 	 
+Microstegium vimineum 	Nepalese browntop 	Plant 	Primary producer 	Contaminant 	As 	(ATL), CON, MAC, MED 	500 	X 	  	  	  	  	  	  	  	X 	X 	  	X
+Prosopis juliflora 	Prosopis 	Plant 	Primary producer 	Contaminant, Escape 	SAm 	ATL, MAC, MED 	500 	X 	  	  	  	  	  	  	X 	X 	X 	X 	 
+Prunus campanulata 	Bell flower cherry 	Plant 	Primary producer 	Escape 	As 	ATL, MAC 	500 	X 	  	  	  	  	  	  	  	  	X 	  	 
+Rubus rosifolius 	Roseleaf raspberry 	Plant 	Primary producer 	Escape 	At, Aus 	MAC 	500 	X 	  	X 	  	  	  	  	X 	  	X 	X 	X
+Triadica sebifera (Sapium sebiferum) 	Chinese tallowtree 	Plant 	Primary producer 	Escape 	As 	MAC, MED 	500 	X 	  	  	  	  	  	  	  	X 	X 	X 	X
+Acanthophora spicifera 	A red alga 	Marine 	Primary producer 	Stowaway 	TrWA 	MED, MAC 	192 	X 	  	  	  	  	X 	  	  	X 	X 	X 	 
+Gammarus fasciatus 	Freshwater shrimp 	Freshwater 	Omnivore 	Escape, Contaminant, Corridor, Stowaway 	NAm 	MED, ATL, CON, STE 	108 	X 	X 	  	  	  	  	X 	X 	X 	  	X 	X
+Perna viridis 	Asian green mussel 	Marine 	Filter feeder 	Stowaway 	TeNWP 	MED, MAC, ATL 	192 	X 	  	  	  	X 	X 	  	X 	X 	X 	  	 
+Potamocorbula amurensis 	Asian basket clam 	Marine 	Filter feeder 	Stowaway 	TeNWP 	MED, MAC, ATL, BLK, BAL 	180 	X 	X 	  	  	  	  	X 	X 	X 	X 	X 	X
+Symplegma reptans 	Pillow-like tunicate 	Marine 	Filter feeder 	Stowaway 	TeNWP 	MED, MAC, ATL, BLK 	192 	X 	  	  	  	  	X 	  	  	X 	X 	  	 
+Aeolesthes sarta 	City longhorn beetle, Qetta borer 	Terrestrial invertebrate 	Herbivore 	Contaminant 	As 	MED, ATL, CON, STE, BOR 	99 	X 	  	  	  	  	  	X 	X 	X 	X 	X 	X
+Amynthas agrestis 	Crazy snake worm 	Terrestrial invertebrate 	Detritivore 	Contaminant, Stowaway 	As? 	ATL, CON 	129 	X 	  	  	  	  	  	  	X 	X 	X 	X 	X
+Pachycondyla chinensis 	Asian needle ant 	Terrestrial invertebrate 	Omnivore 	Contaminant 	As 	MED, ATL, CON, STE, MAC 	175 	X 	X 	  	  	  	  	  	X 	X 	X 	X 	X
+Sirex ermak 	Blue-black horntail 	Terrestrial invertebrate 	Herbivore 	Contaminant, Escape 	As 	CON, STE, BOR 	111 	X 	  	  	X 	  	  	X 	  	X 	X 	X 	X
+Solenopsis geminata 	Fire ant 	Terrestrial invertebrate 	Omnivore 	Contaminant 	NAm/SAm 	MAC, MED, ATL?, CON?, STE 	160 	X 	X 	  	  	X 	  	  	X 	X 	X 	X 	X
+Solenopsis invicta 	Red imported fire ant 	Terrestrial invertebrate 	Omnivore 	Contaminant 	SAm 	MAC, MED 	160 	X 	X 	  	  	X 	  	X 	X 	X 	X 	X 	X
+Solenopsis richteri 	Black imported fire ant 	Terrestrial invertebrate 	Omnivore 	Contaminant 	SAm 	MAC, MED, ATL?, CON?, STE 	128 	X 	X 	  	  	X 	  	X 	X 	X 	X 	X 	X
+Tetropium gracilicorne 	Fine-horned spruce beetle 	Terrestrial invertebrate 	Herbivore 	Contaminant 	As 	ATL, CON, STE, BOR 	128 	X 	  	  	  	  	  	X 	X 	X 	X 	X 	X
+Vespula pensylvanica 	Western yellowjacket 	Terrestrial invertebrate 	Omnivore 	Contaminant 	NAm 	MAC?, MED, ATL, CON, STE, BOR? 	99 	X 	X 	  	  	X 	  	  	X 	X 	  	  	X
+Bison bison 	American bison 	Vertebrate 	Herbivore 	Release 	NAm 	CON 	338 	X 	  	X 	X 	  	  	X 	  	  	  	  	 
+Boiga irregularis 	Brown tree snake 	Vertebrate 	Predator 	Escape, Release, Stowaway 	Aus 	MED, MAC 	280 	X 	X 	  	  	X 	  	  	X 	  	  	  	X
+Cynops pyrrhogaster 	Japanese fire-bellied salamander 	Vertebrate 	Omnivore 	Escape 	As 	CON 	354 	X 	X 	? 	X 	  	  	  	  	  	  	X 	X
+Eleutherodactylus coqui 	Common coquí 	Vertebrate 	Predator 	Escape, Contaminant, Stowaway 	NAm 	MED, MAC 	252 	  	X 	X 	  	  	  	  	  	  	  	  	 
+Eleutherodactylus planirostris 	Greenhouse frog 	Vertebrate 	Predator 	Escape, Stowaway 	NAm 	MED, MAC 	288 	X 	X 	  	X 	  	  	  	  	  	  	  	 
+Hemidactylus frenatus 	Common house gecko 	Vertebrate 	Predator 	Escape, Stowaway 	Aus 	ATL, MED, CON 	320 	X 	X 	  	  	  	  	  	  	  	  	  	 
+Rhinella marina 	Cane toad 	Vertebrate 	Omnivore 	Contaminant, Escape, Release, 	SAm 	MED, MAC 	280 	X 	X 	  	  	X 	  	  	X 	X 	  	  	X
+Trichosurus vulpecula 	Brushtail possum 	Vertebrate 	Omnivore 	Escape 	Aus 	ATL, MED, CON, MAC 	304 	X 	X 	  	X 	  	  	X 	  	  	  	  	 
+Daphnia lumholtzi 	  	Freshwater invertebrate 	Filter feeder 	Contaminant, Corridor, Stowaway, Unaided 	As, At, Aus 	MAC, MED, CON, STE 	96 	X 	  	  	  	  	  	X 	X 	X 	  	X 	X
+Pinus patula 	Mexican weeping pine 	Plant 	Primary producer 	Escape 	NAm 	MAC, ATL 	300 	X 	  	  	  	  	  	  	  	  	X 	X 	 
+Ascidia sydneiensis 	Green tube tunicate 	Marine 	Filter feeder 	Contaminant, Stowaway 	WIP, CIP 	MED, MAC, ATL 	108 	X 	  	  	  	  	X 	  	  	X 	X 	  	 
+Balanus glandula 	Acorn barnacle 	Marine 	Filter feeder 	Stowaway 	TeNEP 	ATL, BAL 	108 	X 	  	  	  	  	X 	  	X 	  	X 	X 	X
+Ciona savignyi 	Pacific transparent tunicate 	Marine 	Filter feeder 	Escape, Stowaway 	TeNEP, Teswa, TeAu 	ATL, BLK, BAL, MED, MAC 	144 	X 	  	  	  	  	X 	  	  	X 	X 	  	 
+Dictyosphaeria cavernosa 	Green bubble weed 	Marine 	Primary producer 	Stowaway 	WIP 	MED, MAC 	108 	X 	  	  	  	  	X 	  	  	X 	X 	X 	X
+Didemnum perlucidum 	A colonial tunicate 	Marine 	Filter feeder 	Contaminant, Stowaway 	Unknown 	MED, MAC 	128 	X 	  	  	  	  	X 	  	  	  	  	X 	X
+Dorvillea similis 	A polychaete worm 	 Marine 	Detritivore 	Stowaway, Unaided 	WIP, CIP 	MED, MAC 	150 	  	  	  	  	  	  	  	  	  	  	  	 
+Rhodosoma turcicum 	 A unitary tunicate 	Marine 	Filter feeder 	Stowaway 	WIP, CIP, TeNWP, TrWA 	MED, MAC, ATL 	162 	X 	  	  	  	  	X 	  	  	X 	X 	  	 
+Zostera japonica 	Dwarf eelgrass 	Marine 	Primary Producer 	Contaminant 	TeNWP 	MED, MAC, ATL, BLK, BAL 	108 	X 	  	  	  	  	X 	  	  	X 	X 	X 	X
+Agrilus auroguttatus 	Gold spotted oak borer 	Terrestrial invertebrate 	Herbivore 	Contaminant, Stowaway 	Nam 	MED 	81 	X 	  	  	  	  	  	X 	X 	X 	X 	X 	X
+Dendrolimus superans 	White-lined silk moth 	Terrestrial invertebrate 	Herbivore 	Contaminant 	As 	CON, STE, BOR 	128 	X 	  	  	  	  	  	X 	  	X 	X 	X 	X
+Platypus quercivorus 	Oak ambrosia beetle 	Terrestrial invertebrate 	Herbivore 	Contaminant, Stowaway 	As 	MAC, MED, ATL, CON, STE 	97 	X 	  	  	X 	  	  	X 	X 	X 	X 	X 	X
+Boa constrictor 	Boa constrictor 	Vertebrate 	Predator 	Escape 	SAm 	MED 	263 	X 	X 	  	  	  	  	  	  	X 	  	  	X
+Gymnorhina tibicen 	Australian magpie 	Vertebrate 	Omnivore 	Escape 	Aus 	ATL, MED, CON 	225 	  	  	  	  	  	  	  	  	  	  	  	 
+Python molurus 	 Indian rock python 	Vertebrate 	Predator 	Escape 	At 	MED 	263 	X 	X 	  	  	  	  	  	  	X 	  	  	X
+Quelea quelea 	Red billed quelea 	Vertebrate 	Omnivore 	Escape,Release 	Afr 	MED,CON 	252 												
+Tamiasciurus hudsonicus 	American red squirrel 	Vertebrate 	Herbivore 	Escape 	NAm 	BOR, ATL, CON 	244 	X 	X 	  	X 	  	  	  	X 	  	X 	  	 
