@@ -44,9 +44,9 @@ backbone = backbone.merge(sp_authors_df, on="canonicalName", how="left")
 
 ## DEMAND COUNTS
 
-redlist = pd.read_csv("../../data/external/IUCN_eu_region_tax_research_needed/assessments.csv")
+redlist = pd.read_csv("../../data/external/redlist_species_data_europe_taxonomy_needed_oct_15/assessments.csv")
 cwr = pd.read_excel("../../data/external/crop wild relatives europe.xlsx", skiprows=1)
-horizon = pd.read_csv("../../data/external/invasive species on the horizon for Europe.csv", sep="\t")
+horizon = pd.read_csv("../../data/external/invasive horizon species europe.tsv", sep="\t")
 
 # get canonical names
 #redlist = redlist.rename(columns={"scientificName":"canonicalName"})
