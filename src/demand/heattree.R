@@ -1,3 +1,5 @@
+setwd("C:/Users/melanie/Documents/GitHub/TETTRIs-mapping-taxonomists")
+
 library(metacoder)
 library(rcartocolor)
 library(grid)
@@ -17,8 +19,7 @@ my_plots <- lapply(c("nr_authors","taxonomicResearchNeeded","cropWildRelatives",
   obj$data$taxon_counts <- calc_taxon_abund(obj, data = "tax_data", cols=demand)
   obj$data$taxon_counts$total <- rowSums(obj$data$taxon_counts[, -1])
   obj$data$taxon_counts$total_leaf <- ifelse(obj$is_leaf(), obj$data$taxon_counts$total, 0)
-  obj$taxon_names()
-
+  
   if(demand=="nr_authors") {
     heat_tree(obj, 
               node_label = taxon_names,
