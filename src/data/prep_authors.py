@@ -61,7 +61,16 @@ def get_single_authors(df_input): # input: authors with doubles
         publications = df_input[df_input["author_id"]==author]
         # get most recent one
         most_recent = publications["publication_date"].max()
-        keep += publications[publications["publication_date"]==most_recent].values.tolist()
+
+        # get species_subject from all their publications
+        subjects = []
+        for subjects_list in publications["species_subject"]:
+            subjects.extend(subjects_list)
+
+        keep_row = publications[publications["publication_date"]==most_recent].values.tolist()
+        if keep_row:
+            keep_row[0][-1] = subjects
+            keep += keep_row
     
     keep_df = pd.DataFrame(keep, columns = df_input.columns)
     # drop duplicates because some articles may have been found twice through different queries 

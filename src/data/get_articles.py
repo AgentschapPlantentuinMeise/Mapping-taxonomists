@@ -39,7 +39,8 @@ for oaid in oaids:
         continue # (returns ~240 000 articles)
     
     # search by confirmed OpenAlex ID (from OpenAlex itself or Wikidata) 
-    journal_articles = download.request_works("primary_location.source.id:"+oaid, email, to_date="2023-12-31")
+    journal_articles = download.request_works("primary_location.source.id:"+oaid, email, 
+                                              from_date="2014-01-01", to_date="2023-12-31")
     n += len(journal_articles)
     articles.append(journal_articles)
     

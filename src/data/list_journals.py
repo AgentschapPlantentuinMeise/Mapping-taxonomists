@@ -97,7 +97,7 @@ print("done!")
 journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID", "openAlexID", "dissolvedYear", 
           "dissolved", "source"]].to_csv("../../data/processed/journals.csv", index=False)
 # remove duplicates with same wikidata ID and OpenALex ID
-journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID", "openAlexID", "dissolvedYear", 
+journals[["title", "wikidataURL", "ISSN-L", "openAlexID", "dissolvedYear", 
           "dissolved", "source"]].drop_duplicates(subset=["wikidataURL","openAlexID"],
                                                   ignore_index=True).to_csv("../../data/processed/journals_deduplicated.csv", index=False)
 
