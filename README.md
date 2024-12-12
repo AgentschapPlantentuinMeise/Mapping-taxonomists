@@ -1,66 +1,73 @@
-# TETTRIs-mapping-taxonomists
-TETTRIs WP3, task 3.2: automatic mapping of taxonomic expertise
+# TETTRIs WP3, task 3.2: automatic mapping of taxonomic expertise
+This repository contains the scripts used to find European authors of taxonomic articles, identify the species they study, and compare their taxa of expertise to some demands for taxonomic expertise.
 
+## Prerequisites
 Before starting you need to download the GBIF taxonomic backbone, unzip it and put the contents in the folder data/external/backbone
 
-The backbone DOI should be cited in any resulting publication. An example citation is below, but consider that the backbone is rebuilt periodically. 
+You may also need to install SPARQLWrapper, geopandas and fiona to your Python installation, i.e. using `pip install SPARQLWrapper`
 
-> GBIF Secretariat (2023). GBIF Backbone Taxonomy. Checklist dataset https://doi.org/10.15468/39omei accessed via GBIF.org on 2024-08-14.
+## "Supply" of taxonomic expertise
+This analysis can be replicated by running `make_dataset.py` from the `src` folder. This file runs, in order, the following files:
 
-You may also need to install SPARQLWrapper, geopandas and fiona to your Python installation.
+### 1.  `list_journals.py` finds taxonomic journals through WikiData and OpenAlex
 
-i.e. using `pip install SPARQLWrapper`
+#### Data Retrieval
+We employed a three-fold approach to gather taxonomic journals:
 
-The countries included in the analysis are listed by there two-letter ISO code (ISO 3166-1) in file `included_countries.txt`, in directory `.\src\data`.
+- **Wikidata query for journals with taxonomic subjects:** using the SPARQL query language, we constructed queries to retrieve scientific journals (Q5633421) or academic journals (Q737498) from Wikidata with main subjects (P921) or fields of work (P101) related to taxonomy. These subjects could be one of the following concepts: taxonomy (Q8269924); biological classification (Q11398); plant taxonomy (Q1138178) and animal taxonomy (Q1469725); biological (Q522190), botanical (Q3310776) and zoological (Q3343211) nomenclature; systematics (Q3516404), phylogenetics (Q171184) and animal phylogeny (Q115135896).
 
-This analysis can be replicated by copying the repository and running `make_dataset.py` from the `src` folder. This file runs, in order, the following files:
-## 1.  `list_journals.py` which finds possible taxonomic journals through WikiData and OpenAlex
+- **Wikidata query for journals with IPNI or ZooBank publication IDs:** we queried Wikidata for journals (again Q5633421 or Q737498) that possess an International Plant Names Index (IPNI) or ZooBank publication ID. IPNI and ZooBank are pivotal in the field of taxonomy for the formal naming of plants and animals; any publication included in their databases is likely related to taxonomy. 
 
-### Data Retrieval
-We employed a two-fold approach to gather taxonomic journals:
-Wikidata Query for Taxonomic Subjects: Using the SPARQL query language, we constructed queries to retrieve journals from Wikidata associated with taxonomy-related concepts. These concepts were identified by their respective Wikidata identifiers, including taxonomy (Q8269924), biological classification (Q11398), plant taxonomy (Q1138178), animal taxonomy (Q1469725), and several others. Due to the complexity of the query and data size, the query was split into two parts to accommodate additional concepts such as systematics (Q3516404) and phylogenetics (Q171184).
-Wikidata Query for IPNI and ZooBank Identifiers: In addition to subject-based searches, we queried Wikidata for journals that possess an International Plant Names Index (IPNI) or ZooBank publication identifier. These identifiers are pivotal in the field of taxonomy for the formal naming of plants and animals. The query extracted relevant metadata, such as journal titles, ISSN numbers, and geographical information, as well as IPNI and ZooBank IDs.
+- **OpenAlex query for journals with taxonomic concepts:** We accessed the OpenAlex API to retrieve journals associated with the taxonomy concept (concepts.id:C58642233). The results were filtered to include only sources categorized as journals, excluding non-journal entities like e-book platforms. The OpenAlex data added another valuable dimension to the dataset by linking additional open-access sources of taxonomic literature.
 
-OpenAlex Query for Taxonomy-Related Journals: We accessed the OpenAlex API to retrieve journals associated with the taxonomy concept (concepts.id). The results were filtered to include only sources categorized as journals, excluding non-journal entities like e-book platforms. The OpenAlex data added another valuable dimension to the dataset by linking additional open-access sources of taxonomic literature.
+These queries extracted relevant metadata, such as journal titles, ISSN numbers, OpenAlex IDs, country of publication, and whether or not the publication was dissolved.
 
-### Data Homogenization
+#### Data Homogenization
 To ensure consistency across data from different sources, we applied a series of preprocessing steps:
 
-Wikidata Value Extraction: Metadata from the Wikidata results, such as journal URLs, ISSN-L, and publication IDs, were often nested in dictionaries. We extracted these values using a custom function to flatten the structure and standardize column names.
+Wikidata: 
+- Metadata from the Wikidata results, such as journal URLs, ISSN-L, and publication IDs, were often nested in dictionaries. We flattened this structure and standardized column names.
+- **OpenAlex IDs** for journals were updated from the older ID format (e.g. V123 to S123). This step ensured uniformity across sources when cross-referencing journal identifiers.
+- We replaced Wikidata **country** objects with more standardized two-letter codes (ISO 3166-1 alpha-2 code, e.g. BE). 
 
-OpenAlex ID Standardization: The OpenAlex data was processed to update older ID formats (e.g., V123 to S123) and align these with the Wikidata format. This step ensured uniformity across sources when cross-referencing journal identifiers.
+OpenAlex: 
+- The columns of the data were aligned with the Wikidata columns, including adding empty columns for IPNI and ZooBank publication IDs (OpenAlex does not record these IDs).
+- (Handling Dissolved Journals: Journals marked as dissolved in the metadata were flagged and a boolean column was added to indicate whether a journal had ceased publication before 2013, a key year for our study's scope.)
 
-Handling Dissolved Journals: Journals marked as dissolved in the metadata were flagged and a boolean column was added to indicate whether a journal had ceased publication before 2013, a key year for our study's scope.
+These datasets were concatenated into a unified dataframe. 
 
-### Data Integration and Deduplication
-Following the extraction and homogenization of data from both Wikidata and OpenAlex, the datasets were concatenated into a unified dataframe. We retained essential columns such as journal title, ISSN-L, IPNI and ZooBank publication IDs, OpenAlex IDs, and dissolution status.
-
-To prevent redundancy, we performed deduplication based on unique combinations of Wikidata and OpenAlex identifiers. The resulting dataset provides a robust list of taxonomic journals, capturing diverse metadata and identifiers crucial for further bibliometric analyses.
+To prevent redundancy, we performed deduplication based on unique combinations of Wikidata and OpenAlex IDs. The resulting dataset provides a robust list of taxonomic journals.
 
 The final dataset was saved in two formats: a complete list and a deduplicated list, ensuring a clean and comprehensive repository of taxonomic journals.
 
-## 2.  `get_articles.py` which extracts the articles from these journals and filters out articles about taxonomy, as well as filtering out  
 
-### Data Collection
-The process of obtaining taxonomic articles was divided into several steps:
-1. Journals Data Preparation: We began by loading a previously curated dataset of taxonomic journals from Wikidata and OpenAlex. This dataset, stored in journals.csv, contained key metadata about journals, including their OpenAlex IDs and dissolution status. Only journals that had valid OpenAlex IDs and were still active during the study period (i.e., not dissolved) were included in the query process.
-2. Directory Cleanup: To ensure that the new data collected was clean and not mixed with previous results, we cleared the directory containing raw article files by removing all files stored in the articles directory.
-3. Querying OpenAlex for Journal Articles: The next step involved querying the OpenAlex API to obtain articles from each taxonomic journal. This was done for journals with valid OpenAlex IDs and for articles published between 2013 and 2022. We excluded PLOS ONE from the general search as it has a large number of taxonomic articles (~240,000) and handled it separately.
-4. Handling PLOS ONE: Due to its high volume of taxonomic articles, PLOS ONE articles were retrieved first and filtered using a custom keyword filter to identify taxonomic articles that met specific criteria. These filtered articles were stored in intermediate files for further processing.
-5. Downloading Articles in Batches: For each journal in the dataset, we queried OpenAlex for articles using the journal's OpenAlex ID. We kept track of the total number of articles downloaded in each batch, splitting the dataset every time 10,000 articles were retrieved. For each batch of articles:
-* The raw data was saved.
-* A keyword filter was applied to extract taxonomic articles based on predefined keywords.
-* The keyword-filtered articles were stored in intermediate files.
-6. Final Download and Processing: After downloading all articles from the selected journals, the final batch of articles was processed similarly by applying the keyword filter and saving the results. All keyword-filtered articles were merged to create a single unified dataset of taxonomic articles.
+### 2.  `get_articles.py` extracts articles about taxonomy from these journals
 
-### Data Processing and Filtering
-Once all articles had been downloaded and filtered, the following processing steps were applied:
-1. Merging and Flattening: The keyword-filtered articles were merged into a single dataframe using the merge_pkls function from the prep_articles module. The resulting articles were then "flattened" to create a clean structure, ensuring that nested metadata was properly extracted and that the articles were formatted uniformly for analysis.
-2. European Taxonomic Articles: Although not fully implemented in the provided code, a filter for European articles (filter_eu_articles) could be applied to isolate articles relevant to European taxonomic research. This step would involve filtering based on geographical information or institutional affiliations.
+#### Data Collection
+We used the OpenAlex API to get articles published in the taxonomic journals found above. This query included several filters:
+- `primary_location.source.id`: the source of the articles is one of the taxonomic journals, identified by OpenAlex ID. This meant that we could only use journals with an associated OpenAlex ID.
+- `authorships.countries`: at least one of the authors is European. The list of countries included can be found in `src/supply/included_countries.txt`.
+- `from_publication_date` and `to_publication_date`: the articles were published between 1 January 2014 and 31 December 2023.
+- `mailto`: we required an email address to be included in the query since this is good practice, especially when downloading a large amount of data.
 
-## 3.  `parse_taxonomy.py` which parses the abstracts of these articles for species names
+The articles were downloaded in batches, splitting the dataset every 10 000 articles. PLOS ONE was handled first and separately due to its high volume of taxonomic articles.
 
-### Data Preparation
+For each batch of articles, the raw data was saved, a keyword filter was applied and the keyword-filtered articles were stored in intermediate files.
+
+This keyword filter kept the following articles:
+- Articles with the words "taxonomy", "taxonomic", "taxon" or "checklist" in their title or abstract;
+- Articles with the word "nov." in their abstract;
+- Articles with the word groups "new species", "novel species", "new genus" or "new genera" in their title or abstract;
+- And articles associated with one of the following concepts: taxonomy (C58642233), taxon (C71640776) or checklist (C2779356329).
+
+Sidenote: the abstracts are stored on OpenAlex in an inverted index format, meaning the abstract is stored as a dictionary with each word in the text as a key and its positions (indices) in the text as values. 
+Thus, each abstract was first reconstructed into a full text so word groups could be found. 
+
+Any duplicate articles were dropped. Finally, all keyword-filtered articles were merged into a single dataframe. This dataframe was then "flattened" to create a clean structure, ensuring that nested metadata was properly extracted and that the articles were formatted uniformly for analysis.
+
+### 3.  `parse_taxonomy.py` parses the abstracts of the articles for species names
+
+#### Data Preparation
 1. Loading Filtered Articles: The dataset containing filtered taxonomic articles was loaded from a pre-processed pickle file (filtered_articles.pkl). This dataset includes articles that had already been filtered based on their relevance to taxonomy through a keyword-based process.
 
 2. Abstract Conversion: The abstracts in the dataset were stored in an inverted index format, which is a structured and compressed representation of the text. To facilitate the parsing process, these indexed abstracts needed to be converted back into plain text. The script iterated over each article and checked if the abstract was available in an inverted index format.
@@ -68,7 +75,7 @@ Once all articles had been downloaded and filtered, the following processing ste
 * If no abstract was available, a `None` value was assigned to that entry.
 The converted abstracts were then added to the dataframe in a new column, `abstract_full_text`, providing easy access to the full text for subsequent processing.
 
-### Taxonomic Subject Parsing
+#### Taxonomic Subject Parsing
 3. GBIF Taxonomic Backbone: The GBIF (Global Biodiversity Information Facility) taxonomic backbone was used as the reference for identifying taxonomic subjects within the articles. This backbone includes a comprehensive list of species names and higher taxa, which are crucial for determining if an article mentions a recognized species.
 
 The backbone was pre-processed using the `preprocess_backbone` function from the `prep_taxonomy` package, ensuring that the data was clean and structured for efficient parsing.
@@ -79,8 +86,8 @@ Searched each article's title and abstract for references to species or other ta
 Cross-referenced these mentions with the GBIF backbone to confirm if the mentioned species or taxa were officially recognized.
 The function added metadata to the articles, indicating which species or taxonomic subjects were identified in each article.
 
-## 4.  `get_authors.py` which extracts the authors from these articles
-### Global Author Extraction
+### 4.  `get_authors.py` which extracts the authors from these articles
+#### Global Author Extraction
 1. **Loading Taxonomic Articles**:  
    The script begins by loading a pre-processed dataset of taxonomic articles, which includes articles where taxonomic subjects, such as species, have been identified. This dataset is stored in the `taxonomic_articles_with_subjects.pkl` file and contains the necessary metadata, including author information.
 
@@ -97,7 +104,8 @@ The function added metadata to the articles, indicating which species or taxonom
 
    These files are stored in the **`interim`** directory for further analysis or processing.
 
-### European Author Extraction
+#### European Author Extraction
+The countries included in the analysis are listed by there two-letter ISO code (ISO 3166-1) in file `included_countries.txt`, in directory `.\src\data`.
 
 5. **Processing European Articles**:  
    Although the section processing European taxonomic articles is commented out, the intended steps are as follows:
@@ -116,11 +124,11 @@ The function added metadata to the articles, indicating which species or taxonom
    - **`country_taxonomic_authors_no_duplicates.pkl`**: This file contains the deduplicated list of country-specific authors.
    - **`country_taxonomic_authors_no_duplicates.tsv`**: The deduplicated list is also saved as a TSV file for easy sharing and inspection.
 
-## 5.  `disambiguate.py` which disambiguates said authors
+### 5.  `disambiguate.py` which disambiguates said authors
 
 This script aims to disambiguate authors from taxonomic articles and link them to the GBIF taxonomic backbone. The workflow involves preprocessing author names, linking them to species they study, and resolving duplicates by matching authors based on their affiliations and taxonomic subjects. The process also involves clustering similar authors to eliminate redundant entries while retaining accurate information about their research.
 
-### Authors
+#### Authors
 
 1. **Loading and Simplifying the Dataset**:  
    The dataset containing taxonomic authors is loaded from the `country_taxonomic_authors_no_duplicates.pkl` file. Unnecessary columns are dropped, and the remaining columns include key fields like `author_id`, `author_display_name`, `author_orcid`, `inst_id` (institution ID), and `species_subject`.
@@ -132,7 +140,7 @@ This script aims to disambiguate authors from taxonomic articles and link them t
    
    These names help in matching authors with minor variations in name formatting.
 
-### GBIF Taxonomic Backbone
+#### GBIF Taxonomic Backbone
 
 3. **Loading the Taxonomic Backbone**:  
    The GBIF taxonomic backbone, containing species names and taxonomic ranks, is loaded from the `Taxon.tsv` file. Unnecessary columns are dropped, and only species with non-ambiguous taxonomic statuses are retained.
@@ -165,15 +173,15 @@ This script aims to disambiguate authors from taxonomic articles and link them t
 
 #######################################################################################
 
-# Demand for taxonomists
+## Demand for taxonomists
 
-## Crop Wild Relatives
+### Crop Wild Relatives
 
 The crop wild relatives data where downloaded from the following dataset and placed in data/external/crop wild relatives europe.xlsx. These are public domain data, but are included here as a test dataset. We recommend anyone useing these scripts updates this file from source.
 
 > USDA, Agricultural Research Service, National Plant Germplasm System. 2024. Germplasm Resources Information Network (GRIN Taxonomy). National Germplasm Resources Laboratory, Beltsville, Maryland. URL: https://npgsweb.ars-grin.gov/gringlobal/taxon/taxonomysearchcwr. Accessed 15 October 2024.
 
-## IUCN Red List of Threatened Species
+### IUCN Red List of Threatened Species
 
 The "Research needed: taxonomy" data were downloaded from the IUCN Red List website as the file assessments.csv. These data are made available under the IUCN Red List Terms and Conditions for non-commercial use only, and redistribution is not permitted. Therefore, we cannot provide the input data directly here.
 
@@ -182,20 +190,20 @@ However, the data are used in their original format, as provided in the CSV file
 
 > IUCN. 2024. The IUCN Red List of Threatened Species. Version 2024-1. https://www.iucnredlist.org/. Accessed on [17 October 2024].
 
-## Invasive alien species on the horizon in the European Union
+### Invasive alien species on the horizon in the European Union
 Invasive species on the horizon were extracted from the supporting information table 7, titled "Preliminary species list 2: 120 species listed" . Accessed on [20 October 2024].
 
 Roy HE, Bacher S, Essl F, et al. Developing a list of invasive alien species likely to threaten biodiversity and ecosystems in the European Union. *Glob Change Biol.* 2019; 25: 1032–1048. https://doi.org/10.1111/gcb.14527
 
 #######################################################################################
 
-# Visualization
+## Visualization
   
-## maps.py Country Frequency
+### maps.py Country Frequency
 
 This Python script analyzes and visualizes the geographic distribution of authors' institutions by plotting country frequencies on maps. It processes the input data, calculates the frequency of authors by country, and generates maps displaying these distributions using **Geopandas** and **Matplotlib**.
 
-### Key Features
+#### Key Features
 
 1. **Frequency Calculation**: 
    The script includes a function `freq_countries` that processes a dataset of authors' institution country codes and calculates how frequently each country appears. It returns this information in a dictionary that links country codes to their respective author counts.
@@ -206,7 +214,7 @@ This Python script analyzes and visualizes the geographic distribution of author
 3. **Custom Color Mapping**:
    The script includes a custom color gradient, ranging from light green to dark blue, that is used in the maps to represent the frequency data, making it easier to differentiate regions with higher author counts.
 
-### Input Data
+#### Input Data
 
 The script requires two main input datasets, which are expected to be in pickle format:
 1. **`single_authors_of_taxonomic_articles.pkl`**: This dataset contains information about authors of taxonomic articles, including the countries of their institutions.
@@ -214,7 +222,7 @@ The script requires two main input datasets, which are expected to be in pickle 
 
 Additionally, a **country codes** file (`country_codes.tsv`) is used to convert between different country code formats for proper map plotting.
 
-### Output
+#### Output
 
 The script produces several types of maps:
 - A **global map** that shows the number of authors per country.
@@ -224,10 +232,10 @@ The script produces several types of maps:
 
 All of these maps are saved as PNG files and stored in the `../../reports/figures/` directory.
 
-### Conclusion
+#### Conclusion
 
 Once the script is run, you’ll find a series of maps that visually represent where authors of taxonomic articles are based, both globally and within Europe. The resulting visualizations offer an insightful view into the geographic distribution of the academic community in this field.
 
-## Open Access status of taxonomic articles
+### Open Access status of taxonomic articles
 
 
