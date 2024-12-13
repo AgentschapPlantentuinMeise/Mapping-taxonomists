@@ -75,8 +75,13 @@ for i, author in authors.iterrows():
             # add this order to the list of orders studied by the author (no duplicates)
             if order_name not in author["order"]:
                 authors.loc[i, "order"].append(order_name)            
-                    
 
+"""
+import prep_taxonomy
+
+backbone = prep_taxonomy.preprocess_backbone() # GBIF taxonomic backbone
+authors = prep_taxonomy.species_to_tree(authors, backbone)
+"""
 # DISAMBIGUATE
 def match(a, b):
     same = False

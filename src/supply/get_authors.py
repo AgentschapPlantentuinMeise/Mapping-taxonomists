@@ -31,6 +31,6 @@ single_eu_authors = prep_authors.get_single_authors(country_authors)
 
 country_authors.to_pickle("../../data/interim/country_authors_with_all_taxonomic_articles.pkl")
 single_eu_authors.to_pickle("../../data/interim/country_taxonomic_authors_no_duplicates.pkl")
-single_eu_authors.to_csv("../../data/processed/country_taxonomic_authors_no_duplicates.tsv", sep="\t")
+single_eu_authors.to_csv("../../data/processed/country_taxonomic_authors_no_duplicates.tsv", sep="\t", index=False)
 
 print("Authors extracted from articles from selected countries. Results in data/processed/country_taxonomic_authors_no_duplicates.tsv.")
