@@ -43,6 +43,8 @@ The final dataset was saved in two formats: a complete list and a deduplicated l
 
 ### 2.  `get_articles.py` extracts articles about taxonomy from these journals
 
+show API URL!
+
 #### Data Collection
 We used the OpenAlex API to get articles published in the taxonomic journals found above. This query included several filters:
 - `primary_location.source.id`: the source of the articles is one of the taxonomic journals, identified by OpenAlex ID. This meant that we could only use journals with an associated OpenAlex ID.
@@ -67,24 +69,14 @@ Any duplicate articles were dropped. Finally, all keyword-filtered articles were
 
 ### 3.  `parse_taxonomy.py` parses the abstracts of the articles for species names
 
-#### Data Preparation
-1. Loading Filtered Articles: The dataset containing filtered taxonomic articles was loaded from a pre-processed pickle file (filtered_articles.pkl). This dataset includes articles that had already been filtered based on their relevance to taxonomy through a keyword-based process.
-
-2. Abstract Conversion: The abstracts in the dataset were stored in an inverted index format, which is a structured and compressed representation of the text. To facilitate the parsing process, these indexed abstracts needed to be converted back into plain text. The script iterated over each article and checked if the abstract was available in an inverted index format.
-* If the abstract was present, the `inverted_index_to_text` function from the `prep_taxonomy` package was used to reconstruct the full abstract text.
-* If no abstract was available, a `None` value was assigned to that entry.
+The abstracts in the dataset were stored in an inverted index format, which is a structured and compressed representation of the text. To facilitate the parsing process, these indexed abstracts needed to be converted back into plain text.
 The converted abstracts were then added to the dataframe in a new column, `abstract_full_text`, providing easy access to the full text for subsequent processing.
 
-#### Taxonomic Subject Parsing
-3. GBIF Taxonomic Backbone: The GBIF (Global Biodiversity Information Facility) taxonomic backbone was used as the reference for identifying taxonomic subjects within the articles. This backbone includes a comprehensive list of species names and higher taxa, which are crucial for determining if an article mentions a recognized species.
+The GBIF (Global Biodiversity Information Facility) taxonomic backbone was used as the reference for identifying taxonomic subjects within the articles. This backbone includes a comprehensive list of species names and higher taxa, which are crucial for determining if an article mentions a recognized species.
 
-The backbone was pre-processed using the `preprocess_backbone` function from the `prep_taxonomy` package, ensuring that the data was clean and structured for efficient parsing.
+We parsed both the abstract and title of each article for mentions of species recorded in the GBIF taxonomic backbone. This was done using regular expressions: scanning the text for any word groups capitalized like *Genus species*, matching candidates to the GBIF taxonomic backbone, and scanning the text again for further mentions of other species of the same genus, structured like *G. species*. 
 
-4. Parsing Articles for Taxonomy: The core of the workflow involved parsing both the abstract and title of each article for mentions of species recorded in the GBIF taxonomic backbone. This was achieved through the `parse_for_taxonomy` function, which:
-
-Searched each article's title and abstract for references to species or other taxonomic entities.
-Cross-referenced these mentions with the GBIF backbone to confirm if the mentioned species or taxa were officially recognized.
-The function added metadata to the articles, indicating which species or taxonomic subjects were identified in each article.
+This way, we added metadata to the articles, indicating which species or taxonomic subjects were identified in each article.
 
 ### 4.  `get_authors.py` which extracts the authors from these articles
 #### Global Author Extraction
