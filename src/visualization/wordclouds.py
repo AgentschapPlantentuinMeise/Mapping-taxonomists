@@ -52,8 +52,8 @@ def wordcloud_abstracts(df, name):
     plt.axis("off")
     # save wordcloud for this concept
     # Save the word cloud as PNG and TIFF
-    png_path = os.path.join(output_dir, f"wordcloud_{name}.png")
-    tiff_path = os.path.join(output_dir, f"wordcloud_{name}.tif")
+    png_path = os.path.join(output_dir, f"FigS2.png")
+    tiff_path = os.path.join(output_dir, f"FigS2.tif")
     
     plt.savefig(png_path, format="png", dpi=600, bbox_inches="tight")
     plt.savefig(tiff_path, format="tiff", dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
