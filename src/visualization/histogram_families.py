@@ -49,7 +49,7 @@ for fam_list in articles["families"]:
 
 # Create Histogram with Formatting Adjustments
 plt.clf()  # Clear the current figure
-fig, ax = plt.subplots(figsize=(7.5, 7.5))  # Set dimensions in inches
+fig, ax = plt.subplots(figsize=(7.5, 6.5))  # Set dimensions in inches
 
 ax.hist(family_counts.values(), bins=50, range=(0, 50))
 
