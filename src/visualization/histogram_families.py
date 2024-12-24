@@ -1,9 +1,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 # Load datasets
 articles = pd.read_pickle("../../data/processed/taxonomic_articles_with_subjects.pkl")
-backbone = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip', low_memory=False)
+#backbone = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip')
+
+file_path = "../../data/external/backbone/Taxon.tsv"
+
+if not os.path.exists(file_path):
+    raise FileNotFoundError(f"The file {file_path} does not exist. Please check the path.")
+
+backbone = pd.read_csv(file_path, sep="\t", on_bad_lines='skip', low_memory=False)
 
 # Reduce the size of backbone for easier searching
 backbone = backbone[backbone["taxonomicStatus"] != "doubtful"]
@@ -41,13 +49,19 @@ for fam_list in articles["families"]:
 
 # Create Histogram with Formatting Adjustments
 plt.clf()  # Clear the current figure
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(7.5, 6.5))  # Set dimensions in inches
 
 ax.hist(family_counts.values(), bins=50, range=(0, 50))
-ax.set_xlabel("Articles", fontsize=20)
-ax.set_ylabel("Families (%)", fontsize=20)
-ax.tick_params(axis='y', labelsize=14)
-ax.tick_params(axis='x', labelsize=14)
+
+# Set axis labels with specified font size
+ax.set_xlabel("Articles", fontsize=20, fontname="Arial")
+ax.set_ylabel("Families (%)", fontsize=20, fontname="Arial")
+
+ax.tick_params(axis='y', labelsize=18)
+ax.tick_params(axis='x', labelsize=18)
+
+for label in ax.get_xticklabels() + ax.get_yticklabels():
+    label.set_fontname("Arial")
 
 # If you have a legend to add:
 #ax.legend(["Family Distribution"], loc="lower left", fontsize=16)
@@ -55,10 +69,16 @@ ax.tick_params(axis='x', labelsize=14)
 #plt.title("Histogram of Articles per Family", fontsize=20)
 plt.tight_layout()  # Ensure everything fits well
 plt.savefig("../../reports/figures/histogram_families.png")
+
+output_path = "../../reports/figures/FigS3.tif"
+plt.savefig(output_path, dpi=600, format="tif", pil_kwargs={"compression": "tiff_lzw"})  # Use LZW compression to reduce file size
+
 plt.show()
 
 # Print the Top 10 Families
 top_10_families = sorted(family_counts.items(), key=lambda x: x[1], reverse=True)[:10]
-print("Top 10 Families by Number of Articles:")
-for family, count in top_10_families:
-    print(f"{family}: {count} articles")
+
+# Format the output
+formatted_families = ", ".join([f"{family}: {count}" for family, count in top_10_families])
+print(f"The top 10 families by number of articles are {formatted_families}.")
+

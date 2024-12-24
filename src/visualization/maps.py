@@ -11,20 +11,17 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
 def freq_countries(df):
-    # get list of countries with authors
-    countries = list(df["inst_country_code"])
-    # remove None values + alphabetical
-    countries = sorted([i for i in countries if i is not None])
-    
-    # count how many of each group (country)
-    freqs = [len(list(group)) for key, group in groupby(countries)]
-    
-    # link counts to country codes
-    freqs_dict = {}
-    for i, country in enumerate(sorted(set(countries))):
-        freqs_dict[country] = freqs[i]
+    """
+    Calculate the frequency of authors by country.
 
-    return freqs_dict
+    Parameters:
+        df (DataFrame): DataFrame containing an 'inst_country_code' column.
+
+    Returns:
+        dict: A dictionary with country codes as keys and frequencies as values.
+    """
+    countries = df["inst_country_code"].dropna()
+    return countries.value_counts().to_dict()
 
 # Alternative color scheme for the relative map (yellow to dark red)
 #alt_cmp = LinearSegmentedColormap.from_list("WarmGradient", ["#ffe6b3", "#ff9933", "#cc3300"], N=10)
@@ -37,7 +34,7 @@ alt_cmp = LinearSegmentedColormap.from_list("CB_Safe_YellowPurple", ["#fef0d9", 
 #alt_cmp = LinearSegmentedColormap.from_list("CB_Safe_BlueOrange", ["#f0f9e8", "#bae4bc", "#7bccc4", "#2b8cbe", "#084081"], N=10)
 
 
-def plot_europe_combined_country_freqs(freqs, map_path, dpi=1200):
+def plot_europe_combined_country_freqs(freqs, map_path, dpi=300):
     # Load and process world map
     worldmap = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
     worldmap = worldmap.to_crs("ESRI:54009")  # Mollweide projection
@@ -58,7 +55,7 @@ def plot_europe_combined_country_freqs(freqs, map_path, dpi=1200):
     worldmap.replace(0, np.nan, inplace=True)
     
     # Set up the figure with two subplots
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 8))  # Adjust size as needed
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.5, 8))  # Adjust size as needed
     
     # Remove box (spines) around each map
     for ax in [ax1, ax2]:
@@ -82,12 +79,9 @@ def plot_europe_combined_country_freqs(freqs, map_path, dpi=1200):
                   linewidth=0.5,      # Set line width for borders
                   legend_kwds={"label": "Number of Taxonomists"})  # Set legend font size here
     
-    # Adjust font size of colorbar ticks
-    plt.setp(cax1.yaxis.get_ticklabels(), fontsize=14)
-    cax1.set_ylabel("Number of Taxonomists", fontsize=16, labelpad=10)  # Increase label font size here
-    
-    # Add 'A' label to the first plot
-    ax1.text(0.06, 0.97, 'A', transform=ax1.transAxes, fontsize=36, fontweight='normal', va='top', ha='right')
+    plt.setp(cax1.yaxis.get_ticklabels(), fontsize=10)
+    cax1.set_ylabel("Number of Taxonomists", fontsize=10, labelpad=10)
+    ax1.text(0.06, 0.97, 'A', transform=ax1.transAxes, fontsize=20, fontweight='normal', va='top', ha='right')
 
     # Plot the relative frequency map of Europe with a color-blind-safe color scheme
     worldmap["relative_freq"] = worldmap["freq"] / worldmap["pop_est"] * 100
@@ -102,24 +96,25 @@ def plot_europe_combined_country_freqs(freqs, map_path, dpi=1200):
     ax2.set_yticks([])
     worldmap.plot(column='relative_freq', ax=ax2, legend=True, cax=cax2,
                   missing_kwds={"color": "lightgrey"},
-                  cmap=alt_cmp,  # Use the color-blind-safe blue-to-orange colormap
-                  edgecolor="black",  # Add black borders to the countries
-                  linewidth=0.5,      # Set line width for borders
+                  cmap=alt_cmp,
+                  edgecolor="black",
+                  linewidth=0.5,
                   legend_kwds={"label": "Percentage of Population"})
     
-    # Adjust font size of colorbar ticks
-    plt.setp(cax1.yaxis.get_ticklabels(), fontsize=14)
-    cax2.set_ylabel("Percentage of Population", fontsize=16, labelpad=10)  # Increase label font size here
-    
-    # Add 'B' label to the second plot
-    ax2.text(0.06, 0.97, 'B', transform=ax2.transAxes, fontsize=36, fontweight='normal', va='top', ha='right')
+    plt.setp(cax2.yaxis.get_ticklabels(), fontsize=10)
+    cax2.set_ylabel("Percentage of Population", fontsize=10, labelpad=10)
+    ax2.text(0.06, 0.97, 'B', transform=ax2.transAxes, fontsize=20, fontweight='normal', va='top', ha='right')
 
-    plt.tight_layout()  # Adjust layout
-    plt.savefig(map_path + "_europe_combined.jpg", dpi=dpi, bbox_inches="tight")
-    plt.show()  # Show plot if running interactively
+    plt.tight_layout()
+    
+    # Save in PNG and TIFF formats
+    fig.savefig(f"{map_path}Fig1.png", format="png", dpi=dpi, bbox_inches="tight")
+    fig.savefig(f"{map_path}Fig1.tif", format="tiff", dpi=dpi, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
+    plt.show()
+
 
 # get worldmap 
-def plot_country_freqs(freqs, map_path, europe=False, dpi=1200, relative=False):
+def plot_country_freqs(freqs, map_path, europe=False, dpi=300, relative=False):
     worldmap = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
     worldmap = worldmap.to_crs("ESRI:54009") # Mollweide projection
 
@@ -206,8 +201,12 @@ def save_freq_data(freqs_dict, output_path):
     freq_df.to_csv(output_path, index=False)
     print(f"Underlying data saved to {output_path}")
 
+try:
+    authors = pd.read_pickle("../../data/interim/single_authors_of_taxonomic_articles.pkl")
+except FileNotFoundError:
+    print("Error: File not found. Please check the path to 'single_authors_of_taxonomic_articles.pkl'.")
+    exit()
 
-authors = pd.read_pickle("../../data/interim/single_authors_of_taxonomic_articles.pkl")
 
 countries_freq = freq_countries(authors)
 save_freq_data(countries_freq, "../../reports/figures/countries_freq_all.csv")
@@ -228,4 +227,4 @@ plot_country_freqs(eujot_freq, "../../reports/figures/map_eujot_relative", europ
 print("Authors' institutions plotted onto world maps. Results in reports/figures.")
 
 countries_freq = freq_countries(eu_authors)
-plot_europe_combined_country_freqs(countries_freq, "../../reports/figures/map_authors_europe_combined")
+plot_europe_combined_country_freqs(countries_freq, "../../reports/figures/")
