@@ -90,8 +90,8 @@ os.makedirs(output_dir, exist_ok=True)
 png_path = os.path.join(output_dir, "FigS1.png")
 tiff_path = os.path.join(output_dir, "FigS1.tif")
 
-plt.savefig(png_path, format="png", dpi=600, bbox_inches="tight")
-plt.savefig(tiff_path, format="tiff", dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
+plt.savefig(png_path, format="png", dpi=300, bbox_inches="tight")
+plt.savefig(tiff_path, format="tiff", dpi=300, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
 
 plt.show()
 
