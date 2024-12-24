@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import os
 
 authors = pd.read_pickle("../../data/interim/country_authors_with_all_taxonomic_articles.pkl")
 # get unique authors per journal
@@ -26,13 +26,9 @@ for journal in set(authors["source_id"]):
 
 # find out how many of the authors in a proposed journal have already been seen
 def not_in_common(authors1, journal2):
-    authors2 = journal_authors[journal2]
-    # get number of authors in journal2 not in total author list so far
-    n = 0
-    for author in authors2:
-        if author not in authors1:
-            n += 1
-    return n
+    authors2 = set(journal_authors[journal2])  # Convert to set for faster lookups
+    return len(authors2 - set(authors1))  # Subtract authors already seen
+
 
 # find path of least resistance through journals
 while unexplored != None:
@@ -61,29 +57,60 @@ while unexplored != None:
 
 
 # plot path through journals with most new authors, cumulatively
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(7.5, 5))
 cumulative_path = np.cumsum(nr_authors_path)
 
-plt.bar(x=range(1,len(journal_path)+1), height=cumulative_path, width=1.0)
-ax.set_title("Number of European authors published in journals (cumulative)")
+# Ensure bars fill the space completely
+plt.bar(x=range(1, len(journal_path) + 1), height=cumulative_path, width=1.0, align='center')
+
+
+# Set x and y axis labels
+ax.set_xlabel("Number of Journals", fontsize=16)
+ax.set_ylabel("Number of Authors (thousands)", fontsize=16)
+
+# Adjust y tick labels to reduce clutter and display in thousands
+max_y = cumulative_path[-1]
+tick_interval = max_y // 5  # Divide into 5 intervals for cleaner ticks
+ax.set_yticks(np.arange(0, max_y + tick_interval, tick_interval))
+ax.set_yticklabels([f"{int(y / 1000)}k" for y in ax.get_yticks()], fontsize=14)
+
+# Adjust x tick labels font size
+ax.tick_params(axis="x", labelsize=14)
 
 # add 95% line
-value_95 = cumulative_path[-1]*0.95
+value_95 = cumulative_path[-1] * 0.95
 plt.axhline(y=value_95, color="red", label="95%")
-ax.text(0.5, value_95+400,"95%", color="red")
+ax.text(len(journal_path) - 0.5, value_95 + 1000, "95%", color="red", fontsize=14)
 
-plt.savefig("../../reports/figures/cumulative_graph_european_authors_in_journals.png")
+# Ensure output directory exists
+output_dir = "../../reports/figures/"
+os.makedirs(output_dir, exist_ok=True)
 
-# save the path we took as journals_cumulative_path.txt
-journal_id_names = authors[["source_display_name", "source_id"]].drop_duplicates()
-journal_id_names = journal_id_names.set_index("source_id")
+# Save as PNG and TIFF
+png_path = os.path.join(output_dir, "FigS1.png")
+tiff_path = os.path.join(output_dir, "FigS1.tif")
+
+plt.savefig(png_path, format="png", dpi=600, bbox_inches="tight")
+plt.savefig(tiff_path, format="tiff", dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
+
+plt.show()
+
+print(f"Graph saved as:\nPNG: {png_path}\nTIFF: {tiff_path}")
+
+# Print the figure legend
+total_journals = len(journal_path)
+print(f"Figure S1: The cumulative frequency curve of newly discovered authors using {total_journals} journals after author deduplication (see methods).")
+
+
+# Save the path to a text file
+journal_id_names = authors[["source_display_name", "source_id"]].drop_duplicates().set_index("source_id")
 
 with open("../../data/interim/journals_cumulative_path.txt", "w", encoding="utf-8") as f:
+    f.write("Path Journals:\n")
     for journal_id in journal_path:
-        # write each item on a new line
         journal_name = journal_id_names.loc[journal_id]
-        f.write(journal_name[0]+"\n")
-    # add last journals too
+        f.write(journal_name.iloc[0] + "\n")  # Updated to use .iloc
+    f.write("\nUnexplored Journals:\n")
     for journal_id in unexplored:
         journal_name = journal_id_names.loc[journal_id]
-        f.write(journal_name[0]+"\n")
+        f.write(journal_name.iloc[0] + "\n")  # Updated to use .iloc
