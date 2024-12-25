@@ -143,7 +143,7 @@ my_plots <- lapply(c("nr_authors","taxonomicResearchNeeded"), function(demand) {
               edge_size_range = c(0.003, 0.003),
               node_color = total_leaf, 
               make_node_legend = FALSE,
-              node_label_size_range = c(0.01,0.03),
+              node_label_size_range = c(0.013,0.03),
               node_size_axis_label = NULL,
               node_size_digits = -1,
               layout="davidson-harel",
