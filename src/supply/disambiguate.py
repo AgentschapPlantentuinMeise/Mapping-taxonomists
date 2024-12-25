@@ -21,7 +21,10 @@ for author in authors.itertuples():
     last_name = author.author_display_name.split(" ")[-1]
     truncated_names.append(first_initial + " " + last_name)
     
-    stripped_name = re.sub('[ .-]', '', author.author_display_name)
+    #stripped_name = re.sub('[ .-]', '', author.author_display_name)
+    stripped_name = re.sub(r'[ .\u002D\u2010\u2012\u2013\u2014\u2015\u2043\uFE63\uFF0D]', '', author.author_display_name)
+
+    
     stripped_names.append(stripped_name)
     
 authors["truncatedName"] = truncated_names
