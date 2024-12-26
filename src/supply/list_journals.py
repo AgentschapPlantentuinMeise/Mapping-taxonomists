@@ -81,6 +81,9 @@ print("Preprocessing data... ")
 prep_journals.get_values_wikidata(wikidata_subjects_results)
 prep_journals.get_values_wikidata(ipni_zoobank_results)
 
+print(wikidata_subjects_results.head())
+print(ipni_zoobank_results.head())
+
 # OpenAlex IDs
 openalex_results = prep_journals.homogenize_openalex(openalex_results)
 
