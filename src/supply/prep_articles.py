@@ -59,44 +59,49 @@ def flatten_works(df_input): # input: articles straight from openalex
 
 
 # filter all articles: at least one of the institutions associated with one of the authors, must be EU
-def filter_eu_articles(df_input):
-    # two-letter country codes of all European countries
-    # from map: https://en.wikipedia.org/wiki/Europe#Contemporary_definition
-    eu_codes = ["IS", "SE", "FO", "NO", "FI", "SE", "DK", # Nordic
-                "EE", "LV", "LT", # Baltic 
-                "IE", "IM", "GB", "GI", # Great Britain
-                "NL", "BE", "LU", # Benelux
-                "ES", "PT", "MT", "FR", "IT", "GR", "CY", "TR", # Mediterranean
-                "BA", "HR", "SI", "ME", "RS", "MK", "AL", "XK", # Balkan
-                "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # Central
-                "UA", "MD", "RO", "BG", # Eastern
-                "SM", "VA", "LI", "AD", "MC", # Micronations
-                "GG", "JE", "SJ", "AX", # Dependencies
-                "AZ", "GE", "AM"] # Caucasus
-    eu_articles = []
+# def filter_eu_articles(df_input):
+#     # two-letter country codes of all European countries
+#     # from map: https://en.wikipedia.org/wiki/Europe#Contemporary_definition
+#     eu_codes = ["IS", "SE", "FO", "NO", "FI", "SE", "DK", # Nordic
+#                 "EE", "LV", "LT", # Baltic 
+#                 "IE", "IM", "GB", "GI", # Great Britain
+#                 "NL", "BE", "LU", # Benelux
+#                 "ES", "PT", "MT", "FR", "IT", "GR", "CY", "TR", # Mediterranean
+#                 "BA", "HR", "SI", "ME", "RS", "MK", "AL", "XK", # Balkan
+#                 "DE", "CZ", "CH", "AT", "SK", "PL", "HU", # Central
+#                 "UA", "MD", "RO", "BG", # Eastern
+#                 "SM", "VA", "LI", "AD", "MC", # Micronations
+#                 "GG", "JE", "SJ", "AX", # Dependencies
+#                 "AZ", "GE", "AM", # Caucasus
+#                 "FK", "VG", "GS", "TC", "SH", "IO", "MS", "BM", "KY", "AI", "PN", # UK overseas territories
+#                 "MQ", "GP", "RE", "PM", "MF", "GF", "PF", "WF", "BL", "YT", "NC", # French overseas territories
+#                 "GL", "FO", # Denmark affiliated
+#                 "AW", "CW", "SX", "BQ"] # Dutch overseas territories
 
-    for article in df_input.itertuples():
-        # check every author
-        for author in article.authorships:
-            stop = False
-            # check every affiliated institute
-            for institute in author["institutions"]:
-                if institute:
-                    country = institute["country_code"]
-                    # european?
-                    if country in eu_codes:
-                        eu_articles.append(list(article))
-                        stop=True # each article should only be included once
-                        break # stop going over institutes of this author
+#     eu_articles = []
 
-            if stop:
-                break # stop going over authors of this article
+#     for article in df_input.itertuples():
+#         # check every author
+#         for author in article.authorships:
+#             stop = False
+#             # check every affiliated institute
+#             for institute in author["institutions"]:
+#                 if institute:
+#                     country = institute["country_code"]
+#                     # european?
+#                     if country in eu_codes:
+#                         eu_articles.append(list(article))
+#                         stop=True # each article should only be included once
+#                         break # stop going over institutes of this author
 
-    eu_articles = pd.DataFrame(eu_articles)
-    eu_articles = eu_articles.iloc[:,1:]
-    eu_articles.columns = df_input.columns
+#             if stop:
+#                 break # stop going over authors of this article
+
+#     eu_articles = pd.DataFrame(eu_articles)
+#     eu_articles = eu_articles.iloc[:,1:]
+#     eu_articles.columns = df_input.columns
     
-    return eu_articles
+#     return eu_articles
 
 
 # query list of articles for specific words and concepts to filter out irrelevant articles
