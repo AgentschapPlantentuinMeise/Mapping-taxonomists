@@ -54,7 +54,18 @@ WHERE {
 
 
 # GET RESULTS OF SPARQLE QUERY (code from WikiData's query service)
-def get_sparql_results(query):
+def get_sparql_results(query, retries=3, delay=5):
+    """
+    Fetch results from the Wikidata SPARQL endpoint with error handling and retry logic.
+
+    Args:
+        query (str): SPARQL query string.
+        retries (int): Number of retry attempts for failed requests.
+        delay (int): Delay in seconds between retries.
+
+    Returns:
+        pd.DataFrame: DataFrame containing the query results.
+    """
     endpoint_url = "https://query.wikidata.org/sparql"
     user_agent = "WDQS-example Python/%s.%s" % (sys.version_info[0], sys.version_info[1])
     
@@ -62,90 +73,170 @@ def get_sparql_results(query):
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     
-    results = sparql.query().convert()
-    return pd.DataFrame.from_dict(results["results"]["bindings"])
+    for attempt in range(retries):
+        try:
+            results = sparql.query().convert()
+            return pd.DataFrame.from_dict(results["results"]["bindings"])
+        except Exception as e:
+            print(f"Attempt {attempt + 1}/{retries} failed with error: {e}")
+            if attempt < retries - 1:
+                time.sleep(delay)  # Wait before retrying
+            else:
+                print("Max retries reached. Returning an empty DataFrame.")
+                return pd.DataFrame()
 
-
+#############################################################################
 # GET ALL SOURCES (JOURNALS) FROM OPENALEX API WITH SPECIFIED REQUIREMENTS
-def request_sources(filter_string, email):
-    # build query (e-mail included for "polite pool")
+def request_sources(filter_string, email, retries=3, delay=5):
+    """
+    Fetch sources from OpenAlex API with error handling and retry logic.
+
+    Args:
+        filter_string (str): Filter string for the OpenAlex API.
+        email (str): User's email for polite API requests.
+        retries (int): Number of retry attempts for failed requests.
+        delay (int): Delay in seconds between retries.
+
+    Returns:
+        pd.DataFrame: DataFrame containing the API results.
+    """
     query = "https://api.openalex.org/sources?per-page=200&filter="+filter_string+"&mailto="+email
-            
-    # open persistent session to shorten processing time between requests
-    s = requests.Session()
-    # FIRST PAGE
-    sources = s.get(query+"&cursor=*")
-    next_sources = sources.json()
-    next_cursor = next_sources["meta"]["next_cursor"]
-    sources_results = next_sources["results"]
     
-    # RETRIEVE ALL PAGES
-    while next_sources["meta"]["next_cursor"] != None:
-        # get next page with cursor
-        next_sources = s.get(query+"&cursor="+next_cursor)
-        next_sources = next_sources.json()
-        next_cursor = next_sources["meta"]["next_cursor"] # remember next cursor
-        if next_sources["results"]:
-            sources_results.extend(next_sources["results"])
-    
-    sources_df = pd.DataFrame.from_dict(sources_results)
-    return sources_df
+    session = requests.Session()
+    all_results = []
+
+    for attempt in range(retries):
+        try:
+            # First page
+            response = session.get(query + "&cursor=*")
+            response.raise_for_status()  # Raise HTTPError for bad responses
+            data = response.json()
+            all_results.extend(data["results"])
+
+            # Pagination
+            next_cursor = data["meta"].get("next_cursor")
+            while next_cursor:
+                response = session.get(query + f"&cursor={next_cursor}")
+                response.raise_for_status()
+                data = response.json()
+                all_results.extend(data["results"])
+                next_cursor = data["meta"].get("next_cursor")
+
+            return pd.DataFrame.from_dict(all_results)
+
+        except requests.exceptions.RequestException as e:
+            print(f"Attempt {attempt + 1}/{retries} failed with error: {e}")
+            if attempt < retries - 1:
+                time.sleep(delay)
+            else:
+                print("Max retries reached. Returning an empty DataFrame.")
+                return pd.DataFrame()
+
+    return pd.DataFrame()
 
 
+#######################################################################
 # INSERT DELAY AFTER FAILED REQUEST
-def pitstop(df_request, query, timeout):
-    # if the server timed out
-    if str(df_request) != "<Response [200]>":
-        print("pitstop")
-        # wait a few seconds
-        time.sleep(timeout)
-        # and try again
-        s = requests.Session()
-        df_request = s.get(query+"&cursor=*")
+# def pitstop(df_request, query, timeout):
+#     # if the server timed out
+#     if str(df_request) != "<Response [200]>":
+#         print("pitstop")
+#         # wait a few seconds
+#         time.sleep(timeout)
+#         # and try again
+#         s = requests.Session()
+#         df_request = s.get(query+"&cursor=*")
     
-    return df_request
+#     return df_request
 
 
 with open("included_countries.txt", "r") as file:
     countries = [line[:-1] for line in file]
     countries = "|".join(map(str, countries))
 
+def make_request_with_retries(url, session=None, retries=3, backoff_factor=2):
+    """
+    Make a request with retries and exponential backoff.
+
+    Args:
+        url (str): URL for the API request.
+        session (requests.Session): Persistent session object.
+        retries (int): Number of retry attempts.
+        backoff_factor (int): Factor for exponential backoff.
+
+    Returns:
+        requests.Response: Response object from the request.
+    """
+    if session is None:
+        session = requests.Session()
+
+    for attempt in range(retries):
+        try:
+            response = session.get(url)
+            response.raise_for_status()  # Raise exception for HTTP errors
+            return response
+        except requests.exceptions.RequestException as e:
+            print(f"Attempt {attempt + 1} failed: {e}")
+            if attempt < retries - 1:
+                sleep_time = backoff_factor ** attempt
+                print(f"Retrying in {sleep_time} seconds...")
+                time.sleep(sleep_time)
+            else:
+                print("Max retries reached. Returning None.")
+                return None
 
 # RETRIEVE ALL RECENT ARTICLES WITH A FILTER
 def request_works(filter_string, email, from_date="2014-01-01", to_date=None, print_number=True):
-    # build query
-    query = "https://api.openalex.org/works?per-page=200&filter=authorships.countries:"+countries+","+filter_string+",from_publication_date:"+from_date
-    if to_date != None:
-        query += ",to_publication_date:"+to_date+"&mailto="+email
-    else:
-        query += "&mailto="+email
-        
-    # open persistent session to shorten processing time between requests
-    s = requests.Session()
-    
-    # FIRST PAGE
-    publications = s.get(query+"&cursor=*")
-    # if the server timed out, wait 20 seconds and try again
-    publications = pitstop(publications, query, 20)
-    publications = pitstop(publications, query, 200) # 200 seconds if 20 wasn't enough
-    
-    if print_number:
-        print("Number of publications for "+filter_string+": "+str(publications.json()["meta"]["count"]))
-    
-    next_pubs = publications.json()
-    next_cursor = next_pubs["meta"]["next_cursor"]
-    publications_results = next_pubs["results"]
-    
-    # RETRIEVE ALL PAGES
-    while next_pubs["meta"]["next_cursor"] != None:
-        # get next page with cursor
-        next_pubs = s.get(query+"&cursor="+next_cursor)
-        next_pubs = pitstop(next_pubs, query, 20)
-        next_pubs = pitstop(next_pubs, query, 200)
+    """
+    Retrieve recent articles from OpenAlex API with error handling and retries.
 
-        next_pubs = next_pubs.json()
-        next_cursor = next_pubs["meta"]["next_cursor"] # remember next cursor
-        publications_results.extend(next_pubs["results"])
-    
-    publications_df = pd.DataFrame.from_dict(publications_results)
-    return publications_df
+    Args:
+        filter_string (str): Filter for API query.
+        email (str): Email for polite API requests.
+        from_date (str): Start date for publication filter.
+        to_date (str): End date for publication filter.
+        print_number (bool): Whether to print the total number of publications.
+
+    Returns:
+        pd.DataFrame: DataFrame containing the results.
+    """
+    # Build query
+    base_query = (
+        f"https://api.openalex.org/works?per-page=200&filter=authorships.countries:{countries},"
+        f"{filter_string},from_publication_date:{from_date}"
+    )
+    if to_date:
+        query = f"{base_query},to_publication_date:{to_date}&mailto={email}"
+    else:
+        query = f"{base_query}&mailto={email}"
+
+    # Open persistent session
+    session = requests.Session()
+
+    # First page
+    response = make_request_with_retries(query, session=session, retries=3)
+    if response is None:
+        print("Failed to fetch initial page. Returning empty DataFrame.")
+        return pd.DataFrame()
+
+    data = response.json()
+    publications_results = data.get("results", [])
+    next_cursor = data["meta"].get("next_cursor")
+
+    if print_number:
+        print(f"Number of publications for {filter_string}: {data['meta']['count']}")
+
+    # Retrieve all pages
+    while next_cursor:
+        next_query = f"{query}&cursor={next_cursor}"
+        response = make_request_with_retries(next_query, session=session, retries=3)
+        if response is None:
+            print("Failed to fetch additional pages. Returning partial results.")
+            break
+
+        data = response.json()
+        publications_results.extend(data.get("results", []))
+        next_cursor = data["meta"].get("next_cursor")
+
+    return pd.DataFrame.from_dict(publications_results)
+
