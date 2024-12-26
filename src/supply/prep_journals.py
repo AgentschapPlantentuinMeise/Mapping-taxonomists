@@ -20,7 +20,10 @@ def get_country_codes():
     
     countries = {}
     for country in results.itertuples():
-        countries[country.item["value"]] = country.twoLetterCode["value"]
+        try:
+            countries[country.item["value"]] = country.twoLetterCode["value"]
+        except KeyError as e:
+            print(f"KeyError while processing country data: {e}")
     return countries
 
 # Wikidata query results are tables with most values locked in dictionaries: get them out 
