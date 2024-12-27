@@ -108,7 +108,7 @@ def flatten_works(df_input): # input: articles straight from openalex
 def filter_keywords(articles):
     queries1 = ["taxonomy", "taxonomic", "taxon", "checklist"] # one-word queries
     queries2 = ["new species", "novel species", "new genus", "new genera"] # two-word queries
-    concepts = ["C58642233", "C71640776", "C2779356329"] # OpenAlex IDs of concepts
+    concepts = ["https://openalex.org/C58642233", "https://openalex.org/C71640776", "https://openalex.org/C2779356329"] # OpenAlex IDs of concepts
                                                          # taxonomy, taxon, checklist
     
     keep = []
