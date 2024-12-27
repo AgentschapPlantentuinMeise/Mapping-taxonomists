@@ -1,5 +1,16 @@
 import pandas as pd
 import download
+import json
+from datetime import datetime
+
+# Load configuration
+with open("../../config.json", "r") as config_file:
+    config = json.load(config_file)
+
+# Extract dates
+from_date = config.get("from_date", "2014-01-01")  # Default to 2014-01-01 if not provided
+
+from_date_year = datetime.strptime(from_date, "%Y-%m-%d").year-1
 
 # wikidata objects of countries often have a ISO 3166-1 alpha-2 code (P297): 
 # use this unambiguous code instead of the wikidata ID, just like OpenALex
@@ -117,7 +128,7 @@ def dissolved_bool(journals):
             dissolveds.append(None)
         # if year of dissolvement is 2013 or later, the journal has not been dissolved
         elif isinstance(journal.dissolvedYear, int): 
-            if journal.dissolvedYear >= 2013:
+            if journal.dissolvedYear >= from_date_year:
                 dissolveds.append(False)
             else:
                 dissolveds.append(True)
@@ -126,14 +137,14 @@ def dissolved_bool(journals):
             # "before ..."
             if journal.dissolvedYear[:6] == "before":
                 # if it was dissolved before 2013, it is unavailable in the last 10 years
-                if int(journal.dissolvedYear[-4:]) <= 2013:
+                if int(journal.dissolvedYear[-4:]) <= from_date_year:
                     dissolveds.append(True)
                 else: # if it was dissolved before e.g. 2017, we don't know
                     dissolveds.append(None)
             # if value is a string but should be an integer
-            elif int(journal.dissolvedYear) >= 2013:
+            elif int(journal.dissolvedYear) >= from_date_year:
                 dissolveds.append(False)
-            elif int(journal.dissolvedYear) < 2013:
+            elif int(journal.dissolvedYear) < from_date_year:
                 dissolveds.append(True)
             else:
                 dissolveds.append(None)

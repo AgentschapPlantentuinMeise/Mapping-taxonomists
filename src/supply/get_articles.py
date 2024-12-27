@@ -5,8 +5,31 @@ import os
 # custom packages
 import download
 import prep_articles
+import json
+from datetime import datetime
+
+def validate_date(date_str):
+    try:
+        datetime.strptime(date_str, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
 
 
+
+# Load configuration
+with open("../../config.json", "r") as config_file:
+    config = json.load(config_file)
+    
+# Extract dates
+from_date = config.get("from_date", "2014-01-01")  # Default to 2014-01-01 if not provided
+to_date = config.get("to_date", "2023-12-31")      # Default to 2023-12-31 if not provided
+
+if not validate_date(from_date) or not validate_date(to_date):
+    raise ValueError("Invalid date format in configuration. Use YYYY-MM-DD.")
+
+print("From ="+from_date+" To ="+to_date)
+      
 journals = pd.read_csv("../../data/processed/journals.csv")
 
 # clear directory
@@ -40,7 +63,7 @@ for oaid in oaids:
     
     # search by confirmed OpenAlex ID (from OpenAlex itself or Wikidata) 
     journal_articles = download.request_works("primary_location.source.id:"+oaid, email, 
-                                              from_date="2014-01-01", to_date="2023-12-31")
+                                              from_date=from_date, to_date=to_date)
     n += len(journal_articles)
     articles.append(journal_articles)
     
