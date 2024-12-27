@@ -187,20 +187,6 @@ def make_request_with_retries(url, session=None, retries=3, backoff_factor=2):
 
 # RETRIEVE ALL RECENT ARTICLES WITH A FILTER
 def request_works(filter_string, email, from_date="2014-01-01", to_date=None, print_number=True):
-    """
-    Retrieve recent articles from OpenAlex API with error handling and retries.
-
-    Args:
-        filter_string (str): Filter for API query.
-        email (str): Email for polite API requests.
-        from_date (str): Start date for publication filter.
-        to_date (str): End date for publication filter.
-        print_number (bool): Whether to print the total number of publications.
-
-    Returns:
-        pd.DataFrame: DataFrame containing the results.
-    """
-    # Build query
     base_query = (
         f"https://api.openalex.org/works?per-page=200&filter=authorships.countries:{countries},"
         f"{filter_string},from_publication_date:{from_date}"
@@ -210,11 +196,10 @@ def request_works(filter_string, email, from_date="2014-01-01", to_date=None, pr
     else:
         query = f"{base_query}&mailto={email}"
 
-    # Open persistent session
-    session = requests.Session()
+    first_query  = f"{query}&cursor=*"
 
-    # First page
-    response = make_request_with_retries(query, session=session, retries=3)
+    session = requests.Session()
+    response = make_request_with_retries(first_query, session=session, retries=3)
     if response is None:
         print("Failed to fetch initial page. Returning empty DataFrame.")
         return pd.DataFrame()
@@ -222,12 +207,16 @@ def request_works(filter_string, email, from_date="2014-01-01", to_date=None, pr
     data = response.json()
     publications_results = data.get("results", [])
     next_cursor = data["meta"].get("next_cursor")
-
     if print_number:
         print(f"Number of publications for {filter_string}: {data['meta']['count']}")
 
-    # Retrieve all pages
+    seen_cursors = set()
     while next_cursor:
+        if next_cursor in seen_cursors:
+            print(f"Duplicate cursor detected: {next_cursor}. Exiting loop.")
+            break
+        seen_cursors.add(next_cursor)
+
         next_query = f"{query}&cursor={next_cursor}"
         response = make_request_with_retries(next_query, session=session, retries=3)
         if response is None:
@@ -237,6 +226,7 @@ def request_works(filter_string, email, from_date="2014-01-01", to_date=None, pr
         data = response.json()
         publications_results.extend(data.get("results", []))
         next_cursor = data["meta"].get("next_cursor")
+        print(f"Total publications fetched so far: {len(publications_results)}")
 
     return pd.DataFrame.from_dict(publications_results)
 

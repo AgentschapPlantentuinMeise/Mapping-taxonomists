@@ -57,6 +57,7 @@ for oaid in oaids:
         #eu_articles = prep_articles.filter_eu_articles(filtered_articles)
         
         filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/eu_articles"+str(m)+".pkl")
+        #filtered_articles.to_csv("../../data/interim/keyword-filtered_articles/eu_articles"+str(m)+".tsv", sep="\t")
         #eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
         
         articles = []
