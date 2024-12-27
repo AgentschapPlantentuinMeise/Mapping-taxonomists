@@ -50,7 +50,7 @@ backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\
                        on_bad_lines='skip')
 # reduce size of backbone for easier searching
 backbone = backbone_original[backbone_original["taxonomicStatus"]!="doubtful"]
-backbone = backbone[["canonicalName", "order", "family"]]
+backbone = backbone[["canonicalName", "kingdom", "order", "family"]]
 # remove taxa with no known species name and remove duplicates
 backbone = backbone.dropna(subset="canonicalName").drop_duplicates(ignore_index=True).reset_index(drop=True)
 
@@ -64,6 +64,13 @@ for species in backbone.itertuples():
         # take family if order is not available        
         elif isinstance(species.family, str):
             seen_species[species.canonicalName] = species.family
+            
+# Create a dictionary mapping species to their kingdom
+species_to_kingdom = {}
+for species in backbone.itertuples():
+    if species.canonicalName not in species_to_kingdom:
+        if isinstance(species.kingdom, str):
+            species_to_kingdom[species.canonicalName] = species.kingdom
 
 ## LINK AUTHORS TO BACKBONE
 # start with empty list for order
@@ -79,6 +86,19 @@ for i, author in authors.iterrows():
             if order_name not in author["order"]:
                 authors.loc[i, "order"].append(order_name)            
 
+# Add an empty list for kingdoms to authors DataFrame
+authors["kingdom"] = [list() for x in range(len(authors.index))]
+
+# For each author, get the kingdom for each species they study
+for i, author in authors.iterrows():
+    for species in author["species_subject"]:
+        if species in species_to_kingdom:
+            # Get the kingdom for the species
+            kingdom_name = species_to_kingdom[species]
+            # Add this kingdom to the list of kingdoms studied by the author (no duplicates)
+            if kingdom_name not in author["kingdom"]:
+                authors.loc[i, "kingdom"].append(kingdom_name)
+                
 """
 import prep_taxonomy
 
@@ -160,25 +180,37 @@ merged_people = []
 m = 1
 
 def collect_values(df, person_ids, column):
-    if len(person_ids) > 0:
-        values = []
-        
-        for duplicate in person_ids:
-            imposter = df.loc[duplicate]
-            if imposter[column] not in values and imposter[column] != None:
-                if column == "order" or column == "species_subject":
-                    values.extend(imposter[column])
-                else:
-                    values.append(imposter[column])
-                
-    else:
-        values = df.loc[person_ids, column]
+    if len(person_ids) == 0:
+        # person_ids is empty; just return None or whatever you want
+        return None
 
+    values = []
+    for duplicate in person_ids:
+        imposter = df.loc[duplicate]
+        current_val = imposter[column]
+
+        # Skip None or NaN
+        if current_val is None:
+            continue
+
+        # Make sure we only add if not already present
+        if current_val not in values:
+            # If it's one of the list columns, extend by its items
+            if column in ["order", "species_subject", "kingdom"]:
+                values.extend(current_val)  # current_val is a list of strings
+            else:
+                values.append(current_val)
+
+    # Convert to set to get unique items
     values = set(values)
-    if len(values)==1:
-        values = list(values)[0]
-        
-    return values
+
+    # If there is exactly one unique item, return that item itself
+    if len(values) == 1:
+        return list(values)[0]
+    else:
+        # Otherwise, return all unique items as a list
+        return list(values)
+
 
 person_ids = []
 m = 1
