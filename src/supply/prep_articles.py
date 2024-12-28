@@ -2,6 +2,7 @@
 import pandas as pd
 import glob
 import prep_taxonomy
+import re
 
 # release information locked in dictionaries inside the dataframe: open access, host (journal)
 def flatten_works(df_input): # input: articles straight from openalex
@@ -106,10 +107,14 @@ def flatten_works(df_input): # input: articles straight from openalex
 
 # query list of articles for specific words and concepts to filter out irrelevant articles
 def filter_keywords(articles):
-    queries1 = ["taxonomy", "taxonomic", "taxon", "checklist"] # one-word queries
-    queries2 = ["new species", "novel species", "new genus", "new genera"] # two-word queries
-    concepts = ["https://openalex.org/C58642233", "https://openalex.org/C71640776", "https://openalex.org/C2779356329"] # OpenAlex IDs of concepts
-                                                         # taxonomy, taxon, checklist
+    queries1 = ["taxonomic", "taxon", "lectotype", "paratype", "neotype"] # one-word queries, checklist was removed as it led to too many errors
+    queries2 = ["new species", "novel species", "new genus", "new genera",
+                "Holotype Specimen","Taxonomic Revision","Species Delimitation",
+                "Taxonomic Key","Phylogenetic Tree","Type Locality",
+                "Type Specimen","Taxonomic Rank","Species Epithet",
+                "Type Designation"] # two-word queries
+    concepts = ["https://openalex.org/C58642233", "https://openalex.org/C71640776"] # OpenAlex IDs of concepts
+                                                         # taxonomy, taxon
     
     keep = []
     
@@ -150,14 +155,32 @@ def filter_keywords(articles):
                     
             # two-word queries
             abstract_full_text = prep_taxonomy.inverted_index_to_text(article.abstract_inverted_index)
+            # for query in queries2:
+            #     # match query to article abstract
+            #     if abstract_full_text.find(query) != -1:
+            #         keep.append(article)
+            #         cont = True
+            #         break
+            # if cont:
+            #     continue # move on to next article
+            # for query in queries2:
+            #     if re.search(rf"\b{re.escape(query)}\b", abstract_full_text):  # Match the exact phrase
+            #         keep.append(article)
+            #         cont = True
+            #         break
+            # if cont:
+            #      continue # move on to next article
+
             for query in queries2:
-                # match query to article abstract
-                if abstract_full_text.find(query) != -1:
-                    keep.append(article)
-                    cont = True
-                    break
-            if cont:
-                continue # move on to next article
+                # Create a regex pattern for the exact two-word phrase with whole-word matching
+                words = query.split()
+                pattern = rf"\b{re.escape(words[0])}\b\s+\b{re.escape(words[1])}\b"
+                
+                # Search for the pattern in the abstract
+                if re.search(pattern, abstract_full_text, re.IGNORECASE):  # Case-insensitive search
+                    print(f"Matched query: {query}")
+                else:
+                    print(f"No match for query: {query}")
             
         # SEARCH CONCEPTS BY ID
         for concept in concepts:
