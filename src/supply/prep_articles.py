@@ -178,9 +178,11 @@ def filter_keywords(articles):
                 
                 # Search for the pattern in the abstract
                 if re.search(pattern, abstract_full_text, re.IGNORECASE):  # Case-insensitive search
-                    print(f"Matched query: {query}")
-                else:
-                    print(f"No match for query: {query}")
+                    keep.append(article)
+                    cont = True
+                    break
+            if cont:
+                continue # move on to next article
             
         # SEARCH CONCEPTS BY ID
         for concept in concepts:
