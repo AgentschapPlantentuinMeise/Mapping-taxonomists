@@ -45,10 +45,16 @@ email = input("Enter e-mail address for OpenAlex API: ")
 articles = []
 n = 0; m = 0
 
+#subfield = "https://api.openalex.org/subfields/1105"
+    #"Ecology, Evolution, Behavior and Systematics"
+
 # deal with PLOS ONE now
 plosone_articles = download.request_works("primary_location.source.id:S202381698", email, to_date="2023-12-31")
 
 filtered_articles = prep_articles.filter_keywords(plosone_articles)
+
+filtered_articles = prep_articles.filter_by_domain(filtered_articles, domain_id="https://openalex.org/domains/1")
+
 filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/articles"+str(m)+".pkl")
 #eu_articles = prep_articles.filter_eu_articles(filtered_articles)
 #eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
@@ -77,8 +83,8 @@ for oaid in oaids:
         
         # save (European) keyword-filtered articles
         filtered_articles = prep_articles.filter_keywords(articles_df)
-        #eu_articles = prep_articles.filter_eu_articles(filtered_articles)
-        
+        filtered_articles = prep_articles.filter_by_domain(filtered_articles, domain_id="https://openalex.org/domains/1")
+                
         filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/eu_articles"+str(m)+".pkl")
         #filtered_articles.to_csv("../../data/interim/keyword-filtered_articles/eu_articles"+str(m)+".tsv", sep="\t")
         #eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")
@@ -91,6 +97,8 @@ articles_df = pd.concat(articles, ignore_index=True)
 #articles_df.to_csv("../../data/raw/articles/articles"+str(m)+".tsv", sep="\t")
 
 filtered_articles = prep_articles.filter_keywords(articles_df)
+filtered_articles = prep_articles.filter_by_domain(filtered_articles, domain_id="https://openalex.org/domains/1")
+
 filtered_articles.to_pickle("../../data/interim/keyword-filtered_articles/articles"+str(m)+".pkl")
 #eu_articles = prep_articles.filter_eu_articles(filtered_articles)
 #eu_articles.to_pickle("../../data/interim/eu_keyword-filtered_articles/eu_articles"+str(m)+".pkl")

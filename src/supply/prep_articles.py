@@ -109,9 +109,10 @@ def flatten_works(df_input): # input: articles straight from openalex
 def filter_keywords(articles):
     queries1 = ["taxonomic", "taxon", "lectotype", "paratype", "neotype"] # one-word queries, checklist was removed as it led to too many errors
     queries2 = ["new species", "novel species", "new genus", "new genera",
-                "Holotype Specimen","Taxonomic Revision","Species Delimitation",
-                "Taxonomic Key","Phylogenetic Tree","Type Locality",
-                "Type Specimen","Taxonomic Rank","Species Epithet",
+                "holotype specimen","taxonomic revision","species delimitation",
+                "taxonomic key","phylogenetic tree","type locality",
+                "Type Specimen","Taxonomic Rank","species epithet",
+                "formally name","formally describe", 
                 "Type Designation"] # two-word queries
     concepts = ["https://openalex.org/C58642233", "https://openalex.org/C71640776"] # OpenAlex IDs of concepts
                                                          # taxonomy, taxon
@@ -174,7 +175,7 @@ def filter_keywords(articles):
             for query in queries2:
                 # Create a regex pattern for the exact two-word phrase with whole-word matching
                 words = query.split()
-                pattern = rf"\b{re.escape(words[0])}\b\s+\b{re.escape(words[1])}\b"
+                pattern = rf"\b{re.escape(words[0])}\b(?:\s+\S+)?\s+\b{re.escape(words[1])}\b"
                 
                 # Search for the pattern in the abstract
                 if re.search(pattern, abstract_full_text, re.IGNORECASE):  # Case-insensitive search
@@ -196,6 +197,37 @@ def filter_keywords(articles):
                 break
     
     return pd.DataFrame(keep).drop_duplicates(subset="id", ignore_index=True).iloc[:,1:]
+
+def filter_by_domain(articles_df, domain_id = "https://openalex.org/domains/1"):
+    """
+    Given a DataFrame of article records (after your main filter),
+    return only those with the specified domain (e.g., https://openalex.org/domains/1).
+    
+    The function looks for the domain ID in both 'primary_topic' and 'topics'.
+    """
+    keep = []
+    
+    for article in articles_df.itertuples():
+        # Convert namedtuple to dict for easier key-based access
+        article_dict = article._asdict()
+        
+        # 1. Check 'primary_topic'
+        primary_topic = article_dict.get("primary_topic")
+        if primary_topic and "domain" in primary_topic:
+            if primary_topic["domain"].get("id") == domain_id:
+                keep.append(article)
+                continue  # proceed to next article
+
+        # 2. Check each topic in the 'topics' array
+        topics = article_dict.get("topics", [])
+        for t in topics:
+            domain_info = t.get("domain")
+            if domain_info and domain_info.get("id") == domain_id:
+                keep.append(article)
+                break  # no need to look at more topics for this article
+
+    # Return a DataFrame of unique articles
+    return pd.DataFrame(keep).drop_duplicates(subset="id", ignore_index=True)
 
 
 # put together separate files with articles
