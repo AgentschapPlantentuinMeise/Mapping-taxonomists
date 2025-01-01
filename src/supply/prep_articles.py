@@ -3,6 +3,66 @@ import pandas as pd
 import glob
 import prep_taxonomy
 import re
+import unicodedata
+import json
+
+def load_config(config_path="../../config.json"):
+    """
+    Load the JSON configuration file.
+
+    Parameters:
+        config_path (str): Path to the JSON config file.
+
+    Returns:
+        dict: Parsed configuration.
+    """
+    try:
+        with open(config_path, 'r', encoding='utf-8') as file:
+            config = json.load(file)
+        print(f"Configuration loaded from '{config_path}'.")
+        return config
+    except FileNotFoundError:
+        print(f"ERROR: Configuration file '{config_path}' not found.")
+        raise
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Error parsing JSON configuration: {e}")
+        raise
+
+def validate_config(config):
+    """
+    Validate the presence and structure of required sections in the config.
+
+    Parameters:
+        config (dict): Configuration dictionary.
+
+    Raises:
+        ValueError: If required sections or keys are missing.
+    """
+    required_sections = ['from_date', 'to_date', 'keywords', 'concepts']
+    for section in required_sections:
+        if section not in config:
+            raise ValueError(f"Missing '{section}' section in configuration.")
+
+    if 'single_word' not in config['keywords'] or 'two_word' not in config['keywords']:
+        raise ValueError("Configuration must include 'single_word' and 'two_word' under 'keywords'.")
+
+    if not isinstance(config['keywords']['single_word'], list) or not isinstance(config['keywords']['two_word'], list):
+        raise ValueError("'single_word' and 'two_word' under 'keywords' must be lists.")
+
+    if not isinstance(config['concepts'], list):
+        raise ValueError("'concepts' should be a list.")
+
+    print("Configuration validation passed.")
+
+def normalize_text(s):
+    """
+    Normalize the string to NFC (Canonical Composition) and lowercase it.
+    This helps ensure that accented or Cyrillic characters are consistently
+    represented for matching.
+    """
+    if not s:
+        return ""
+    return unicodedata.normalize("NFC", s).lower()
 
 # release information locked in dictionaries inside the dataframe: open access, host (journal)
 def flatten_works(df_input): # input: articles straight from openalex
@@ -35,7 +95,7 @@ def flatten_works(df_input): # input: articles straight from openalex
         if article.primary_location["source"] != None:
             if article.primary_location["source"]["issn"] != None and len(article.primary_location["source"]["issn"]) != 1:
                 # get everything about source
-                article.primary_location["source"]["issn"] = '\n'.join(article.primary_location["source"]["issn"])
+                article.primary_location["source"]["issn"] = ','.join(article.primary_location["source"]["issn"])
             l_source = list(article.primary_location["source"].values())
             
             # not all sources have "is_oa" and "is_in_doaj" provided
@@ -104,99 +164,108 @@ def flatten_works(df_input): # input: articles straight from openalex
     
 #     return eu_articles
 
-
-# query list of articles for specific words and concepts to filter out irrelevant articles
 def filter_keywords(articles):
-    queries1 = ["taxonomic", "taxon", "lectotype", "paratype", "neotype"] # one-word queries, checklist was removed as it led to too many errors
-    queries2 = ["new species", "novel species", "new genus", "new genera",
-                "holotype specimen","taxonomic revision","species delimitation",
-                "taxonomic key","phylogenetic tree","type locality",
-                "Type Specimen","Taxonomic Rank","species epithet",
-                "formally name","formally describe", 
-                "Type Designation"] # two-word queries
-    concepts = ["https://openalex.org/C58642233", "https://openalex.org/C71640776"] # OpenAlex IDs of concepts
-                                                         # taxonomy, taxon
+    # Load and validate configuration
+    try:
+        config = load_config("../../config.json")  # Ensure the path is correct
+        validate_config(config)
+    except Exception as e:
+        print(f"CRITICAL: Configuration loading/validation failed: {e}")
+        return
     
+    queries1 = config['keywords']['single_word']
+    queries2 = config['keywords']['two_word']
+    concepts = config['concepts']
+
     keep = []
-    
+
     for article in articles.itertuples():
         cont = False
-        # SEARCH TITLE
-        if article.display_name != None:
-            # single-word queries
-            for query in queries1 + queries2 + ["nov.",]:
-                if query in article.display_name.lower():
+
+        #--------------------
+        # 1) SEARCH TITLE
+        #--------------------
+        if article.display_name is not None:
+            # Normalize the display name
+            display_name_norm = normalize_text(article.display_name)
+
+            # single-word queries + "nov."
+            for query in queries1 + queries2 + ["nov."]:
+                query_norm = normalize_text(query)
+                if query_norm in display_name_norm:
                     keep.append(article)
                     cont = True
-                    break # stop querying
+                    break  # Found match in title -> keep article, stop searching
             if cont:
-                continue # move on to next article
+                continue  # move on to next article
 
-        # SEARCH ABSTRACT
-        # get list of words from the abstract without distracting characters or uppercase
-        if article.abstract_inverted_index != None:
-            abstract_words = article.abstract_inverted_index.keys()
-            abstract_words = [x.lower().strip(",;.?!\'()-]") for x in abstract_words]
-        
-            # search "nov." without stripping abstract of period
-            if "nov." in article.abstract_inverted_index.keys():
+        #-----------------------
+        # 2) SEARCH ABSTRACT
+        #-----------------------
+        # If there's an abstract, we want to check the inverted index
+        if article.abstract_inverted_index is not None:
+            # Normalize each token in the abstract keys
+            abstract_words_norm = [
+                normalize_text(x).strip(",;.?!'()-]")  # strip punctuation on top of normalization
+                for x in article.abstract_inverted_index.keys()
+            ]
+
+            # (a) Check if "nov." is directly in the abstract tokens
+            if "nov." in article.abstract_inverted_index:
+                # If the original key "nov." is present
                 keep.append(article)
                 continue
-            if cont:
-                continue # move on to next article
-            
-            # one-word queries
+
+            # single-word queries in the abstract tokens
             for query in queries1:
-                if query in abstract_words:
+                query_norm = normalize_text(query)
+                if query_norm in abstract_words_norm:
                     keep.append(article)
                     cont = True
                     break
             if cont:
-                continue # move on to next article
-                    
-            # two-word queries
+                continue
+
+            # two-word queries in the full abstract text
+            # convert the entire abstract to a normalized string
+            # (assuming you have a utility like prep_taxonomy.inverted_index_to_text)
             abstract_full_text = prep_taxonomy.inverted_index_to_text(article.abstract_inverted_index)
-            # for query in queries2:
-            #     # match query to article abstract
-            #     if abstract_full_text.find(query) != -1:
-            #         keep.append(article)
-            #         cont = True
-            #         break
-            # if cont:
-            #     continue # move on to next article
-            # for query in queries2:
-            #     if re.search(rf"\b{re.escape(query)}\b", abstract_full_text):  # Match the exact phrase
-            #         keep.append(article)
-            #         cont = True
-            #         break
-            # if cont:
-            #      continue # move on to next article
+            abstract_full_text_norm = normalize_text(abstract_full_text)
 
             for query in queries2:
-                # Create a regex pattern for the exact two-word phrase with whole-word matching
-                words = query.split()
-                pattern = rf"\b{re.escape(words[0])}\b(?:\s+\S+)?\s+\b{re.escape(words[1])}\b"
-                
-                # Search for the pattern in the abstract
-                if re.search(pattern, abstract_full_text, re.IGNORECASE):  # Case-insensitive search
-                    keep.append(article)
-                    cont = True
-                    break
-            if cont:
-                continue # move on to next article
-            
-        # SEARCH CONCEPTS BY ID
-        for concept in concepts:
-            # make list of concepts (by OpenAlex ID) associated with the article
-            conc_ids = []
-            for art_conc in article.concepts:
-                conc_ids.append(art_conc["id"])
+                query_norm = normalize_text(query)
+                # split into two words
+                words = query_norm.split()
+                if len(words) == 2:
+                    # Build a pattern that matches these two words as separate tokens
+                    # \b ensures word boundaries, re.escape avoids regex special chars
+                    pattern = rf"\b{re.escape(words[0])}\b(?:\s+\S+)?\s+\b{re.escape(words[1])}\b"
+                    if re.search(pattern, abstract_full_text_norm, re.IGNORECASE):
+                        keep.append(article)
+                        cont = True
+                        break
+                else:
+                    # If query is more or fewer than 2 words, you can handle differently
+                    continue
 
-            if concept in conc_ids:
-                keep.append(article)
-                break
-    
-    return pd.DataFrame(keep).drop_duplicates(subset="id", ignore_index=True).iloc[:,1:]
+            if cont:
+                continue  # Move on to next article
+
+        #---------------------------------
+        # 3) SEARCH CONCEPTS BY ID
+        #---------------------------------
+        # Convert each concept ID in the article to a list, and if
+        # any match the "concepts" list, keep the article
+        if article.concepts:
+            conc_ids = [art_conc["id"] for art_conc in article.concepts]
+            for concept in concepts:
+                if concept in conc_ids:
+                    keep.append(article)
+                    break  # no need to check the other concepts
+
+    # Finally, return a new DataFrame of kept articles
+    return pd.DataFrame(keep).drop_duplicates(subset="id", ignore_index=True).iloc[:, 1:]
+
 
 def filter_by_domain(articles_df, domain_id = "https://openalex.org/domains/1"):
     """

@@ -21,6 +21,14 @@ for article in articles.itertuples():
 articles["abstract_full_text"] = pd.DataFrame(abstracts)
 print("Abstract inverted indices converted to texts")
 
+# >>> CLEAN UP CARRIAGE RETURNS AND NEWLINES HERE <<<
+articles["abstract_full_text"] = (
+    articles["abstract_full_text"]
+    .astype(str)                            # ensure string type
+    .str.replace(r"[\r\n]+", " ", regex=True)  # replace any \r or \n with a space
+    .str.strip()                                # remove leading/trailing spaces
+)
+
 # parse every article abstract and title for mentions of recorded species
 backbone = prep_taxonomy.preprocess_backbone() # GBIF taxonomic backbone
 articles = prep_taxonomy.parse_for_taxonomy(articles, backbone)
