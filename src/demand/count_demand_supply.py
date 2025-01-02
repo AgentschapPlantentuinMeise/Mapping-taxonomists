@@ -11,9 +11,18 @@ backbone = backbone.dropna(subset="canonicalName").set_index("canonicalName")
 # or no full taxonomic lineage to the family
 #backbone = backbone.dropna(subset=['kingdom', 'phylum', 'class', 'order', 'family'])
 
-backbone = backbone[['taxonomicStatus',
-                     'kingdom', 'phylum', 'class', 'order']]
+# Retain only necessary columns
+backbone = backbone[['taxonomicStatus', 'kingdom', 'phylum', 'class', 'order']]
 
+# Create the lineage column
+backbone['lineage'] = (
+    'r__' + backbone['kingdom'].fillna('') + ';' +
+    'p__' + backbone['phylum'].fillna('') + ';' +
+    'c__' + backbone['class'].fillna('') + ';' +
+    'o__' + backbone['order'].fillna('')
+)
+
+backbone = backbone.drop(columns=['kingdom', 'phylum', 'class', 'order'])
 
 ## AUTHOR COUNTS
 
