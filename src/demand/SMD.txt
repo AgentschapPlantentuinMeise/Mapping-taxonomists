@@ -1,0 +1,11 @@
+SampleID	name	type	b	c	d
+taxonomicResearchNeeded	taxonomicResearchNeeded	conservation	1.0	1.0	1.0
+cropWildRelatives	cropWildRelatives	breeding	1	0.0	1.0
+horizonInvasives	horizonInvasives	Invasive	1	1	1
+nr_authors	taxonomists	people	1	1	1
+habitatsDir	Habitats Directive	Habitats	1	1	1
+marineDir	Marine Directive	marine	1	1	1
+iasListConcern	IAS of Union Concern	IAS	1	1	1
+redlistFull	European Redlist	Redlist	1	1	1
+birdDir	Birds Directive	Birds	1	1	1
+pollinators	pollinators	pollinator	1	1	1

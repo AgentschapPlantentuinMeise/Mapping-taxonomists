@@ -1,0 +1,1643 @@
+OTU_ID	taxonomy	kingdom	phylum	class	order	Confidence
+1	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Diptera	Animalia	Arthropoda	Insecta	Diptera	1
+2	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Hemiptera	Animalia	Arthropoda	Insecta	Hemiptera	1
+3	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Sessilia	Animalia	Arthropoda	Maxillopoda	Sessilia	1
+4	Root;k__Animalia;p__Chordata;c__;o__Perciformes	Animalia	Chordata		Perciformes	1
+5	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Decapoda	Animalia	Arthropoda	Malacostraca	Decapoda	1
+6	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Hymenoptera	Animalia	Arthropoda	Insecta	Hymenoptera	1
+7	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Lepidoptera	Animalia	Arthropoda	Insecta	Lepidoptera	1
+8	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Neogastropoda	Animalia	Mollusca	Gastropoda	Neogastropoda	1
+9	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Coleoptera	Animalia	Arthropoda	Insecta	Coleoptera	1
+10	Root;k__Animalia;p__Chordata;c__Aves;o__Strigiformes	Animalia	Chordata	Aves	Strigiformes	1
+11	Root;k__Animalia;p__Chordata;c__Mammalia;o__Artiodactyla	Animalia	Chordata	Mammalia	Artiodactyla	1
+12	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Stylommatophora	Animalia	Mollusca	Gastropoda	Stylommatophora	1
+13	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Agelasida	Animalia	Porifera	Demospongiae	Agelasida	1
+14	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Orthoptera	Animalia	Arthropoda	Insecta	Orthoptera	1
+15	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Trombidiformes	Animalia	Arthropoda	Arachnida	Trombidiformes	1
+16	Root;k__Animalia;p__Chordata;c__;o__Cypriniformes	Animalia	Chordata		Cypriniformes	1
+17	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Dendroceratida	Animalia	Porifera	Demospongiae	Dendroceratida	1
+18	Root;k__Animalia;p__Brachiopoda;c__;o__	Animalia	Brachiopoda			1
+19	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Carditida	Animalia	Mollusca	Bivalvia	Carditida	1
+20	Root;k__Animalia;p__Nemertea;c__Hoplonemertea;o__Monostilifera	Animalia	Nemertea	Hoplonemertea	Monostilifera	1
+21	Root;k__Animalia;p__Porifera;c__Calcarea;o__Clathrinida	Animalia	Porifera	Calcarea	Clathrinida	1
+22	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Phasmida	Animalia	Arthropoda	Insecta	Phasmida	1
+23	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Littorinimorpha	Animalia	Mollusca	Gastropoda	Littorinimorpha	1
+24	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Trochida	Animalia	Mollusca	Gastropoda	Trochida	1
+25	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__	Animalia	Mollusca	Gastropoda		1
+26	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__	Animalia	Mollusca	Cephalopoda		1
+27	Root;k__Animalia;p__Chordata;c__Mammalia;o__Soricomorpha	Animalia	Chordata	Mammalia	Soricomorpha	1
+28	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Cardiida	Animalia	Mollusca	Bivalvia	Cardiida	1
+29	Root;k__Animalia;p__Platyhelminthes;c__Trematoda;o__Plagiorchiida	Animalia	Platyhelminthes	Trematoda	Plagiorchiida	1
+30	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Harpacticoida	Animalia	Arthropoda	Copepoda	Harpacticoida	1
+31	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Pleurotomariida	Animalia	Mollusca	Gastropoda	Pleurotomariida	1
+32	Root;k__Animalia;p__Chordata;c__;o__Siluriformes	Animalia	Chordata		Siluriformes	1
+33	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Opilioacarida	Animalia	Arthropoda	Arachnida	Opilioacarida	1
+34	Root;k__Animalia;p__Porifera;c__Hexactinellida;o__Lychniscosida	Animalia	Porifera	Hexactinellida	Lychniscosida	1
+35	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Grylloblattodea	Animalia	Arthropoda	Insecta	Grylloblattodea	1
+36	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Amphipoda	Animalia	Arthropoda	Malacostraca	Amphipoda	1
+37	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Trigoniida	Animalia	Mollusca	Bivalvia	Trigoniida	1
+38	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Psocodea	Animalia	Arthropoda	Insecta	Psocodea	1
+39	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Pectinida	Animalia	Mollusca	Bivalvia	Pectinida	1
+40	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__Anthoathecata	Animalia	Cnidaria	Hydrozoa	Anthoathecata	1
+41	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__Leptothecata	Animalia	Cnidaria	Hydrozoa	Leptothecata	1
+42	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Dactylogyridea	Animalia	Platyhelminthes	Monogenea	Dactylogyridea	1
+43	Root;k__Animalia;p__Chordata;c__Mammalia;o__Rodentia	Animalia	Chordata	Mammalia	Rodentia	1
+44	Root;k__Animalia;p__Chordata;c__Squamata;o__	Animalia	Chordata	Squamata		1
+45	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Araneae	Animalia	Arthropoda	Arachnida	Araneae	1
+46	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Goniatitida	Animalia	Mollusca	Cephalopoda	Goniatitida	1
+47	Root;k__Animalia;p__Nematoda;c__;o__Enoplida	Animalia	Nematoda		Enoplida	1
+48	Root;k__Animalia;p__Arthropoda;c__Ostracoda;o__Podocopida	Animalia	Arthropoda	Ostracoda	Podocopida	1
+49	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Dendrochirotida	Animalia	Echinodermata	Holothuroidea	Dendrochirotida	1
+50	Root;k__Animalia;p__Annelida;c__Polychaeta;o__	Animalia	Annelida	Polychaeta		1
+51	Root;k__Animalia;p__Chordata;c__Aves;o__Passeriformes	Animalia	Chordata	Aves	Passeriformes	1
+52	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Venerida	Animalia	Mollusca	Bivalvia	Venerida	1
+53	Root;k__Animalia;p__Mollusca;c__Monoplacophora;o__Kirengellida	Animalia	Mollusca	Monoplacophora	Kirengellida	1
+54	Root;k__Animalia;p__Chordata;c__Aves;o__Apodiformes	Animalia	Chordata	Aves	Apodiformes	1
+55	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__Araeolaimida	Animalia	Nematoda	Chromadorea	Araeolaimida	1
+56	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Ceratitida	Animalia	Mollusca	Cephalopoda	Ceratitida	1
+57	Root;k__Animalia;p__Chordata;c__Mammalia;o__Diprotodontia	Animalia	Chordata	Mammalia	Diprotodontia	1
+58	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Architaenioglossa	Animalia	Mollusca	Gastropoda	Architaenioglossa	1
+59	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Cydippida	Animalia	Ctenophora	Tentaculata	Cydippida	1
+60	Root;k__Animalia;p__Rotifera;c__Eurotatoria;o__Ploima	Animalia	Rotifera	Eurotatoria	Ploima	1
+61	Root;k__Animalia;p__Chordata;c__Mammalia;o__	Animalia	Chordata	Mammalia		1
+62	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Nautilida	Animalia	Mollusca	Cephalopoda	Nautilida	1
+63	Root;k__Animalia;p__Annelida;c__Polychaeta;o__Phyllodocida	Animalia	Annelida	Polychaeta	Phyllodocida	1
+64	Root;k__Animalia;p__Echinodermata;c__Ophiuroidea;o__Ophiacanthida	Animalia	Echinodermata	Ophiuroidea	Ophiacanthida	1
+65	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__Rhabditida	Animalia	Nematoda	Chromadorea	Rhabditida	1
+66	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Axinellida	Animalia	Porifera	Demospongiae	Axinellida	1
+67	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Seguenziida	Animalia	Mollusca	Gastropoda	Seguenziida	1
+68	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__	Animalia	Cnidaria	Anthozoa		1
+69	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Galeommatida	Animalia	Mollusca	Bivalvia	Galeommatida	1
+70	Root;k__Animalia;p__Chordata;c__Mammalia;o__Perissodactyla	Animalia	Chordata	Mammalia	Perissodactyla	1
+71	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Hexanchiformes	Animalia	Chordata	Elasmobranchii	Hexanchiformes	1
+72	Root;k__Animalia;p__;c__;o__	Animalia				1
+73	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Phacopida	Animalia	Arthropoda	Trilobita	Phacopida	1
+74	Root;k__Animalia;p__Chordata;c__;o__Cyprinodontiformes	Animalia	Chordata		Cyprinodontiformes	1
+75	Root;k__Animalia;p__Echinodermata;c__Ophiuroidea;o__Euryalida	Animalia	Echinodermata	Ophiuroidea	Euryalida	1
+76	Root;k__Animalia;p__Acanthocephala;c__Palaeacanthocephala;o__Echinorhynchida	Animalia	Acanthocephala	Palaeacanthocephala	Echinorhynchida	1
+77	Root;k__Animalia;p__Chordata;c__Amphibia;o__Anura	Animalia	Chordata	Amphibia	Anura	1
+78	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Aulacopleurida	Animalia	Arthropoda	Trilobita	Aulacopleurida	1
+79	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Cyclopoida	Animalia	Arthropoda	Copepoda	Cyclopoida	1
+80	Root;k__Animalia;p__Chordata;c__;o__Beloniformes	Animalia	Chordata		Beloniformes	1
+81	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Odonata	Animalia	Arthropoda	Insecta	Odonata	1
+82	Root;k__Animalia;p__Brachiopoda;c__Rhynchonellata;o__	Animalia	Brachiopoda	Rhynchonellata		1
+83	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Protorthoptera	Animalia	Arthropoda	Insecta	Protorthoptera	1
+84	Root;k__Animalia;p__Echinodermata;c__Crinoidea;o__	Animalia	Echinodermata	Crinoidea		1
+85	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Zoantharia	Animalia	Cnidaria	Anthozoa	Zoantharia	1
+86	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Opiliones	Animalia	Arthropoda	Arachnida	Opiliones	1
+87	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Chordeumatida	Animalia	Arthropoda	Diplopoda	Chordeumatida	1
+88	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Dermaptera	Animalia	Arthropoda	Insecta	Dermaptera	1
+89	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Cycloneritida	Animalia	Mollusca	Gastropoda	Cycloneritida	1
+90	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Siphonostomatoida	Animalia	Arthropoda	Copepoda	Siphonostomatoida	1
+91	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Polydesmida	Animalia	Arthropoda	Diplopoda	Polydesmida	1
+92	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Lepetellida	Animalia	Mollusca	Gastropoda	Lepetellida	1
+93	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__	Animalia	Chordata	Elasmobranchii		1
+94	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Neuroptera	Animalia	Arthropoda	Insecta	Neuroptera	1
+95	Root;k__Animalia;p__Chordata;c__Aves;o__Coraciiformes	Animalia	Chordata	Aves	Coraciiformes	1
+96	Root;k__Animalia;p__Chordata;c__;o__Percopsiformes	Animalia	Chordata		Percopsiformes	1
+97	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Mesostigmata	Animalia	Arthropoda	Arachnida	Mesostigmata	1
+98	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Pseudoscorpiones	Animalia	Arthropoda	Arachnida	Pseudoscorpiones	1
+99	Root;k__Animalia;p__Chordata;c__Aves;o__Columbiformes	Animalia	Chordata	Aves	Columbiformes	1
+100	Root;k__Animalia;p__Annelida;c__Polychaeta;o__Echiuroidea	Animalia	Annelida	Polychaeta	Echiuroidea	1
+101	Root;k__Animalia;p__Brachiopoda;c__Rhynchonellata;o__Rhynchonellida	Animalia	Brachiopoda	Rhynchonellata	Rhynchonellida	1
+102	Root;k__Animalia;p__Chordata;c__;o__	Animalia	Chordata			1
+103	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Blattodea	Animalia	Arthropoda	Insecta	Blattodea	1
+104	Root;k__Animalia;p__Arthropoda;c__Insecta;o__	Animalia	Arthropoda	Insecta		1
+105	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Sarcoptiformes	Animalia	Arthropoda	Arachnida	Sarcoptiformes	1
+106	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Pedunculata	Animalia	Arthropoda	Maxillopoda	Pedunculata	1
+107	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Myida	Animalia	Mollusca	Bivalvia	Myida	1
+108	Root;k__Animalia;p__Chordata;c__;o__Clupeiformes	Animalia	Chordata		Clupeiformes	1
+109	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Lucinida	Animalia	Mollusca	Bivalvia	Lucinida	1
+110	Root;k__Animalia;p__Arthropoda;c__Collembola;o__Entomobryomorpha	Animalia	Arthropoda	Collembola	Entomobryomorpha	1
+111	Root;k__Animalia;p__Platyhelminthes;c__;o__Rhabdocoela	Animalia	Platyhelminthes		Rhabdocoela	1
+112	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Holasteroida	Animalia	Echinodermata	Echinoidea	Holasteroida	1
+113	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Agoniatitida	Animalia	Mollusca	Cephalopoda	Agoniatitida	1
+114	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Stomatopoda	Animalia	Arthropoda	Malacostraca	Stomatopoda	1
+115	Root;k__Animalia;p__Chordata;c__Aves;o__Cuculiformes	Animalia	Chordata	Aves	Cuculiformes	1
+116	Root;k__Animalia;p__Chordata;c__Aves;o__Anseriformes	Animalia	Chordata	Aves	Anseriformes	1
+117	Root;k__Animalia;p__Chordata;c__Mammalia;o__Chiroptera	Animalia	Chordata	Mammalia	Chiroptera	1
+118	Root;k__Animalia;p__Bryozoa;c__Gymnolaemata;o__Cheilostomatida	Animalia	Bryozoa	Gymnolaemata	Cheilostomatida	1
+119	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Siphonaptera	Animalia	Arthropoda	Insecta	Siphonaptera	1
+120	Root;k__Animalia;p__Chordata;c__Aves;o__	Animalia	Chordata	Aves		1
+121	Root;k__Animalia;p__Chordata;c__Testudines;o__	Animalia	Chordata	Testudines		1
+122	Root;k__Animalia;p__Nemertea;c__Palaeonemertea;o__Archinemertea	Animalia	Nemertea	Palaeonemertea	Archinemertea	1
+123	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Asaphida	Animalia	Arthropoda	Trilobita	Asaphida	1
+124	Root;k__Animalia;p__Chordata;c__Aves;o__Gruiformes	Animalia	Chordata	Aves	Gruiformes	1
+125	Root;k__Animalia;p__Chordata;c__;o__Characiformes	Animalia	Chordata		Characiformes	1
+126	Root;k__Animalia;p__Chordata;c__Aves;o__Charadriiformes	Animalia	Chordata	Aves	Charadriiformes	1
+127	Root;k__Animalia;p__Chordata;c__Mammalia;o__Carnivora	Animalia	Chordata	Mammalia	Carnivora	1
+128	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Mantodea	Animalia	Arthropoda	Insecta	Mantodea	1
+129	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Verongiida	Animalia	Porifera	Demospongiae	Verongiida	1
+130	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Orectolobiformes	Animalia	Chordata	Elasmobranchii	Orectolobiformes	1
+131	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__	Animalia	Mollusca	Bivalvia		1
+132	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Isopoda	Animalia	Arthropoda	Malacostraca	Isopoda	1
+133	Root;k__Animalia;p__Platyhelminthes;c__Turbellaria;o__	Animalia	Platyhelminthes	Turbellaria		1
+134	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Julida	Animalia	Arthropoda	Diplopoda	Julida	1
+135	Root;k__Animalia;p__Arthropoda;c__Collembola;o__Poduromorpha	Animalia	Arthropoda	Collembola	Poduromorpha	1
+136	Root;k__Animalia;p__Chordata;c__;o__Gadiformes	Animalia	Chordata		Gadiformes	1
+137	Root;k__Animalia;p__Echinodermata;c__Crinoidea;o__Comatulida	Animalia	Echinodermata	Crinoidea	Comatulida	1
+138	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Ostreida	Animalia	Mollusca	Bivalvia	Ostreida	1
+139	Root;k__Animalia;p__Annelida;c__Clitellata;o__Tubificida	Animalia	Annelida	Clitellata	Tubificida	1
+140	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Calanoida	Animalia	Arthropoda	Copepoda	Calanoida	1
+141	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Scorpiones	Animalia	Arthropoda	Arachnida	Scorpiones	1
+142	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Nudibranchia	Animalia	Mollusca	Gastropoda	Nudibranchia	1
+143	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Carcharhiniformes	Animalia	Chordata	Elasmobranchii	Carcharhiniformes	1
+144	Root;k__Animalia;p__Arthropoda;c__Pycnogonida;o__Pantopoda	Animalia	Arthropoda	Pycnogonida	Pantopoda	1
+145	Root;k__Animalia;p__Chordata;c__Aves;o__Caprimulgiformes	Animalia	Chordata	Aves	Caprimulgiformes	1
+146	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__	Animalia	Arthropoda	Arachnida		1
+147	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Camarodonta	Animalia	Echinodermata	Echinoidea	Camarodonta	1
+148	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Thysanoptera	Animalia	Arthropoda	Insecta	Thysanoptera	1
+149	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Lecanicephalidea	Animalia	Platyhelminthes	Cestoda	Lecanicephalidea	1
+150	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Malacalcyonacea	Animalia	Cnidaria	Anthozoa	Malacalcyonacea	1
+151	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Trichoptera	Animalia	Arthropoda	Insecta	Trichoptera	1
+152	Root;k__Animalia;p__Brachiopoda;c__Rhynchonellata;o__Terebratulida	Animalia	Brachiopoda	Rhynchonellata	Terebratulida	1
+153	Root;k__Animalia;p__Chordata;c__;o__Ophidiiformes	Animalia	Chordata		Ophidiiformes	1
+154	Root;k__Animalia;p__Echinodermata;c__Ophiuroidea;o__Amphilepidida	Animalia	Echinodermata	Ophiuroidea	Amphilepidida	1
+155	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Megaloptera	Animalia	Arthropoda	Insecta	Megaloptera	1
+156	Root;k__Animalia;p__Annelida;c__Clitellata;o__Crassiclitellata	Animalia	Annelida	Clitellata	Crassiclitellata	1
+157	Root;k__Animalia;p__Chordata;c__Aves;o__Phoenicopteriformes	Animalia	Chordata	Aves	Phoenicopteriformes	1
+158	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Cyclophyllidea	Animalia	Platyhelminthes	Cestoda	Cyclophyllidea	1
+159	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Scleractinia	Animalia	Cnidaria	Anthozoa	Scleractinia	1
+160	Root;k__Animalia;p__Arthropoda;c__Chilopoda;o__Scolopendromorpha	Animalia	Arthropoda	Chilopoda	Scolopendromorpha	1
+161	Root;k__Animalia;p__Cnidaria;c__Myxozoa;o__	Animalia	Cnidaria	Myxozoa		1
+162	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__	Animalia	Echinodermata	Echinoidea		1
+163	Root;k__Animalia;p__Arthropoda;c__Collembola;o__Symphypleona	Animalia	Arthropoda	Collembola	Symphypleona	1
+164	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Tetractinellida	Animalia	Porifera	Demospongiae	Tetractinellida	1
+165	Root;k__Animalia;p__Arthropoda;c__Ostracoda;o__Palaeocopida	Animalia	Arthropoda	Ostracoda	Palaeocopida	1
+166	Root;k__Animalia;p__Chordata;c__Mammalia;o__Cetacea	Animalia	Chordata	Mammalia	Cetacea	1
+167	Root;k__Animalia;p__Chordata;c__Aves;o__Bucerotiformes	Animalia	Chordata	Aves	Bucerotiformes	1
+168	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__Desmodorida	Animalia	Nematoda	Chromadorea	Desmodorida	1
+169	Root;k__Animalia;p__Platyhelminthes;c__;o__Proseriata	Animalia	Platyhelminthes		Proseriata	1
+170	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Tanaidacea	Animalia	Arthropoda	Malacostraca	Tanaidacea	1
+171	Root;k__Animalia;p__Chordata;c__Amphibia;o__Caudata	Animalia	Chordata	Amphibia	Caudata	1
+172	Root;k__Animalia;p__Cnidaria;c__Scyphozoa;o__	Animalia	Cnidaria	Scyphozoa		1
+173	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Sepiida	Animalia	Mollusca	Cephalopoda	Sepiida	1
+174	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Cnemidolestodea	Animalia	Arthropoda	Insecta	Cnemidolestodea	1
+175	Root;k__Animalia;p__Chordata;c__Aves;o__Sphenisciformes	Animalia	Chordata	Aves	Sphenisciformes	1
+176	Root;k__Animalia;p__Chordata;c__Mammalia;o__Dasyuromorphia	Animalia	Chordata	Mammalia	Dasyuromorphia	1
+177	Root;k__Animalia;p__Xenacoelomorpha;c__;o__Acoela	Animalia	Xenacoelomorpha		Acoela	1
+178	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Paxillosida	Animalia	Echinodermata	Asteroidea	Paxillosida	1
+179	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Synallactida	Animalia	Echinodermata	Holothuroidea	Synallactida	1
+180	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Protocoleoptera	Animalia	Arthropoda	Insecta	Protocoleoptera	1
+181	Root;k__Animalia;p__Cnidaria;c__Myxozoa;o__Multivalvulida	Animalia	Cnidaria	Myxozoa	Multivalvulida	1
+182	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Squaliformes	Animalia	Chordata	Elasmobranchii	Squaliformes	1
+183	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Oegopsida	Animalia	Mollusca	Cephalopoda	Oegopsida	1
+184	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Octopoda	Animalia	Mollusca	Cephalopoda	Octopoda	1
+185	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Myalinida	Animalia	Mollusca	Bivalvia	Myalinida	1
+186	Root;k__Animalia;p__Arthropoda;c__Ostracoda;o__Platycopida	Animalia	Arthropoda	Ostracoda	Platycopida	1
+187	Root;k__Animalia;p__Chordata;c__;o__Zeiformes	Animalia	Chordata		Zeiformes	1
+188	Root;k__Animalia;p__Mollusca;c__Solenogastres;o__	Animalia	Mollusca	Solenogastres		1
+189	Root;k__Animalia;p__Gastrotricha;c__;o__	Animalia	Gastrotricha			1
+190	Root;k__Animalia;p__Chordata;c__Aves;o__Psittaciformes	Animalia	Chordata	Aves	Psittaciformes	1
+191	Root;k__Animalia;p__Annelida;c__Clitellata;o__Rhynchobdellida	Animalia	Annelida	Clitellata	Rhynchobdellida	1
+192	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Mytilida	Animalia	Mollusca	Bivalvia	Mytilida	1
+193	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Polyarthra	Animalia	Arthropoda	Copepoda	Polyarthra	1
+194	Root;k__Animalia;p__Mollusca;c__Monoplacophora;o__	Animalia	Mollusca	Monoplacophora		1
+195	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__Fenestrida	Animalia	Bryozoa	Stenolaemata	Fenestrida	1
+196	Root;k__Animalia;p__Nematoda;c__;o__Dorylaimida	Animalia	Nematoda		Dorylaimida	1
+197	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Hippuritida	Animalia	Mollusca	Bivalvia	Hippuritida	1
+198	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Arcida	Animalia	Mollusca	Bivalvia	Arcida	1
+199	Root;k__Animalia;p__Chordata;c__Mammalia;o__Primates	Animalia	Chordata	Mammalia	Primates	1
+200	Root;k__Animalia;p__Porifera;c__;o__	Animalia	Porifera			1
+201	Root;k__Animalia;p__Chordata;c__Amphibia;o__	Animalia	Chordata	Amphibia		1
+202	Root;k__Animalia;p__Echinodermata;c__;o__	Animalia	Echinodermata			1
+203	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Spatangoida	Animalia	Echinodermata	Echinoidea	Spatangoida	1
+204	Root;k__Animalia;p__Arthropoda;c__Branchiopoda;o__Diplostraca	Animalia	Arthropoda	Branchiopoda	Diplostraca	1
+205	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__	Animalia	Arthropoda	Malacostraca		1
+206	Root;k__Animalia;p__Chordata;c__Aves;o__Otidiformes	Animalia	Chordata	Aves	Otidiformes	1
+207	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Plecoptera	Animalia	Arthropoda	Insecta	Plecoptera	1
+208	Root;k__Animalia;p__Chordata;c__Mammalia;o__Sirenia	Animalia	Chordata	Mammalia	Sirenia	1
+209	Root;k__Animalia;p__Chordata;c__Mammalia;o__Pilosa	Animalia	Chordata	Mammalia	Pilosa	1
+210	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Cidaroida	Animalia	Echinodermata	Echinoidea	Cidaroida	1
+211	Root;k__Animalia;p__Hemichordata;c__Pterobranchia;o__	Animalia	Hemichordata	Pterobranchia		1
+212	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Ptychopariida	Animalia	Arthropoda	Trilobita	Ptychopariida	1
+213	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Scleralcyonacea	Animalia	Cnidaria	Anthozoa	Scleralcyonacea	1
+214	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Callipodida	Animalia	Arthropoda	Diplopoda	Callipodida	1
+215	Root;k__Animalia;p__Chordata;c__;o__Tetraodontiformes	Animalia	Chordata		Tetraodontiformes	1
+216	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Trypanorhyncha	Animalia	Platyhelminthes	Cestoda	Trypanorhyncha	1
+217	Root;k__Animalia;p__Chordata;c__Aves;o__Procellariiformes	Animalia	Chordata	Aves	Procellariiformes	1
+218	Root;k__Animalia;p__Arthropoda;c__Chilopoda;o__Lithobiomorpha	Animalia	Arthropoda	Chilopoda	Lithobiomorpha	1
+219	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Kermasida	Animalia	Echinodermata	Asteroidea	Kermasida	1
+220	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Lamniformes	Animalia	Chordata	Elasmobranchii	Lamniformes	1
+221	Root;k__Animalia;p__Platyhelminthes;c__;o__Prolecithophora	Animalia	Platyhelminthes		Prolecithophora	1
+222	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__Cryptostomida	Animalia	Bryozoa	Stenolaemata	Cryptostomida	1
+223	Root;k__Animalia;p__Nemertea;c__Hoplonemertea;o__Polystilifera	Animalia	Nemertea	Hoplonemertea	Polystilifera	1
+224	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Ephemeroptera	Animalia	Arthropoda	Insecta	Ephemeroptera	1
+225	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Gastrochaenida	Animalia	Mollusca	Bivalvia	Gastrochaenida	1
+226	Root;k__Animalia;p__Tardigrada;c__Heterotardigrada;o__Echiniscoidea	Animalia	Tardigrada	Heterotardigrada	Echiniscoidea	1
+227	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Echinolampadacea	Animalia	Echinodermata	Echinoidea	Echinolampadacea	1
+228	Root;k__Animalia;p__Mollusca;c__;o__	Animalia	Mollusca			1
+229	Root;k__Animalia;p__Chordata;c__;o__Amiiformes	Animalia	Chordata		Amiiformes	1
+230	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Unionida	Animalia	Mollusca	Bivalvia	Unionida	1
+231	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Raphidioptera	Animalia	Arthropoda	Insecta	Raphidioptera	1
+232	Root;k__Animalia;p__Annelida;c__Polychaeta;o__Sabellida	Animalia	Annelida	Polychaeta	Sabellida	1
+233	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Mecoptera	Animalia	Arthropoda	Insecta	Mecoptera	1
+234	Root;k__Animalia;p__Chordata;c__;o__Scorpaeniformes	Animalia	Chordata		Scorpaeniformes	1
+235	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__Chromadorida	Animalia	Nematoda	Chromadorea	Chromadorida	1
+236	Root;k__Animalia;p__Mollusca;c__Monoplacophora;o__Tryblidiida	Animalia	Mollusca	Monoplacophora	Tryblidiida	1
+237	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Actiniaria	Animalia	Cnidaria	Anthozoa	Actiniaria	1
+238	Root;k__Animalia;p__Chordata;c__Aves;o__Piciformes	Animalia	Chordata	Aves	Piciformes	1
+239	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Apodida	Animalia	Echinodermata	Holothuroidea	Apodida	1
+240	Root;k__Animalia;p__Nemertea;c__;o__	Animalia	Nemertea			1
+241	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Mysida	Animalia	Arthropoda	Malacostraca	Mysida	1
+242	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Forcipulatida	Animalia	Echinodermata	Asteroidea	Forcipulatida	1
+243	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Dictyoceratida	Animalia	Porifera	Demospongiae	Dictyoceratida	1
+244	Root;k__Animalia;p__Chordata;c__;o__Aulopiformes	Animalia	Chordata		Aulopiformes	1
+245	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Rajiformes	Animalia	Chordata	Elasmobranchii	Rajiformes	1
+246	Root;k__Animalia;p__Arthropoda;c__Ostracoda;o__Myodocopida	Animalia	Arthropoda	Ostracoda	Myodocopida	1
+247	Root;k__Animalia;p__Chaetognatha;c__Sagittoidea;o__Aphragmophora	Animalia	Chaetognatha	Sagittoidea	Aphragmophora	1
+248	Root;k__Animalia;p__Nematoda;c__;o__Trichinellida	Animalia	Nematoda		Trichinellida	1
+249	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Megasecoptera	Animalia	Arthropoda	Insecta	Megasecoptera	1
+250	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Clypeasteroida	Animalia	Echinodermata	Echinoidea	Clypeasteroida	1
+251	Root;k__Animalia;p__Platyhelminthes;c__Trematoda;o__Aspidogastrida	Animalia	Platyhelminthes	Trematoda	Aspidogastrida	1
+252	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Valvatida	Animalia	Echinodermata	Asteroidea	Valvatida	1
+253	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Mazocraeidea	Animalia	Platyhelminthes	Monogenea	Mazocraeidea	1
+254	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Spirobolida	Animalia	Arthropoda	Diplopoda	Spirobolida	1
+255	Root;k__Animalia;p__Nematoda;c__;o__Mermithida	Animalia	Nematoda		Mermithida	1
+256	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__Trachymedusae	Animalia	Cnidaria	Hydrozoa	Trachymedusae	1
+257	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__	Animalia	Echinodermata	Asteroidea		1
+258	Root;k__Animalia;p__Chordata;c__;o__Lophiiformes	Animalia	Chordata		Lophiiformes	1
+259	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__Desmoscolecida	Animalia	Nematoda	Chromadorea	Desmoscolecida	1
+260	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Meganisoptera	Animalia	Arthropoda	Insecta	Meganisoptera	1
+261	Root;k__Animalia;p__Arthropoda;c__;o__	Animalia	Arthropoda			1
+262	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__Cyclostomatida	Animalia	Bryozoa	Stenolaemata	Cyclostomatida	1
+263	Root;k__Animalia;p__Chordata;c__;o__Stomiiformes	Animalia	Chordata		Stomiiformes	1
+264	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Biemnida	Animalia	Porifera	Demospongiae	Biemnida	1
+265	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Diadematoida	Animalia	Echinodermata	Echinoidea	Diadematoida	1
+266	Root;k__Animalia;p__Cnidaria;c__Scyphozoa;o__Rhizostomeae	Animalia	Cnidaria	Scyphozoa	Rhizostomeae	1
+267	Root;k__Animalia;p__Porifera;c__Hexactinellida;o__Sceptrulophora	Animalia	Porifera	Hexactinellida	Sceptrulophora	1
+268	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Pteropoda	Animalia	Mollusca	Gastropoda	Pteropoda	1
+269	Root;k__Animalia;p__Chordata;c__;o__Beryciformes	Animalia	Chordata		Beryciformes	1
+270	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Rhinopristiformes	Animalia	Chordata	Elasmobranchii	Rhinopristiformes	1
+271	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Trachycladida	Animalia	Porifera	Demospongiae	Trachycladida	1
+272	Root;k__Animalia;p__Arthropoda;c__Chilopoda;o__Geophilomorpha	Animalia	Arthropoda	Chilopoda	Geophilomorpha	1
+273	Root;k__Animalia;p__Chordata;c__Ascidiacea;o__Aplousobranchia	Animalia	Chordata	Ascidiacea	Aplousobranchia	1
+274	Root;k__Animalia;p__Chordata;c__Thaliacea;o__Salpida	Animalia	Chordata	Thaliacea	Salpida	1
+275	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Chondrillida	Animalia	Porifera	Demospongiae	Chondrillida	1
+276	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Holothuriida	Animalia	Echinodermata	Holothuroidea	Holothuriida	1
+277	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Palaeodictyoptera	Animalia	Arthropoda	Insecta	Palaeodictyoptera	1
+278	Root;k__Animalia;p__Porifera;c__Hexactinellida;o__	Animalia	Porifera	Hexactinellida		1
+279	Root;k__Animalia;p__Platyhelminthes;c__Trematoda;o__Diplostomida	Animalia	Platyhelminthes	Trematoda	Diplostomida	1
+280	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Arbacioida	Animalia	Echinodermata	Echinoidea	Arbacioida	1
+281	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Diaphanopterodea	Animalia	Arthropoda	Insecta	Diaphanopterodea	1
+282	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Adapedonta	Animalia	Mollusca	Bivalvia	Adapedonta	1
+283	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Elasipodida	Animalia	Echinodermata	Holothuroidea	Elasipodida	1
+284	Root;k__Animalia;p__Annelida;c__Polychaeta;o__Eunicida	Animalia	Annelida	Polychaeta	Eunicida	1
+285	Root;k__Animalia;p__Chordata;c__Aves;o__Galliformes	Animalia	Chordata	Aves	Galliformes	1
+286	Root;k__Animalia;p__Brachiopoda;c__Lingulata;o__	Animalia	Brachiopoda	Lingulata		1
+287	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Belemnitida	Animalia	Mollusca	Cephalopoda	Belemnitida	1
+288	Root;k__Animalia;p__Chordata;c__Ascidiacea;o__Phlebobranchia	Animalia	Chordata	Ascidiacea	Phlebobranchia	1
+289	Root;k__Animalia;p__Arthropoda;c__Diplura;o__Diplura	Animalia	Arthropoda	Diplura	Diplura	1
+290	Root;k__Animalia;p__Chordata;c__;o__Saccopharyngiformes	Animalia	Chordata		Saccopharyngiformes	1
+291	Root;k__Animalia;p__Annelida;c__Polychaeta;o__Amphinomida	Animalia	Annelida	Polychaeta	Amphinomida	1
+292	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Caloneurodea	Animalia	Arthropoda	Insecta	Caloneurodea	1
+293	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Corynexochida	Animalia	Arthropoda	Trilobita	Corynexochida	1
+294	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__Monhysterida	Animalia	Nematoda	Chromadorea	Monhysterida	1
+295	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Phyllobothriidea	Animalia	Platyhelminthes	Cestoda	Phyllobothriidea	1
+296	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Cephalaspidea	Animalia	Mollusca	Gastropoda	Cephalaspidea	1
+297	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Agnostida	Animalia	Arthropoda	Trilobita	Agnostida	1
+298	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Amblypygi	Animalia	Arthropoda	Arachnida	Amblypygi	1
+299	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Clionaida	Animalia	Porifera	Demospongiae	Clionaida	1
+300	Root;k__Animalia;p__Cnidaria;c__Myxozoa;o__Bivalvulida	Animalia	Cnidaria	Myxozoa	Bivalvulida	1
+301	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Proetida	Animalia	Arthropoda	Trilobita	Proetida	1
+302	Root;k__Animalia;p__Annelida;c__Clitellata;o__Arhynchobdellida	Animalia	Annelida	Clitellata	Arhynchobdellida	1
+303	Root;k__Animalia;p__Chordata;c__;o__Gobiesociformes	Animalia	Chordata		Gobiesociformes	1
+304	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Solifugae	Animalia	Arthropoda	Arachnida	Solifugae	1
+305	Root;k__Animalia;p__Mollusca;c__Polyplacophora;o__Chitonida	Animalia	Mollusca	Polyplacophora	Chitonida	1
+306	Root;k__Animalia;p__Chordata;c__Dipneusti;o__Ceratodontiformes	Animalia	Chordata	Dipneusti	Ceratodontiformes	1
+307	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Amphilinidea	Animalia	Platyhelminthes	Cestoda	Amphilinidea	1
+308	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Suberitida	Animalia	Porifera	Demospongiae	Suberitida	1
+309	Root;k__Animalia;p__Chordata;c__Mammalia;o__Proboscidea	Animalia	Chordata	Mammalia	Proboscidea	1
+310	Root;k__Animalia;p__Arthropoda;c__Chilopoda;o__Scutigeromorpha	Animalia	Arthropoda	Chilopoda	Scutigeromorpha	1
+311	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Phylloceratida	Animalia	Mollusca	Cephalopoda	Phylloceratida	1
+312	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Bothriocidaroida	Animalia	Echinodermata	Echinoidea	Bothriocidaroida	1
+313	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Bothriocephalidea	Animalia	Platyhelminthes	Cestoda	Bothriocephalidea	1
+314	Root;k__Animalia;p__Echinodermata;c__Crinoidea;o__Hyocrinida	Animalia	Echinodermata	Crinoidea	Hyocrinida	1
+315	Root;k__Animalia;p__Chordata;c__;o__Syngnathiformes	Animalia	Chordata		Syngnathiformes	1
+316	Root;k__Animalia;p__Annelida;c__Clitellata;o__Lumbriculida	Animalia	Annelida	Clitellata	Lumbriculida	1
+317	Root;k__Animalia;p__Platyhelminthes;c__;o__Tricladida	Animalia	Platyhelminthes		Tricladida	1
+318	Root;k__Animalia;p__Cnidaria;c__Scyphozoa;o__Coronatae	Animalia	Cnidaria	Scyphozoa	Coronatae	1
+319	Root;k__Animalia;p__Chordata;c__;o__Pleuronectiformes	Animalia	Chordata		Pleuronectiformes	1
+320	Root;k__Animalia;p__Chordata;c__;o__Atheriniformes	Animalia	Chordata		Atheriniformes	1
+321	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Strepsiptera	Animalia	Arthropoda	Insecta	Strepsiptera	1
+322	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Ellobiida	Animalia	Mollusca	Gastropoda	Ellobiida	1
+323	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Echinoneoida	Animalia	Echinodermata	Echinoidea	Echinoneoida	1
+324	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Platyctenida	Animalia	Ctenophora	Tentaculata	Platyctenida	1
+325	Root;k__Animalia;p__Arthropoda;c__Remipedia;o__Nectiopoda	Animalia	Arthropoda	Remipedia	Nectiopoda	1
+326	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Spirostreptida	Animalia	Arthropoda	Diplopoda	Spirostreptida	1
+327	Root;k__Animalia;p__Chordata;c__Mammalia;o__Lagomorpha	Animalia	Chordata	Mammalia	Lagomorpha	1
+328	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Kentrogonida	Animalia	Arthropoda	Maxillopoda	Kentrogonida	1
+329	Root;k__Animalia;p__Chordata;c__;o__Anguilliformes	Animalia	Chordata		Anguilliformes	1
+330	Root;k__Animalia;p__Onychophora;c__;o__	Animalia	Onychophora			1
+331	Root;k__Animalia;p__Nematoda;c__;o__Mononchida	Animalia	Nematoda		Mononchida	1
+332	Root;k__Animalia;p__Kinorhyncha;c__Cyclorhagida;o__Kentrorhagata	Animalia	Kinorhyncha	Cyclorhagida	Kentrorhagata	1
+333	Root;k__Animalia;p__Chordata;c__;o__Lampriformes	Animalia	Chordata		Lampriformes	1
+334	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Spinulosida	Animalia	Echinodermata	Asteroidea	Spinulosida	1
+335	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Cephalobaenida	Animalia	Arthropoda	Maxillopoda	Cephalobaenida	1
+336	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Orthocerida	Animalia	Mollusca	Cephalopoda	Orthocerida	1
+337	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Velatida	Animalia	Echinodermata	Asteroidea	Velatida	1
+338	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Redlichiida	Animalia	Arthropoda	Trilobita	Redlichiida	1
+339	Root;k__Animalia;p__Chordata;c__Holocephali;o__Chimaeriformes	Animalia	Chordata	Holocephali	Chimaeriformes	1
+340	Root;k__Animalia;p__Chordata;c__Crocodylia;o__	Animalia	Chordata	Crocodylia		1
+341	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Anaspidacea	Animalia	Arthropoda	Malacostraca	Anaspidacea	1
+342	Root;k__Animalia;p__Chordata;c__Mammalia;o__Didelphimorphia	Animalia	Chordata	Mammalia	Didelphimorphia	1
+343	Root;k__Animalia;p__Arthropoda;c__Merostomata;o__Xiphosurida	Animalia	Arthropoda	Merostomata	Xiphosurida	1
+344	Root;k__Animalia;p__Acanthocephala;c__Archiacanthocephala;o__Oligacanthorhynchida	Animalia	Acanthocephala	Archiacanthocephala	Oligacanthorhynchida	1
+345	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Capsalidea	Animalia	Platyhelminthes	Monogenea	Capsalidea	1
+346	Root;k__Animalia;p__Chordata;c__Aves;o__Accipitriformes	Animalia	Chordata	Aves	Accipitriformes	1
+347	Root;k__Animalia;p__Brachiopoda;c__Lingulata;o__Lingulida	Animalia	Brachiopoda	Lingulata	Lingulida	1
+348	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Spirulida	Animalia	Mollusca	Cephalopoda	Spirulida	1
+349	Root;k__Animalia;p__Arthropoda;c__Collembola;o__Neelipleona	Animalia	Arthropoda	Collembola	Neelipleona	1
+350	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Poecilosclerida	Animalia	Porifera	Demospongiae	Poecilosclerida	1
+351	Root;k__Animalia;p__Mollusca;c__Polyplacophora;o__Septemchitonida	Animalia	Mollusca	Polyplacophora	Septemchitonida	1
+352	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Antipatharia	Animalia	Cnidaria	Anthozoa	Antipatharia	1
+353	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Arguloida	Animalia	Arthropoda	Maxillopoda	Arguloida	1
+354	Root;k__Animalia;p__Cnidaria;c__Staurozoa;o__Stauromedusae	Animalia	Cnidaria	Staurozoa	Stauromedusae	1
+355	Root;k__Animalia;p__Chordata;c__Mammalia;o__Macroscelidea	Animalia	Chordata	Mammalia	Macroscelidea	1
+356	Root;k__Animalia;p__Arthropoda;c__Pauropoda;o__Tetramerocerata	Animalia	Arthropoda	Pauropoda	Tetramerocerata	1
+357	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Pristiophoriformes	Animalia	Chordata	Elasmobranchii	Pristiophoriformes	1
+358	Root;k__Animalia;p__Chordata;c__Mammalia;o__Paucituberculata	Animalia	Chordata	Mammalia	Paucituberculata	1
+359	Root;k__Animalia;p__Mollusca;c__Polyplacophora;o__Lepidopleurida	Animalia	Mollusca	Polyplacophora	Lepidopleurida	1
+360	Root;k__Animalia;p__Annelida;c__Clitellata;o__Enchytraeida	Animalia	Annelida	Clitellata	Enchytraeida	1
+361	Root;k__Animalia;p__Chordata;c__Mammalia;o__Dermoptera	Animalia	Chordata	Mammalia	Dermoptera	1
+362	Root;k__Animalia;p__Chordata;c__Amphibia;o__Gymnophiona	Animalia	Chordata	Amphibia	Gymnophiona	1
+363	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Diclybothriidea	Animalia	Platyhelminthes	Monogenea	Diclybothriidea	1
+364	Root;k__Animalia;p__Hemichordata;c__Enteropneusta;o__	Animalia	Hemichordata	Enteropneusta		1
+365	Root;k__Animalia;p__Chordata;c__Petromyzonti;o__Petromyzontiformes	Animalia	Chordata	Petromyzonti	Petromyzontiformes	1
+366	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Archaeognatha	Animalia	Arthropoda	Insecta	Archaeognatha	1
+367	Root;k__Animalia;p__Chordata;c__Aves;o__Nyctibiiformes	Animalia	Chordata	Aves	Nyctibiiformes	1
+368	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Lichida	Animalia	Arthropoda	Trilobita	Lichida	1
+369	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Porocephalida	Animalia	Arthropoda	Maxillopoda	Porocephalida	1
+370	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Tetrabothriidea	Animalia	Platyhelminthes	Cestoda	Tetrabothriidea	1
+371	Root;k__Animalia;p__Chordata;c__;o__Myctophiformes	Animalia	Chordata		Myctophiformes	1
+372	Root;k__Animalia;p__Chordata;c__Mammalia;o__Erinaceomorpha	Animalia	Chordata	Mammalia	Erinaceomorpha	1
+373	Root;k__Animalia;p__Chordata;c__Mammalia;o__Notoryctemorphia	Animalia	Chordata	Mammalia	Notoryctemorphia	1
+374	Root;k__Animalia;p__Chordata;c__Mammalia;o__Cingulata	Animalia	Chordata	Mammalia	Cingulata	1
+375	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Onchoproteocephalidea	Animalia	Platyhelminthes	Cestoda	Onchoproteocephalidea	1
+376	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Systellommatophora	Animalia	Mollusca	Gastropoda	Systellommatophora	1
+377	Root;k__Animalia;p__Chordata;c__;o__Cetomimiformes	Animalia	Chordata		Cetomimiformes	1
+378	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__Narcomedusae	Animalia	Cnidaria	Hydrozoa	Narcomedusae	1
+379	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Polyxenida	Animalia	Arthropoda	Diplopoda	Polyxenida	1
+380	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Spathebothriidea	Animalia	Platyhelminthes	Cestoda	Spathebothriidea	1
+381	Root;k__Animalia;p__Arthropoda;c__Ostracoda;o__Halocyprida	Animalia	Arthropoda	Ostracoda	Halocyprida	1
+382	Root;k__Animalia;p__Mollusca;c__Scaphopoda;o__Gadilida	Animalia	Mollusca	Scaphopoda	Gadilida	1
+383	Root;k__Animalia;p__Mollusca;c__Monoplacophora;o__Cyrtonellida	Animalia	Mollusca	Monoplacophora	Cyrtonellida	1
+384	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Thermosbaenacea	Animalia	Arthropoda	Malacostraca	Thermosbaenacea	1
+385	Root;k__Animalia;p__Mollusca;c__Rostroconchia;o__Conocardiida	Animalia	Mollusca	Rostroconchia	Conocardiida	1
+386	Root;k__Animalia;p__Nemertea;c__Pilidiophora;o__Heteronemertea	Animalia	Nemertea	Pilidiophora	Heteronemertea	1
+387	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Holothyrida	Animalia	Arthropoda	Arachnida	Holothyrida	1
+388	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Zygentoma	Animalia	Arthropoda	Insecta	Zygentoma	1
+389	Root;k__Animalia;p__Chordata;c__;o__Osmeriformes	Animalia	Chordata		Osmeriformes	1
+390	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__Plectida	Animalia	Nematoda	Chromadorea	Plectida	1
+391	Root;k__Animalia;p__Tardigrada;c__Eutardigrada;o__Parachela	Animalia	Tardigrada	Eutardigrada	Parachela	1
+392	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__	Animalia	Arthropoda	Trilobita		1
+393	Root;k__Animalia;p__Chordata;c__;o__Mugiliformes	Animalia	Chordata		Mugiliformes	1
+394	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Cocculinida	Animalia	Mollusca	Gastropoda	Cocculinida	1
+395	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Embioptera	Animalia	Arthropoda	Insecta	Embioptera	1
+396	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Cyrtodontida	Animalia	Mollusca	Bivalvia	Cyrtodontida	1
+397	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__	Animalia	Platyhelminthes	Cestoda		1
+398	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__Trepostomatida	Animalia	Bryozoa	Stenolaemata	Trepostomatida	1
+399	Root;k__Animalia;p__Gnathostomulida;c__;o__Bursovaginoidea	Animalia	Gnathostomulida		Bursovaginoidea	1
+400	Root;k__Animalia;p__Chordata;c__;o__Elopiformes	Animalia	Chordata		Elopiformes	1
+401	Root;k__Animalia;p__Echinodermata;c__Crinoidea;o__Millericrinida	Animalia	Echinodermata	Crinoidea	Millericrinida	1
+402	Root;k__Animalia;p__Echinodermata;c__Crinoidea;o__Isocrinida	Animalia	Echinodermata	Crinoidea	Isocrinida	1
+403	Root;k__Animalia;p__Chordata;c__Ascidiacea;o__Stolidobranchia	Animalia	Chordata	Ascidiacea	Stolidobranchia	1
+404	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Nuculanida	Animalia	Mollusca	Bivalvia	Nuculanida	1
+405	Root;k__Animalia;p__Bryozoa;c__Gymnolaemata;o__Ctenostomatida	Animalia	Bryozoa	Gymnolaemata	Ctenostomatida	1
+406	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Sphaeriida	Animalia	Mollusca	Bivalvia	Sphaeriida	1
+407	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__	Animalia	Arthropoda	Diplopoda		1
+408	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Monstrilloida	Animalia	Arthropoda	Copepoda	Monstrilloida	1
+409	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Echinothurioida	Animalia	Echinodermata	Echinoidea	Echinothurioida	1
+410	Root;k__Animalia;p__Chordata;c__Aves;o__Falconiformes	Animalia	Chordata	Aves	Falconiformes	1
+411	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Scopalinida	Animalia	Porifera	Demospongiae	Scopalinida	1
+412	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__Siphonophorae	Animalia	Cnidaria	Hydrozoa	Siphonophorae	1
+413	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Clymeniida	Animalia	Mollusca	Cephalopoda	Clymeniida	1
+414	Root;k__Animalia;p__Arthropoda;c__Merostomata;o__	Animalia	Arthropoda	Merostomata		1
+415	Root;k__Animalia;p__Chordata;c__;o__Synbranchiformes	Animalia	Chordata		Synbranchiformes	1
+416	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Odontopleurida	Animalia	Arthropoda	Trilobita	Odontopleurida	1
+417	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Heliolitina	Animalia	Cnidaria	Anthozoa	Heliolitina	1
+418	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__Limnomedusae	Animalia	Cnidaria	Hydrozoa	Limnomedusae	1
+419	Root;k__Animalia;p__Chordata;c__;o__Albuliformes	Animalia	Chordata		Albuliformes	1
+420	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Glomerida	Animalia	Arthropoda	Diplopoda	Glomerida	1
+421	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Diphyllidea	Animalia	Platyhelminthes	Cestoda	Diphyllidea	1
+422	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Gyrodactylidea	Animalia	Platyhelminthes	Monogenea	Gyrodactylidea	1
+423	Root;k__Animalia;p__Arthropoda;c__Tantulocarida;o__	Animalia	Arthropoda	Tantulocarida		1
+424	Root;k__Animalia;p__Mollusca;c__Polyplacophora;o__	Animalia	Mollusca	Polyplacophora		1
+425	Root;k__Animalia;p__Micrognathozoa;c__Micrognathozoa;o__Limnognathida	Animalia	Micrognathozoa	Micrognathozoa	Limnognathida	1
+426	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Mormonilloida	Animalia	Arthropoda	Copepoda	Mormonilloida	1
+427	Root;k__Animalia;p__Bryozoa;c__Phylactolaemata;o__Plumatellida	Animalia	Bryozoa	Phylactolaemata	Plumatellida	1
+428	Root;k__Animalia;p__Porifera;c__Calcarea;o__Leucosolenida	Animalia	Porifera	Calcarea	Leucosolenida	1
+429	Root;k__Animalia;p__Echinodermata;c__Ophiuroidea;o__	Animalia	Echinodermata	Ophiuroidea		1
+430	Root;k__Animalia;p__Chordata;c__;o__Batrachoidiformes	Animalia	Chordata		Batrachoidiformes	1
+431	Root;k__Animalia;p__Chordata;c__;o__Lepisosteiformes	Animalia	Chordata		Lepisosteiformes	1
+432	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Schizomida	Animalia	Arthropoda	Arachnida	Schizomida	1
+433	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Arthrochirotida	Animalia	Echinodermata	Holothuroidea	Arthrochirotida	1
+434	Root;k__Animalia;p__Rotifera;c__Eurotatoria;o__Bdelloidea	Animalia	Rotifera	Eurotatoria	Bdelloidea	1
+435	Root;k__Animalia;p__Arthropoda;c__Symphyla;o__	Animalia	Arthropoda	Symphyla		1
+436	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Siphonariida	Animalia	Mollusca	Gastropoda	Siphonariida	1
+437	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Molpadida	Animalia	Echinodermata	Holothuroidea	Molpadida	1
+438	Root;k__Animalia;p__Chordata;c__Aves;o__Pelecaniformes	Animalia	Chordata	Aves	Pelecaniformes	1
+439	Root;k__Animalia;p__Chordata;c__Mammalia;o__Hyracoidea	Animalia	Chordata	Mammalia	Hyracoidea	1
+440	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Colpomyida	Animalia	Mollusca	Bivalvia	Colpomyida	1
+441	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Rhinebothriidea	Animalia	Platyhelminthes	Cestoda	Rhinebothriidea	1
+442	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Caryophyllidea	Animalia	Platyhelminthes	Cestoda	Caryophyllidea	1
+443	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Vampyromorpha	Animalia	Mollusca	Cephalopoda	Vampyromorpha	1
+444	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Eoblattida	Animalia	Arthropoda	Insecta	Eoblattida	1
+445	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Haplosclerida	Animalia	Porifera	Demospongiae	Haplosclerida	1
+446	Root;k__Animalia;p__Kinorhyncha;c__Allomalorhagida;o__	Animalia	Kinorhyncha	Allomalorhagida		1
+447	Root;k__Animalia;p__Chordata;c__Aves;o__Pteroclidiformes	Animalia	Chordata	Aves	Pteroclidiformes	1
+448	Root;k__Animalia;p__Chordata;c__;o__Osteoglossiformes	Animalia	Chordata		Osteoglossiformes	1
+449	Root;k__Animalia;p__Chordata;c__Mammalia;o__Afrosoricida	Animalia	Chordata	Mammalia	Afrosoricida	1
+450	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Polystomatidea	Animalia	Platyhelminthes	Monogenea	Polystomatidea	1
+451	Root;k__Animalia;p__Cnidaria;c__;o__	Animalia	Cnidaria			1
+452	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Solemyida	Animalia	Mollusca	Bivalvia	Solemyida	1
+453	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Platydesmida	Animalia	Arthropoda	Diplopoda	Platydesmida	1
+454	Root;k__Animalia;p__Arthropoda;c__Branchiopoda;o__Anostraca	Animalia	Arthropoda	Branchiopoda	Anostraca	1
+455	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Corallimorpharia	Animalia	Cnidaria	Anthozoa	Corallimorpharia	1
+456	Root;k__Animalia;p__Brachiopoda;c__Rhynchonellata;o__Thecideida	Animalia	Brachiopoda	Rhynchonellata	Thecideida	1
+457	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Cumacea	Animalia	Arthropoda	Malacostraca	Cumacea	1
+458	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Spongillida	Animalia	Porifera	Demospongiae	Spongillida	1
+459	Root;k__Animalia;p__Chordata;c__Aves;o__Struthioniformes	Animalia	Chordata	Aves	Struthioniformes	1
+460	Root;k__Animalia;p__Brachiopoda;c__Craniata;o__	Animalia	Brachiopoda	Craniata		1
+461	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Zoraptera	Animalia	Arthropoda	Insecta	Zoraptera	1
+462	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Aplysiida	Animalia	Mollusca	Gastropoda	Aplysiida	1
+463	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Phymosomatoida	Animalia	Echinodermata	Echinoidea	Phymosomatoida	1
+464	Root;k__Animalia;p__Chordata;c__Aves;o__Coliiformes	Animalia	Chordata	Aves	Coliiformes	1
+465	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Glosselytrodea	Animalia	Arthropoda	Insecta	Glosselytrodea	1
+466	Root;k__Animalia;p__Annelida;c__Clitellata;o__Haplotaxida	Animalia	Annelida	Clitellata	Haplotaxida	1
+467	Root;k__Animalia;p__Chordata;c__Mammalia;o__Peramelemorphia	Animalia	Chordata	Mammalia	Peramelemorphia	1
+468	Root;k__Animalia;p__Acanthocephala;c__Palaeacanthocephala;o__Polymorphida	Animalia	Acanthocephala	Palaeacanthocephala	Polymorphida	1
+469	Root;k__Animalia;p__Platyhelminthes;c__;o__	Animalia	Platyhelminthes			1
+470	Root;k__Animalia;p__Priapulida;c__;o__	Animalia	Priapulida			1
+471	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Ricinulei	Animalia	Arthropoda	Arachnida	Ricinulei	1
+472	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Litobothriidea	Animalia	Platyhelminthes	Cestoda	Litobothriidea	1
+473	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Heterodontiformes	Animalia	Chordata	Elasmobranchii	Heterodontiformes	1
+474	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Tetraphyllidea	Animalia	Platyhelminthes	Cestoda	Tetraphyllidea	1
+475	Root;k__Animalia;p__Chordata;c__;o__Copelata	Animalia	Chordata		Copelata	1
+476	Root;k__Animalia;p__Entoprocta;c__;o__Solitaria	Animalia	Entoprocta		Solitaria	1
+477	Root;k__Animalia;p__Chordata;c__Mammalia;o__Monotremata	Animalia	Chordata	Mammalia	Monotremata	1
+478	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Prolecanitida	Animalia	Mollusca	Cephalopoda	Prolecanitida	1
+479	Root;k__Animalia;p__Porifera;c__Hexactinellida;o__Lyssacinosida	Animalia	Porifera	Hexactinellida	Lyssacinosida	1
+480	Root;k__Animalia;p__Annelida;c__Clitellata;o__Branchiobdellida	Animalia	Annelida	Clitellata	Branchiobdellida	1
+481	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__Cystoporida	Animalia	Bryozoa	Stenolaemata	Cystoporida	1
+482	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Tethyida	Animalia	Porifera	Demospongiae	Tethyida	1
+483	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Torpediniformes	Animalia	Chordata	Elasmobranchii	Torpediniformes	1
+484	Root;k__Animalia;p__Chordata;c__Aves;o__Suliformes	Animalia	Chordata	Aves	Suliformes	1
+485	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Myliobatiformes	Animalia	Chordata	Elasmobranchii	Myliobatiformes	1
+486	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Nuculida	Animalia	Mollusca	Bivalvia	Nuculida	1
+487	Root;k__Animalia;p__Chordata;c__;o__Notacanthiformes	Animalia	Chordata		Notacanthiformes	1
+488	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Limida	Animalia	Mollusca	Bivalvia	Limida	1
+489	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Diphyllobothriidea	Animalia	Platyhelminthes	Cestoda	Diphyllobothriidea	1
+490	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Harpetida	Animalia	Arthropoda	Trilobita	Harpetida	1
+491	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Pleurobranchida	Animalia	Mollusca	Gastropoda	Pleurobranchida	1
+492	Root;k__Animalia;p__Placozoa;c__Uniplacotomia;o__Trichoplacea	Animalia	Placozoa	Uniplacotomia	Trichoplacea	1
+493	Root;k__Animalia;p__Cnidaria;c__Cubozoa;o__Chirodropida	Animalia	Cnidaria	Cubozoa	Chirodropida	1
+494	Root;k__Animalia;p__Chordata;c__Sphenodontia;o__	Animalia	Chordata	Sphenodontia		1
+495	Root;k__Animalia;p__Chordata;c__;o__Gonorynchiformes	Animalia	Chordata		Gonorynchiformes	1
+496	Root;k__Animalia;p__Acanthocephala;c__Eoacanthocephala;o__Gyracanthocephala	Animalia	Acanthocephala	Eoacanthocephala	Gyracanthocephala	1
+497	Root;k__Animalia;p__Arthropoda;c__Protura;o__Protura	Animalia	Arthropoda	Protura	Protura	1
+498	Root;k__Animalia;p__Chordata;c__Aves;o__Gaviiformes	Animalia	Chordata	Aves	Gaviiformes	1
+499	Root;k__Animalia;p__Platyhelminthes;c__Trematoda;o__Stichocotylida	Animalia	Platyhelminthes	Trematoda	Stichocotylida	1
+500	Root;k__Animalia;p__Chordata;c__Aves;o__Podicipediformes	Animalia	Chordata	Aves	Podicipediformes	1
+501	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__Persiculida	Animalia	Echinodermata	Holothuroidea	Persiculida	1
+502	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Aspidodiadematoida	Animalia	Echinodermata	Echinoidea	Aspidodiadematoida	1
+503	Root;k__Animalia;p__Chordata;c__Mammalia;o__Pholidota	Animalia	Chordata	Mammalia	Pholidota	1
+504	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Sphaerotheriida	Animalia	Arthropoda	Diplopoda	Sphaerotheriida	1
+505	Root;k__Animalia;p__Sipuncula;c__Sipunculidea;o__Sipunculiformes	Animalia	Sipuncula	Sipunculidea	Sipunculiformes	1
+506	Root;k__Animalia;p__Platyhelminthes;c__;o__Fecampiida	Animalia	Platyhelminthes		Fecampiida	1
+507	Root;k__Animalia;p__Priapulida;c__;o__Halicryptomorpha	Animalia	Priapulida		Halicryptomorpha	1
+508	Root;k__Animalia;p__Arthropoda;c__Pycnogonida;o__Palaeopantopoda	Animalia	Arthropoda	Pycnogonida	Palaeopantopoda	1
+509	Root;k__Animalia;p__Sipuncula;c__Sipunculidea;o__Golfingiiformes	Animalia	Sipuncula	Sipunculidea	Golfingiiformes	1
+510	Root;k__Animalia;p__Porifera;c__Calcarea;o__	Animalia	Porifera	Calcarea		1
+511	Root;k__Animalia;p__Annelida;c__Clitellata;o__	Animalia	Annelida	Clitellata		1
+512	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Ixodida	Animalia	Arthropoda	Arachnida	Ixodida	1
+513	Root;k__Animalia;p__Entoprocta;c__;o__Coloniales	Animalia	Entoprocta		Coloniales	1
+514	Root;k__Animalia;p__Nematoda;c__;o__	Animalia	Nematoda			1
+515	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Monocotylidea	Animalia	Platyhelminthes	Monogenea	Monocotylidea	1
+516	Root;k__Animalia;p__Echinodermata;c__Crinoidea;o__Encrinida	Animalia	Echinodermata	Crinoidea	Encrinida	1
+517	Root;k__Animalia;p__Platyhelminthes;c__;o__Bothrioplanida	Animalia	Platyhelminthes		Bothrioplanida	1
+518	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Cryptolobiferida	Animalia	Ctenophora	Tentaculata	Cryptolobiferida	1
+519	Root;k__Animalia;p__Hemichordata;c__;o__	Animalia	Hemichordata			1
+520	Root;k__Animalia;p__Brachiopoda;c__Craniata;o__Craniida	Animalia	Brachiopoda	Craniata	Craniida	1
+521	Root;k__Animalia;p__Echinodermata;c__Ophiuroidea;o__Ophioleucida	Animalia	Echinodermata	Ophiuroidea	Ophioleucida	1
+522	Root;k__Animalia;p__Acanthocephala;c__Eoacanthocephala;o__Neoechinorhynchida	Animalia	Acanthocephala	Eoacanthocephala	Neoechinorhynchida	1
+523	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__	Animalia	Arthropoda	Maxillopoda		1
+524	Root;k__Animalia;p__Chordata;c__Aves;o__Trogoniformes	Animalia	Chordata	Aves	Trogoniformes	1
+525	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Bubarida	Animalia	Porifera	Demospongiae	Bubarida	1
+526	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Desmacellida	Animalia	Porifera	Demospongiae	Desmacellida	1
+527	Root;k__Animalia;p__Kinorhyncha;c__Cyclorhagida;o__Echinorhagata	Animalia	Kinorhyncha	Cyclorhagida	Echinorhagata	1
+528	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Lophogastrida	Animalia	Arthropoda	Malacostraca	Lophogastrida	1
+529	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Miomoptera	Animalia	Arthropoda	Insecta	Miomoptera	1
+530	Root;k__Animalia;p__Rotifera;c__Eurotatoria;o__Collothecacea	Animalia	Rotifera	Eurotatoria	Collothecacea	1
+531	Root;k__Animalia;p__Tardigrada;c__Heterotardigrada;o__Arthrotardigrada	Animalia	Tardigrada	Heterotardigrada	Arthrotardigrada	1
+532	Root;k__Animalia;p__Mollusca;c__Polyplacophora;o__Chelodida	Animalia	Mollusca	Polyplacophora	Chelodida	1
+533	Root;k__Animalia;p__Arthropoda;c__Pycnogonida;o__	Animalia	Arthropoda	Pycnogonida		1
+534	Root;k__Animalia;p__Nematoda;c__;o__Triplonchida	Animalia	Nematoda		Triplonchida	1
+535	Root;k__Animalia;p__Chordata;c__;o__Salmoniformes	Animalia	Chordata		Salmoniformes	1
+536	Root;k__Animalia;p__Kinorhyncha;c__;o__	Animalia	Kinorhyncha			1
+537	Root;k__Animalia;p__Nematoda;c__;o__Muspiceida	Animalia	Nematoda		Muspiceida	1
+538	Root;k__Animalia;p__Chordata;c__Aves;o__Musophagiformes	Animalia	Chordata	Aves	Musophagiformes	1
+539	Root;k__Animalia;p__Chordata;c__;o__Gasterosteiformes	Animalia	Chordata		Gasterosteiformes	1
+540	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Bathynellacea	Animalia	Arthropoda	Malacostraca	Bathynellacea	1
+541	Root;k__Animalia;p__Chordata;c__Coelacanthi;o__Coelacanthiformes	Animalia	Chordata	Coelacanthi	Coelacanthiformes	1
+542	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Actinodontida	Animalia	Mollusca	Bivalvia	Actinodontida	1
+543	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Dendrogastrida	Animalia	Arthropoda	Maxillopoda	Dendrogastrida	1
+544	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Akentrogonida	Animalia	Arthropoda	Maxillopoda	Akentrogonida	1
+545	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Lobata	Animalia	Ctenophora	Tentaculata	Lobata	1
+546	Root;k__Animalia;p__Chordata;c__Aves;o__Ciconiiformes	Animalia	Chordata	Aves	Ciconiiformes	1
+547	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__Esthonioporata	Animalia	Bryozoa	Stenolaemata	Esthonioporata	1
+548	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Runcinida	Animalia	Mollusca	Gastropoda	Runcinida	1
+549	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Olenellida	Animalia	Arthropoda	Trilobita	Olenellida	1
+550	Root;k__Animalia;p__Chordata;c__Aves;o__Eurypygiformes	Animalia	Chordata	Aves	Eurypygiformes	1
+551	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Palpigradi	Animalia	Arthropoda	Arachnida	Palpigradi	1
+552	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Megalodontida	Animalia	Mollusca	Bivalvia	Megalodontida	1
+553	Root;k__Animalia;p__Chordata;c__;o__Esociformes	Animalia	Chordata		Esociformes	1
+554	Root;k__Animalia;p__Porifera;c__Calcarea;o__Baerida	Animalia	Porifera	Calcarea	Baerida	1
+555	Root;k__Animalia;p__Annelida;c__Clitellata;o__Euhirudinea	Animalia	Annelida	Clitellata	Euhirudinea	1
+556	Root;k__Animalia;p__Kinorhyncha;c__Allomalorhagida;o__Anomoirhaga	Animalia	Kinorhyncha	Allomalorhagida	Anomoirhaga	1
+557	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Stemmiulida	Animalia	Arthropoda	Diplopoda	Stemmiulida	1
+558	Root;k__Animalia;p__Hemichordata;c__Pterobranchia;o__Rhabdopleurida	Animalia	Hemichordata	Pterobranchia	Rhabdopleurida	1
+559	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Holectypoida	Animalia	Echinodermata	Echinoidea	Holectypoida	1
+560	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Modiomorphida	Animalia	Mollusca	Bivalvia	Modiomorphida	1
+561	Root;k__Animalia;p__Mollusca;c__Rostroconchia;o__	Animalia	Mollusca	Rostroconchia		1
+562	Root;k__Animalia;p__Loricifera;c__;o__Nanaloricida	Animalia	Loricifera		Nanaloricida	1
+563	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Stomopneustoida	Animalia	Echinodermata	Echinoidea	Stomopneustoida	1
+564	Root;k__Animalia;p__Annelida;c__;o__	Animalia	Annelida			1
+565	Root;k__Animalia;p__Arthropoda;c__Ostracoda;o__	Animalia	Arthropoda	Ostracoda		1
+566	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Euaxosida	Animalia	Echinodermata	Asteroidea	Euaxosida	1
+567	Root;k__Animalia;p__Priapulida;c__;o__Priapulomorpha	Animalia	Priapulida		Priapulomorpha	1
+568	Root;k__Animalia;p__Cnidaria;c__Cubozoa;o__Carybdeida	Animalia	Cnidaria	Cubozoa	Carybdeida	1
+569	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Cambojiida	Animalia	Ctenophora	Tentaculata	Cambojiida	1
+570	Root;k__Animalia;p__Chordata;c__;o__Gymnotiformes	Animalia	Chordata		Gymnotiformes	1
+571	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Sphaerocladina	Animalia	Porifera	Demospongiae	Sphaerocladina	1
+572	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Polymastiida	Animalia	Porifera	Demospongiae	Polymastiida	1
+573	Root;k__Animalia;p__Mollusca;c__Caudofoveata;o__Chaetodermatida	Animalia	Mollusca	Caudofoveata	Chaetodermatida	1
+574	Root;k__Animalia;p__Echinodermata;c__Holothuroidea;o__	Animalia	Echinodermata	Holothuroidea		1
+575	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Scalpelliformes	Animalia	Arthropoda	Maxillopoda	Scalpelliformes	1
+576	Root;k__Animalia;p__Mollusca;c__Cricoconarida;o__	Animalia	Mollusca	Cricoconarida		1
+577	Root;k__Animalia;p__Arthropoda;c__Arachnida;o__Uropygi	Animalia	Arthropoda	Arachnida	Uropygi	1
+578	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Leptostraca	Animalia	Arthropoda	Malacostraca	Leptostraca	1
+579	Root;k__Animalia;p__Arthropoda;c__Chilopoda;o__Craterostigmomorpha	Animalia	Arthropoda	Chilopoda	Craterostigmomorpha	1
+580	Root;k__Animalia;p__Mollusca;c__Scaphopoda;o__Dentaliida	Animalia	Mollusca	Scaphopoda	Dentaliida	1
+581	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Nippotaeniidea	Animalia	Platyhelminthes	Cestoda	Nippotaeniidea	1
+582	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Fordillida	Animalia	Mollusca	Bivalvia	Fordillida	1
+583	Root;k__Animalia;p__Porifera;c__Hexactinellida;o__Amphidiscosida	Animalia	Porifera	Hexactinellida	Amphidiscosida	1
+584	Root;k__Animalia;p__Chordata;c__Aves;o__Tinamiformes	Animalia	Chordata	Aves	Tinamiformes	1
+585	Root;k__Animalia;p__Acanthocephala;c__Archiacanthocephala;o__Apororhynchida	Animalia	Acanthocephala	Archiacanthocephala	Apororhynchida	1
+586	Root;k__Animalia;p__Nemertea;c__Palaeonemertea;o__	Animalia	Nemertea	Palaeonemertea		1
+587	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Laurida	Animalia	Arthropoda	Maxillopoda	Laurida	1
+588	Root;k__Animalia;p__Acanthocephala;c__Archiacanthocephala;o__Moniliformida	Animalia	Acanthocephala	Archiacanthocephala	Moniliformida	1
+589	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Hadrosida	Animalia	Echinodermata	Asteroidea	Hadrosida	1
+590	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Trichasteropsida	Animalia	Echinodermata	Asteroidea	Trichasteropsida	1
+591	Root;k__Animalia;p__Ctenophora;c__;o__	Animalia	Ctenophora			1
+592	Root;k__Animalia;p__Chordata;c__Mammalia;o__Microbiotheria	Animalia	Chordata	Mammalia	Microbiotheria	1
+593	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__Melicerititida	Animalia	Bryozoa	Stenolaemata	Melicerititida	1
+594	Root;k__Animalia;p__Chordata;c__;o__Acipenseriformes	Animalia	Chordata		Acipenseriformes	1
+595	Root;k__Animalia;p__Mollusca;c__Cricoconarida;o__Tentaculitida	Animalia	Mollusca	Cricoconarida	Tentaculitida	1
+596	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Bathyteuthida	Animalia	Mollusca	Cephalopoda	Bathyteuthida	1
+597	Root;k__Animalia;p__Chordata;c__;o__Polymixiiformes	Animalia	Chordata		Polymixiiformes	1
+598	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Pygophora	Animalia	Arthropoda	Maxillopoda	Pygophora	1
+599	Root;k__Animalia;p__Dicyemida;c__Rhombozoa;o__	Animalia	Dicyemida	Rhombozoa		1
+600	Root;k__Animalia;p__Cnidaria;c__Scyphozoa;o__Semaeostomeae	Animalia	Cnidaria	Scyphozoa	Semaeostomeae	1
+601	Root;k__Animalia;p__Chaetognatha;c__Sagittoidea;o__Phragmophora	Animalia	Chaetognatha	Sagittoidea	Phragmophora	1
+602	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Siphonophorida	Animalia	Arthropoda	Diplopoda	Siphonophorida	1
+603	Root;k__Animalia;p__Chordata;c__Thaliacea;o__Doliolida	Animalia	Chordata	Thaliacea	Doliolida	1
+604	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Brisingida	Animalia	Echinodermata	Asteroidea	Brisingida	1
+605	Root;k__Animalia;p__Arthropoda;c__Ostracoda;o__Leperditicopida	Animalia	Arthropoda	Ostracoda	Leperditicopida	1
+606	Root;k__Animalia;p__Mollusca;c__Polyplacophora;o__Callochitonida	Animalia	Mollusca	Polyplacophora	Callochitonida	1
+607	Root;k__Animalia;p__Porifera;c__Homoscleromorpha;o__Homosclerophorida	Animalia	Porifera	Homoscleromorpha	Homosclerophorida	1
+608	Root;k__Animalia;p__Mollusca;c__Monoplacophora;o__Neopilinida	Animalia	Mollusca	Monoplacophora	Neopilinida	1
+609	Root;k__Animalia;p__Chordata;c__Aves;o__Cariamiformes	Animalia	Chordata	Aves	Cariamiformes	1
+610	Root;k__Animalia;p__Phoronida;c__;o__	Animalia	Phoronida			1
+611	Root;k__Animalia;p__Platyhelminthes;c__Trematoda;o__	Animalia	Platyhelminthes	Trematoda		1
+612	Root;k__Animalia;p__Sipuncula;c__Phascolosomatidea;o__Phascolosomatiformes	Animalia	Sipuncula	Phascolosomatidea	Phascolosomatiformes	1
+613	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Chimaericolidea	Animalia	Platyhelminthes	Monogenea	Chimaericolidea	1
+614	Root;k__Animalia;p__Chordata;c__Myxini;o__Myxiniformes	Animalia	Chordata	Myxini	Myxiniformes	1
+615	Root;k__Animalia;p__Chordata;c__Aves;o__Leptosomiformes	Animalia	Chordata	Aves	Leptosomiformes	1
+616	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Pedinoida	Animalia	Echinodermata	Echinoidea	Pedinoida	1
+617	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Titanoptera	Animalia	Arthropoda	Insecta	Titanoptera	1
+618	Root;k__Animalia;p__Chordata;c__Aves;o__Casuariiformes	Animalia	Chordata	Aves	Casuariiformes	1
+619	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Hypoperlida	Animalia	Arthropoda	Insecta	Hypoperlida	1
+620	Root;k__Animalia;p__Annelida;c__Clitellata;o__Parvidrilida	Animalia	Annelida	Clitellata	Parvidrilida	1
+621	Root;k__Animalia;p__Arthropoda;c__Branchiopoda;o__Notostraca	Animalia	Arthropoda	Branchiopoda	Notostraca	1
+622	Root;k__Animalia;p__Chordata;c__;o__Polypteriformes	Animalia	Chordata		Polypteriformes	1
+623	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Haplobothriidea	Animalia	Platyhelminthes	Cestoda	Haplobothriidea	1
+624	Root;k__Animalia;p__Arthropoda;c__Cephalocarida;o__Brachypoda	Animalia	Arthropoda	Cephalocarida	Brachypoda	1
+625	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Polyzoniida	Animalia	Arthropoda	Diplopoda	Polyzoniida	1
+626	Root;k__Animalia;p__Gnathostomulida;c__;o__Filospermoidea	Animalia	Gnathostomulida		Filospermoidea	1
+627	Root;k__Animalia;p__Kinorhyncha;c__Cyclorhagida;o__Xenosomata	Animalia	Kinorhyncha	Cyclorhagida	Xenosomata	1
+628	Root;k__Animalia;p__Rotifera;c__Pararotatoria;o__Seisonacea	Animalia	Rotifera	Pararotatoria	Seisonacea	1
+629	Root;k__Animalia;p__Platyhelminthes;c__;o__Prorhynchida	Animalia	Platyhelminthes		Prorhynchida	1
+630	Root;k__Animalia;p__Echinodermata;c__Asteroidea;o__Peripodida	Animalia	Echinodermata	Asteroidea	Peripodida	1
+631	Root;k__Animalia;p__Acanthocephala;c__Archiacanthocephala;o__Gigantorhynchida	Animalia	Acanthocephala	Archiacanthocephala	Gigantorhynchida	1
+632	Root;k__Animalia;p__Chordata;c__;o__Ateleopodiformes	Animalia	Chordata		Ateleopodiformes	1
+633	Root;k__Animalia;p__Xenacoelomorpha;c__;o__Nemertodermatida	Animalia	Xenacoelomorpha		Nemertodermatida	1
+634	Root;k__Animalia;p__Sipuncula;c__Phascolosomatidea;o__Aspidosiphoniformes	Animalia	Sipuncula	Phascolosomatidea	Aspidosiphoniformes	1
+635	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Cestida	Animalia	Ctenophora	Tentaculata	Cestida	1
+636	Root;k__Animalia;p__Rotifera;c__Eurotatoria;o__Flosculariaceae	Animalia	Rotifera	Eurotatoria	Flosculariaceae	1
+637	Root;k__Animalia;p__Annelida;c__Clitellata;o__Alluroidida	Animalia	Annelida	Clitellata	Alluroidida	1
+638	Root;k__Animalia;p__Platyhelminthes;c__;o__Dolichomicrostomida	Animalia	Platyhelminthes		Dolichomicrostomida	1
+639	Root;k__Animalia;p__Echinodermata;c__Ophiuroidea;o__Ophioscolecida	Animalia	Echinodermata	Ophiuroidea	Ophioscolecida	1
+640	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Umbraculida	Animalia	Mollusca	Gastropoda	Umbraculida	1
+641	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Paoliida	Animalia	Arthropoda	Insecta	Paoliida	1
+642	Root;k__Animalia;p__Arthropoda;c__Chilopoda;o__	Animalia	Arthropoda	Chilopoda		1
+643	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__Actinulida	Animalia	Cnidaria	Hydrozoa	Actinulida	1
+644	Root;k__Animalia;p__Nematoda;c__;o__Dioctophymatida	Animalia	Nematoda		Dioctophymatida	1
+645	Root;k__Animalia;p__Orthonectida;c__;o__	Animalia	Orthonectida			1
+646	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Euphausiacea	Animalia	Arthropoda	Malacostraca	Euphausiacea	1
+647	Root;k__Animalia;p__Chordata;c__;o__Stephanoberyciformes	Animalia	Chordata		Stephanoberyciformes	1
+648	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Montchadskyellidea	Animalia	Platyhelminthes	Monogenea	Montchadskyellidea	1
+649	Root;k__Animalia;p__Arthropoda;c__Remipedia;o__Enantiopoda	Animalia	Arthropoda	Remipedia	Enantiopoda	1
+650	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Salenioida	Animalia	Echinodermata	Echinoidea	Salenioida	1
+651	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Siphoniulida	Animalia	Arthropoda	Diplopoda	Siphoniulida	1
+652	Root;k__Animalia;p__Chordata;c__Aves;o__Phaethontiformes	Animalia	Chordata	Aves	Phaethontiformes	1
+653	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Merliida	Animalia	Porifera	Demospongiae	Merliida	1
+654	Root;k__Animalia;p__Chordata;c__Aves;o__Mesitornithiformes	Animalia	Chordata	Aves	Mesitornithiformes	1
+655	Root;k__Animalia;p__Porifera;c__Calcarea;o__Lithonida	Animalia	Porifera	Calcarea	Lithonida	1
+656	Root;k__Animalia;p__Annelida;c__Clitellata;o__Acanthobdellida	Animalia	Annelida	Clitellata	Acanthobdellida	1
+657	Root;k__Animalia;p__Brachiopoda;c__Lingulata;o__Siphonotretida	Animalia	Brachiopoda	Lingulata	Siphonotretida	1
+658	Root;k__Animalia;p__Priapulida;c__;o__Seticoronaria	Animalia	Priapulida		Seticoronaria	1
+659	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Misophrioida	Animalia	Arthropoda	Copepoda	Misophrioida	1
+660	Root;k__Animalia;p__Nematomorpha;c__Gordioida;o__Gordioidea	Animalia	Nematomorpha	Gordioida	Gordioidea	1
+661	Root;k__Animalia;p__Cnidaria;c__Anthozoa;o__Pennatulacea	Animalia	Cnidaria	Anthozoa	Pennatulacea	1
+662	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Cathetocephalidea	Animalia	Platyhelminthes	Cestoda	Cathetocephalidea	1
+663	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__	Animalia	Platyhelminthes	Monogenea		1
+664	Root;k__Animalia;p__Tardigrada;c__Mesotardigrada;o__Thermozodia	Animalia	Tardigrada	Mesotardigrada	Thermozodia	1
+665	Root;k__Animalia;p__Bryozoa;c__;o__	Animalia	Bryozoa			1
+666	Root;k__Animalia;p__Platyhelminthes;c__;o__Gnosonesimida	Animalia	Platyhelminthes		Gnosonesimida	1
+667	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Diplobelida	Animalia	Mollusca	Cephalopoda	Diplobelida	1
+668	Root;k__Animalia;p__Cnidaria;c__Hydrozoa;o__	Animalia	Cnidaria	Hydrozoa		1
+669	Root;k__Animalia;p__Platyhelminthes;c__Cestoda;o__Gyrocotylidea	Animalia	Platyhelminthes	Cestoda	Gyrocotylidea	1
+670	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Neomphalida	Animalia	Mollusca	Gastropoda	Neomphalida	1
+671	Root;k__Animalia;p__Acanthocephala;c__Polyacanthocephala;o__Polyacanthorhynchida	Animalia	Acanthocephala	Polyacanthocephala	Polyacanthorhynchida	1
+672	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Myopsida	Animalia	Mollusca	Cephalopoda	Myopsida	1
+673	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Afghanodesmatida	Animalia	Mollusca	Bivalvia	Afghanodesmatida	1
+674	Root;k__Animalia;p__Echinodermata;c__Echinoidea;o__Micropygoida	Animalia	Echinodermata	Echinoidea	Micropygoida	1
+675	Root;k__Animalia;p__Platyhelminthes;c__;o__Mariplanellida	Animalia	Platyhelminthes		Mariplanellida	1
+676	Root;k__Animalia;p__Arthropoda;c__Maxillopoda;o__Apygophora	Animalia	Arthropoda	Maxillopoda	Apygophora	1
+677	Root;k__Animalia;p__Chordata;c__Mammalia;o__Scandentia	Animalia	Chordata	Mammalia	Scandentia	1
+678	Root;k__Animalia;p__Arthropoda;c__Protura;o__	Animalia	Arthropoda	Protura		1
+679	Root;k__Animalia;p__Nemertea;c__Arhynchocoela;o__Arhynchonemertea	Animalia	Nemertea	Arhynchocoela	Arhynchonemertea	1
+680	Root;k__Animalia;p__Bryozoa;c__Phylactolaemata;o__	Animalia	Bryozoa	Phylactolaemata		1
+681	Root;k__Animalia;p__Placozoa;c__Polyplacotomia;o__Polyplacotomea	Animalia	Placozoa	Polyplacotomia	Polyplacotomea	1
+682	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Platycopioida	Animalia	Arthropoda	Copepoda	Platycopioida	1
+683	Root;k__Animalia;p__Chordata;c__Elasmobranchii;o__Squatiniformes	Animalia	Chordata	Elasmobranchii	Squatiniformes	1
+684	Root;k__Animalia;p__Annelida;c__Clitellata;o__Moniligastrida	Animalia	Annelida	Clitellata	Moniligastrida	1
+685	Root;k__Animalia;p__Chordata;c__Thaliacea;o__Pyrosomatida	Animalia	Chordata	Thaliacea	Pyrosomatida	1
+686	Root;k__Animalia;p__Nemertea;c__Pilidiophora;o__	Animalia	Nemertea	Pilidiophora		1
+687	Root;k__Animalia;p__Arthropoda;c__Pauropoda;o__Hexamerocerata	Animalia	Arthropoda	Pauropoda	Hexamerocerata	1
+688	Root;k__Animalia;p__Chaetognatha;c__;o__	Animalia	Chaetognatha			1
+689	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Glomeridesmida	Animalia	Arthropoda	Diplopoda	Glomeridesmida	1
+690	Root;k__Animalia;p__Acanthocephala;c__Palaeacanthocephala;o__Heteramorphida	Animalia	Acanthocephala	Palaeacanthocephala	Heteramorphida	1
+691	Root;k__Animalia;p__Arthropoda;c__Pycnogonida;o__Palaeoisopoda	Animalia	Arthropoda	Pycnogonida	Palaeoisopoda	1
+692	Root;k__Animalia;p__Sipuncula;c__;o__	Animalia	Sipuncula			1
+693	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Zosterogrammida	Animalia	Arthropoda	Diplopoda	Zosterogrammida	1
+694	Root;k__Animalia;p__Arthropoda;c__Malacostraca;o__Bochusacea	Animalia	Arthropoda	Malacostraca	Bochusacea	1
+695	Root;k__Animalia;p__Mollusca;c__Gastropoda;o__Cyrtoneritida	Animalia	Mollusca	Gastropoda	Cyrtoneritida	1
+696	Root;k__Animalia;p__Arthropoda;c__;o__Mystacocaridida	Animalia	Arthropoda		Mystacocaridida	1
+697	Root;k__Animalia;p__Cycliophora;c__Eucycliophora;o__Symbiida	Animalia	Cycliophora	Eucycliophora	Symbiida	1
+698	Root;k__Animalia;p__Arthropoda;c__Diplopoda;o__Siphonocryptida	Animalia	Arthropoda	Diplopoda	Siphonocryptida	1
+699	Root;k__Animalia;p__Xenacoelomorpha;c__;o__	Animalia	Xenacoelomorpha			1
+700	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Ganeshida	Animalia	Ctenophora	Tentaculata	Ganeshida	1
+701	Root;k__Animalia;p__Arthropoda;c__Branchiopoda;o__	Animalia	Arthropoda	Branchiopoda		1
+702	Root;k__Animalia;p__Ctenophora;c__Tentaculata;o__Thalassocalycida	Animalia	Ctenophora	Tentaculata	Thalassocalycida	1
+703	Root;k__Animalia;p__Arthropoda;c__Collembola;o__	Animalia	Arthropoda	Collembola		1
+704	Root;k__Animalia;p__Placozoa;c__Uniplacotomia;o__Hoilungea	Animalia	Placozoa	Uniplacotomia	Hoilungea	1
+705	Root;k__Animalia;p__Chordata;c__Aves;o__Rheiformes	Animalia	Chordata	Aves	Rheiformes	1
+706	Root;k__Animalia;p__Bryozoa;c__Stenolaemata;o__	Animalia	Bryozoa	Stenolaemata		1
+707	Root;k__Animalia;p__Nematoda;c__Chromadorea;o__	Animalia	Nematoda	Chromadorea		1
+708	Root;k__Animalia;p__Arthropoda;c__Insecta;o__Mantophasmatodea	Animalia	Arthropoda	Insecta	Mantophasmatodea	1
+709	Root;k__Animalia;p__Chordata;c__Leptocardii;o__	Animalia	Chordata	Leptocardii		1
+710	Root;k__Animalia;p__Porifera;c__Demospongiae;o__	Animalia	Porifera	Demospongiae		1
+711	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__	Animalia	Arthropoda	Copepoda		1
+712	Root;k__Animalia;p__Porifera;c__Demospongiae;o__Chondrosiida	Animalia	Porifera	Demospongiae	Chondrosiida	1
+713	Root;k__Animalia;p__Ctenophora;c__Nuda;o__Beroida	Animalia	Ctenophora	Nuda	Beroida	1
+714	Root;k__Animalia;p__Chordata;c__Aves;o__Apterygiformes	Animalia	Chordata	Aves	Apterygiformes	1
+715	Root;k__Animalia;p__Mollusca;c__Cephalopoda;o__Idiosepida	Animalia	Mollusca	Cephalopoda	Idiosepida	1
+716	Root;k__Animalia;p__Priapulida;c__;o__Meiopriapulomorpha	Animalia	Priapulida		Meiopriapulomorpha	1
+717	Root;k__Animalia;p__Annelida;c__Clitellata;o__Narapida	Animalia	Annelida	Clitellata	Narapida	1
+718	Root;k__Animalia;p__Nematoda;c__;o__Isolaimida	Animalia	Nematoda		Isolaimida	1
+719	Root;k__Animalia;p__Platyhelminthes;c__Monogenea;o__Lagarocotylidea	Animalia	Platyhelminthes	Monogenea	Lagarocotylidea	1
+720	Root;k__Animalia;p__Tardigrada;c__Eutardigrada;o__Apochela	Animalia	Tardigrada	Eutardigrada	Apochela	1
+721	Root;k__Animalia;p__Chordata;c__Mammalia;o__Tubulidentata	Animalia	Chordata	Mammalia	Tubulidentata	1
+722	Root;k__Animalia;p__Arthropoda;c__Copepoda;o__Gelyelloida	Animalia	Arthropoda	Copepoda	Gelyelloida	1
+723	Root;k__Animalia;p__Nematomorpha;c__Gordioida;o__	Animalia	Nematomorpha	Gordioida		1
+724	Root;k__Animalia;p__Arthropoda;c__Pycnogonida;o__Nectopantopoda	Animalia	Arthropoda	Pycnogonida	Nectopantopoda	1
+725	Root;k__Animalia;p__Chordata;c__Aves;o__Opisthocomiformes	Animalia	Chordata	Aves	Opisthocomiformes	1
+726	Root;k__Animalia;p__Mollusca;c__Bivalvia;o__Tuarangiida	Animalia	Mollusca	Bivalvia	Tuarangiida	1
+727	Root;k__Animalia;p__Chordata;c__Aves;o__Steatornithiformes	Animalia	Chordata	Aves	Steatornithiformes	1
+728	Root;k__Animalia;p__Arthropoda;c__Diplura;o__	Animalia	Arthropoda	Diplura		1
+729	Root;k__Animalia;p__Ctenophora;c__Scleroctenophora;o__	Animalia	Ctenophora	Scleroctenophora		1
+730	Root;k__Animalia;p__Annelida;c__Clitellata;o__Randiellida	Animalia	Annelida	Clitellata	Randiellida	1
+731	Root;k__Animalia;p__Loricifera;c__;o__	Animalia	Loricifera			1
+732	Root;k__Animalia;p__Annelida;c__Clitellata;o__Capilloventrida	Animalia	Annelida	Clitellata	Capilloventrida	1
+733	Root;k__Animalia;p__Arthropoda;c__Trilobita;o__Proparia	Animalia	Arthropoda	Trilobita	Proparia	1
+734	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Lamiales	Plantae	Tracheophyta	Magnoliopsida	Lamiales	1
+735	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Porellales	Plantae	Marchantiophyta	Jungermanniopsida	Porellales	1
+736	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Geraniales	Plantae	Tracheophyta	Magnoliopsida	Geraniales	1
+737	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Asparagales	Plantae	Tracheophyta	Liliopsida	Asparagales	1
+738	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Boraginales	Plantae	Tracheophyta	Magnoliopsida	Boraginales	1
+739	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Escalloniales	Plantae	Tracheophyta	Magnoliopsida	Escalloniales	1
+740	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Malvales	Plantae	Tracheophyta	Magnoliopsida	Malvales	1
+741	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Asterales	Plantae	Tracheophyta	Magnoliopsida	Asterales	1
+742	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Saxifragales	Plantae	Tracheophyta	Magnoliopsida	Saxifragales	1
+743	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Polypodiales	Plantae	Tracheophyta	Polypodiopsida	Polypodiales	1
+744	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Laurales	Plantae	Tracheophyta	Magnoliopsida	Laurales	1
+745	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Gentianales	Plantae	Tracheophyta	Magnoliopsida	Gentianales	1
+746	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Solanales	Plantae	Tracheophyta	Magnoliopsida	Solanales	1
+747	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Fabales	Plantae	Tracheophyta	Magnoliopsida	Fabales	1
+748	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Malpighiales	Plantae	Tracheophyta	Magnoliopsida	Malpighiales	1
+749	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Sapindales	Plantae	Tracheophyta	Magnoliopsida	Sapindales	1
+750	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Pandanales	Plantae	Tracheophyta	Liliopsida	Pandanales	1
+751	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Poales	Plantae	Tracheophyta	Liliopsida	Poales	1
+752	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Ranunculales	Plantae	Tracheophyta	Magnoliopsida	Ranunculales	1
+753	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Hypnodendrales	Plantae	Bryophyta	Bryopsida	Hypnodendrales	1
+754	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Alismatales	Plantae	Tracheophyta	Liliopsida	Alismatales	1
+755	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Proteales	Plantae	Tracheophyta	Magnoliopsida	Proteales	1
+756	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Brassicales	Plantae	Tracheophyta	Magnoliopsida	Brassicales	1
+757	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Celastrales	Plantae	Tracheophyta	Magnoliopsida	Celastrales	1
+758	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Caryophyllales	Plantae	Tracheophyta	Magnoliopsida	Caryophyllales	1
+759	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Ericales	Plantae	Tracheophyta	Magnoliopsida	Ericales	1
+760	Root;k__Plantae;p__Tracheophyta;c__Pinopsida;o__Pinales	Plantae	Tracheophyta	Pinopsida	Pinales	1
+761	Root;k__Plantae;p__Tracheophyta;c__;o__	Plantae	Tracheophyta			1
+762	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Marattiales	Plantae	Tracheophyta	Polypodiopsida	Marattiales	1
+763	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Arecales	Plantae	Tracheophyta	Liliopsida	Arecales	1
+764	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Myrtales	Plantae	Tracheophyta	Magnoliopsida	Myrtales	1
+765	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Chlamydomonadales	Plantae	Chlorophyta	Chlorophyceae	Chlamydomonadales	1
+766	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Rosales	Plantae	Tracheophyta	Magnoliopsida	Rosales	1
+767	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Santalales	Plantae	Tracheophyta	Magnoliopsida	Santalales	1
+768	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Hypnales	Plantae	Bryophyta	Bryopsida	Hypnales	1
+769	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Ceramiales	Plantae	Rhodophyta	Florideophyceae	Ceramiales	1
+770	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Pallaviciniales	Plantae	Marchantiophyta	Jungermanniopsida	Pallaviciniales	1
+771	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Liliales	Plantae	Tracheophyta	Liliopsida	Liliales	1
+772	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Metteniusales	Plantae	Tracheophyta	Magnoliopsida	Metteniusales	1
+773	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Apiales	Plantae	Tracheophyta	Magnoliopsida	Apiales	1
+774	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Dipsacales	Plantae	Tracheophyta	Magnoliopsida	Dipsacales	1
+775	Root;k__Plantae;p__Tracheophyta;c__Lycopodiopsida;o__	Plantae	Tracheophyta	Lycopodiopsida		1
+776	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Bryales	Plantae	Bryophyta	Bryopsida	Bryales	1
+777	Root;k__Plantae;p__Charophyta;c__Charophyceae;o__Sycidiales	Plantae	Charophyta	Charophyceae	Sycidiales	1
+778	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Jungermanniales	Plantae	Marchantiophyta	Jungermanniopsida	Jungermanniales	1
+779	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Gleicheniales	Plantae	Tracheophyta	Polypodiopsida	Gleicheniales	1
+780	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Cardiopteridales	Plantae	Tracheophyta	Magnoliopsida	Cardiopteridales	1
+781	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Gigartinales	Plantae	Rhodophyta	Florideophyceae	Gigartinales	1
+782	Root;k__Plantae;p__Charophyta;c__Zygnematophyceae;o__Zygnematales	Plantae	Charophyta	Zygnematophyceae	Zygnematales	1
+783	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Aquifoliales	Plantae	Tracheophyta	Magnoliopsida	Aquifoliales	1
+784	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Cucurbitales	Plantae	Tracheophyta	Magnoliopsida	Cucurbitales	1
+785	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Hookeriales	Plantae	Bryophyta	Bryopsida	Hookeriales	1
+786	Root;k__Plantae;p__Anthocerotophyta;c__Anthocerotopsida;o__Dendrocerotales	Plantae	Anthocerotophyta	Anthocerotopsida	Dendrocerotales	1
+787	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Vitales	Plantae	Tracheophyta	Magnoliopsida	Vitales	1
+788	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Dicranales	Plantae	Bryophyta	Bryopsida	Dicranales	1
+789	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Oxalidales	Plantae	Tracheophyta	Magnoliopsida	Oxalidales	1
+790	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Ulotrichales	Plantae	Chlorophyta	Ulvophyceae	Ulotrichales	1
+791	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Magnoliales	Plantae	Tracheophyta	Magnoliopsida	Magnoliales	1
+792	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Zingiberales	Plantae	Tracheophyta	Liliopsida	Zingiberales	1
+793	Root;k__Plantae;p__;c__;o__	Plantae				1
+794	Root;k__Plantae;p__Charophyta;c__Charophyceae;o__Charales	Plantae	Charophyta	Charophyceae	Charales	1
+795	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Pottiales	Plantae	Bryophyta	Bryopsida	Pottiales	1
+796	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Huerteales	Plantae	Tracheophyta	Magnoliopsida	Huerteales	1
+797	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Hypopterygiales	Plantae	Bryophyta	Bryopsida	Hypopterygiales	1
+798	Root;k__Plantae;p__Bryophyta;c__;o__	Plantae	Bryophyta			1
+799	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Grimmiales	Plantae	Bryophyta	Bryopsida	Grimmiales	1
+800	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Catoscopiales	Plantae	Bryophyta	Bryopsida	Catoscopiales	1
+801	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Rhodymeniales	Plantae	Rhodophyta	Florideophyceae	Rhodymeniales	1
+802	Root;k__Plantae;p__Tracheophyta;c__Cycadopsida;o__Cycadales	Plantae	Tracheophyta	Cycadopsida	Cycadales	1
+803	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Nemastomatales	Plantae	Rhodophyta	Florideophyceae	Nemastomatales	1
+804	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Chloranthales	Plantae	Tracheophyta	Magnoliopsida	Chloranthales	1
+805	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Ulvales	Plantae	Chlorophyta	Ulvophyceae	Ulvales	1
+806	Root;k__Plantae;p__Tracheophyta;c__Pinopsida;o__	Plantae	Tracheophyta	Pinopsida		1
+807	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Volvocales	Plantae	Chlorophyta	Chlorophyceae	Volvocales	1
+808	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Rhodogorgonales	Plantae	Rhodophyta	Florideophyceae	Rhodogorgonales	1
+809	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Ptychomniales	Plantae	Bryophyta	Bryopsida	Ptychomniales	1
+810	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__	Plantae	Marchantiophyta	Jungermanniopsida		1
+811	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Piperales	Plantae	Tracheophyta	Magnoliopsida	Piperales	1
+812	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Commelinales	Plantae	Tracheophyta	Liliopsida	Commelinales	1
+813	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Cyatheales	Plantae	Tracheophyta	Polypodiopsida	Cyatheales	1
+814	Root;k__Plantae;p__Marchantiophyta;c__Marchantiopsida;o__Marchantiales	Plantae	Marchantiophyta	Marchantiopsida	Marchantiales	1
+815	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Cornales	Plantae	Tracheophyta	Magnoliopsida	Cornales	1
+816	Root;k__Plantae;p__Rhodophyta;c__Compsopogonophyceae;o__Erythropeltidales	Plantae	Rhodophyta	Compsopogonophyceae	Erythropeltidales	1
+817	Root;k__Plantae;p__Bryophyta;c__Takakiopsida;o__Takakiales	Plantae	Bryophyta	Takakiopsida	Takakiales	1
+818	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Chaetophorales	Plantae	Chlorophyta	Chlorophyceae	Chaetophorales	1
+819	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__	Plantae	Tracheophyta	Polypodiopsida		1
+820	Root;k__Plantae;p__Charophyta;c__Charophyceae;o__Coleochaetales	Plantae	Charophyta	Charophyceae	Coleochaetales	1
+821	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Fagales	Plantae	Tracheophyta	Magnoliopsida	Fagales	1
+822	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Berberidopsidales	Plantae	Tracheophyta	Magnoliopsida	Berberidopsidales	1
+823	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Dasycladales	Plantae	Chlorophyta	Ulvophyceae	Dasycladales	1
+824	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Corallinales	Plantae	Rhodophyta	Florideophyceae	Corallinales	1
+825	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Equisetales	Plantae	Tracheophyta	Polypodiopsida	Equisetales	1
+826	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Sphaeropleales	Plantae	Chlorophyta	Chlorophyceae	Sphaeropleales	1
+827	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Pleuroziales	Plantae	Marchantiophyta	Jungermanniopsida	Pleuroziales	1
+828	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Bryopsidales	Plantae	Chlorophyta	Ulvophyceae	Bryopsidales	1
+829	Root;k__Plantae;p__Chlorophyta;c__Trebouxiophyceae;o__Oocystales	Plantae	Chlorophyta	Trebouxiophyceae	Oocystales	1
+830	Root;k__Plantae;p__Tracheophyta;c__Lycopodiopsida;o__Isoetales	Plantae	Tracheophyta	Lycopodiopsida	Isoetales	1
+831	Root;k__Plantae;p__Tracheophyta;c__Gnetopsida;o__Welwitschiales	Plantae	Tracheophyta	Gnetopsida	Welwitschiales	1
+832	Root;k__Plantae;p__Anthocerotophyta;c__Anthocerotopsida;o__Anthocerotales	Plantae	Anthocerotophyta	Anthocerotopsida	Anthocerotales	1
+833	Root;k__Plantae;p__Charophyta;c__Conjugatophyceae;o__Desmidiales	Plantae	Charophyta	Conjugatophyceae	Desmidiales	1
+834	Root;k__Plantae;p__Chlorophyta;c__Trebouxiophyceae;o__	Plantae	Chlorophyta	Trebouxiophyceae		1
+835	Root;k__Plantae;p__Chlorophyta;c__Trebouxiophyceae;o__Chlorellales	Plantae	Chlorophyta	Trebouxiophyceae	Chlorellales	1
+836	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Palmariales	Plantae	Rhodophyta	Florideophyceae	Palmariales	1
+837	Root;k__Plantae;p__Marchantiophyta;c__Marchantiopsida;o__Lunulariales	Plantae	Marchantiophyta	Marchantiopsida	Lunulariales	1
+838	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Siphonocladales	Plantae	Chlorophyta	Ulvophyceae	Siphonocladales	1
+839	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__	Plantae	Tracheophyta	Magnoliopsida		1
+840	Root;k__Plantae;p__Tracheophyta;c__Cycadopsida;o__	Plantae	Tracheophyta	Cycadopsida		1
+841	Root;k__Plantae;p__Bryophyta;c__Polytrichopsida;o__Polytrichales	Plantae	Bryophyta	Polytrichopsida	Polytrichales	1
+842	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Zygophyllales	Plantae	Tracheophyta	Magnoliopsida	Zygophyllales	1
+843	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Halymeniales	Plantae	Rhodophyta	Florideophyceae	Halymeniales	1
+844	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Dilleniales	Plantae	Tracheophyta	Magnoliopsida	Dilleniales	1
+845	Root;k__Plantae;p__Marchantiophyta;c__Marchantiopsida;o__	Plantae	Marchantiophyta	Marchantiopsida		1
+846	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Dioscoreales	Plantae	Tracheophyta	Liliopsida	Dioscoreales	1
+847	Root;k__Plantae;p__Chlorophyta;c__Prasinophyceae;o__Pyramimonadales	Plantae	Chlorophyta	Prasinophyceae	Pyramimonadales	1
+848	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Ptilidiales	Plantae	Marchantiophyta	Jungermanniopsida	Ptilidiales	1
+849	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Nemaliales	Plantae	Rhodophyta	Florideophyceae	Nemaliales	1
+850	Root;k__Plantae;p__Charophyta;c__Charophyceae;o__	Plantae	Charophyta	Charophyceae		1
+851	Root;k__Plantae;p__Bryophyta;c__Sphagnopsida;o__Sphagnales	Plantae	Bryophyta	Sphagnopsida	Sphagnales	1
+852	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Cladophorales	Plantae	Chlorophyta	Ulvophyceae	Cladophorales	1
+853	Root;k__Plantae;p__Marchantiophyta;c__Marchantiopsida;o__Sphaerocarpales	Plantae	Marchantiophyta	Marchantiopsida	Sphaerocarpales	1
+854	Root;k__Plantae;p__Tracheophyta;c__Lycopodiopsida;o__Lycopodiales	Plantae	Tracheophyta	Lycopodiopsida	Lycopodiales	1
+855	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Orthodontiales	Plantae	Bryophyta	Bryopsida	Orthodontiales	1
+856	Root;k__Plantae;p__Tracheophyta;c__Ginkgoopsida;o__Ginkgoales	Plantae	Tracheophyta	Ginkgoopsida	Ginkgoales	1
+857	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Ceratophyllales	Plantae	Tracheophyta	Magnoliopsida	Ceratophyllales	1
+858	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Oedogoniales	Plantae	Chlorophyta	Chlorophyceae	Oedogoniales	1
+859	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Buxales	Plantae	Tracheophyta	Magnoliopsida	Buxales	1
+860	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Acrochaetiales	Plantae	Rhodophyta	Florideophyceae	Acrochaetiales	1
+861	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Ophioglossales	Plantae	Tracheophyta	Polypodiopsida	Ophioglossales	1
+862	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Paracryphiales	Plantae	Tracheophyta	Magnoliopsida	Paracryphiales	1
+863	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Hymenophyllales	Plantae	Tracheophyta	Polypodiopsida	Hymenophyllales	1
+864	Root;k__Plantae;p__Charophyta;c__Mesostigmatophyceae;o__Mesostigmatales	Plantae	Charophyta	Mesostigmatophyceae	Mesostigmatales	1
+865	Root;k__Plantae;p__Rhodophyta;c__;o__Archaeolithophyllales	Plantae	Rhodophyta		Archaeolithophyllales	1
+866	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Nymphaeales	Plantae	Tracheophyta	Magnoliopsida	Nymphaeales	1
+867	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Peyssonneliales	Plantae	Rhodophyta	Florideophyceae	Peyssonneliales	1
+868	Root;k__Plantae;p__Rhodophyta;c__;o__	Plantae	Rhodophyta			1
+869	Root;k__Plantae;p__Charophyta;c__Mesostigmatophyceae;o__Chaetosphaeridiales	Plantae	Charophyta	Mesostigmatophyceae	Chaetosphaeridiales	1
+870	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Gunnerales	Plantae	Tracheophyta	Magnoliopsida	Gunnerales	1
+871	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Bartramiales	Plantae	Bryophyta	Bryopsida	Bartramiales	1
+872	Root;k__Plantae;p__Chlorophyta;c__Mamiellophyceae;o__Mamiellales	Plantae	Chlorophyta	Mamiellophyceae	Mamiellales	1
+873	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Rhizogoniales	Plantae	Bryophyta	Bryopsida	Rhizogoniales	1
+874	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Austrobaileyales	Plantae	Tracheophyta	Magnoliopsida	Austrobaileyales	1
+875	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Crossosomatales	Plantae	Tracheophyta	Magnoliopsida	Crossosomatales	1
+876	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Icacinales	Plantae	Tracheophyta	Magnoliopsida	Icacinales	1
+877	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Receptaculitales	Plantae	Chlorophyta	Chlorophyceae	Receptaculitales	1
+878	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Batrachospermales	Plantae	Rhodophyta	Florideophyceae	Batrachospermales	1
+879	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__	Plantae	Chlorophyta	Ulvophyceae		1
+880	Root;k__Plantae;p__Marchantiophyta;c__;o__	Plantae	Marchantiophyta			1
+881	Root;k__Plantae;p__Chlorophyta;c__Pleurastrophyceae;o__Pleurastrales	Plantae	Chlorophyta	Pleurastrophyceae	Pleurastrales	1
+882	Root;k__Plantae;p__Tracheophyta;c__Lycopodiopsida;o__Selaginellales	Plantae	Tracheophyta	Lycopodiopsida	Selaginellales	1
+883	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Archidiales	Plantae	Bryophyta	Bryopsida	Archidiales	1
+884	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Schizaeales	Plantae	Tracheophyta	Polypodiopsida	Schizaeales	1
+885	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Chlorocystidales	Plantae	Chlorophyta	Chlorophyceae	Chlorocystidales	1
+886	Root;k__Plantae;p__Anthocerotophyta;c__Anthocerotopsida;o__Notothyladales	Plantae	Anthocerotophyta	Anthocerotopsida	Notothyladales	1
+887	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Orthotrichales	Plantae	Bryophyta	Bryopsida	Orthotrichales	1
+888	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Metzgeriales	Plantae	Marchantiophyta	Jungermanniopsida	Metzgeriales	1
+889	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Tetrasporales	Plantae	Chlorophyta	Chlorophyceae	Tetrasporales	1
+890	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Scouleriales	Plantae	Bryophyta	Bryopsida	Scouleriales	1
+891	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Osmundales	Plantae	Tracheophyta	Polypodiopsida	Osmundales	1
+892	Root;k__Plantae;p__Chlorophyta;c__Trebouxiophyceae;o__Trebouxiales	Plantae	Chlorophyta	Trebouxiophyceae	Trebouxiales	1
+893	Root;k__Plantae;p__Charophyta;c__;o__	Plantae	Charophyta			1
+894	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Canellales	Plantae	Tracheophyta	Magnoliopsida	Canellales	1
+895	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Entwisleiales	Plantae	Rhodophyta	Florideophyceae	Entwisleiales	1
+896	Root;k__Plantae;p__Rhodophyta;c__Stylonematophyceae;o__Stylonematales	Plantae	Rhodophyta	Stylonematophyceae	Stylonematales	1
+897	Root;k__Plantae;p__Chlorophyta;c__Trebouxiophyceae;o__Prasiolales	Plantae	Chlorophyta	Trebouxiophyceae	Prasiolales	1
+898	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Gelidiales	Plantae	Rhodophyta	Florideophyceae	Gelidiales	1
+899	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Rhodachlyales	Plantae	Rhodophyta	Florideophyceae	Rhodachlyales	1
+900	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Chaetopeltidales	Plantae	Chlorophyta	Chlorophyceae	Chaetopeltidales	1
+901	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Balliales	Plantae	Rhodophyta	Florideophyceae	Balliales	1
+902	Root;k__Plantae;p__Tracheophyta;c__Ginkgoopsida;o__	Plantae	Tracheophyta	Ginkgoopsida		1
+903	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Funariales	Plantae	Bryophyta	Bryopsida	Funariales	1
+904	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Bruniales	Plantae	Tracheophyta	Magnoliopsida	Bruniales	1
+905	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Hedwigiales	Plantae	Bryophyta	Bryopsida	Hedwigiales	1
+906	Root;k__Plantae;p__Rhodophyta;c__Rhodellophyceae;o__Glaucosphaerales	Plantae	Rhodophyta	Rhodellophyceae	Glaucosphaerales	1
+907	Root;k__Plantae;p__Langiophytophyta;c__Langiophytopsida;o__Lyonophytales	Plantae	Langiophytophyta	Langiophytopsida	Lyonophytales	1
+908	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Pelliales	Plantae	Marchantiophyta	Jungermanniopsida	Pelliales	1
+909	Root;k__Plantae;p__Marchantiophyta;c__Jungermanniopsida;o__Fossombroniales	Plantae	Marchantiophyta	Jungermanniopsida	Fossombroniales	1
+910	Root;k__Plantae;p__Rhodophyta;c__Cyanidiophyceae;o__Cyanidiales	Plantae	Rhodophyta	Cyanidiophyceae	Cyanidiales	1
+911	Root;k__Plantae;p__Chlorophyta;c__;o__	Plantae	Chlorophyta			1
+912	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Bonnemaisoniales	Plantae	Rhodophyta	Florideophyceae	Bonnemaisoniales	1
+913	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Gracilariales	Plantae	Rhodophyta	Florideophyceae	Gracilariales	1
+914	Root;k__Plantae;p__Charophyta;c__Klebsormidiophyceae;o__Klebsormidiales	Plantae	Charophyta	Klebsormidiophyceae	Klebsormidiales	1
+915	Root;k__Plantae;p__Marchantiophyta;c__Haplomitriopsida;o__Calobryales	Plantae	Marchantiophyta	Haplomitriopsida	Calobryales	1
+916	Root;k__Plantae;p__Chlorophyta;c__Prasinophyceae;o__	Plantae	Chlorophyta	Prasinophyceae		1
+917	Root;k__Plantae;p__Chlorophyta;c__Prasinophyceae;o__Halosphaerales	Plantae	Chlorophyta	Prasinophyceae	Halosphaerales	1
+918	Root;k__Plantae;p__Bryophyta;c__Polytrichopsida;o__Tetraphidales	Plantae	Bryophyta	Polytrichopsida	Tetraphidales	1
+919	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Cyclocrinales	Plantae	Chlorophyta	Ulvophyceae	Cyclocrinales	1
+920	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Aulacomniales	Plantae	Bryophyta	Bryopsida	Aulacomniales	1
+921	Root;k__Plantae;p__Chlorophyta;c__Prasinophyceae;o__Chlorodendrales	Plantae	Chlorophyta	Prasinophyceae	Chlorodendrales	1
+922	Root;k__Plantae;p__Rhodophyta;c__Rhodophyceae;o__	Plantae	Rhodophyta	Rhodophyceae		1
+923	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Pseudoditrichales	Plantae	Bryophyta	Bryopsida	Pseudoditrichales	1
+924	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__	Plantae	Chlorophyta	Chlorophyceae		1
+925	Root;k__Plantae;p__Rhodophyta;c__Compsopogonophyceae;o__Compsopogonales	Plantae	Rhodophyta	Compsopogonophyceae	Compsopogonales	1
+926	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Acorales	Plantae	Tracheophyta	Liliopsida	Acorales	1
+927	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Splachnales	Plantae	Bryophyta	Bryopsida	Splachnales	1
+928	Root;k__Plantae;p__Langiophytophyta;c__Langiophytopsida;o__Langiophytales	Plantae	Langiophytophyta	Langiophytopsida	Langiophytales	1
+929	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Picramniales	Plantae	Tracheophyta	Magnoliopsida	Picramniales	1
+930	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Thoreales	Plantae	Rhodophyta	Florideophyceae	Thoreales	1
+931	Root;k__Plantae;p__Anthocerotophyta;c__Leiosporocerotopsida;o__Leiosporocerotales	Plantae	Anthocerotophyta	Leiosporocerotopsida	Leiosporocerotales	1
+932	Root;k__Plantae;p__Rhodophyta;c__Bangiophyceae;o__Bangiales	Plantae	Rhodophyta	Bangiophyceae	Bangiales	1
+933	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Encalyptales	Plantae	Bryophyta	Bryopsida	Encalyptales	1
+934	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Balbianiales	Plantae	Rhodophyta	Florideophyceae	Balbianiales	1
+935	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Psilotales	Plantae	Tracheophyta	Polypodiopsida	Psilotales	1
+936	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Garryales	Plantae	Tracheophyta	Magnoliopsida	Garryales	1
+937	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Dunaliellales	Plantae	Chlorophyta	Chlorophyceae	Dunaliellales	1
+938	Root;k__Plantae;p__Chlorophyta;c__Pedinophyceae;o__Scourfieldiales	Plantae	Chlorophyta	Pedinophyceae	Scourfieldiales	1
+939	Root;k__Plantae;p__Marchantiophyta;c__Haplomitriopsida;o__Treubiales	Plantae	Marchantiophyta	Haplomitriopsida	Treubiales	1
+940	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Bryoxiphiales	Plantae	Bryophyta	Bryopsida	Bryoxiphiales	1
+941	Root;k__Plantae;p__Chlorophyta;c__Pedinophyceae;o__Pedinomonadales	Plantae	Chlorophyta	Pedinophyceae	Pedinomonadales	1
+942	Root;k__Plantae;p__Tracheophyta;c__Polypodiopsida;o__Salviniales	Plantae	Tracheophyta	Polypodiopsida	Salviniales	1
+943	Root;k__Plantae;p__Chlorophyta;c__Nephroselmidophyceae;o__Nephroselmidales	Plantae	Chlorophyta	Nephroselmidophyceae	Nephroselmidales	1
+944	Root;k__Plantae;p__Tracheophyta;c__Gnetopsida;o__Ephedrales	Plantae	Tracheophyta	Gnetopsida	Ephedrales	1
+945	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__	Plantae	Bryophyta	Bryopsida		1
+946	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Acrosymphytales	Plantae	Rhodophyta	Florideophyceae	Acrosymphytales	1
+947	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Trentepohliales	Plantae	Chlorophyta	Ulvophyceae	Trentepohliales	1
+948	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Colaconematales	Plantae	Rhodophyta	Florideophyceae	Colaconematales	1
+949	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Vahliales	Plantae	Tracheophyta	Magnoliopsida	Vahliales	1
+950	Root;k__Plantae;p__Rhodophyta;c__Rhodellophyceae;o__Dixoniellales	Plantae	Rhodophyta	Rhodellophyceae	Dixoniellales	1
+951	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Gigaspermales	Plantae	Bryophyta	Bryopsida	Gigaspermales	1
+952	Root;k__Plantae;p__Marchantiophyta;c__Marchantiopsida;o__Naiaditales	Plantae	Marchantiophyta	Marchantiopsida	Naiaditales	1
+953	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Trochodendrales	Plantae	Tracheophyta	Magnoliopsida	Trochodendrales	1
+954	Root;k__Plantae;p__Chlorophyta;c__Prasinophyceae;o__Pseudoscourfieldiales	Plantae	Chlorophyta	Prasinophyceae	Pseudoscourfieldiales	1
+955	Root;k__Plantae;p__Charophyta;c__Chlorokybophyceae;o__Chlorokybales	Plantae	Charophyta	Chlorokybophyceae	Chlorokybales	1
+956	Root;k__Plantae;p__Chlorophyta;c__;o__Marsupiomonadales	Plantae	Chlorophyta		Marsupiomonadales	1
+957	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Oltmannsiellopsidales	Plantae	Chlorophyta	Ulvophyceae	Oltmannsiellopsidales	1
+958	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Corynodactylales	Plantae	Rhodophyta	Florideophyceae	Corynodactylales	1
+959	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Plocamiales	Plantae	Rhodophyta	Florideophyceae	Plocamiales	1
+960	Root;k__Plantae;p__Charophyta;c__Zygnematophyceae;o__	Plantae	Charophyta	Zygnematophyceae		1
+961	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Atractophorales	Plantae	Rhodophyta	Florideophyceae	Atractophorales	1
+962	Root;k__Plantae;p__Tracheophyta;c__Liliopsida;o__Petrosaviales	Plantae	Tracheophyta	Liliopsida	Petrosaviales	1
+963	Root;k__Plantae;p__Bryophyta;c__Andreaeobryopsida;o__Andreaeobryales	Plantae	Bryophyta	Andreaeobryopsida	Andreaeobryales	1
+964	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Sebdeniales	Plantae	Rhodophyta	Florideophyceae	Sebdeniales	1
+965	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Disceliales	Plantae	Bryophyta	Bryopsida	Disceliales	1
+966	Root;k__Plantae;p__Chlorophyta;c__Chloropicophyceae;o__Chloropicales	Plantae	Chlorophyta	Chloropicophyceae	Chloropicales	1
+967	Root;k__Plantae;p__Marchantiophyta;c__Marchantiopsida;o__Neohodgsoniales	Plantae	Marchantiophyta	Marchantiopsida	Neohodgsoniales	1
+968	Root;k__Plantae;p__Anthocerotophyta;c__Anthocerotopsida;o__Phymatocerotales	Plantae	Anthocerotophyta	Anthocerotopsida	Phymatocerotales	1
+969	Root;k__Plantae;p__Tracheophyta;c__Gnetopsida;o__Gnetales	Plantae	Tracheophyta	Gnetopsida	Gnetales	1
+970	Root;k__Plantae;p__Chlorophyta;c__Ulvophyceae;o__Scotinosphaerales	Plantae	Chlorophyta	Ulvophyceae	Scotinosphaerales	1
+971	Root;k__Plantae;p__Rhodophyta;c__Porphyridiophyceae;o__Porphyridiales	Plantae	Rhodophyta	Porphyridiophyceae	Porphyridiales	1
+972	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__	Plantae	Rhodophyta	Florideophyceae		1
+973	Root;k__Plantae;p__Bryophyta;c__Andreaeopsida;o__Andreaeales	Plantae	Bryophyta	Andreaeopsida	Andreaeales	1
+974	Root;k__Plantae;p__Charophyta;c__Charophyceae;o__Moellerinales	Plantae	Charophyta	Charophyceae	Moellerinales	1
+975	Root;k__Plantae;p__Rhodophyta;c__Compsopogonophyceae;o__Rhodochaetales	Plantae	Rhodophyta	Compsopogonophyceae	Rhodochaetales	1
+976	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Diphysciales	Plantae	Bryophyta	Bryopsida	Diphysciales	1
+977	Root;k__Plantae;p__Chlorophyta;c__Palmophyllophyceae;o__Palmophyllales	Plantae	Chlorophyta	Palmophyllophyceae	Palmophyllales	1
+978	Root;k__Plantae;p__Marchantiophyta;c__Marchantiopsida;o__Blasiales	Plantae	Marchantiophyta	Marchantiopsida	Blasiales	1
+979	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Hildenbrandiales	Plantae	Rhodophyta	Florideophyceae	Hildenbrandiales	1
+980	Root;k__Plantae;p__Chlorophyta;c__Mamiellophyceae;o__Dolichomastigales	Plantae	Chlorophyta	Mamiellophyceae	Dolichomastigales	1
+981	Root;k__Plantae;p__Bryophyta;c__Polytrichopsida;o__Oedipodiales	Plantae	Bryophyta	Polytrichopsida	Oedipodiales	1
+982	Root;k__Plantae;p__Rhodophyta;c__Stylonematophyceae;o__Rufusiales	Plantae	Rhodophyta	Stylonematophyceae	Rufusiales	1
+983	Root;k__Plantae;p__Charophyta;c__Charophyceae;o__Umbellinales	Plantae	Charophyta	Charophyceae	Umbellinales	1
+984	Root;k__Plantae;p__Tracheophyta;c__Magnoliopsida;o__Amborellales	Plantae	Tracheophyta	Magnoliopsida	Amborellales	1
+985	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Timmiales	Plantae	Bryophyta	Bryopsida	Timmiales	1
+986	Root;k__Plantae;p__Chlorophyta;c__Chlorophyceae;o__Caulerpales	Plantae	Chlorophyta	Chlorophyceae	Caulerpales	1
+987	Root;k__Plantae;p__Rhodophyta;c__Florideophyceae;o__Ahnfeltiales	Plantae	Rhodophyta	Florideophyceae	Ahnfeltiales	1
+988	Root;k__Plantae;p__Glaucophyta;c__Glaucophyceae;o__Glaucocystales	Plantae	Glaucophyta	Glaucophyceae	Glaucocystales	1
+989	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Helicophyllales	Plantae	Bryophyta	Bryopsida	Helicophyllales	1
+990	Root;k__Plantae;p__Tracheophyta;c__Gnetopsida;o__	Plantae	Tracheophyta	Gnetopsida		1
+991	Root;k__Plantae;p__Chlorophyta;c__Trebouxiophyceae;o__Microthamniales	Plantae	Chlorophyta	Trebouxiophyceae	Microthamniales	1
+992	Root;k__Plantae;p__Rhodophyta;c__Rhodellophyceae;o__Rhodellales	Plantae	Rhodophyta	Rhodellophyceae	Rhodellales	1
+993	Root;k__Plantae;p__Chlorophyta;c__Picocystophyceae;o__Picocystales	Plantae	Chlorophyta	Picocystophyceae	Picocystales	1
+994	Root;k__Plantae;p__Bryophyta;c__Bryopsida;o__Buxbaumiales	Plantae	Bryophyta	Bryopsida	Buxbaumiales	1
+995	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Boletales	Fungi	Basidiomycota	Agaricomycetes	Boletales	1
+996	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Hymenochaetales	Fungi	Basidiomycota	Agaricomycetes	Hymenochaetales	1
+997	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Agaricales	Fungi	Basidiomycota	Agaricomycetes	Agaricales	1
+998	Root;k__Chromista;p__Foraminifera;c__;o__Allogromiida	Chromista	Foraminifera		Allogromiida	1
+999	Root;k__Fungi;p__Ascomycota;c__Saccharomycetes;o__Saccharomycetales	Fungi	Ascomycota	Saccharomycetes	Saccharomycetales	1
+1000	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Diaporthales	Fungi	Ascomycota	Sordariomycetes	Diaporthales	1
+1001	Root;k__Chromista;p__Foraminifera;c__Globothalamea;o__Rotaliida	Chromista	Foraminifera	Globothalamea	Rotaliida	1
+1002	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Lecanorales	Fungi	Ascomycota	Lecanoromycetes	Lecanorales	1
+1003	Root;k__Fungi;p__Basidiomycota;c__Tremellomycetes;o__Cystofilobasidiales	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	1
+1004	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Pleosporales	Fungi	Ascomycota	Dothideomycetes	Pleosporales	1
+1005	Root;k__Fungi;p__Ascomycota;c__Pezizomycetes;o__Pezizales	Fungi	Ascomycota	Pezizomycetes	Pezizales	1
+1006	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Ophiostomatales	Fungi	Ascomycota	Sordariomycetes	Ophiostomatales	1
+1007	Root;k__Chromista;p__Foraminifera;c__;o__Endothyrida	Chromista	Foraminifera		Endothyrida	1
+1008	Root;k__Chromista;p__;c__Polycystina;o__Nassellaria	Chromista		Polycystina	Nassellaria	1
+1009	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Chaetothyriales	Fungi	Ascomycota	Eurotiomycetes	Chaetothyriales	1
+1010	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Asterinales	Fungi	Ascomycota	Dothideomycetes	Asterinales	1
+1011	Root;k__Chromista;p__Foraminifera;c__Tubothalamea;o__Miliolida	Chromista	Foraminifera	Tubothalamea	Miliolida	1
+1012	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Monoblastiales	Fungi	Ascomycota	Dothideomycetes	Monoblastiales	1
+1013	Root;k__Chromista;p__Cryptophyta;c__Cryptophyceae;o__Pyrenomonadales	Chromista	Cryptophyta	Cryptophyceae	Pyrenomonadales	1
+1014	Root;k__Chromista;p__Foraminifera;c__;o__Astrorhizida	Chromista	Foraminifera		Astrorhizida	1
+1015	Root;k__Fungi;p__Ascomycota;c__;o__	Fungi	Ascomycota			1
+1016	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Polyporales	Fungi	Basidiomycota	Agaricomycetes	Polyporales	1
+1017	Root;k__Chromista;p__Ciliophora;c__Hypotrichea;o__Oxytrichida	Chromista	Ciliophora	Hypotrichea	Oxytrichida	1
+1018	Root;k__Fungi;p__Ascomycota;c__Arthoniomycetes;o__Arthoniales	Fungi	Ascomycota	Arthoniomycetes	Arthoniales	1
+1019	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Exobasidiales	Fungi	Basidiomycota	Exobasidiomycetes	Exobasidiales	1
+1020	Root;k__Chromista;p__Foraminifera;c__;o__	Chromista	Foraminifera			1
+1021	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Robbauerales	Fungi	Basidiomycota	Exobasidiomycetes	Robbauerales	1
+1022	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Rhaponeidales	Chromista	Ochrophyta	Bacillariophyceae	Rhaponeidales	1
+1023	Root;k__Chromista;p__Myzozoa;c__Conoidasida;o__Eugregarinorida	Chromista	Myzozoa	Conoidasida	Eugregarinorida	1
+1024	Root;k__Fungi;p__Basidiomycota;c__Pucciniomycetes;o__Pucciniales	Fungi	Basidiomycota	Pucciniomycetes	Pucciniales	1
+1025	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Corticiales	Fungi	Basidiomycota	Agaricomycetes	Corticiales	1
+1026	Root;k__Protozoa;p__Euglenozoa;c__Euglenoidea;o__Euglenida	Protozoa	Euglenozoa	Euglenoidea	Euglenida	1
+1027	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Peridiniales	Chromista	Myzozoa	Dinophyceae	Peridiniales	1
+1028	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Hypocreales	Fungi	Ascomycota	Sordariomycetes	Hypocreales	1
+1029	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Helotiales	Fungi	Ascomycota	Leotiomycetes	Helotiales	1
+1030	Root;k__Chromista;p__Foraminifera;c__Globothalamea;o__Lituolida	Chromista	Foraminifera	Globothalamea	Lituolida	1
+1031	Root;k__Protozoa;p__;c__;o__	Protozoa				1
+1032	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Microthyriales	Fungi	Ascomycota	Dothideomycetes	Microthyriales	1
+1033	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Caliciales	Fungi	Ascomycota	Lecanoromycetes	Caliciales	1
+1034	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Peltigerales	Fungi	Ascomycota	Lecanoromycetes	Peltigerales	1
+1035	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Rhopalodiales	Chromista	Ochrophyta	Bacillariophyceae	Rhopalodiales	1
+1036	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Eremithallales	Fungi	Ascomycota	Dothideomycetes	Eremithallales	1
+1037	Root;k__Chromista;p__Ciliophora;c__Kinetofragminophora;o__Suctorida	Chromista	Ciliophora	Kinetofragminophora	Suctorida	1
+1038	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Tubeufiales	Fungi	Ascomycota	Dothideomycetes	Tubeufiales	1
+1039	Root;k__Chromista;p__Ciliophora;c__Hypotrichea;o__Urostylida	Chromista	Ciliophora	Hypotrichea	Urostylida	1
+1040	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Mycosphaerellales	Fungi	Ascomycota	Dothideomycetes	Mycosphaerellales	1
+1041	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Cymbellales	Chromista	Ochrophyta	Bacillariophyceae	Cymbellales	1
+1042	Root;k__Fungi;p__Basidiomycota;c__Dacrymycetes;o__Dacrymycetales	Fungi	Basidiomycota	Dacrymycetes	Dacrymycetales	1
+1043	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Fucales	Chromista	Ochrophyta	Phaeophyceae	Fucales	1
+1044	Root;k__Chromista;p__Foraminifera;c__;o__Fusulinida	Chromista	Foraminifera		Fusulinida	1
+1045	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Auriculariales	Fungi	Basidiomycota	Agaricomycetes	Auriculariales	1
+1046	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Coccolithales	Chromista	Haptophyta	Prymnesiophyceae	Coccolithales	1
+1047	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Chaetocerotales	Chromista	Ochrophyta	Bacillariophyceae	Chaetocerotales	1
+1048	Root;k__Chromista;p__Foraminifera;c__Globothalamea;o__Textulariida	Chromista	Foraminifera	Globothalamea	Textulariida	1
+1049	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Trypetheliales	Fungi	Ascomycota	Dothideomycetes	Trypetheliales	1
+1050	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Coronophorales	Fungi	Ascomycota	Sordariomycetes	Coronophorales	1
+1051	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Russulales	Fungi	Basidiomycota	Agaricomycetes	Russulales	1
+1052	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Naviculales	Chromista	Ochrophyta	Bacillariophyceae	Naviculales	1
+1053	Root;k__Chromista;p__Myzozoa;c__Conoidasida;o__Eucoccidiorida	Chromista	Myzozoa	Conoidasida	Eucoccidiorida	1
+1054	Root;k__Chromista;p__Ciliophora;c__Gymnostomatea;o__Spathidiida	Chromista	Ciliophora	Gymnostomatea	Spathidiida	1
+1055	Root;k__Fungi;p__Glomeromycota;c__Glomeromycetes;o__Diversisporales	Fungi	Glomeromycota	Glomeromycetes	Diversisporales	1
+1056	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Verrucariales	Fungi	Ascomycota	Eurotiomycetes	Verrucariales	1
+1057	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__	Fungi	Ascomycota	Sordariomycetes		1
+1058	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Pyrenulales	Fungi	Ascomycota	Eurotiomycetes	Pyrenulales	1
+1059	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Fragilariales	Chromista	Ochrophyta	Bacillariophyceae	Fragilariales	1
+1060	Root;k__Protozoa;p__Euglenozoa;c__Diplonemea;o__Diplonemida	Protozoa	Euglenozoa	Diplonemea	Diplonemida	1
+1061	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Leotiales	Fungi	Ascomycota	Leotiomycetes	Leotiales	1
+1062	Root;k__Chromista;p__Ciliophora;c__Spirotrichea;o__Protocruziida	Chromista	Ciliophora	Spirotrichea	Protocruziida	1
+1063	Root;k__Chromista;p__Cercozoa;c__;o__	Chromista	Cercozoa			1
+1064	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Microascales	Fungi	Ascomycota	Sordariomycetes	Microascales	1
+1065	Root;k__Chromista;p__Ochrophyta;c__Raphidophyceae;o__Chattonellales	Chromista	Ochrophyta	Raphidophyceae	Chattonellales	1
+1066	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Phallales	Fungi	Basidiomycota	Agaricomycetes	Phallales	1
+1067	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__	Chromista	Haptophyta	Prymnesiophyceae		1
+1068	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Ectocarpales	Chromista	Ochrophyta	Phaeophyceae	Ectocarpales	1
+1069	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Peronosporales	Chromista	Oomycota	Peronosporea	Peronosporales	1
+1070	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Stictodiscales	Chromista	Ochrophyta	Bacillariophyceae	Stictodiscales	1
+1071	Root;k__Fungi;p__Basidiomycota;c__Pucciniomycetes;o__Platygloeales	Fungi	Basidiomycota	Pucciniomycetes	Platygloeales	1
+1072	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Myriangiales	Fungi	Ascomycota	Dothideomycetes	Myriangiales	1
+1073	Root;k__Chromista;p__Ciliophora;c__Oligotrichea;o__Choreotrichida	Chromista	Ciliophora	Oligotrichea	Choreotrichida	1
+1074	Root;k__Protozoa;p__Microsporidia;c__Microsporea;o__Glugeida	Protozoa	Microsporidia	Microsporea	Glugeida	1
+1075	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Lecideales	Fungi	Ascomycota	Lecanoromycetes	Lecideales	1
+1076	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Ostropales	Fungi	Ascomycota	Lecanoromycetes	Ostropales	1
+1077	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Phyllachorales	Fungi	Ascomycota	Sordariomycetes	Phyllachorales	1
+1078	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Hysterangiales	Fungi	Basidiomycota	Agaricomycetes	Hysterangiales	1
+1079	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Noctilucales	Chromista	Myzozoa	Dinophyceae	Noctilucales	1
+1080	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Gyalectales	Fungi	Ascomycota	Lecanoromycetes	Gyalectales	1
+1081	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__Grossglockneriida	Chromista	Ciliophora	Colpodea	Grossglockneriida	1
+1082	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Baeomycetales	Fungi	Ascomycota	Lecanoromycetes	Baeomycetales	1
+1083	Root;k__Fungi;p__Glomeromycota;c__Glomeromycetes;o__Paraglomerales	Fungi	Glomeromycota	Glomeromycetes	Paraglomerales	1
+1084	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Sordariales	Fungi	Ascomycota	Sordariomycetes	Sordariales	1
+1085	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__Bryophryida	Chromista	Ciliophora	Colpodea	Bryophryida	1
+1086	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Tilletiales	Fungi	Basidiomycota	Exobasidiomycetes	Tilletiales	1
+1087	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__Scuticociliatida	Chromista	Ciliophora	Oligohymenophorea	Scuticociliatida	1
+1088	Root;k__Protozoa;p__Loukozoa;c__Jakobea;o__Jakobida	Protozoa	Loukozoa	Jakobea	Jakobida	1
+1089	Root;k__Fungi;p__Basidiomycota;c__Ustilaginomycetes;o__Ustilaginales	Fungi	Basidiomycota	Ustilaginomycetes	Ustilaginales	1
+1090	Root;k__Protozoa;p__;c__Acantharia;o__Arthracanthida	Protozoa		Acantharia	Arthracanthida	1
+1091	Root;k__Protozoa;p__Mycetozoa;c__Myxomycetes;o__Echinosteliales	Protozoa	Mycetozoa	Myxomycetes	Echinosteliales	1
+1092	Root;k__Chromista;p__Foraminifera;c__;o__Nodosariida	Chromista	Foraminifera		Nodosariida	1
+1093	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Onygenales	Fungi	Ascomycota	Eurotiomycetes	Onygenales	1
+1094	Root;k__Chromista;p__Ciliophora;c__Gymnostomatea;o__Pleurostomatida	Chromista	Ciliophora	Gymnostomatea	Pleurostomatida	1
+1095	Root;k__Fungi;p__Ascomycota;c__Geoglossomycetes;o__Geoglossales	Fungi	Ascomycota	Geoglossomycetes	Geoglossales	1
+1096	Root;k__incertae sedis;p__;c__;o__	incertae sedis				1
+1097	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Achnanthales	Chromista	Ochrophyta	Bacillariophyceae	Achnanthales	1
+1098	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Coscinodiscales	Chromista	Ochrophyta	Bacillariophyceae	Coscinodiscales	1
+1099	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Teloschistales	Fungi	Ascomycota	Lecanoromycetes	Teloschistales	1
+1100	Root;k__Chromista;p__Ciliophora;c__Karyorelictea;o__Protoheterotrichida	Chromista	Ciliophora	Karyorelictea	Protoheterotrichida	1
+1101	Root;k__Chromista;p__Foraminifera;c__Tubothalamea;o__Spirillinida	Chromista	Foraminifera	Tubothalamea	Spirillinida	1
+1102	Root;k__Chromista;p__Ciliophora;c__Hypotrichea;o__Stichotrichida	Chromista	Ciliophora	Hypotrichea	Stichotrichida	1
+1103	Root;k__Chromista;p__Ciliophora;c__Oligotrichea;o__Tintinnida	Chromista	Ciliophora	Oligotrichea	Tintinnida	1
+1104	Root;k__Protozoa;p__Euglenozoa;c__Euglenoidea;o__	Protozoa	Euglenozoa	Euglenoidea		1
+1105	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Thalassionematales	Chromista	Ochrophyta	Bacillariophyceae	Thalassionematales	1
+1106	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Ceraceosorales	Fungi	Basidiomycota	Exobasidiomycetes	Ceraceosorales	1
+1107	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__	Fungi	Ascomycota	Dothideomycetes		1
+1108	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Annulatascales	Fungi	Ascomycota	Sordariomycetes	Annulatascales	1
+1109	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Dothideales	Fungi	Ascomycota	Dothideomycetes	Dothideales	1
+1110	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Hysteriales	Fungi	Ascomycota	Dothideomycetes	Hysteriales	1
+1111	Root;k__Fungi;p__Basidiomycota;c__Atractiellomycetes;o__Atractiellales	Fungi	Basidiomycota	Atractiellomycetes	Atractiellales	1
+1112	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Chrysanthemodiscales	Chromista	Ochrophyta	Bacillariophyceae	Chrysanthemodiscales	1
+1113	Root;k__Chromista;p__Foraminifera;c__;o__Involutinida	Chromista	Foraminifera		Involutinida	1
+1114	Root;k__Fungi;p__;c__;o__	Fungi				1
+1115	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Meliolales	Fungi	Ascomycota	Sordariomycetes	Meliolales	1
+1116	Root;k__Fungi;p__Ascomycota;c__Lichinomycetes;o__Lichinales	Fungi	Ascomycota	Lichinomycetes	Lichinales	1
+1117	Root;k__Protozoa;p__Microsporidia;c__Microsporea;o__	Protozoa	Microsporidia	Microsporea		1
+1118	Root;k__Chromista;p__Ciliophora;c__Heterotrichea;o__Heterotrichida	Chromista	Ciliophora	Heterotrichea	Heterotrichida	1
+1119	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Lichenotheliales	Fungi	Ascomycota	Dothideomycetes	Lichenotheliales	1
+1120	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Trichosphaeriales	Fungi	Ascomycota	Sordariomycetes	Trichosphaeriales	1
+1121	Root;k__Fungi;p__Basidiomycota;c__Microbotryomycetes;o__Sporidiobolales	Fungi	Basidiomycota	Microbotryomycetes	Sporidiobolales	1
+1122	Root;k__Protozoa;p__Metamonada;c__Anaeromonadea;o__Oxymonadida	Protozoa	Metamonada	Anaeromonadea	Oxymonadida	1
+1123	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__	Chromista	Ochrophyta	Bacillariophyceae		1
+1124	Root;k__Chromista;p__Myzozoa;c__;o__Eugregarinida	Chromista	Myzozoa		Eugregarinida	1
+1125	Root;k__Chromista;p__Foraminifera;c__Globothalamea;o__	Chromista	Foraminifera	Globothalamea		1
+1126	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Triceratiales	Chromista	Ochrophyta	Bacillariophyceae	Triceratiales	1
+1127	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Bacillariales	Chromista	Ochrophyta	Bacillariophyceae	Bacillariales	1
+1128	Root;k__Chromista;p__Ciliophora;c__Gymnostomatea;o__Haptorida	Chromista	Ciliophora	Gymnostomatea	Haptorida	1
+1129	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Acrospermales	Fungi	Ascomycota	Dothideomycetes	Acrospermales	1
+1130	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Xylariales	Fungi	Ascomycota	Sordariomycetes	Xylariales	1
+1131	Root;k__Protozoa;p__Amoebozoa;c__Lobosa;o__Arcellinida	Protozoa	Amoebozoa	Lobosa	Arcellinida	1
+1132	Root;k__Protozoa;p__Microsporidia;c__Microsporea;o__Dissociodihaplophasida	Protozoa	Microsporidia	Microsporea	Dissociodihaplophasida	1
+1133	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Acarosporales	Fungi	Ascomycota	Lecanoromycetes	Acarosporales	1
+1134	Root;k__Chromista;p__Myzozoa;c__;o__	Chromista	Myzozoa			1
+1135	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__Peritrichida	Chromista	Ciliophora	Oligohymenophorea	Peritrichida	1
+1136	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Gonyaulacales	Chromista	Myzozoa	Dinophyceae	Gonyaulacales	1
+1137	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Cutleriales	Chromista	Ochrophyta	Phaeophyceae	Cutleriales	1
+1138	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Nemodermatales	Chromista	Ochrophyta	Phaeophyceae	Nemodermatales	1
+1139	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Thalassiosirales	Chromista	Ochrophyta	Bacillariophyceae	Thalassiosirales	1
+1140	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Melosirales	Chromista	Ochrophyta	Bacillariophyceae	Melosirales	1
+1141	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Rhytismatales	Fungi	Ascomycota	Leotiomycetes	Rhytismatales	1
+1142	Root;k__Protozoa;p__Mycetozoa;c__;o__	Protozoa	Mycetozoa			1
+1143	Root;k__Chromista;p__Foraminifera;c__Globothalamea;o__Robertinida	Chromista	Foraminifera	Globothalamea	Robertinida	1
+1144	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Paraliales	Chromista	Ochrophyta	Bacillariophyceae	Paraliales	1
+1145	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Myrmecridiales	Fungi	Ascomycota	Sordariomycetes	Myrmecridiales	1
+1146	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Rhizosoleniales	Chromista	Ochrophyta	Bacillariophyceae	Rhizosoleniales	1
+1147	Root;k__Chromista;p__Picozoa;c__Picomonadea;o__Picomonadida	Chromista	Picozoa	Picomonadea	Picomonadida	1
+1148	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Eunotiales	Chromista	Ochrophyta	Bacillariophyceae	Eunotiales	1
+1149	Root;k__Chromista;p__Ciliophora;c__Litostomatea;o__Dileptida	Chromista	Ciliophora	Litostomatea	Dileptida	1
+1150	Root;k__Chromista;p__Ochrophyta;c__Dictyochophyceae;o__Dictyochales	Chromista	Ochrophyta	Dictyochophyceae	Dictyochales	1
+1151	Root;k__Protozoa;p__Sarcomastigophora;c__;o__	Protozoa	Sarcomastigophora			1
+1152	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Pertusariales	Fungi	Ascomycota	Lecanoromycetes	Pertusariales	1
+1153	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Venturiales	Fungi	Ascomycota	Dothideomycetes	Venturiales	1
+1154	Root;k__Fungi;p__Chytridiomycota;c__Rhizophydiomycetes;o__Rhizophydiales	Fungi	Chytridiomycota	Rhizophydiomycetes	Rhizophydiales	1
+1155	Root;k__Chromista;p__Foraminifera;c__;o__Polymorphinida	Chromista	Foraminifera		Polymorphinida	1
+1156	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Chromulinales	Chromista	Ochrophyta	Chrysophyceae	Chromulinales	1
+1157	Root;k__Protozoa;p__Mycetozoa;c__Protosteliomycetes;o__Ceratiomyxales	Protozoa	Mycetozoa	Protosteliomycetes	Ceratiomyxales	1
+1158	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Capnodiales	Fungi	Ascomycota	Dothideomycetes	Capnodiales	1
+1159	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Phomatosporales	Fungi	Ascomycota	Sordariomycetes	Phomatosporales	1
+1160	Root;k__Chromista;p__Ciliophora;c__Gymnostomatea;o__Pseudoholophryida	Chromista	Ciliophora	Gymnostomatea	Pseudoholophryida	1
+1161	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Gloeophyllales	Fungi	Basidiomycota	Agaricomycetes	Gloeophyllales	1
+1162	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Lithodesmiales	Chromista	Ochrophyta	Bacillariophyceae	Lithodesmiales	1
+1163	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Coniochaetales	Fungi	Ascomycota	Sordariomycetes	Coniochaetales	1
+1164	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Sebacinales	Fungi	Basidiomycota	Agaricomycetes	Sebacinales	1
+1165	Root;k__Chromista;p__Foraminifera;c__;o__Parathuramminida	Chromista	Foraminifera		Parathuramminida	1
+1166	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Licmophorales	Chromista	Ochrophyta	Bacillariophyceae	Licmophorales	1
+1167	Root;k__Chromista;p__Ciliophora;c__Prostomatea;o__Prostomatida	Chromista	Ciliophora	Prostomatea	Prostomatida	1
+1168	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Valsariales	Fungi	Ascomycota	Dothideomycetes	Valsariales	1
+1169	Root;k__Chromista;p__Ciliophora;c__Karyorelictea;o__Trachelocercida	Chromista	Ciliophora	Karyorelictea	Trachelocercida	1
+1170	Root;k__Fungi;p__Mucoromycota;c__Mucoromycetes;o__Mucorales	Fungi	Mucoromycota	Mucoromycetes	Mucorales	1
+1171	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Chaetosphaeriales	Fungi	Ascomycota	Sordariomycetes	Chaetosphaeriales	1
+1172	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Dyfrolomycetales	Fungi	Ascomycota	Dothideomycetes	Dyfrolomycetales	1
+1173	Root;k__Protozoa;p__Choanozoa;c__Ichthyosporea;o__Eccrinida	Protozoa	Choanozoa	Ichthyosporea	Eccrinida	1
+1174	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Botryosphaeriales	Fungi	Ascomycota	Dothideomycetes	Botryosphaeriales	1
+1175	Root;k__Fungi;p__Ascomycota;c__Candelariomycetes;o__Candelariales	Fungi	Ascomycota	Candelariomycetes	Candelariales	1
+1176	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Ralfsiales	Chromista	Ochrophyta	Phaeophyceae	Ralfsiales	1
+1177	Root;k__Chromista;p__;c__Polycystina;o__Spumellaria	Chromista		Polycystina	Spumellaria	1
+1178	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__Colpodida	Chromista	Ciliophora	Colpodea	Colpodida	1
+1179	Root;k__Chromista;p__Foraminifera;c__Globothalamea;o__Loftusiida	Chromista	Foraminifera	Globothalamea	Loftusiida	1
+1180	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Sphacelariales	Chromista	Ochrophyta	Phaeophyceae	Sphacelariales	1
+1181	Root;k__Chromista;p__;c__;o__	Chromista				1
+1182	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Eurotiales	Fungi	Ascomycota	Eurotiomycetes	Eurotiales	1
+1183	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__Hymenostomatida	Chromista	Ciliophora	Oligohymenophorea	Hymenostomatida	1
+1184	Root;k__Chromista;p__Ciliophora;c__Oligotrichea;o__Oligotrichida	Chromista	Ciliophora	Oligotrichea	Oligotrichida	1
+1185	Root;k__Fungi;p__Entomophthoromycota;c__Entomophthoromycetes;o__Entomophthorales	Fungi	Entomophthoromycota	Entomophthoromycetes	Entomophthorales	1
+1186	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__Cyrtolophosidida	Chromista	Ciliophora	Colpodea	Cyrtolophosidida	1
+1187	Root;k__Fungi;p__Chytridiomycota;c__Monoblepharidomycetes;o__Monoblepharidales	Fungi	Chytridiomycota	Monoblepharidomycetes	Monoblepharidales	1
+1188	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Syracosphaerales	Chromista	Haptophyta	Prymnesiophyceae	Syracosphaerales	1
+1189	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Saprolegniales	Chromista	Oomycota	Peronosporea	Saprolegniales	1
+1190	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Laminariales	Chromista	Ochrophyta	Phaeophyceae	Laminariales	1
+1191	Root;k__Fungi;p__Ascomycota;c__Taphrinomycetes;o__Taphrinales	Fungi	Ascomycota	Taphrinomycetes	Taphrinales	1
+1192	Root;k__Chromista;p__Ciliophora;c__Nassophorea;o__Nassulida	Chromista	Ciliophora	Nassophorea	Nassulida	1
+1193	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Neophaeothecales	Fungi	Ascomycota	Dothideomycetes	Neophaeothecales	1
+1194	Root;k__Chromista;p__Ciliophora;c__Cyrtophoria;o__Chlamydodontida	Chromista	Ciliophora	Cyrtophoria	Chlamydodontida	1
+1195	Root;k__Chromista;p__Ciliophora;c__Cyrtophoria;o__Dysteriida	Chromista	Ciliophora	Cyrtophoria	Dysteriida	1
+1196	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Suessiales	Chromista	Myzozoa	Dinophyceae	Suessiales	1
+1197	Root;k__Fungi;p__Ascomycota;c__Laboulbeniomycetes;o__Laboulbeniales	Fungi	Ascomycota	Laboulbeniomycetes	Laboulbeniales	1
+1198	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Amphisphaeriales	Fungi	Ascomycota	Sordariomycetes	Amphisphaeriales	1
+1199	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Magnaporthales	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	1
+1200	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__Philasterida	Chromista	Ciliophora	Oligohymenophorea	Philasterida	1
+1201	Root;k__Chromista;p__;c__Polycystina;o__	Chromista		Polycystina		1
+1202	Root;k__Protozoa;p__Mycetozoa;c__Myxomycetes;o__Cribrariales	Protozoa	Mycetozoa	Myxomycetes	Cribrariales	1
+1203	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Minutisphaerales	Fungi	Ascomycota	Dothideomycetes	Minutisphaerales	1
+1204	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Isochrysidales	Chromista	Haptophyta	Prymnesiophyceae	Isochrysidales	1
+1205	Root;k__Fungi;p__Ascomycota;c__;o__Triblidiales	Fungi	Ascomycota		Triblidiales	1
+1206	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__Chytridiales	Fungi	Chytridiomycota	Chytridiomycetes	Chytridiales	1
+1207	Root;k__Fungi;p__Basidiomycota;c__Tremellomycetes;o__Tremellales	Fungi	Basidiomycota	Tremellomycetes	Tremellales	1
+1208	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Koralionastetales	Fungi	Ascomycota	Sordariomycetes	Koralionastetales	1
+1209	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Collemopsidiales	Fungi	Ascomycota	Dothideomycetes	Collemopsidiales	1
+1210	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Hibberdiales	Chromista	Ochrophyta	Chrysophyceae	Hibberdiales	1
+1211	Root;k__Protozoa;p__Euglenozoa;c__Postgaardea;o__Bihospitida	Protozoa	Euglenozoa	Postgaardea	Bihospitida	1
+1212	Root;k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__Cyphobasidiales	Fungi	Basidiomycota	Cystobasidiomycetes	Cyphobasidiales	1
+1213	Root;k__Protozoa;p__;c__Haplosporea;o__Haplosporida	Protozoa		Haplosporea	Haplosporida	1
+1214	Root;k__Protozoa;p__Microsporidia;c__Rudimicrosporea;o__Metchnikovellida	Protozoa	Microsporidia	Rudimicrosporea	Metchnikovellida	1
+1215	Root;k__Chromista;p__Ciliophora;c__Nassophorea;o__Nassulopsida	Chromista	Ciliophora	Nassophorea	Nassulopsida	1
+1216	Root;k__Chromista;p__Heliozoa;c__;o__Desmothoracida	Chromista	Heliozoa		Desmothoracida	1
+1217	Root;k__Fungi;p__Mucoromycota;c__Mortierellomycetes;o__Mortierellales	Fungi	Mucoromycota	Mortierellomycetes	Mortierellales	1
+1218	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Biddulphiales	Chromista	Ochrophyta	Bacillariophyceae	Biddulphiales	1
+1219	Root;k__Protozoa;p__Euglenozoa;c__Euglenoidea;o__Petalomonadida	Protozoa	Euglenozoa	Euglenoidea	Petalomonadida	1
+1220	Root;k__Chromista;p__Bigyra;c__Labyrinthulea;o__	Chromista	Bigyra	Labyrinthulea		1
+1221	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Umbilicariales	Fungi	Ascomycota	Lecanoromycetes	Umbilicariales	1
+1222	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Cantharellales	Fungi	Basidiomycota	Agaricomycetes	Cantharellales	1
+1223	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Prymnesiales	Chromista	Haptophyta	Prymnesiophyceae	Prymnesiales	1
+1224	Root;k__Protozoa;p__Choanozoa;c__;o__	Protozoa	Choanozoa			1
+1225	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Thelephorales	Fungi	Basidiomycota	Agaricomycetes	Thelephorales	1
+1226	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Strigulales	Fungi	Ascomycota	Dothideomycetes	Strigulales	1
+1227	Root;k__Chromista;p__Haptophyta;c__;o__	Chromista	Haptophyta			1
+1228	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Watznaueriales	Chromista	Haptophyta	Prymnesiophyceae	Watznaueriales	1
+1229	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Gymnodiniales	Chromista	Myzozoa	Dinophyceae	Gymnodiniales	1
+1230	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__Olpidiales	Fungi	Chytridiomycota	Chytridiomycetes	Olpidiales	1
+1231	Root;k__Chromista;p__Ochrophyta;c__;o__	Chromista	Ochrophyta			1
+1232	Root;k__Chromista;p__Ciliophora;c__Gymnostomatea;o__Cyclotrichida	Chromista	Ciliophora	Gymnostomatea	Cyclotrichida	1
+1233	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Trechisporales	Fungi	Basidiomycota	Agaricomycetes	Trechisporales	1
+1234	Root;k__Chromista;p__Foraminifera;c__;o__Vaginulinida	Chromista	Foraminifera		Vaginulinida	1
+1235	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Dictyoneidales	Chromista	Ochrophyta	Bacillariophyceae	Dictyoneidales	1
+1236	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Scytosiphonales	Chromista	Ochrophyta	Phaeophyceae	Scytosiphonales	1
+1237	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Podorhabdales	Chromista	Haptophyta	Prymnesiophyceae	Podorhabdales	1
+1238	Root;k__Protozoa;p__Euglenozoa;c__Kinetoplastea;o__Bodonida	Protozoa	Euglenozoa	Kinetoplastea	Bodonida	1
+1239	Root;k__Fungi;p__Basidiomycota;c__Ustilaginomycetes;o__Urocystidales	Fungi	Basidiomycota	Ustilaginomycetes	Urocystidales	1
+1240	Root;k__Fungi;p__Ascomycota;c__Laboulbeniomycetes;o__	Fungi	Ascomycota	Laboulbeniomycetes		1
+1241	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Chaetomellales	Fungi	Ascomycota	Leotiomycetes	Chaetomellales	1
+1242	Root;k__Fungi;p__Basidiomycota;c__Wallemiomycetes;o__Wallemiales	Fungi	Basidiomycota	Wallemiomycetes	Wallemiales	1
+1243	Root;k__Chromista;p__Ciliophora;c__Hypotrichea;o__Euplotida	Chromista	Ciliophora	Hypotrichea	Euplotida	1
+1244	Root;k__Chromista;p__Bigyra;c__Labyrinthulea;o__Thraustochytrida	Chromista	Bigyra	Labyrinthulea	Thraustochytrida	1
+1245	Root;k__Chromista;p__Ciliophora;c__Cyrtophoria;o__Cyrtophorida	Chromista	Ciliophora	Cyrtophoria	Cyrtophorida	1
+1246	Root;k__Chromista;p__Ochrophyta;c__Xanthophyceae;o__Phyllosiphonales	Chromista	Ochrophyta	Xanthophyceae	Phyllosiphonales	1
+1247	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Eiffellithales	Chromista	Haptophyta	Prymnesiophyceae	Eiffellithales	1
+1248	Root;k__Chromista;p__Cercozoa;c__Phytomyxea;o__Plasmodiophorida	Chromista	Cercozoa	Phytomyxea	Plasmodiophorida	1
+1249	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Togniniales	Fungi	Ascomycota	Sordariomycetes	Togniniales	1
+1250	Root;k__Fungi;p__Basidiomycota;c__Microbotryomycetes;o__	Fungi	Basidiomycota	Microbotryomycetes		1
+1251	Root;k__Chromista;p__Ochrophyta;c__Eustigmatophyceae;o__Eustigmatales	Chromista	Ochrophyta	Eustigmatophyceae	Eustigmatales	1
+1252	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Dictyotales	Chromista	Ochrophyta	Phaeophyceae	Dictyotales	1
+1253	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Phytodiniales	Chromista	Myzozoa	Dinophyceae	Phytodiniales	1
+1254	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Phaeotrichales	Fungi	Ascomycota	Dothideomycetes	Phaeotrichales	1
+1255	Root;k__Protozoa;p__Mycetozoa;c__Dictyosteliomycetes;o__	Protozoa	Mycetozoa	Dictyosteliomycetes		1
+1256	Root;k__Fungi;p__Basidiomycota;c__Pucciniomycetes;o__Helicobasidiales	Fungi	Basidiomycota	Pucciniomycetes	Helicobasidiales	1
+1257	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Pyrocystales	Chromista	Myzozoa	Dinophyceae	Pyrocystales	1
+1258	Root;k__Fungi;p__Basidiomycota;c__Pucciniomycetes;o__Septobasidiales	Fungi	Basidiomycota	Pucciniomycetes	Septobasidiales	1
+1259	Root;k__Chromista;p__Ochrophyta;c__Dictyochophyceae;o__Pelagomonadales	Chromista	Ochrophyta	Dictyochophyceae	Pelagomonadales	1
+1260	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Rhipidiales	Chromista	Oomycota	Peronosporea	Rhipidiales	1
+1261	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__Spizellomycetales	Fungi	Chytridiomycota	Chytridiomycetes	Spizellomycetales	1
+1262	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Patellariales	Fungi	Ascomycota	Dothideomycetes	Patellariales	1
+1263	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Atractosporales	Fungi	Ascomycota	Sordariomycetes	Atractosporales	1
+1264	Root;k__Protozoa;p__Calcitarcha;c__;o__	Protozoa	Calcitarcha			1
+1265	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Cyclophorales	Chromista	Ochrophyta	Bacillariophyceae	Cyclophorales	1
+1266	Root;k__Chromista;p__Bigyra;c__;o__	Chromista	Bigyra			1
+1267	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Melanosporales	Fungi	Ascomycota	Sordariomycetes	Melanosporales	1
+1268	Root;k__Protozoa;p__Microsporidia;c__Microsporea;o__Meiodihaplophasida	Protozoa	Microsporidia	Microsporea	Meiodihaplophasida	1
+1269	Root;k__Fungi;p__Basidiomycota;c__Tremellomycetes;o__Trichosporonales	Fungi	Basidiomycota	Tremellomycetes	Trichosporonales	1
+1270	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Atheliales	Fungi	Basidiomycota	Agaricomycetes	Atheliales	1
+1271	Root;k__Protozoa;p__Microsporidia;c__Microsporea;o__Chytridiopsida	Protozoa	Microsporidia	Microsporea	Chytridiopsida	1
+1272	Root;k__Fungi;p__Ascomycota;c__Schizosaccharomycetes;o__Schizosaccharomycetales	Fungi	Ascomycota	Schizosaccharomycetes	Schizosaccharomycetales	1
+1273	Root;k__Protozoa;p__Metamonada;c__Trepomonadea;o__Distomatida	Protozoa	Metamonada	Trepomonadea	Distomatida	1
+1274	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Glomerellales	Fungi	Ascomycota	Sordariomycetes	Glomerellales	1
+1275	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Tremellodendropsidales	Fungi	Basidiomycota	Agaricomycetes	Tremellodendropsidales	1
+1276	Root;k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__	Fungi	Basidiomycota	Cystobasidiomycetes		1
+1277	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Discosporangiales	Chromista	Ochrophyta	Phaeophyceae	Discosporangiales	1
+1278	Root;k__Fungi;p__Mucoromycota;c__Kickxellomycetes;o__Harpellales	Fungi	Mucoromycota	Kickxellomycetes	Harpellales	1
+1279	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__Peniculida	Chromista	Ciliophora	Oligohymenophorea	Peniculida	1
+1280	Root;k__Chromista;p__Ciliophora;c__;o__	Chromista	Ciliophora			1
+1281	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__	Chromista	Oomycota	Peronosporea		1
+1282	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__	Fungi	Basidiomycota	Agaricomycetes		1
+1283	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Dictyosiphonales	Chromista	Ochrophyta	Phaeophyceae	Dictyosiphonales	1
+1284	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__Astomatida	Chromista	Ciliophora	Oligohymenophorea	Astomatida	1
+1285	Root;k__Protozoa;p__Euglenozoa;c__Kinetoplastea;o__Eubodonida	Protozoa	Euglenozoa	Kinetoplastea	Eubodonida	1
+1286	Root;k__Chromista;p__Myzozoa;c__Aconoidasida;o__Piroplasmorida	Chromista	Myzozoa	Aconoidasida	Piroplasmorida	1
+1287	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Lulworthiales	Fungi	Ascomycota	Sordariomycetes	Lulworthiales	1
+1288	Root;k__Protozoa;p__Amoebozoa;c__Tubulinea;o__	Protozoa	Amoebozoa	Tubulinea		1
+1289	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Tirisporellales	Fungi	Ascomycota	Dothideomycetes	Tirisporellales	1
+1290	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Savoryellales	Fungi	Ascomycota	Sordariomycetes	Savoryellales	1
+1291	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Stereopsidales	Fungi	Basidiomycota	Agaricomycetes	Stereopsidales	1
+1292	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__	Fungi	Ascomycota	Leotiomycetes		1
+1293	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Mastogloiales	Chromista	Ochrophyta	Bacillariophyceae	Mastogloiales	1
+1294	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Stigmatodiscales	Fungi	Ascomycota	Dothideomycetes	Stigmatodiscales	1
+1295	Root;k__Chromista;p__Foraminifera;c__;o__Lagenida	Chromista	Foraminifera		Lagenida	1
+1296	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Coryneliales	Fungi	Ascomycota	Eurotiomycetes	Coryneliales	1
+1297	Root;k__Chromista;p__Ciliophora;c__Oligotrichea;o__Halteriida	Chromista	Ciliophora	Oligotrichea	Halteriida	1
+1298	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Georgefischeriales	Fungi	Basidiomycota	Exobasidiomycetes	Georgefischeriales	1
+1299	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Coccosphaerales	Chromista	Haptophyta	Prymnesiophyceae	Coccosphaerales	1
+1300	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Stephanolithiales	Chromista	Haptophyta	Prymnesiophyceae	Stephanolithiales	1
+1301	Root;k__Protozoa;p__Euglenozoa;c__Euglenoidea;o__Peranemida	Protozoa	Euglenozoa	Euglenoidea	Peranemida	1
+1302	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Surirellales	Chromista	Ochrophyta	Bacillariophyceae	Surirellales	1
+1303	Root;k__Fungi;p__Zoopagomycota;c__Zoopagomycetes;o__Zoopagales	Fungi	Zoopagomycota	Zoopagomycetes	Zoopagales	1
+1304	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Leptomitales	Chromista	Oomycota	Peronosporea	Leptomitales	1
+1305	Root;k__Protozoa;p__Mycetozoa;c__Myxomycetes;o__Physarales	Protozoa	Mycetozoa	Myxomycetes	Physarales	1
+1306	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Mycocaliciales	Fungi	Ascomycota	Eurotiomycetes	Mycocaliciales	1
+1307	Root;k__Fungi;p__Blastocladiomycota;c__Blastocladiomycetes;o__Blastocladiales	Fungi	Blastocladiomycota	Blastocladiomycetes	Blastocladiales	1
+1308	Root;k__Chromista;p__Ciliophora;c__Kinetofragminophora;o__Trichostomatida	Chromista	Ciliophora	Kinetofragminophora	Trichostomatida	1
+1309	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Sporochnales	Chromista	Ochrophyta	Phaeophyceae	Sporochnales	1
+1310	Root;k__Fungi;p__Basidiomycota;c__Microbotryomycetes;o__Microbotryales	Fungi	Basidiomycota	Microbotryomycetes	Microbotryales	1
+1311	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Mytilinidiales	Fungi	Ascomycota	Dothideomycetes	Mytilinidiales	1
+1312	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Phacidiales	Fungi	Ascomycota	Leotiomycetes	Phacidiales	1
+1313	Root;k__Fungi;p__Basidiomycota;c__Agaricostilbomycetes;o__Agaricostilbales	Fungi	Basidiomycota	Agaricostilbomycetes	Agaricostilbales	1
+1314	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Amplistromatales	Fungi	Ascomycota	Sordariomycetes	Amplistromatales	1
+1315	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Hemiaulales	Chromista	Ochrophyta	Bacillariophyceae	Hemiaulales	1
+1316	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Ascosphaerales	Fungi	Ascomycota	Eurotiomycetes	Ascosphaerales	1
+1317	Root;k__Fungi;p__Ascomycota;c__;o__Thelocarpales	Fungi	Ascomycota		Thelocarpales	1
+1318	Root;k__Chromista;p__Acavomonidia;c__Acavomonea;o__Acavomonida	Chromista	Acavomonidia	Acavomonea	Acavomonida	1
+1319	Root;k__Fungi;p__Basidiomycota;c__Tremellomycetes;o__Filobasidiales	Fungi	Basidiomycota	Tremellomycetes	Filobasidiales	1
+1320	Root;k__Chromista;p__Cryptophyta;c__Cryptophyceae;o__Cryptomonadales	Chromista	Cryptophyta	Cryptophyceae	Cryptomonadales	1
+1321	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Leptocylindrales	Chromista	Ochrophyta	Bacillariophyceae	Leptocylindrales	1
+1322	Root;k__Fungi;p__Basidiomycota;c__Microbotryomycetes;o__Kriegeriales	Fungi	Basidiomycota	Microbotryomycetes	Kriegeriales	1
+1323	Root;k__Fungi;p__Glomeromycota;c__Glomeromycetes;o__Glomerales	Fungi	Glomeromycota	Glomeromycetes	Glomerales	1
+1324	Root;k__Fungi;p__Basidiomycota;c__Entorrhizomycetes;o__Talbotiomycetales	Fungi	Basidiomycota	Entorrhizomycetes	Talbotiomycetales	1
+1325	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Arachnomycetales	Fungi	Ascomycota	Eurotiomycetes	Arachnomycetales	1
+1326	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Thalassiophysales	Chromista	Ochrophyta	Bacillariophyceae	Thalassiophysales	1
+1327	Root;k__Fungi;p__Basidiomycota;c__Moniliellomycetes;o__Moniliellales	Fungi	Basidiomycota	Moniliellomycetes	Moniliellales	1
+1328	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Jahnulales	Fungi	Ascomycota	Dothideomycetes	Jahnulales	1
+1329	Root;k__Chromista;p__Oomycota;c__Hyphochytrea;o__Hyphochytriales	Chromista	Oomycota	Hyphochytrea	Hyphochytriales	1
+1330	Root;k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__Erythrobasidiales	Fungi	Basidiomycota	Cystobasidiomycetes	Erythrobasidiales	1
+1331	Root;k__Chromista;p__Ochrophyta;c__Xanthophyceae;o__Rhizochloridales	Chromista	Ochrophyta	Xanthophyceae	Rhizochloridales	1
+1332	Root;k__Protozoa;p__Amoebozoa;c__Lobosa;o__Amoebida	Protozoa	Amoebozoa	Lobosa	Amoebida	1
+1333	Root;k__Protozoa;p__Euglenozoa;c__Peranemea;o__Natomonadida	Protozoa	Euglenozoa	Peranemea	Natomonadida	1
+1334	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Climacospheniales	Chromista	Ochrophyta	Bacillariophyceae	Climacospheniales	1
+1335	Root;k__Fungi;p__Ascomycota;c__Sareomycetes;o__Sareales	Fungi	Ascomycota	Sareomycetes	Sareales	1
+1336	Root;k__Chromista;p__Bigyra;c__Labyrinthulea;o__Labyrinthulida	Chromista	Bigyra	Labyrinthulea	Labyrinthulida	1
+1337	Root;k__Protozoa;p__Mycetozoa;c__Myxomycetes;o__Stemonitidales	Protozoa	Mycetozoa	Myxomycetes	Stemonitidales	1
+1338	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Anaulales	Chromista	Ochrophyta	Bacillariophyceae	Anaulales	1
+1339	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Gomphales	Fungi	Basidiomycota	Agaricomycetes	Gomphales	1
+1340	Root;k__Chromista;p__Ciliophora;c__Litostomatea;o__	Chromista	Ciliophora	Litostomatea		1
+1341	Root;k__Protozoa;p__;c__Filosia;o__Aconchulinida	Protozoa		Filosia	Aconchulinida	1
+1342	Root;k__Fungi;p__Basidiomycota;c__Spiculogloeomycetes;o__Spiculogloeales	Fungi	Basidiomycota	Spiculogloeomycetes	Spiculogloeales	1
+1343	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Pseudodactylariales	Fungi	Ascomycota	Sordariomycetes	Pseudodactylariales	1
+1344	Root;k__Chromista;p__Ciliophora;c__Phyllopharyngea;o__	Chromista	Ciliophora	Phyllopharyngea		1
+1345	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__Cladochytriales	Fungi	Chytridiomycota	Chytridiomycetes	Cladochytriales	1
+1346	Root;k__Protozoa;p__Amoebozoa;c__Discosea;o__Dactylopodida	Protozoa	Amoebozoa	Discosea	Dactylopodida	1
+1347	Root;k__Chromista;p__Ochrophyta;c__Raphidophyceae;o__Actinophryida	Chromista	Ochrophyta	Raphidophyceae	Actinophryida	1
+1348	Root;k__Protozoa;p__Metamonada;c__Trichomonadea;o__Spirotrichonymphida	Protozoa	Metamonada	Trichomonadea	Spirotrichonymphida	1
+1349	Root;k__Protozoa;p__Mycetozoa;c__Myxomycetes;o__Trichiales	Protozoa	Mycetozoa	Myxomycetes	Trichiales	1
+1350	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__	Chromista	Ochrophyta	Chrysophyceae		1
+1351	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Neodactylariales	Fungi	Ascomycota	Dothideomycetes	Neodactylariales	1
+1352	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__Zygophlyctidales	Fungi	Chytridiomycota	Chytridiomycetes	Zygophlyctidales	1
+1353	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Cyttariales	Fungi	Ascomycota	Leotiomycetes	Cyttariales	1
+1354	Root;k__Protozoa;p__Euglenozoa;c__Kinetoplastea;o__Trypanosomatida	Protozoa	Euglenozoa	Kinetoplastea	Trypanosomatida	1
+1355	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Stictocyclales	Chromista	Ochrophyta	Bacillariophyceae	Stictocyclales	1
+1356	Root;k__Fungi;p__Basidiomycota;c__Mixiomycetes;o__Mixiales	Fungi	Basidiomycota	Mixiomycetes	Mixiales	1
+1357	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Tracyllales	Fungi	Ascomycota	Sordariomycetes	Tracyllales	1
+1358	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Albuginales	Chromista	Oomycota	Peronosporea	Albuginales	1
+1359	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Centrales	Chromista	Ochrophyta	Bacillariophyceae	Centrales	1
+1360	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Entylomatales	Fungi	Basidiomycota	Exobasidiomycetes	Entylomatales	1
+1361	Root;k__Chromista;p__Ciliophora;c__Kinetofragminophora;o__Apostomatida	Chromista	Ciliophora	Kinetofragminophora	Apostomatida	1
+1362	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Torpedosporales	Fungi	Ascomycota	Sordariomycetes	Torpedosporales	1
+1363	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Tilopteridales	Chromista	Ochrophyta	Phaeophyceae	Tilopteridales	1
+1364	Root;k__Protozoa;p__;c__Acantharia;o__	Protozoa		Acantharia		1
+1365	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Boliniales	Fungi	Ascomycota	Sordariomycetes	Boliniales	1
+1366	Root;k__Fungi;p__Zygomycota;c__;o__Basidiobolales	Fungi	Zygomycota		Basidiobolales	1
+1367	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Micraspidales	Fungi	Ascomycota	Leotiomycetes	Micraspidales	1
+1368	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__	Chromista	Myzozoa	Dinophyceae		1
+1369	Root;k__Fungi;p__Chytridiomycota;c__Lobulomycetes;o__Lobulomycetales	Fungi	Chytridiomycota	Lobulomycetes	Lobulomycetales	1
+1370	Root;k__Protozoa;p__Metamonada;c__Trichonymphea;o__Trichonymphida	Protozoa	Metamonada	Trichonymphea	Trichonymphida	1
+1371	Root;k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__Buckleyzymales	Fungi	Basidiomycota	Cystobasidiomycetes	Buckleyzymales	1
+1372	Root;k__Protozoa;p__Euglenozoa;c__Kinetoplastea;o__Parabodonida	Protozoa	Euglenozoa	Kinetoplastea	Parabodonida	1
+1373	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Cephalothecales	Fungi	Ascomycota	Sordariomycetes	Cephalothecales	1
+1374	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Geastrales	Fungi	Basidiomycota	Agaricomycetes	Geastrales	1
+1375	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Hymeneliales	Fungi	Ascomycota	Lecanoromycetes	Hymeneliales	1
+1376	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Corethrales	Chromista	Ochrophyta	Bacillariophyceae	Corethrales	1
+1377	Root;k__Fungi;p__Ascomycota;c__Laboulbeniomycetes;o__Pyxidiophorales	Fungi	Ascomycota	Laboulbeniomycetes	Pyxidiophorales	1
+1378	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Cymatosirales	Chromista	Ochrophyta	Bacillariophyceae	Cymatosirales	1
+1379	Root;k__Fungi;p__Basidiomycota;c__Ustilaginomycetes;o__	Fungi	Basidiomycota	Ustilaginomycetes		1
+1380	Root;k__Viruses;p__Negarnaviricota;c__Milneviricetes;o__Serpentovirales	Viruses	Negarnaviricota	Milneviricetes	Serpentovirales	1
+1381	Root;k__Chromista;p__Ochrophyta;c__Xanthophyceae;o__Mischococcales	Chromista	Ochrophyta	Xanthophyceae	Mischococcales	1
+1382	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Phaeomoniellales	Fungi	Ascomycota	Eurotiomycetes	Phaeomoniellales	1
+1383	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Arkhangelskiales	Chromista	Haptophyta	Prymnesiophyceae	Arkhangelskiales	1
+1384	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Toxariales	Chromista	Ochrophyta	Bacillariophyceae	Toxariales	1
+1385	Root;k__Chromista;p__Ochrophyta;c__Xanthophyceae;o__Vaucheriales	Chromista	Ochrophyta	Xanthophyceae	Vaucheriales	1
+1386	Root;k__Chromista;p__Myzozoa;c__Conoidasida;o__Protococcidiorida	Chromista	Myzozoa	Conoidasida	Protococcidiorida	1
+1387	Root;k__Chromista;p__Ciliophora;c__Spirotrichea;o__	Chromista	Ciliophora	Spirotrichea		1
+1388	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Orthoseirales	Chromista	Ochrophyta	Bacillariophyceae	Orthoseirales	1
+1389	Root;k__Protozoa;p__Mycetozoa;c__Dictyosteliomycetes;o__Dictyosteliales	Protozoa	Mycetozoa	Dictyosteliomycetes	Dictyosteliales	1
+1390	Root;k__Fungi;p__Mucoromycota;c__Endogonomycetes;o__Endogonales	Fungi	Mucoromycota	Endogonomycetes	Endogonales	1
+1391	Root;k__Chromista;p__Ciliophora;c__Karyorelictea;o__Loxodida	Chromista	Ciliophora	Karyorelictea	Loxodida	1
+1392	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Microstromatales	Fungi	Basidiomycota	Exobasidiomycetes	Microstromatales	1
+1393	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Pleurotheciales	Fungi	Ascomycota	Sordariomycetes	Pleurotheciales	1
+1394	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__	Fungi	Ascomycota	Lecanoromycetes		1
+1395	Root;k__Chromista;p__Ochrophyta;c__Dictyochophyceae;o__Sarcinochrysidales	Chromista	Ochrophyta	Dictyochophyceae	Sarcinochrysidales	1
+1396	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__Bryometopida	Chromista	Ciliophora	Colpodea	Bryometopida	1
+1397	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Spathulosporales	Fungi	Ascomycota	Sordariomycetes	Spathulosporales	1
+1398	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Aulacoseirales	Chromista	Ochrophyta	Bacillariophyceae	Aulacoseirales	1
+1399	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Lepidostromatales	Fungi	Basidiomycota	Agaricomycetes	Lepidostromatales	1
+1400	Root;k__Chromista;p__Ciliophora;c__Oligotrichea;o__Strombidiida	Chromista	Ciliophora	Oligotrichea	Strombidiida	1
+1401	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Doassansiales	Fungi	Basidiomycota	Exobasidiomycetes	Doassansiales	1
+1402	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Amylocorticiales	Fungi	Basidiomycota	Agaricomycetes	Amylocorticiales	1
+1403	Root;k__Fungi;p__Mucoromycota;c__Mucoromycetes;o__Calcarisporiellales	Fungi	Mucoromycota	Mucoromycetes	Calcarisporiellales	1
+1404	Root;k__Fungi;p__Basidiomycota;c__Pucciniomycetes;o__Pachnocybales	Fungi	Basidiomycota	Pucciniomycetes	Pachnocybales	1
+1405	Root;k__Fungi;p__Zygomycota;c__Zygomycetes;o__	Fungi	Zygomycota	Zygomycetes		1
+1406	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__Bursariomorphida	Chromista	Ciliophora	Colpodea	Bursariomorphida	1
+1407	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Neocelosporiales	Fungi	Ascomycota	Dothideomycetes	Neocelosporiales	1
+1408	Root;k__Fungi;p__Mucoromycota;c__;o__	Fungi	Mucoromycota			1
+1409	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Ochromonadales	Chromista	Ochrophyta	Chrysophyceae	Ochromonadales	1
+1410	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Rhabdonematales	Chromista	Ochrophyta	Bacillariophyceae	Rhabdonematales	1
+1411	Root;k__Chromista;p__Ciliophora;c__Cyrtophoria;o__Chilodonellida	Chromista	Ciliophora	Cyrtophoria	Chilodonellida	1
+1412	Root;k__Chromista;p__Oomycota;c__Bigyromonadea;o__Developayellales	Chromista	Oomycota	Bigyromonadea	Developayellales	1
+1413	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Sistotremastrales	Fungi	Basidiomycota	Agaricomycetes	Sistotremastrales	1
+1414	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Rhizocarpales	Fungi	Ascomycota	Lecanoromycetes	Rhizocarpales	1
+1415	Root;k__Chromista;p__Ciliophora;c__Nassophorea;o__Synhymeniida	Chromista	Ciliophora	Nassophorea	Synhymeniida	1
+1416	Root;k__Chromista;p__Ochrophyta;c__Xanthophyceae;o__Tribonematales	Chromista	Ochrophyta	Xanthophyceae	Tribonematales	1
+1417	Root;k__Fungi;p__Ascomycota;c__Orbiliomycetes;o__Orbiliales	Fungi	Ascomycota	Orbiliomycetes	Orbiliales	1
+1418	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Synurales	Chromista	Ochrophyta	Chrysophyceae	Synurales	1
+1419	Root;k__Fungi;p__Chytridiomycota;c__;o__	Fungi	Chytridiomycota			1
+1420	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Asterolamprales	Chromista	Ochrophyta	Bacillariophyceae	Asterolamprales	1
+1421	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Cryptocaliciales	Fungi	Ascomycota	Lecanoromycetes	Cryptocaliciales	1
+1422	Root;k__Protozoa;p__Amoebozoa;c__Discosea;o__Himatismenida	Protozoa	Amoebozoa	Discosea	Himatismenida	1
+1423	Root;k__Protozoa;p__Amoebozoa;c__Discosea;o__	Protozoa	Amoebozoa	Discosea		1
+1424	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Sclerococcales	Fungi	Ascomycota	Eurotiomycetes	Sclerococcales	1
+1425	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Asterocladales	Chromista	Ochrophyta	Phaeophyceae	Asterocladales	1
+1426	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__	Fungi	Chytridiomycota	Chytridiomycetes		1
+1427	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Chloramoebales	Chromista	Ochrophyta	Chrysophyceae	Chloramoebales	1
+1428	Root;k__Chromista;p__Ciliophora;c__Kinetofragminophora;o__Plagiopylida	Chromista	Ciliophora	Kinetofragminophora	Plagiopylida	1
+1429	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Arachnoidiscales	Chromista	Ochrophyta	Bacillariophyceae	Arachnoidiscales	1
+1430	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Olpidiopsidales	Chromista	Oomycota	Peronosporea	Olpidiopsidales	1
+1431	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Syringodermatales	Chromista	Ochrophyta	Phaeophyceae	Syringodermatales	1
+1432	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__	Chromista	Ciliophora	Colpodea		1
+1433	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Desmarestiales	Chromista	Ochrophyta	Phaeophyceae	Desmarestiales	1
+1434	Root;k__Protozoa;p__Choanozoa;c__Rozellidea;o__Rozellida	Protozoa	Choanozoa	Rozellidea	Rozellida	1
+1435	Root;k__Fungi;p__Ascomycota;c__Arthoniomycetes;o__Lichenostigmatales	Fungi	Ascomycota	Arthoniomycetes	Lichenostigmatales	1
+1436	Root;k__Chromista;p__Myzozoa;c__Apicomonadea;o__Colpodellida	Chromista	Myzozoa	Apicomonadea	Colpodellida	1
+1437	Root;k__Chromista;p__Ochrophyta;c__Dictyochophyceae;o__Florenciellales	Chromista	Ochrophyta	Dictyochophyceae	Florenciellales	1
+1438	Root;k__Chromista;p__Cryptophyta;c__Palpitea;o__Palpitida	Chromista	Cryptophyta	Palpitea	Palpitida	1
+1439	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Scytothamnales	Chromista	Ochrophyta	Phaeophyceae	Scytothamnales	1
+1440	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Muyocopronales	Fungi	Ascomycota	Dothideomycetes	Muyocopronales	1
+1441	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__Rhizophlyctidales	Fungi	Chytridiomycota	Chytridiomycetes	Rhizophlyctidales	1
+1442	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Falcocladiales	Fungi	Ascomycota	Sordariomycetes	Falcocladiales	1
+1443	Root;k__Protozoa;p__Mycetozoa;c__Protosteliomycetes;o__Protosteliales	Protozoa	Mycetozoa	Protosteliomycetes	Protosteliales	1
+1444	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Protoraphidales	Chromista	Ochrophyta	Bacillariophyceae	Protoraphidales	1
+1445	Root;k__Fungi;p__Basidiomycota;c__;o__	Fungi	Basidiomycota			1
+1446	Root;k__Fungi;p__Basidiomycota;c__Tritirachiomycetes;o__Tritirachiales	Fungi	Basidiomycota	Tritirachiomycetes	Tritirachiales	1
+1447	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Rozellopsidales	Chromista	Oomycota	Peronosporea	Rozellopsidales	1
+1448	Root;k__Protozoa;p__Euglenozoa;c__Euglenoidea;o__Eutreptiida	Protozoa	Euglenozoa	Euglenoidea	Eutreptiida	1
+1449	Root;k__Chromista;p__Ciliophora;c__Spirotrichea;o__Phacodiniida	Chromista	Ciliophora	Spirotrichea	Phacodiniida	1
+1450	Root;k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__Cystobasidiales	Fungi	Basidiomycota	Cystobasidiomycetes	Cystobasidiales	1
+1451	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Lyrellales	Chromista	Ochrophyta	Bacillariophyceae	Lyrellales	1
+1452	Root;k__Fungi;p__Ascomycota;c__Xylobotryomycetes;o__Xylobotryales	Fungi	Ascomycota	Xylobotryomycetes	Xylobotryales	1
+1453	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Syndiniales	Chromista	Myzozoa	Dinophyceae	Syndiniales	1
+1454	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Arctomiales	Fungi	Ascomycota	Lecanoromycetes	Arctomiales	1
+1455	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Parasympodiellales	Fungi	Ascomycota	Sordariomycetes	Parasympodiellales	1
+1456	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Striatellales	Chromista	Ochrophyta	Bacillariophyceae	Striatellales	1
+1457	Root;k__Fungi;p__Neocallimastigomycota;c__Neocallimastigomycetes;o__Neocallimastigales	Fungi	Neocallimastigomycota	Neocallimastigomycetes	Neocallimastigales	1
+1458	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Thelebolales	Fungi	Ascomycota	Leotiomycetes	Thelebolales	1
+1459	Root;k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__Naohideales	Fungi	Basidiomycota	Cystobasidiomycetes	Naohideales	1
+1460	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Graphidales	Fungi	Ascomycota	Lecanoromycetes	Graphidales	1
+1461	Root;k__Chromista;p__Ciliophora;c__Gymnostomatea;o__Prorodontida	Chromista	Ciliophora	Gymnostomatea	Prorodontida	1
+1462	Root;k__Chromista;p__Cryptophyta;c__Katablepharidophyceae;o__	Chromista	Cryptophyta	Katablepharidophyceae		1
+1463	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Prorocentrales	Chromista	Myzozoa	Dinophyceae	Prorocentrales	1
+1464	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Ardissoneales	Chromista	Ochrophyta	Bacillariophyceae	Ardissoneales	1
+1465	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Discoasterales	Chromista	Haptophyta	Prymnesiophyceae	Discoasterales	1
+1466	Root;k__Protozoa;p__Euglenozoa;c__Euglenoidea;o__Ploeotiida	Protozoa	Euglenozoa	Euglenoidea	Ploeotiida	1
+1467	Root;k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__Sakaguchiales	Fungi	Basidiomycota	Cystobasidiomycetes	Sakaguchiales	1
+1468	Root;k__Protozoa;p__Amoebozoa;c__;o__	Protozoa	Amoebozoa			1
+1469	Root;k__Protozoa;p__Choanozoa;c__Choanoflagellatea;o__Choanoflagellida	Protozoa	Choanozoa	Choanoflagellatea	Choanoflagellida	1
+1470	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Zygodiscales	Chromista	Haptophyta	Prymnesiophyceae	Zygodiscales	1
+1471	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Medeolariales	Fungi	Ascomycota	Leotiomycetes	Medeolariales	1
+1472	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Amphilothales	Chromista	Myzozoa	Dinophyceae	Amphilothales	1
+1473	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Cordanales	Fungi	Ascomycota	Sordariomycetes	Cordanales	1
+1474	Root;k__Fungi;p__Basidiomycota;c__Entorrhizomycetes;o__Entorrhizales	Fungi	Basidiomycota	Entorrhizomycetes	Entorrhizales	1
+1475	Root;k__Fungi;p__Glomeromycota;c__;o__	Fungi	Glomeromycota			1
+1476	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Pararamichloridiales	Fungi	Ascomycota	Sordariomycetes	Pararamichloridiales	1
+1477	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Halosphaeriales	Fungi	Ascomycota	Sordariomycetes	Halosphaeriales	1
+1478	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Schaereriales	Fungi	Ascomycota	Lecanoromycetes	Schaereriales	1
+1479	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Dinophysiales	Chromista	Myzozoa	Dinophyceae	Dinophysiales	1
+1480	Root;k__Chromista;p__Ciliophora;c__Colpodea;o__Sorogenida	Chromista	Ciliophora	Colpodea	Sorogenida	1
+1481	Root;k__Fungi;p__Ascomycota;c__Coniocybomycetes;o__Coniocybales	Fungi	Ascomycota	Coniocybomycetes	Coniocybales	1
+1482	Root;k__Chromista;p__Myzozoa;c__Perkinsea;o__Perkinsida	Chromista	Myzozoa	Perkinsea	Perkinsida	1
+1483	Root;k__Fungi;p__Mucoromycota;c__Kickxellomycetes;o__	Fungi	Mucoromycota	Kickxellomycetes		1
+1484	Root;k__Fungi;p__Glomeromycota;c__Glomeromycetes;o__Archaeosporales	Fungi	Glomeromycota	Glomeromycetes	Archaeosporales	1
+1485	Root;k__Protozoa;p__Choanozoa;c__Ichthyosporea;o__	Protozoa	Choanozoa	Ichthyosporea		1
+1486	Root;k__Fungi;p__Ascomycota;c__Pneumocystomycetes;o__Pneumocystales	Fungi	Ascomycota	Pneumocystomycetes	Pneumocystales	1
+1487	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Vermiculariopsiellales	Fungi	Ascomycota	Sordariomycetes	Vermiculariopsiellales	1
+1488	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__Pleuronematida	Chromista	Ciliophora	Oligohymenophorea	Pleuronematida	1
+1489	Root;k__Fungi;p__Blastocladiomycota;c__Blastocladiomycetes;o__Physodermatales	Fungi	Blastocladiomycota	Blastocladiomycetes	Physodermatales	1
+1490	Root;k__Protozoa;p__Mycetozoa;c__Dictyosteliomycetes;o__Acytosteliales	Protozoa	Mycetozoa	Dictyosteliomycetes	Acytosteliales	1
+1491	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Hydrurales	Chromista	Ochrophyta	Chrysophyceae	Hydrurales	1
+1492	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Phaeothamniales	Chromista	Ochrophyta	Phaeophyceae	Phaeothamniales	1
+1493	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Parmales	Chromista	Ochrophyta	Chrysophyceae	Parmales	1
+1494	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Jobellisiales	Fungi	Ascomycota	Sordariomycetes	Jobellisiales	1
+1495	Root;k__Protozoa;p__Amoebozoa;c__Variosea;o__Stereomyxida	Protozoa	Amoebozoa	Variosea	Stereomyxida	1
+1496	Root;k__Fungi;p__Glomeromycota;c__Glomeromycetes;o__	Fungi	Glomeromycota	Glomeromycetes		1
+1497	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Thoracosphaerales	Chromista	Myzozoa	Dinophyceae	Thoracosphaerales	1
+1498	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Zeloasperisporiales	Fungi	Ascomycota	Dothideomycetes	Zeloasperisporiales	1
+1499	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Oxyrrhinales	Chromista	Myzozoa	Dinophyceae	Oxyrrhinales	1
+1500	Root;k__Fungi;p__Basidiomycota;c__Microbotryomycetes;o__Heterogastridiales	Fungi	Basidiomycota	Microbotryomycetes	Heterogastridiales	1
+1501	Root;k__Protozoa;p__Choanozoa;c__Filasterea;o__Ministeriida	Protozoa	Choanozoa	Filasterea	Ministeriida	1
+1502	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Natipusillales	Fungi	Ascomycota	Dothideomycetes	Natipusillales	1
+1503	Root;k__Chromista;p__Ochrophyta;c__Xanthophyceae;o__Botrydiales	Chromista	Ochrophyta	Xanthophyceae	Botrydiales	1
+1504	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Cancellidiales	Fungi	Ascomycota	Sordariomycetes	Cancellidiales	1
+1505	Root;k__Chromista;p__Myzozoa;c__Conoidasida;o__Archigregarinorida	Chromista	Myzozoa	Conoidasida	Archigregarinorida	1
+1506	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Coniosporiales	Fungi	Ascomycota	Dothideomycetes	Coniosporiales	1
+1507	Root;k__Protozoa;p__Amoebozoa;c__Discosea;o__Vannellida	Protozoa	Amoebozoa	Discosea	Vannellida	1
+1508	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Aureoconidiellales	Fungi	Ascomycota	Dothideomycetes	Aureoconidiellales	1
+1509	Root;k__Chromista;p__Haptophyta;c__Pavlovophyceae;o__Pavlovales	Chromista	Haptophyta	Pavlovophyceae	Pavlovales	1
+1510	Root;k__Chromista;p__Ciliophora;c__Phyllopharyngea;o__Paracinetida	Chromista	Ciliophora	Phyllopharyngea	Paracinetida	1
+1511	Root;k__Fungi;p__Ascomycota;c__Pezizomycetes;o__	Fungi	Ascomycota	Pezizomycetes		1
+1512	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Pontismatales	Chromista	Oomycota	Peronosporea	Pontismatales	1
+1513	Root;k__Protozoa;p__Metamonada;c__Trichomonadea;o__	Protozoa	Metamonada	Trichomonadea		1
+1514	Root;k__Protozoa;p__Euglenozoa;c__Postgaardea;o__Postgaardida	Protozoa	Euglenozoa	Postgaardea	Postgaardida	1
+1515	Root;k__Chromista;p__Ciliophora;c__Spirotrichea;o__Odontostomatida	Chromista	Ciliophora	Spirotrichea	Odontostomatida	1
+1516	Root;k__Fungi;p__Basidiomycota;c__Malasseziomycetes;o__Malasseziales	Fungi	Basidiomycota	Malasseziomycetes	Malasseziales	1
+1517	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Desmomastigales	Chromista	Myzozoa	Dinophyceae	Desmomastigales	1
+1518	Root;k__Fungi;p__Basidiomycota;c__Dacrymycetes;o__Unilacrymales	Fungi	Basidiomycota	Dacrymycetes	Unilacrymales	1
+1519	Root;k__Protozoa;p__Amoebozoa;c__Variosea;o__Holomastigida	Protozoa	Amoebozoa	Variosea	Holomastigida	1
+1520	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Calosphaeriales	Fungi	Ascomycota	Sordariomycetes	Calosphaeriales	1
+1521	Root;k__Chromista;p__Ochrophyta;c__Dictyochophyceae;o__Pedinellales	Chromista	Ochrophyta	Dictyochophyceae	Pedinellales	1
+1522	Root;k__Chromista;p__Haptophyta;c__Rappephyceae;o__	Chromista	Haptophyta	Rappephyceae		1
+1523	Root;k__Protozoa;p__Euglenozoa;c__Entosiphonea;o__Entosiphonida	Protozoa	Euglenozoa	Entosiphonea	Entosiphonida	1
+1524	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Anisolpidiales	Chromista	Oomycota	Peronosporea	Anisolpidiales	1
+1525	Root;k__Chromista;p__Foraminifera;c__Globothalamea;o__Carterinida	Chromista	Foraminifera	Globothalamea	Carterinida	1
+1526	Root;k__Chromista;p__Myzozoa;c__Conoidasida;o__Agamococcidiorida	Chromista	Myzozoa	Conoidasida	Agamococcidiorida	1
+1527	Root;k__Fungi;p__Basidiomycota;c__Ustilaginomycetes;o__Quasiramulariales	Fungi	Basidiomycota	Ustilaginomycetes	Quasiramulariales	1
+1528	Root;k__Protozoa;p__Sarcomastigophora;c__Phytomastigophora;o__Ebriida	Protozoa	Sarcomastigophora	Phytomastigophora	Ebriida	1
+1529	Root;k__Protozoa;p__Metamonada;c__Retortamonadea;o__Retortamonadida	Protozoa	Metamonada	Retortamonadea	Retortamonadida	1
+1530	Root;k__Protozoa;p__Mycetozoa;c__Myxomycetes;o__	Protozoa	Mycetozoa	Myxomycetes		1
+1531	Root;k__Chromista;p__Ciliophora;c__Spirotrichea;o__Kiitrichida	Chromista	Ciliophora	Spirotrichea	Kiitrichida	1
+1532	Root;k__Fungi;p__Mucoromycota;c__Umbelopsidomycetes;o__Umbelopsidales	Fungi	Mucoromycota	Umbelopsidomycetes	Umbelopsidales	1
+1533	Root;k__Chromista;p__Ochrophyta;c__Synurophyceae;o__	Chromista	Ochrophyta	Synurophyceae		1
+1534	Root;k__Chromista;p__Ochrophyta;c__Xanthophyceae;o__	Chromista	Ochrophyta	Xanthophyceae		1
+1535	Root;k__Fungi;p__Chytridiomycota;c__;o__Nephridiophagales	Fungi	Chytridiomycota		Nephridiophagales	1
+1536	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__	Fungi	Basidiomycota	Exobasidiomycetes		1
+1537	Root;k__Protozoa;p__Amoebozoa;c__;o__Schizopyrenida	Protozoa	Amoebozoa		Schizopyrenida	1
+1538	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Distoseptisporales	Fungi	Ascomycota	Sordariomycetes	Distoseptisporales	1
+1539	Root;k__Fungi;p__Mucoromycota;c__Kickxellomycetes;o__Kickxellales	Fungi	Mucoromycota	Kickxellomycetes	Kickxellales	1
+1540	Root;k__Protozoa;p__Euglenozoa;c__Kinetoplastea;o__Prokinetoplastida	Protozoa	Euglenozoa	Kinetoplastea	Prokinetoplastida	1
+1541	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Comminutisporales	Fungi	Ascomycota	Dothideomycetes	Comminutisporales	1
+1542	Root;k__Fungi;p__Ascomycota;c__Saccharomycetes;o__	Fungi	Ascomycota	Saccharomycetes		1
+1543	Root;k__Viruses;p__Uroviricota;c__Caudoviricetes;o__	Viruses	Uroviricota	Caudoviricetes		1
+1544	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Tabellariales	Chromista	Ochrophyta	Bacillariophyceae	Tabellariales	1
+1545	Root;k__Chromista;p__Cercozoa;c__Chlorarachniophyceae;o__Chlorarachniales	Chromista	Cercozoa	Chlorarachniophyceae	Chlorarachniales	1
+1546	Root;k__Fungi;p__Ascomycota;c__;o__Vezdaeales	Fungi	Ascomycota		Vezdaeales	1
+1547	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Superstratomycetales	Fungi	Ascomycota	Dothideomycetes	Superstratomycetales	1
+1548	Root;k__Fungi;p__Ascomycota;c__;o__Wiesneriomycetales	Fungi	Ascomycota		Wiesneriomycetales	1
+1549	Root;k__Protozoa;p__Amoebozoa;c__Variosea;o__Phalansteriida	Protozoa	Amoebozoa	Variosea	Phalansteriida	1
+1550	Root;k__Viruses;p__Pisuviricota;c__Pisoniviricetes;o__Picornavirales	Viruses	Pisuviricota	Pisoniviricetes	Picornavirales	1
+1551	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Asterotexales	Fungi	Ascomycota	Dothideomycetes	Asterotexales	1
+1552	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Lineolatales	Fungi	Ascomycota	Dothideomycetes	Lineolatales	1
+1553	Root;k__Chromista;p__Oomycota;c__;o__	Chromista	Oomycota			1
+1554	Root;k__Protozoa;p__Choanozoa;c__Cristidiscoidea;o__Nucleariida	Protozoa	Choanozoa	Cristidiscoidea	Nucleariida	1
+1555	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Xenospadicoidales	Fungi	Ascomycota	Sordariomycetes	Xenospadicoidales	1
+1556	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__	Chromista	Ochrophyta	Phaeophyceae		1
+1557	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Ethmodiscales	Chromista	Ochrophyta	Bacillariophyceae	Ethmodiscales	1
+1558	Root;k__Chromista;p__Haptophyta;c__Prymnesiophyceae;o__Phaeocystales	Chromista	Haptophyta	Prymnesiophyceae	Phaeocystales	1
+1559	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Fuscosporellales	Fungi	Ascomycota	Sordariomycetes	Fuscosporellales	1
+1560	Root;k__Chromista;p__Ochrophyta;c__Bacillariophyceae;o__Chaetocerales	Chromista	Ochrophyta	Bacillariophyceae	Chaetocerales	1
+1561	Root;k__Fungi;p__Ascomycota;c__;o__Lahmiales	Fungi	Ascomycota		Lahmiales	1
+1562	Root;k__Chromista;p__Ciliophora;c__Oligohymenophorea;o__	Chromista	Ciliophora	Oligohymenophorea		1
+1563	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Conioscyphales	Fungi	Ascomycota	Sordariomycetes	Conioscyphales	1
+1564	Root;k__Fungi;p__Mucoromycota;c__Kickxellomycetes;o__Orphellales	Fungi	Mucoromycota	Kickxellomycetes	Orphellales	1
+1565	Root;k__Chromista;p__Ciliophora;c__Litostomatea;o__Tracheliida	Chromista	Ciliophora	Litostomatea	Tracheliida	1
+1566	Root;k__Fungi;p__Mucoromycota;c__;o__Asellariales	Fungi	Mucoromycota		Asellariales	1
+1567	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Pisorisporiales	Fungi	Ascomycota	Sordariomycetes	Pisorisporiales	1
+1568	Root;k__Protozoa;p__Sarcomastigophora;c__Zoomastigophora;o__	Protozoa	Sarcomastigophora	Zoomastigophora		1
+1569	Root;k__Protozoa;p__Euglenozoa;c__Peranemea;o__Anisonemida	Protozoa	Euglenozoa	Peranemea	Anisonemida	1
+1570	Root;k__Chromista;p__Myzozoa;c__;o__Eucoccidiida	Chromista	Myzozoa		Eucoccidiida	1
+1571	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Heterogloeales	Chromista	Ochrophyta	Chrysophyceae	Heterogloeales	1
+1572	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Lagenismatales	Chromista	Oomycota	Peronosporea	Lagenismatales	1
+1573	Root;k__Chromista;p__Myzozoa;c__Ellobiopsea;o__Ellobiopsida	Chromista	Myzozoa	Ellobiopsea	Ellobiopsida	1
+1574	Root;k__Fungi;p__Basidiomycota;c__Tremellomycetes;o__Holtermanniales	Fungi	Basidiomycota	Tremellomycetes	Holtermanniales	1
+1575	Root;k__Fungi;p__Basidiomycota;c__Microbotryomycetes;o__Leucosporidiales	Fungi	Basidiomycota	Microbotryomycetes	Leucosporidiales	1
+1576	Root;k__Chromista;p__Ochrophyta;c__Picophagea;o__Chlamydomyxales	Chromista	Ochrophyta	Picophagea	Chlamydomyxales	1
+1577	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Bezerromycetales	Fungi	Ascomycota	Dothideomycetes	Bezerromycetales	1
+1578	Root;k__Protozoa;p__Sulcozoa;c__Glissodiscea;o__	Protozoa	Sulcozoa	Glissodiscea		1
+1579	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Chrysosphaerales	Chromista	Ochrophyta	Chrysophyceae	Chrysosphaerales	1
+1580	Root;k__Fungi;p__Blastocladiomycota;c__Blastocladiomycetes;o__	Fungi	Blastocladiomycota	Blastocladiomycetes		1
+1581	Root;k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__	Fungi	Ascomycota	Eurotiomycetes		1
+1582	Root;k__Fungi;p__Basidiomycota;c__Exobasidiomycetes;o__Franziozymales	Fungi	Basidiomycota	Exobasidiomycetes	Franziozymales	1
+1583	Root;k__Fungi;p__Glomeromycota;c__Glomeromycetes;o__Entrophosporales	Fungi	Glomeromycota	Glomeromycetes	Entrophosporales	1
+1584	Root;k__Chromista;p__Myzozoa;c__Colponemea;o__Colponemida	Chromista	Myzozoa	Colponemea	Colponemida	1
+1585	Root;k__Chromista;p__Ochrophyta;c__Chrysophyceae;o__Thallochrysidales	Chromista	Ochrophyta	Chrysophyceae	Thallochrysidales	1
+1586	Root;k__Fungi;p__Basidiomycota;c__Classiculomycetes;o__Classiculales	Fungi	Basidiomycota	Classiculomycetes	Classiculales	1
+1587	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Chordariales	Chromista	Ochrophyta	Phaeophyceae	Chordariales	1
+1588	Root;k__Viruses;p__Kitrinoviricota;c__Alsuviricetes;o__Martellivirales	Viruses	Kitrinoviricota	Alsuviricetes	Martellivirales	1
+1589	Root;k__Chromista;p__Myzozoa;c__Aconoidasida;o__Haemospororida	Chromista	Myzozoa	Aconoidasida	Haemospororida	1
+1590	Root;k__Fungi;p__Ascomycota;c__Xylonomycetes;o__Symbiotaphrinales	Fungi	Ascomycota	Xylonomycetes	Symbiotaphrinales	1
+1591	Root;k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Jaapiales	Fungi	Basidiomycota	Agaricomycetes	Jaapiales	1
+1592	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Abrothallales	Fungi	Ascomycota	Dothideomycetes	Abrothallales	1
+1593	Root;k__Protozoa;p__Amoebozoa;c__Tubulinea;o__Leptomyxida	Protozoa	Amoebozoa	Tubulinea	Leptomyxida	1
+1594	Root;k__Fungi;p__Ascomycota;c__Neolectomycetes;o__Neolectales	Fungi	Ascomycota	Neolectomycetes	Neolectales	1
+1595	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Cladoriellales	Fungi	Ascomycota	Dothideomycetes	Cladoriellales	1
+1596	Root;k__Fungi;p__Basidiomycota;c__Wallemiomycetes;o__Geminibasidiales	Fungi	Basidiomycota	Wallemiomycetes	Geminibasidiales	1
+1597	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Actiniscales	Chromista	Myzozoa	Dinophyceae	Actiniscales	1
+1598	Root;k__Chromista;p__Ochrophyta;c__Dictyochophyceae;o__Pinguiochrysidales	Chromista	Ochrophyta	Dictyochophyceae	Pinguiochrysidales	1
+1599	Root;k__Fungi;p__Ascomycota;c__Xylonomycetes;o__Xylonales	Fungi	Ascomycota	Xylonomycetes	Xylonales	1
+1600	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Phaeothecales	Fungi	Ascomycota	Dothideomycetes	Phaeothecales	1
+1601	Root;k__Chromista;p__Ochrophyta;c__Bolidophyceae;o__Bolidomonadales	Chromista	Ochrophyta	Bolidophyceae	Bolidomonadales	1
+1602	Root;k__Fungi;p__Basidiomycota;c__Wallemiomycetes;o__	Fungi	Basidiomycota	Wallemiomycetes		1
+1603	Root;k__Fungi;p__Mucoromycota;c__;o__Dimargaritales	Fungi	Mucoromycota		Dimargaritales	1
+1604	Root;k__Fungi;p__Ascomycota;c__Leotiomycetes;o__Lichinodiales	Fungi	Ascomycota	Leotiomycetes	Lichinodiales	1
+1605	Root;k__Chromista;p__Ciliophora;c__Heterotrichea;o__Plagiotomida	Chromista	Ciliophora	Heterotrichea	Plagiotomida	1
+1606	Root;k__Fungi;p__Ascomycota;c__Laboulbeniomycetes;o__Herpomycetales	Fungi	Ascomycota	Laboulbeniomycetes	Herpomycetales	1
+1607	Root;k__Protozoa;p__Amoebozoa;c__Variosea;o__Acanthopodida	Protozoa	Amoebozoa	Variosea	Acanthopodida	1
+1608	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Delonicicolales	Fungi	Ascomycota	Sordariomycetes	Delonicicolales	1
+1609	Root;k__Chromista;p__Ciliophora;c__Spirotrichea;o__Licnophorida	Chromista	Ciliophora	Spirotrichea	Licnophorida	1
+1610	Root;k__Chromista;p__Ochrophyta;c__Raphidophyceae;o__	Chromista	Ochrophyta	Raphidophyceae		1
+1611	Root;k__Fungi;p__Basidiomycota;c__Tremellomycetes;o__	Fungi	Basidiomycota	Tremellomycetes		1
+1612	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Blastodiniales	Chromista	Myzozoa	Dinophyceae	Blastodiniales	1
+1613	Root;k__Chromista;p__Ciliophora;c__Karyorelictea;o__Karyorelictida	Chromista	Ciliophora	Karyorelictea	Karyorelictida	1
+1614	Root;k__Protozoa;p__Sulcozoa;c__Thecomonadea;o__Apusomonadida	Protozoa	Sulcozoa	Thecomonadea	Apusomonadida	1
+1615	Root;k__Chromista;p__Heliozoa;c__;o__Centrohelida	Chromista	Heliozoa		Centrohelida	1
+1616	Root;k__Fungi;p__Ascomycota;c__Novakomycetes;o__Novakomycetales	Fungi	Ascomycota	Novakomycetes	Novakomycetales	1
+1617	Root;k__Fungi;p__Ascomycota;c__;o__Lauriomycetales	Fungi	Ascomycota		Lauriomycetales	1
+1618	Root;k__Chromista;p__Ciliophora;c__Heterotrichea;o__Armophorida	Chromista	Ciliophora	Heterotrichea	Armophorida	1
+1619	Root;k__Protozoa;p__Sulcozoa;c__Diphyllatea;o__Diphylleida	Protozoa	Sulcozoa	Diphyllatea	Diphylleida	1
+1620	Root;k__Fungi;p__Zygomycota;c__;o__	Fungi	Zygomycota			1
+1621	Root;k__Fungi;p__Basidiomycota;c__Microbotryomycetes;o__Rosettozymales	Fungi	Basidiomycota	Microbotryomycetes	Rosettozymales	1
+1622	Root;k__Fungi;p__Ascomycota;c__Sordariomycetes;o__Batistiales	Fungi	Ascomycota	Sordariomycetes	Batistiales	1
+1623	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Lichenoconiales	Fungi	Ascomycota	Dothideomycetes	Lichenoconiales	1
+1624	Root;k__Fungi;p__Basidiomycota;c__Ustilaginomycetes;o__Uleiellales	Fungi	Basidiomycota	Ustilaginomycetes	Uleiellales	1
+1625	Root;k__Fungi;p__Chytridiomycota;c__Chytridiomycetes;o__Polychytriales	Fungi	Chytridiomycota	Chytridiomycetes	Polychytriales	1
+1626	Root;k__Fungi;p__Basidiomycota;c__Ustilaginomycetes;o__Violaceomycetales	Fungi	Basidiomycota	Ustilaginomycetes	Violaceomycetales	1
+1627	Root;k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Lembosinales	Fungi	Ascomycota	Dothideomycetes	Lembosinales	1
+1628	Root;k__Fungi;p__Chytridiomycota;c__Mesochytriomycetes;o__Gromochytriales	Fungi	Chytridiomycota	Mesochytriomycetes	Gromochytriales	1
+1629	Root;k__Chromista;p__Cercozoa;c__Chlorarachniophyceae;o__	Chromista	Cercozoa	Chlorarachniophyceae		1
+1630	Root;k__Chromista;p__Ochrophyta;c__Phaeophyceae;o__Ishigeales	Chromista	Ochrophyta	Phaeophyceae	Ishigeales	1
+1631	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Lophodiniales	Chromista	Myzozoa	Dinophyceae	Lophodiniales	1
+1632	Root;k__Fungi;p__Basidiomycota;c__Cryptomycocolacomycetes;o__Cryptomycocolacales	Fungi	Basidiomycota	Cryptomycocolacomycetes	Cryptomycocolacales	1
+1633	Root;k__Chromista;p__Ochrophyta;c__Chrysomerophyceae;o__Chrysomeridales	Chromista	Ochrophyta	Chrysomerophyceae	Chrysomeridales	1
+1634	Root;k__Protozoa;p__Microsporidia;c__;o__	Protozoa	Microsporidia			1
+1635	Root;k__Chromista;p__Myzozoa;c__Dinophyceae;o__Coccidiniales	Chromista	Myzozoa	Dinophyceae	Coccidiniales	1
+1636	Root;k__Viruses;p__;c__;o__	Viruses				1
+1637	Root;k__Chromista;p__Oomycota;c__Peronosporea;o__Haptoglossales	Chromista	Oomycota	Peronosporea	Haptoglossales	1
+1638	Root;k__Fungi;p__Blastocladiomycota;c__;o__	Fungi	Blastocladiomycota			1
+1639	Root;k__Fungi;p__Sanchytriomycota;c__Sanchytriomycetes;o__Sanchytriales	Fungi	Sanchytriomycota	Sanchytriomycetes	Sanchytriales	1
+1640	Root;k__Fungi;p__Ascomycota;c__Archaeorhizomycetes;o__Archaeorhizomycetales	Fungi	Ascomycota	Archaeorhizomycetes	Archaeorhizomycetales	1
+1641	Root;k__Chromista;p__Cryptophyta;c__Cryptophyceae;o__	Chromista	Cryptophyta	Cryptophyceae		1
+1642	Root;k__Fungi;p__Ascomycota;c__Lecanoromycetes;o__Turquoiseomycetales	Fungi	Ascomycota	Lecanoromycetes	Turquoiseomycetales	1
