@@ -1,6 +1,74 @@
 import pandas as pd
 import numpy as np
 import pickle
+from pygbif import species
+import csv
+
+# Global counter for the number of species processed
+species_processed_count = 0
+
+log_file = "unmatched_species.csv"
+
+# Create the CSV file with a header if it doesn't exist
+with open(log_file, "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["species_name", "kingdom", "reason"])  # Add headers
+
+def log_unmatched_species(name, kingdom, reason="Not found in GBIF"):
+    with open(log_file, "a", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow([name, kingdom, reason])
+        
+def count_species(backbone, species_list, countname):
+    # Convert to set so duplicates are counted only once
+    unique_species = set(species_list)
+    available_species = set(backbone["canonicalName"])
+    species_count = {}
+
+    for spec in unique_species:
+        if spec in available_species:
+            if spec not in species_count:
+                species_count[spec] =  1
+            else:
+                species_count[spec] += 1
+    #print(species_count.keys(), species_count.values())            
+    count_df = pd.DataFrame(species_count.keys(), species_count.values()).reset_index()
+    count_df.columns = [countname, "canonicalName"]
+    count_df.set_index("canonicalName", inplace=True)
+    
+    backbone = backbone.merge(count_df, on="canonicalName", how="left")
+    return backbone
+
+# Takes a Latin name and standardized name for use in comparison
+def get_canonical_name(name, kingdom=None, dataframe_name=None):
+    global species_processed_count
+    try:
+        species_processed_count += 1
+        result = species.name_backbone(
+            name=name,
+            rank="species",
+            kingdom=kingdom,
+            verbose=True,
+            strict=True
+        ) if kingdom else species.name_backbone(name=name, rank="species", verbose=True, strict=True)
+        
+        if result and 'canonicalName' in result and result['canonicalName']:
+            print(f"[{species_processed_count}] Returning canonical name: {result['canonicalName']}")
+            return result['canonicalName']
+        else:
+            print(f"[{species_processed_count}] Unmatched: {name}")
+            log_unmatched_species(name, kingdom, "No canonicalName found")
+            if dataframe_name is not None:
+                print(f"Working DataFrame: {dataframe_name}")
+            return name  # Return original name
+
+    except Exception as e:
+        print(f"[{species_processed_count}] Error retrieving {name}: {e}")
+        log_unmatched_species(name, kingdom, str(e))
+        if dataframe_name is not None:
+            print(f"Working DataFrame: {dataframe_name}")
+        return name
+
 
 ## BACKBONE
 
@@ -12,6 +80,7 @@ backbone["canonicalName"] = backbone["canonicalName"].str.strip()
 
 # drop species with no canonical name
 backbone = backbone.dropna(subset="canonicalName").set_index("canonicalName")
+
 
 # or no full taxonomic lineage to the family
 #backbone = backbone.dropna(subset=['kingdom', 'phylum', 'class', 'order', 'family'])
@@ -38,14 +107,68 @@ authors = pd.read_pickle("../../data/processed/authors_disambiguated_truncated.p
 available_species = set(backbone.index)
 species_authors = {}
 
-for subjects in authors["species_subject"]:
-    if len(subjects) != 0: 
-        for species in subjects:
-            if species in available_species:
-                if species not in species_authors:
-                    species_authors[species] =  1
-                else:
-                    species_authors[species] += 1
+# for subjects in authors["species_subject"]:
+#     if len(subjects) != 0: 
+#         for species in subjects:
+#             if species in available_species:
+#                 if species not in species_authors:
+#                     species_authors[species] =  1
+#                 else:
+#                     species_authors[species] += 1
+
+# Pre-standardize species names for each subject list using GBIF
+standardized_authors_species = []
+
+##################################################################################
+# for subjects in authors["species_subject"]:
+#     standardized_subjects = []
+#     if subjects:
+#         for species_name in subjects:
+#             # Use GBIF to get the canonical name
+#             standardized_name = get_canonical_name(species_name.strip())
+#             standardized_subjects.append(standardized_name)
+#     standardized_authors_species.append(standardized_subjects)
+##################################################################################
+
+# Iterate over the 'species_subject' and use kingdom from the last column (assuming it's named 'kingdom')
+standardized_authors_species = []
+
+for idx, subjects in enumerate(authors["species_subject"]):
+    standardized_subjects = []
+    
+    if subjects:
+        # Ensure subjects is a list, even if it's a single string
+        if isinstance(subjects, str):
+            subjects = [subjects]  # Convert single string to a list
+        # Check if the 'kingdom' column for the current row is populated and a single value (not an array or list)
+        kingdom = authors.iloc[idx, -1]  # Get the last column value (assuming it's 'kingdom')
+        
+        # Ensure that kingdom is a valid single value (string or None)
+        if isinstance(kingdom, str) and pd.notnull(kingdom):
+            kingdom_value = kingdom
+        else:
+            kingdom_value = None
+        
+        for species_name in subjects:
+            # Use GBIF to get the canonical name, passing kingdom if it's populated
+            standardized_name = get_canonical_name(species_name.strip(), kingdom=kingdom_value)
+            standardized_subjects.append(standardized_name)
+    
+    standardized_authors_species.append(standardized_subjects)
+
+# Replace original column with standardized names
+authors["species_subject_standardized"] = standardized_authors_species
+
+# Now use the standardized names for matching:
+available_species = set(backbone.index)
+species_authors = {}
+
+for subjects in authors["species_subject_standardized"]:
+    if subjects:
+        for spec in subjects:
+            if spec in available_species:
+                species_authors[spec] = species_authors.get(spec, 0) + 1
+
 
 sp_authors_df = pd.DataFrame(species_authors.keys(), species_authors.values()).reset_index()
 sp_authors_df.columns = ["nr_authors", "canonicalName"]
@@ -68,7 +191,9 @@ pollinators = pd.read_csv("../../data/external/pollinators_sps_list_Reverte_et_a
 redlistFull = pd.read_csv("../../data/external/european_red_list_2017_december.csv", sep=",")
 
 # 1. Convert NaN to empty strings in 'scientificName' 
-redlistFull["scientificName"] = redlistFull["scientificName"].fillna("")
+#redlistFull["scientificName"] = redlistFull["scientificName"].fillna("")
+redlistFull["scientificName"] = redlistFull["taxonomicRankGenus"].fillna("") + " " + redlistFull["taxonomicRankSpecies"].fillna("")
+
 
 # 2. Create a mask for rows where 'scientificName' is empty
 mask_empty = redlistFull["scientificName"].eq("")
@@ -93,36 +218,61 @@ fullRedListUniq = redlistFiltered["scientificName"].unique()
 cwr["canonicalName"] = [" ".join(x.split()[:2]) for x in cwr["CROP WILD RELATIVE"]]
 #horizon = horizon.rename(columns={"Species Name":"canonicalName"})
 
+# Standardize redlist species names using GBIF
+redlist["scientificName_standardized"] = redlist["scientificName"].apply(lambda name: get_canonical_name(name.strip(),"redlist") if pd.notnull(name) else name)
+backbone = count_species(backbone, redlist["scientificName_standardized"], "taxonomicResearchNeeded")
 
-def count_species(backbone, species_list, countname):
-    # Convert to set so duplicates are counted only once
-    unique_species = set(species_list)
-    available_species = set(backbone["canonicalName"])
-    species_count = {}
+redlist.head()
 
-    for species in unique_species:
-        if species in available_species:
-            if species not in species_count:
-                species_count[species] =  1
-            else:
-                species_count[species] += 1
-    #print(species_count.keys(), species_count.values())            
-    count_df = pd.DataFrame(species_count.keys(), species_count.values()).reset_index()
-    count_df.columns = [countname, "canonicalName"]
-    count_df.set_index("canonicalName", inplace=True)
-    
-    backbone = backbone.merge(count_df, on="canonicalName", how="left")
-    return backbone
+# Assuming the 'Subgroup' column exists in the horizon DataFrame
+horizon["kingdom"] = horizon["Subgroup"].apply(lambda x: 'Plantae' if x == 'Plants' else 'Animalia')
 
-backbone = count_species(backbone, redlist["scientificName"], "taxonomicResearchNeeded")
-#backbone = count_species(backbone, cwr["canonicalName"], "cropWildRelatives")
-backbone = count_species(backbone, horizon["Scientific name"], "horizonInvasives")
+# Now apply get_canonical_name with the proper kingdom for each row
+horizon["scientificName_standardized"] = horizon.apply(
+    lambda row: get_canonical_name(row["Scientific name"].strip(), kingdom=row["kingdom"] if pd.notnull(row["kingdom"]) else None, dataframe_name="horizon") 
+    if pd.notnull(row["Scientific name"]) else row["Scientific name"],
+    axis=1  # Apply function row-wise
+)
 
-#backbone = count_species(backbone, birdDir["verbatimScientificName"], "birdDir")
-backbone = count_species(backbone, habitatsDir["verbatimScientificName"], "habitatsDir")
-backbone = count_species(backbone, marineDir["ScientificName_accepted"], "marineDir")
-backbone = count_species(backbone, iasListConcern["canonicalName"], "iasListConcern")
+# Count species
+backbone = count_species(backbone, horizon["scientificName_standardized"], "horizonInvasives")
+
+horizon.head()
+
+#habitatsDir["scientificName_standardized"] = habitatsDir["verbatimScientificName"].apply(lambda name: get_canonical_name(name.strip(),habitatsDir) if pd.notnull(name) else name)
+habitatsDir["scientificName_standardized"] = habitatsDir.apply(
+    lambda row: get_canonical_name(row["verbatimScientificName"].strip(), row["kingdom"], "habitatsDir")
+                if pd.notnull(row["verbatimScientificName"]) else row["verbatimScientificName"],
+    axis=1
+)
+backbone = count_species(backbone, habitatsDir["scientificName_standardized"], "habitatsDir")
+
+habitatsDir.head()
+
+#marineDir["scientificName_standardized"] = marineDir["ScientificName_accepted"].apply(lambda name: get_canonical_name(name.strip()) if pd.notnull(name) else name)
+marineDir["scientificName_standardized"] = marineDir.apply(
+    lambda row: get_canonical_name(row["ScientificName_accepted"].strip(), row["Kingdom"], "marineDir")
+                if pd.notnull(row["ScientificName_accepted"]) else row["ScientificName_accepted"],
+    axis=1
+)
+backbone = count_species(backbone, marineDir["scientificName_standardized"], "marineDir")
+
+marineDir.head()
+
+# Assuming 'genus' and 'species' are columns in the iasListConcern DataFrame
+iasListConcern["scientificName_standardized"] = iasListConcern.apply(
+    lambda row: get_canonical_name(f"{row['genus']} {row['species']}", row["kingdom"], "iasListConcern") 
+                if pd.notnull(row["genus"]) and pd.notnull(row["species"]) else row["genus"] + " " + row["species"],
+    axis=1
+)
+
+# Count species
+backbone = count_species(backbone, iasListConcern["scientificName_standardized"], "iasListConcern")
+
+iasListConcern.head()
+
 #backbone = count_species(backbone, pollinators["GenusAndSpecies"], "pollinators")
+
 backbone = count_species(backbone, fullRedListUniq, "redlistFull")
 
 #To avoid homonyms
