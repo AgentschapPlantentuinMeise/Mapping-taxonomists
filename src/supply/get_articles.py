@@ -18,7 +18,7 @@ def validate_date(date_str):
 
 
 # Load configuration
-with open("../../config.json", "r") as config_file:
+with open("../../config.json", "r", encoding="utf-8") as config_file:
     config = json.load(config_file)
     
 # Extract dates

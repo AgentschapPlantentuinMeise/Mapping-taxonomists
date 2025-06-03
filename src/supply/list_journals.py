@@ -63,6 +63,7 @@ print("Wikidata journals by IPNI or ZooBank ID: done")
 # 3. openalex: sources associated with the taxonomy concept
 
 email = input("Enter e-mail address for OpenAlex API: ")
+# C58642233 = Taxonomy (biology) Concept
 openalex_results = download.request_sources("concepts.id:C58642233", email)
 # only journals, no e-book platforms etc
 openalex_results = openalex_results[openalex_results["type"]=="journal"].reset_index(drop=True)
