@@ -223,6 +223,70 @@ The name of the file is `european_red_list_2017_december.csv`. Accessed on [04 J
 
 ![A diagram of the connections between scripts that generate the phylogenetic trees of policies and taxonomists](policies_flow.png)
 
+### `count_demand_supply.py` Matching Taxonomic Supply with Policy Demand
+
+This comprehensive script quantifies and compares the **supply** of taxonomic expertise (i.e., authorship on species) with **demand** indicated by conservation and policy priorities. It builds a unified dataset linking taxa to research needs and outputs a taxonomic matrix for further analysis and visualization.
+
+#### Purpose
+
+To generate a taxonomic matrix linking species and higher taxa (especially orders) to:
+
+* Taxonomic research supply (i.e., number of taxonomic authors per species/order)
+* Demand indicators from major EU and international biodiversity policies
+
+This matrix supports downstream analyses such as phylogenetic coverage heatmaps and gap assessments.
+
+#### Workflow Summary
+
+1. **Input Data**:
+
+   * GBIF taxonomic backbone: `Taxon.tsv`
+   * Author data: `authors_disambiguated_truncated.pkl`
+   * Policy datasets (e.g., IUCN, CWR, Birds Directive, etc.)
+
+2. **Standardization of Species Names**:
+
+   * Uses `pygbif` to retrieve canonical names for species mentioned in author and policy datasets.
+   * Standardizes names and logs unmatched species to `unmatched_species.csv`.
+
+3. **Linking Authors to Taxa**:
+
+   * Tallies how many disambiguated authors have published on each species.
+   * Aggregates these counts by taxonomic order.
+
+4. **Linking Policy Demand to Taxa**:
+
+   * Extracts species of concern from multiple policy sources:
+
+     * IUCN Red List (taxonomy research needed)
+     * Crop Wild Relatives
+     * Horizon scanning invasive species
+     * Birds Directive, Habitats Directive, Marine Strategy, Pollinator lists, and more
+   * Standardizes and matches these species to the GBIF backbone.
+
+5. **Aggregation to Order Level**:
+
+   * Totals demand and supply indicators across taxonomic orders (excluding Bacteria and Archaea).
+   * Produces a `supply_and_demand_order_level.pkl` and `.tsv`.
+
+6. **Output for Visualization**:
+
+   * **`taxAssignments.txt`**: List of OTUs (taxonomic units) with taxonomic lineage and IDs, used for visual tools like iTOL.
+   * **`otutable.tsv`**: Matrix of taxonomic orders vs. counts of authors and species appearing in different policy datasets.
+
+#### Output Files
+
+* `taxAssignments.txt`: Lineage per OTU ID with confidence annotations.
+* `otutable.tsv`: Main output matrix of taxonomic orders × policy indicators and author counts.
+* `supply_and_demand_order_level.tsv`: Raw order-level summary of supply and demand.
+* `unmatched_species.csv`: Log of species names not found in GBIF during standardization.
+
+#### Example Indicators in Final Matrix
+
+| OTU\_ID | nr\_authors | taxonomicResearchNeeded | cropWildRelatives | ... |
+| ------- | ----------- | ----------------------- | ----------------- | --- |
+| 1       | 32          | 12                      | 4                 | ... |
+
 #######################################################################################
 
 ## Visualization
