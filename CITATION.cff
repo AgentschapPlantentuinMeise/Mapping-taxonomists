@@ -8,7 +8,6 @@ type: software
 authors:
   - given-names: Melanie
     family-names: De Nolf
-    email: melanie.denolf@plantentuinmeise.be
     affiliation: Meise Botanic Garden
     orcid: 'https://orcid.org/0000-0001-6032-5198'
   - given-names: Sofie
