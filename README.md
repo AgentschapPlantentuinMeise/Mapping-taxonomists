@@ -170,6 +170,8 @@ This script aims to disambiguate authors from taxonomic articles and link them t
     - The final, disambiguated list of authors is saved as:
       - `authors_disambiguated_truncated.pkl`
       - `authors_disambiguated_truncated.tsv`
+     
+![A diagram of the connections between scripts that generate the data on the afiliations of taxonomists and the taxonomic groups they work on](taxonomist_flow.png)
 
 #######################################################################################
 
@@ -340,6 +342,96 @@ The word cloud offers an **intuitive visual summary** of the vocabulary used acr
 * **Figure S2**: A word cloud visualizing the most common words in the title and abstract of the filtered taxonomic articles. Serves as a visual diagnostic for topical relevance.
 * **Console Message**: Confirms the number of articles analyzed, the additional stopwords applied, and the paths to the saved images.
 
-### Open Access status of taxonomic articles
+### `histogram_families.py` Family-Level Taxonomic Coverage Visualization
+
+This script analyzes the frequency with which biological families are mentioned in taxonomic articles and produces a histogram that visualizes their distribution. It is designed to give insight into which taxonomic families receive the most attention in the literature dataset.
+
+#### Purpose
+
+To visualize how many articles mention species from each biological family, thereby identifying biases or concentrations in taxonomic research.
+
+#### Workflow Summary
+
+1. **Input**:
+
+   * `../../data/processed/taxonomic_articles_with_subjects.pkl`: Contains taxonomic articles with identified species.
+   * `../../data/external/backbone/Taxon.tsv`: The GBIF taxonomic backbone, used to match species names to their respective families.
+
+2. **Data Preparation**:
+
+   * Filters out taxa with doubtful taxonomic status.
+   * Maps each species in the articles to a family using a lookup table derived from the GBIF backbone.
+   * Aggregates the number of articles per family.
+
+3. **Visualization**:
+
+   * Generates a histogram showing the number of families by how many articles mention them (with bins up to 50 articles).
+   * Saves the figure as both `histogram_families.png` and `FigS3.tif` in the `../../reports/figures/` directory, with high-resolution export suitable for publication.
+
+4. **Output**:
+
+   * A histogram that highlights the skew in article distribution among taxonomic families.
+   * Console output of the top 10 families by article count.
+
+#### Example Output
+
+* **Figure S3**: Histogram showing how many families are mentioned in 1–50 articles.
+* **Console Output**:
+  `The top 10 families by number of articles are Fabaceae: 143, Asteraceae: 132, Orchidaceae: 118, ...`
+
+This script provides a visual diagnostic of taxonomic focus and helps identify underrepresented families in the analyzed corpus.
+
+### `open_access.py` Open Access Status Analysis of Taxonomic Articles
+
+This script analyzes and visualizes the open access (OA) status of taxonomic articles, providing insights into how accessible the scientific literature is across different journals.
+
+#### Purpose
+
+The aim is to evaluate the distribution of open access types—such as gold, green, hybrid, diamond, bronze, and closed—among taxonomic articles and present this data in a series of charts. This analysis can help identify which journals most contribute to openly accessible taxonomy research.
+
+#### Workflow Summary
+
+1. **Input**:
+
+   * `../../data/processed/taxonomic_articles_with_subjects.pkl`: Contains metadata for taxonomic articles, including their open access status and source (journal).
+
+2. **Per-Journal Analysis**:
+
+   * For each journal (based on `source_id`), the script counts how many articles fall into each OA category.
+   * Journals with fewer than 20 articles are excluded from the visualization to simplify interpretation.
+
+3. **Visualization**:
+
+   * **Stacked Bar Chart (Absolute Counts)**: Shows the number of articles per OA status per journal.
+
+     * Saved as: `absolute_oa_status_journals.jpg`
+   * **Stacked Bar Chart (Relative Percentages)**: Shows the proportion of OA types per journal.
+
+     * Saved as: `relative_oa_status_journals.jpg`
+   * **Pie Chart (Global OA Distribution)**: Displays the overall proportion of articles in each OA category.
+
+     * Saved as: `pie_chart_oa_status.jpg`
+
+4. **Output**:
+
+   * Three high-resolution images saved in `../../reports/figures/`.
+   * Console messages confirming progress and success.
+
+#### Open Access Categories:
+
+* **Closed**: Paywalled, not freely accessible.
+* **Hybrid**: Paywalled journal with some open articles.
+* **Bronze**: Free to read on the publisher’s site, but without a license.
+* **Green**: Available in an open repository.
+* **Gold**: Fully open access journal.
+* **Diamond**: Open access journal with no APCs (article processing charges).
+
+#### Example Output
+
+* **Absolute Bar Chart**: Tallies of each OA category per journal.
+* **Relative Bar Chart**: Percent breakdown showing dominance of OA types across journals.
+* **Pie Chart**: Overall distribution of OA statuses in the dataset.
+
+This script provides a clear picture of the current landscape of accessibility in taxonomic publishing and helps assess progress toward open science goals.
 
 
