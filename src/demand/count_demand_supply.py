@@ -1,6 +1,4 @@
 import pandas as pd
-import numpy as np
-import pickle
 from pygbif import species
 import csv
 
