@@ -262,6 +262,45 @@ All of these maps are saved as PNG files and stored in the `../../reports/figure
 
 Once the script is run, you’ll find a series of maps that visually represent where authors of taxonomic articles are based, both globally and within Europe. The resulting visualizations offer an insightful view into the geographic distribution of the academic community in this field.
 
+### `cumulative.py` Journal Path Optimization and Author Discovery Curve
+
+This script analyzes the contribution of different journals to the pool of unique taxonomic authors and determines an optimal sequence of journals that maximizes author discovery with minimal redundancy.
+
+### Purpose
+
+The goal of this script is to plot the **cumulative number of unique authors** encountered by sequentially adding journals in an order that prioritizes the discovery of new authors. This helps visualize journal coverage and identify diminishing returns in author discovery.
+
+### Workflow Summary
+
+1. **Input**:
+
+   * Reads from `../../data/interim/country_authors_with_all_taxonomic_articles.pkl`, a dataset of taxonomic authors linked to journal sources.
+   * Authors are deduplicated by `author_id` and `source_id`.
+
+2. **Greedy Path Algorithm**:
+
+   * Starts with the journal containing the most unique authors.
+   * Iteratively adds the journal that contributes the highest number of *previously unseen* authors.
+   * Continues until no journal can contribute additional unique authors.
+
+3. **Visualization**:
+
+   * Plots a bar chart of the **cumulative number of authors** as journals are added.
+   * Highlights the point at which 95% of authors have been discovered.
+   * Saves this figure as both `FigS1.png` and `FigS1.tif` in `../../reports/figures/`.
+
+4. **Output**:
+
+   * A figure caption printed in the console for documentation.
+   * A text file `journals_cumulative_path.txt` listing the selected and unexplored journals (by name), saved in `../../data/interim/`.
+
+#### Output Example
+
+* **Figure S1**: Cumulative frequency curve of newly discovered authors as journals are added. Indicates the steepness of discovery and where saturation occurs.
+* **Text File**: Lists journals in order of their contribution to author discovery and those not selected.
+
+This analysis helps prioritize journals for future data collection or highlights redundancy in journal selection.
+
 ### Open Access status of taxonomic articles
 
 
