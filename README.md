@@ -301,6 +301,45 @@ The goal of this script is to plot the **cumulative number of unique authors** e
 
 This analysis helps prioritize journals for future data collection or highlights redundancy in journal selection.
 
+### `wordclouds.py` Word Cloud of Taxonomic Article Abstracts
+
+This script visualizes the most frequently used words in the titles and abstracts of taxonomic articles by generating a word cloud. It serves as a qualitative check on the dataset, confirming that the articles predominantly relate to taxonomy.
+
+#### Purpose
+
+The word cloud offers an **intuitive visual summary** of the vocabulary used across all taxonomic article abstracts. It highlights common themes and helps verify the effectiveness of the keyword filtering process applied earlier in the pipeline.
+
+#### Workflow Summary
+
+1. **Input**:
+
+   * Loads the processed article dataset from `../../data/processed/taxonomic_articles_with_subjects.pkl`.
+   * The input data must include `abstract_inverted_index`, the OpenAlex format for storing abstracts as a dictionary of words and their positions.
+
+2. **Cleaning and Filtering**:
+
+   * The script removes punctuation, converts text to lowercase, and filters out common stopwords.
+   * Custom stopwords are added to exclude words like *taxonomy*, *species*, *genus*, as well as single letters and digits, which are overly frequent and non-informative.
+
+3. **Frequency Computation**:
+
+   * Words are counted based on how often they appear across all abstracts.
+   * The word frequency dictionary is passed to the WordCloud generator.
+
+4. **Visualization**:
+
+   * A word cloud image is created using the **Viridis** colormap for clear, aesthetic visualization.
+   * The image is saved as `FigS2.png` and `FigS2.tif` in `../../reports/figures/`.
+
+5. **Output**:
+
+   * Console output includes a short description of the figure and a list of the custom stopwords used to refine the visualization.
+
+#### Output Example
+
+* **Figure S2**: A word cloud visualizing the most common words in the title and abstract of the filtered taxonomic articles. Serves as a visual diagnostic for topical relevance.
+* **Console Message**: Confirms the number of articles analyzed, the additional stopwords applied, and the paths to the saved images.
+
 ### Open Access status of taxonomic articles
 
 
