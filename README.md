@@ -177,7 +177,7 @@ This script aims to disambiguate authors from taxonomic articles and link them t
 
 ### Crop Wild Relatives
 
-The crop wild relatives data where downloaded from the following dataset and placed in data/external/crop wild relatives europe.xlsx. These are public domain data, but are included here as a test dataset. We recommend anyone useing these scripts updates this file from source.
+The crop wild relatives data where downloaded from the following dataset and placed in `data/external/crop wild relatives europe.xlsx`. These are public domain data, but are included here as a test dataset. We recommend anyone useing these scripts updates this file from source.
 
 > USDA, Agricultural Research Service, National Plant Germplasm System. 2024. Germplasm Resources Information Network (GRIN Taxonomy). National Germplasm Resources Laboratory, Beltsville, Maryland. URL: https://npgsweb.ars-grin.gov/gringlobal/taxon/taxonomysearchcwr. Accessed 15 October 2024.
 
@@ -194,6 +194,27 @@ However, the data are used in their original format, as provided in the CSV file
 Invasive species on the horizon were extracted from the supporting information table 7, titled "Preliminary species list 2: 120 species listed" . Accessed on [20 October 2024].
 
 Roy HE, Bacher S, Essl F, et al. Developing a list of invasive alien species likely to threaten biodiversity and ecosystems in the European Union. *Glob Change Biol.* 2019; 25: 1032–1048. https://doi.org/10.1111/gcb.14527
+
+### The Birds Directive
+birdDir = pd.read_csv("../../data/external/birds_directive_annexi+gbif.csv", sep=",")
+
+### The Habitat Directive
+habitatsDir = pd.read_csv("../../data/external/habitats_directive_art_17_checklis+gbif.csv", sep=",")
+
+### The EU Marine Strategy Framework Directive
+marineDir = pd.read_csv("../../data/external/MSFD_descriptor1+worms.csv", sep=",")
+
+### The List of invasive alien species of Union concern
+iasListConcern = pd.read_csv("../../data/external/IAS_list_union_concern+gbif.csv", sep=",")
+
+### The EU Pollinators Initiative
+pollinators = pd.read_csv("../../data/external/pollinators_sps_list_Reverte_et_al_insect_conservation&diversity_2023.csv", sep=",")
+
+### European Red Lists of species
+The European Red Lists of species was downloaded from the [European Environment Agency Datahub](https://sdi.eea.europa.eu/data/9c785326-8859-4abd-aad6-c8d35b619ff9).
+The name of the file is `european_red_list_2017_december.csv`. Accessed on [04 June 2025].
+
+![A diagram of the connections between scripts that generate the phylogenetic trees of policies and taxonomists](policies_flow.png)
 
 #######################################################################################
 
