@@ -169,7 +169,7 @@ png(
 )
 
 # Arrange and render the plots
-grid.arrange(taxonomyNeeded, redList, cwr, OnHorizon, iasUnionList, birds, habitats, marineDir, pollinators, ncol=3)
+grid.arrange(plantPlot, fungiPlot, animalPlot, ncol=2)
 
 # Close the device to save the file
 dev.off()
