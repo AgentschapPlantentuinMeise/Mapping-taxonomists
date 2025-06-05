@@ -498,4 +498,120 @@ The aim is to evaluate the distribution of open access types—such as gold, gre
 
 This script provides a clear picture of the current landscape of accessibility in taxonomic publishing and helps assess progress toward open science goals.
 
+###########################################################################################################################################################
 
+### `heattreeTaxonomists.R` Visualizing Taxonomic Research Supply Across Kingdoms
+
+This R script generates **phylogenetic heat trees** to visualize the taxonomic distribution of research effort (e.g., number of contributing authors) across plants, fungi, and animals. It uses the [`metacoder`](https://grunwaldlab.github.io/metacoder_documentation/) package to create hierarchical trees where node size and color represent author supply per taxon.
+
+#### Purpose
+
+The goal is to communicate which taxonomic groups receive the most taxonomic attention (in terms of author contributions), while suppressing visually uninformative or irrelevant clades. The final output consists of labeled, size- and color-coded trees for **Plantae**, **Fungi**, and **Animalia**.
+
+#### Workflow Summary
+
+1. **Input Files**:
+
+   * `otutable.tsv`: Matrix of taxa (OTU\_IDs) vs. number of contributing authors and policy relevance.
+   * `taxAssignments.txt`: Taxonomic lineages (e.g., kingdom → order) for each OTU\_ID.
+   * `SMD.txt`: Sample metadata (sample IDs and their types).
+
+2. **Data Preparation**:
+
+   * Merges OTU and taxonomy tables on `OTU_ID`.
+   * Parses taxonomic ranks from lineage strings using `metacoder::parse_tax_data()`.
+   * Converts OTU tables into a `metacoder` object for visualization.
+   * Calculates taxon abundance across grouped samples.
+
+3. **Taxon Filtering**:
+
+   * Excludes obscure or irrelevant clades using a manually curated list (`dontprint`) of taxon names (mostly rare in datasets or biologically ambiguous groups).
+   * Retains important higher-level taxa (e.g., Liliopsida, Insecta, Aves).
+
+4. **Tree Construction**:
+
+   * For each major kingdom (Plantae, Fungi, Animalia), the script:
+
+     * Filters subtaxa within the kingdom.
+     * Constructs a heat tree using `heat_tree()`:
+
+       * **Node size** = number of observations (e.g., author mentions).
+       * **Node color** = number of contributing people (`people` column).
+       * **Node labels** = taxon names (excluding `dontprint`).
+     * Custom layout and visual settings are applied (e.g., font size, node scaling, `davidson-harel` layout).
+
+5. **Output Figures**:
+
+   * Renders and saves composite figures using `grid.arrange()`:
+
+     * `taxonomists.tif`: High-resolution TIFF version (300 DPI, LZW compressed).
+     * `taxonomists.png`: PNG version using Cairo graphics.
+
+#### Output Example
+
+Each tree includes:
+
+* A hierarchical taxonomy from kingdom down to orders or classes.
+* Scaled nodes showing concentration of taxonomic authorship.
+* Legends indicating magnitude of node size and color values.
+
+### `policy_heat_trees.R` Visualizing Policy-Relevant Taxonomic Gaps
+
+This R script generates a grid of **phylogenetic heat trees**, each one illustrating the taxonomic distribution of species included in major European conservation and biodiversity policies. It is designed to highlight which parts of the tree of life are covered—or neglected—by different policy frameworks.
+
+#### Purpose
+
+To visually compare the taxonomic scope of multiple biodiversity policy instruments by mapping species relevance onto a phylogenetic tree. Each policy is represented as a separate heat tree, showing which groups are most frequently listed.
+
+#### Workflow Summary
+
+1. **Input Files**:
+
+   * `otutable.tsv`: Table of taxonomic units with counts of relevance to policies.
+   * `taxAssignments.txt`: Taxonomic lineage strings assigned to each OTU.
+   * `SMD.txt`: Metadata table identifying sample types (e.g., policy categories).
+
+2. **Data Preparation**:
+
+   * Combines taxonomy and OTU data via `left_join()`.
+   * Parses hierarchical taxonomy using `metacoder::parse_tax_data()`.
+   * Filters out unwanted taxa (e.g. orders, microbes, protists) for cleaner visualizations.
+   * Retains higher taxonomic groups of interest (e.g., Plantae, Animalia, Fungi).
+
+3. **Tree Construction**:
+   For each policy domain, the script:
+
+   * Generates a heat tree where:
+
+     * **Node size** = number of observed species or taxa.
+     * **Node color** = number of species linked to the policy (e.g. `conservation`, `Redlist`, `IAS`, `marine`, etc.).
+     * **Node labels** = major taxa (selected via a `doprint` list).
+   * Sets consistent styling across all plots (layout, scaling, font, etc.).
+
+4. **Policies Visualized**:
+
+   * **Taxonomy Needed** (from IUCN)
+   * **European Red List**
+   * **Crop Wild Relatives**
+   * **Invasive Alien Species (Horizon Scan)**
+   * **Union List of IAS of Concern**
+   * **Birds Directive**
+   * **Habitats Directive**
+   * **Marine Strategy Framework Directive**
+   * **EU Pollinators Initiative**
+
+5. **Output Figures**:
+
+   * `policies.tif`: High-resolution TIFF (300 DPI, LZW compression), suitable for publications.
+   * `policies.png`: PNG export (Cairo graphics) for web or presentations.
+
+Each file displays a 3-column grid of policy-specific trees.
+
+#### Example Interpretation
+
+In each tree:
+
+* Large, dark-colored nodes indicate taxonomic groups with high species representation in a policy.
+* Empty or pale branches indicate gaps—taxa that are rarely or never addressed.
+
+This visualization facilitates side-by-side comparison of taxonomic priorities across legal and conservation frameworks, helping identify overlooked lineages.
