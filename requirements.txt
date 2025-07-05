@@ -5,5 +5,4 @@ geopandas==0.12.2
 matplotlib==3.9.2
 seaborn==0.12.2
 SPARQLWrapper==2.0.0
-fiona==1.8.22
 shapely==2.0.1
