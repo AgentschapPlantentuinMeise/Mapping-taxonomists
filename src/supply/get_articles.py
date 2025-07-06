@@ -7,6 +7,7 @@ import download
 import prep_articles
 import json
 from datetime import datetime
+from pathlib import Path
 
 def validate_date(date_str):
     try:
@@ -15,10 +16,19 @@ def validate_date(date_str):
     except ValueError:
         return False
 
+# === Path setup ===
+this_dir = Path(__file__).resolve().parent
+root_dir = this_dir.parents[1]  # Adjust if needed
 
+config_path = root_dir / "config" / "config.json"
+journals_path = root_dir / "data" / "processed" / "journals.csv"
+articles_dir = root_dir / "data" / "raw" / "articles"
 
-# Load configuration
-with open("../../config.json", "r", encoding="utf-8") as config_file:
+# === Load configuration ===
+if not config_path.exists():
+    raise FileNotFoundError(f"Config file not found at {config_path}")
+
+with open(config_path, "r", encoding="utf-8") as config_file:
     config = json.load(config_file)
     
 # Extract dates
@@ -41,7 +51,11 @@ for f in files:
 # ask OpenAlex (nicely) for all articles from these journals from 2014-2023
 # can only use journals that have OpenAlex IDs and that are not dissolved
 oaids = list(set(journals[journals["dissolved"]!=True]["openAlexID"]))
-email = input("Enter e-mail address for OpenAlex API: ")
+#email = input("Enter e-mail address for OpenAlex API: ")
+email = config.get("email")
+if not email:
+    raise ValueError("Email address for OpenAlex API is missing in config.json")
+
 articles = []
 n = 0; m = 0
 

@@ -2,9 +2,24 @@ import pandas as pd
 import download
 import json
 from datetime import datetime
+from pathlib import Path
 
 # Load configuration
-with open("../../config.json", "r", encoding="utf-8") as config_file:
+#with open("../../config.json", "r", encoding="utf-8") as config_file:
+#    config = json.load(config_file)
+
+print(f"__file__ = {__file__}")
+print(f"Resolved = {Path(__file__).resolve()}")
+print(f"Parent = {Path(__file__).resolve().parent}")
+print(f"Parents[1] = {Path(__file__).resolve().parents[1]}")
+print(f"Parents[2] = {Path(__file__).resolve().parents[2]}")
+
+config_path = Path(__file__).resolve().parents[2] / "config" / "config.json"
+
+if not config_path.exists():
+    raise FileNotFoundError(f"Config file not found at {config_path}")
+
+with open(config_path, "r", encoding="utf-8") as config_file:
     config = json.load(config_file)
 
 # Extract dates

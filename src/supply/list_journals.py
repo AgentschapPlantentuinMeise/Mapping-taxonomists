@@ -4,6 +4,17 @@ import requests
 import time
 import download
 import prep_journals
+from pathlib import Path
+import json
+
+# Resolve path to config.json (relative to this script)
+config_path = Path(__file__).resolve().parents[2] / "config" / "config.json"
+
+if not config_path.exists():
+    raise FileNotFoundError(f"Config file not found at {config_path}")
+
+with open(config_path, "r", encoding="utf-8") as f:
+    config = json.load(f)
 
 # GET JOURNALS
 # 1. wikidata: journals with taxonomy (and similar concepts) as subject
@@ -62,7 +73,11 @@ print("Wikidata journals by IPNI or ZooBank ID: done")
 
 # 3. openalex: sources associated with the taxonomy concept
 
-email = input("Enter e-mail address for OpenAlex API: ")
+#email = input("Enter e-mail address for OpenAlex API: ")
+email = config.get("email")
+if not email:
+    raise ValueError("Email address for OpenAlex API is missing in config.json")
+    
 # C58642233 = Taxonomy (biology) Concept
 openalex_results = download.request_sources("concepts.id:C58642233", email)
 # only journals, no e-book platforms etc
