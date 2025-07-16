@@ -1,36 +1,44 @@
-# get all European taxonomic articles from taxonomic journals
 import pandas as pd
-import glob
-import os
-# custom packages
+from pathlib import Path
 import prep_authors
 
+# === Path setup ===
+this_dir = Path(__file__).resolve().parent
+root_dir = this_dir.parents[1]
 
-# GET AUTHORS
-# global
-articles = pd.read_pickle("../../data/processed/taxonomic_articles_with_subjects.pkl")
+# Input files
+processed_dir = root_dir / "data" / "processed"
+interim_dir = root_dir / "data" / "interim"
+
+articles_path = processed_dir / "taxonomic_articles_with_subjects.pkl"
+output_all_authors = interim_dir / "all_authors_of_taxonomic_articles.pkl"
+output_single_authors = interim_dir / "single_authors_of_taxonomic_articles.pkl"
+output_country_authors = interim_dir / "country_authors_with_all_taxonomic_articles.pkl"
+output_country_single_authors = interim_dir / "country_taxonomic_authors_no_duplicates.pkl"
+output_country_single_authors_tsv = processed_dir / "country_taxonomic_authors_no_duplicates.tsv"
+
+# === Load articles ===
+print(f"[INFO] Loading articles from: {articles_path}", flush=True)
+articles = pd.read_pickle(articles_path)
+
+# === Extract authors ===
+print(f"[INFO] Extracting authors...", flush=True)
 authors = prep_authors.get_authors(articles)
 single_authors = prep_authors.get_single_authors(authors)
 
-authors.to_pickle("../../data/interim/all_authors_of_taxonomic_articles.pkl")
-single_authors.to_pickle("../../data/interim/single_authors_of_taxonomic_articles.pkl")
+# Save full and single-author datasets
+authors.to_pickle(output_all_authors)
+single_authors.to_pickle(output_single_authors)
+print(f"[INFO] Saved all authors to: {output_all_authors}", flush=True)
+print(f"[INFO] Saved single authors to: {output_single_authors}", flush=True)
 
-print("Authors extracted from articles. Results in data/processed/all_authors_of_taxonomic_articles.pkl and single_authors_of_taxonomic_articles.pkl.")
-
-
-# european
-#eu_articles = pd.read_pickle("../../data/processed/european_taxonomic_articles_with_subjects.pkl")
-
-#authors = prep_authors.get_authors(eu_articles)
-#single_authors = prep_authors.get_single_authors(authors)
+# === Country-filtered authors ===
+print(f"[INFO] Filtering authors by country...", flush=True)
 country_authors = prep_authors.get_country_authors(authors)
-single_eu_authors = prep_authors.get_single_authors(country_authors)
+single_country_authors = prep_authors.get_single_authors(country_authors)
 
-#authors.to_pickle("../../data/interim/all_authors_of_european_taxonomic_articles.pkl")
-#single_authors.to_pickle("../../data/interim/single_authors_of_european_taxonomic_articles.pkl")
+country_authors.to_pickle(output_country_authors)
+single_country_authors.to_pickle(output_country_single_authors)
+single_country_authors.to_csv(output_country_single_authors_tsv, sep="\t", index=False)
 
-country_authors.to_pickle("../../data/interim/country_authors_with_all_taxonomic_articles.pkl")
-single_eu_authors.to_pickle("../../data/interim/country_taxonomic_authors_no_duplicates.pkl")
-single_eu_authors.to_csv("../../data/processed/country_taxonomic_authors_no_duplicates.tsv", sep="\t", index=False)
-
-print("Authors extracted from articles from selected countries. Results in data/processed/country_taxonomic_authors_no_duplicates.tsv.")
+print(f"[INFO] Country-specific authors written to: {output_country_single_authors_tsv}", flush=True)

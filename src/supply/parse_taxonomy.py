@@ -4,9 +4,19 @@ import os
 # custom packages
 import prep_taxonomy
 
+from pathlib import Path
+import pandas as pd
+
+# Resolve absolute paths
+this_dir = Path(__file__).resolve().parent
+root_dir = this_dir.parents[1]
+interim_dir = root_dir / "data" / "interim" / "keyword-filtered_articles"
+
+# Full path to filtered_articles.pkl
+filtered_articles_path = interim_dir / "filtered_articles.pkl"
 
 # PARSE ARTICLES FOR TAXONOMIC SUBJECTS
-articles = pd.read_pickle("../../data/interim/filtered_articles.pkl")
+articles = pd.read_pickle(filtered_articles_path)
 
 # convert abstract to text for every article
 abstracts = []
@@ -33,7 +43,10 @@ articles["abstract_full_text"] = (
 backbone = prep_taxonomy.preprocess_backbone() # GBIF taxonomic backbone
 articles = prep_taxonomy.parse_for_taxonomy(articles, backbone)
 
-articles.to_pickle("../../data/processed/taxonomic_articles_with_subjects.pkl")
-articles.to_csv("../../data/processed/taxonomic_articles_with_subjects.tsv", sep="\t")
+processed_dir = root_dir / "data" / "processed"
+processed_dir.mkdir(parents=True, exist_ok=True)  # make sure directory exists
+
+articles.to_pickle(processed_dir / "taxonomic_articles_with_subjects.pkl")
+articles.to_csv(processed_dir / "taxonomic_articles_with_subjects.tsv", sep="\t")
 print("Taxonomic articles parsed for taxonomic subjects. Results in data/processed/taxonomic_articles_with_subjects.tsv.")
  

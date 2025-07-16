@@ -1,5 +1,15 @@
 import pandas as pd
+from pathlib import Path
 
+# Resolve path to included_countries.txt inside the config directory
+this_dir = Path(__file__).resolve().parent
+root_dir = this_dir.parents[1]
+config_dir = root_dir / "config"
+countries_path = config_dir / "included_countries.txt"
+
+# Load countries
+with open(countries_path, "r", encoding="utf-8") as file:
+    countries = [line.strip() for line in file]
 
 # get authorship information from raw dataframe WITH all other data
 def get_authors(df_input): # input: articles after get_dict_info
@@ -76,10 +86,6 @@ def get_single_authors(df_input): # input: authors with doubles
     # drop duplicates because some articles may have been found twice through different queries 
     # and some authors have published multiple relevant articles on the same day
     return keep_df.drop_duplicates(subset=["author_id"], ignore_index=True)
-
-
-with open("included_countries.txt", "r") as file:
-    countries = [line[:-1] for line in file]
 
 # filter a list of authors for authors who are asscociated with at least one institution from one of the chosen countries
 def get_country_authors(df_input): # input: authors

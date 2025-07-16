@@ -6,6 +6,10 @@ import pickle
 import sys
 from SPARQLWrapper import SPARQLWrapper, JSON
 import time
+import sys
+import os
+from pathlib import Path
+#sys.stdout.reconfigure(line_buffering=True)
 
 
 # BUILD SPARQL QUERIES TO FIND JOURNALS WITH ONE OF MANY TAXONOMIC SUBJECTS
@@ -150,9 +154,16 @@ def request_sources(filter_string, email, retries=3, delay=5):
 #     return df_request
 
 
-with open("included_countries.txt", "r") as file:
-    countries = [line[:-1] for line in file]
-    countries = "|".join(map(str, countries))
+this_dir = Path(__file__).resolve().parent
+root_dir = this_dir.parents[1]  # Adjust depending on your layout
+
+included_countries_path = root_dir / "config" / "included_countries.txt"
+
+with open(included_countries_path, "r", encoding="utf-8") as file:
+    countries = [line.strip() for line in file if line.strip()]
+    countries = "|".join(countries)
+    
+    
 
 def make_request_with_retries(url, session=None, retries=3, backoff_factor=2):
     """
@@ -197,6 +208,8 @@ def request_works(filter_string, email, from_date="2014-01-01", to_date=None, pr
         query = f"{base_query}&mailto={email}"
 
     first_query  = f"{query}&cursor=*"
+    
+    #print("First query: " + first_query)
 
     session = requests.Session()
     response = make_request_with_retries(first_query, session=session, retries=3)
@@ -229,4 +242,3 @@ def request_works(filter_string, email, from_date="2014-01-01", to_date=None, pr
         print(f"Total publications fetched so far: {len(publications_results)}")
 
     return pd.DataFrame.from_dict(publications_results)
-

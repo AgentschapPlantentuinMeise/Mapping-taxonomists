@@ -1,40 +1,44 @@
 import pandas as pd
 import numpy as np
 import re
+from pathlib import Path
 
-# PREPROCESSING
-## AUTHORS
-authors = pd.read_pickle("../../data/interim/country_taxonomic_authors_no_duplicates.pkl")
-print("Number of authors before disambiguation: " + str(len(authors)))
+# === Setup paths ===
+this_dir = Path(__file__).resolve().parent
+root_dir = this_dir.parents[1]
+interim_dir = root_dir / "data" / "interim"
+processed_dir = root_dir / "data" / "processed"
+external_dir = root_dir / "data" / "external" / "backbone"
 
-# less columns and author ID as index quicken processing
+# === Load author data ===
+input_authors = interim_dir / "country_taxonomic_authors_no_duplicates.pkl"
+print(f"[INFO] Loading author data from: {input_authors}")
+authors = pd.read_pickle(input_authors)
+print(f"[INFO] Number of authors before disambiguation: {len(authors)}")
+
+# === Preprocess author names ===
 authors = authors[["author_id", "author_display_name", "author_orcid",
-                   "inst_id", "inst_display_name",  "species_subject"]]
+                   "inst_id", "inst_display_name", "species_subject"]]
 authors = authors.set_index("author_id")
 
-# get initial first name + last name for every author
 truncated_names = []
 stripped_names = []
 
 for author in authors.itertuples():
     first_initial = author.author_display_name[0]
     last_name = author.author_display_name.split(" ")[-1]
-    truncated_names.append(first_initial + " " + last_name)
-    
-    #stripped_name = re.sub('[ .-]', '', author.author_display_name)
+    truncated_names.append(f"{first_initial} {last_name}")
     stripped_name = re.sub(r'[ .\u002D\u2010\u2012\u2013\u2014\u2015\u2043\uFE63\uFF0D]', '', author.author_display_name)
-
-    
     stripped_names.append(stripped_name)
-    
+
 authors["truncatedName"] = truncated_names
 authors["strippedName"] = stripped_names
 
-
-## GBIF TAXONOMIC BACKBONE
-#backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip')
-backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", 
-                       dtype={'scientificNameAuthorship': 'str', 
+# === Load GBIF backbone ===
+backbone_path = external_dir / "Taxon.tsv"
+print(f"[INFO] Loading GBIF backbone from: {backbone_path}")
+backbone = pd.read_csv(backbone_path, sep="\t", 
+                       dtype={'scientificNameAuthorship': 'str',
                               'infraspecificEpithet': 'str',
                               'canonicalName': 'str',
                               'genericName': 'str',
@@ -48,190 +52,95 @@ backbone_original = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\
                               'family': 'str',
                               'genus': 'str'},
                        on_bad_lines='skip')
-# reduce size of backbone for easier searching
-backbone = backbone_original[backbone_original["taxonomicStatus"]!="doubtful"]
-backbone = backbone[["canonicalName", "kingdom", "order", "family"]]
-# remove taxa with no known species name and remove duplicates
-backbone = backbone.dropna(subset="canonicalName").drop_duplicates(ignore_index=True).reset_index(drop=True)
 
-# backbone to dictionary for quicker processing
-seen_species = {}
+backbone = backbone[backbone["taxonomicStatus"] != "doubtful"]
+backbone = backbone[["canonicalName", "kingdom", "order", "family"]].dropna(subset=["canonicalName"]).drop_duplicates()
 
-for species in backbone.itertuples():
-    if species.canonicalName not in seen_species:
-        if isinstance(species.order,str):
-            seen_species[species.canonicalName] = species.order
-        # take family if order is not available        
-        elif isinstance(species.family, str):
-            seen_species[species.canonicalName] = species.family
-            
-# Create a dictionary mapping species to their kingdom
-species_to_kingdom = {}
-for species in backbone.itertuples():
-    if species.canonicalName not in species_to_kingdom:
-        if isinstance(species.kingdom, str):
-            species_to_kingdom[species.canonicalName] = species.kingdom
+# === Index species to order and kingdom ===
+seen_species = {row.canonicalName: row.order for row in backbone.itertuples() if isinstance(row.order, str)}
+species_to_kingdom = {row.canonicalName: row.kingdom for row in backbone.itertuples() if isinstance(row.kingdom, str)}
 
-## LINK AUTHORS TO BACKBONE
-# start with empty list for order
-authors["order"] = [list() for x in range(len(authors.index))]
-    
-# for every author, get order for every species they study
+# === Map orders and kingdoms to authors ===
+authors["order"] = [[] for _ in range(len(authors))]
+authors["kingdom"] = [[] for _ in range(len(authors))]
+
 for i, author in authors.iterrows():
     for species in author["species_subject"]:
         if species in seen_species:
-            # get order name according to GBIF
-            order_name = seen_species[species]
-            # add this order to the list of orders studied by the author (no duplicates)
-            if order_name not in author["order"]:
-                authors.loc[i, "order"].append(order_name)            
-
-# Add an empty list for kingdoms to authors DataFrame
-authors["kingdom"] = [list() for x in range(len(authors.index))]
-
-# For each author, get the kingdom for each species they study
-for i, author in authors.iterrows():
-    for species in author["species_subject"]:
+            if seen_species[species] not in author["order"]:
+                authors.at[i, "order"].append(seen_species[species])
         if species in species_to_kingdom:
-            # Get the kingdom for the species
-            kingdom_name = species_to_kingdom[species]
-            # Add this kingdom to the list of kingdoms studied by the author (no duplicates)
-            if kingdom_name not in author["kingdom"]:
-                authors.loc[i, "kingdom"].append(kingdom_name)
-                
-"""
-import prep_taxonomy
+            if species_to_kingdom[species] not in author["kingdom"]:
+                authors.at[i, "kingdom"].append(species_to_kingdom[species])
 
-backbone = prep_taxonomy.preprocess_backbone() # GBIF taxonomic backbone
-authors = prep_taxonomy.species_to_tree(authors, backbone)
-"""
-# DISAMBIGUATE
+# === Disambiguation logic ===
 def match(a, b):
-    same = False
-    # if no known orders for one of them, institution and full name must match 
     if a.order == [] or b.order == []:
-        if a.inst_id == b.inst_id and a.strippedName==b.strippedName:
-            same = True
-    # if both have known orders, orders and institution must match
+        return a.inst_id == b.inst_id and a.strippedName == b.strippedName
     else:
-        if a.inst_id == b.inst_id and len(set(a.order).intersection(set(b.order))) > 0:
-            same = True
-    
-    return same
-
+        return a.inst_id == b.inst_id and bool(set(a.order).intersection(set(b.order)))
 
 def cluster(matches):
     clusters = []
-    
     for match in matches:
-        # check if it matches any existing groups
-        match_with_groups = []
-        for i, group in enumerate(clusters):
-            if len(set(match).intersection(set(group))) > 0:
-                match_with_groups.append(i)
-        
-        # if it fits with no existing group, add it by itself
-        if len(match_with_groups) == 0:
+        overlapping = [i for i, group in enumerate(clusters) if set(match).intersection(group)]
+        if not overlapping:
             clusters.append(match)
-        # if it fits with one existing group, add it to that group
-        elif len(match_with_groups) == 1:
-            clusters[match_with_groups[0]].extend(match)
-        # if it fits with multiple groups, mash those groups together
+        elif len(overlapping) == 1:
+            clusters[overlapping[0]].extend(match)
         else:
-            #print(clusters) # apparently this never happens
             supergroup = []
-            # remove each group and add its contents to the new supergroup
-            for j in match_with_groups.sort(reverse=True):
-                supergroup.extend(clusters.pop(j))
+            for i in sorted(overlapping, reverse=True):
+                supergroup.extend(clusters.pop(i))
             supergroup.extend(match)
             clusters.append(supergroup)
-            #print(clusters)
-    
-    # turn into a list of sets to get unique values
-    clusters = [set(x) for x in clusters] 
-    return clusters
+    return [set(group) for group in clusters]
 
-
-# emergency meeting: go over every duplicated name
-true_people = []
 duplicates = authors[authors.duplicated(subset=["truncatedName"], keep=False)]
+true_people = []
 
 for name in set(duplicates["truncatedName"]):
-    # get all trund names that are exact string matches to this name
-    #same_names = duplicates[duplicates["author_display_name"]==name]
-    same_names = duplicates[duplicates["truncatedName"]==name]
+    same_names = duplicates[duplicates["truncatedName"] == name]
     matches = []
-    
     for person_a in same_names.itertuples():
-        aliases = [person_a.Index,]
-        
+        aliases = [person_a.Index]
         for person_b in same_names.itertuples():
-            if match(person_a, person_b) and person_a.Index!=person_b.Index:
+            if person_a.Index != person_b.Index and match(person_a, person_b):
                 aliases.append(person_b.Index)
-                
         matches.append(aliases)
-
     true_people.extend(cluster(matches))
 
-
-true_authors = authors[-(authors.duplicated(subset="truncatedName", keep=False))].reset_index()
-
+true_authors = authors[~authors.duplicated(subset="truncatedName", keep=False)].reset_index()
 merged_people = []
 m = 1
 
 def collect_values(df, person_ids, column):
-    if len(person_ids) == 0:
-        # person_ids is empty; just return None or whatever you want
-        return None
-
+    if not person_ids: return None
     values = []
-    for duplicate in person_ids:
-        imposter = df.loc[duplicate]
-        current_val = imposter[column]
-
-        # Skip None or NaN
-        if current_val is None:
-            continue
-
-        # Make sure we only add if not already present
-        if current_val not in values:
-            # If it's one of the list columns, extend by its items
-            if column in ["order", "species_subject", "kingdom"]:
-                values.extend(current_val)  # current_val is a list of strings
-            else:
-                values.append(current_val)
-
-    # Convert to set to get unique items
+    for pid in person_ids:
+        val = df.loc[pid, column]
+        if val is None: continue
+        if column in ["order", "species_subject", "kingdom"]:
+            values.extend(val)
+        else:
+            values.append(val)
     values = set(values)
-
-    # If there is exactly one unique item, return that item itself
-    if len(values) == 1:
-        return list(values)[0]
-    else:
-        # Otherwise, return all unique items as a list
-        return list(values)
-
-
-person_ids = []
-m = 1
+    return list(values)[0] if len(values) == 1 else list(values)
 
 for person in true_people:
-    row = [person,]
-    for column in true_authors.columns[1:]:
-        answer = collect_values(authors, person, column)
-        row.append(answer)
-        
+    row = [person]
+    for col in true_authors.columns[1:]:
+        row.append(collect_values(authors, person, col))
     merged_people.append(authors.loc[list(person)].reset_index())
     merged_people[-1]["groupNr"] = m
     m += 1
-    
     true_authors.loc[len(true_authors)] = row
-    
-    
-merged_df = pd.concat(merged_people, ignore_index=True)        
-merged_df.to_csv("../../data/interim/merged_people_truncated.csv")
 
-true_authors.to_pickle("../../data/processed/authors_disambiguated_truncated.pkl")
-true_authors.to_csv("../../data/processed/authors_disambiguated_truncated.tsv", sep="\t")
+# === Save results ===
+merged_df = pd.concat(merged_people, ignore_index=True)
+merged_df.to_csv(interim_dir / "merged_people_truncated.csv", index=False)
 
-print("Number of authors after disambiguation: " + str(len(true_authors)))
+true_authors.to_pickle(processed_dir / "authors_disambiguated_truncated.pkl")
+true_authors.to_csv(processed_dir / "authors_disambiguated_truncated.tsv", sep="\t", index=False)
+
+print(f"[INFO] Number of authors after disambiguation: {len(true_authors)}")

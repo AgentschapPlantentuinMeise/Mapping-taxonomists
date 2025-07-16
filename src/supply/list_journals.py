@@ -37,7 +37,7 @@ results2 = download.get_sparql_results(query2)
 wikidata_subjects_results = pd.concat([results, results2])
 wikidata_subjects_results["source"] = "Wikidata taxonomic subject"
 
-print("Wikidata journals by subject: done")
+print("Wikidata journals by subject: done", flush=True)
 
 
 # 2. wikidata: journals with any IPNI or ZooBank Publication ID
@@ -68,7 +68,7 @@ WHERE {
 
 ipni_zoobank_results = download.get_sparql_results(query3)
 ipni_zoobank_results["source"] = "IPNI or ZooBank ID"
-print("Wikidata journals by IPNI or ZooBank ID: done")
+print("Wikidata journals by IPNI or ZooBank ID: done", flush=True)
 
 
 # 3. openalex: sources associated with the taxonomy concept
@@ -84,11 +84,11 @@ openalex_results = download.request_sources("concepts.id:C58642233", email)
 openalex_results = openalex_results[openalex_results["type"]=="journal"].reset_index(drop=True)
 openalex_results["source"] =  "OpenAlex taxonomy concept"
 
-print("OpenAlex journals by Taxonomy in concepts: done")
+print("OpenAlex journals by Taxonomy in concepts: done", flush=True)
 
 
 # HOMOGENIZE JOURNALS
-print("Preprocessing data... ")
+print("Preprocessing data... ", flush=True)
 # we need the following columns:
 # title, wikidataURL, ISSN-L, IPNIpubID, ZooBankPubID, openAlexID, dissolvedYear, dissolvedBefore2013
 
@@ -97,8 +97,8 @@ print("Preprocessing data... ")
 prep_journals.get_values_wikidata(wikidata_subjects_results)
 prep_journals.get_values_wikidata(ipni_zoobank_results)
 
-print(wikidata_subjects_results.head())
-print(ipni_zoobank_results.head())
+print(wikidata_subjects_results.head(), flush=True)
+print(ipni_zoobank_results.head(), flush=True)
 
 # OpenAlex IDs
 openalex_results = prep_journals.homogenize_openalex(openalex_results)
@@ -111,7 +111,7 @@ journals.columns = ["wikidataURL", "openAlexID", "ISSN-L", "ISSN",
 
 # translate dissolved year to True/False
 journals = prep_journals.dissolved_bool(journals)
-print("done!")
+print("done!", flush=True)
 
 journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID", "openAlexID", "dissolvedYear", 
           "dissolved", "source"]].to_csv("../../data/processed/journals.csv", index=False)
@@ -120,4 +120,4 @@ journals[["title", "wikidataURL", "ISSN-L", "openAlexID", "dissolvedYear",
           "dissolved", "source"]].drop_duplicates(subset=["wikidataURL","openAlexID"],
                                                   ignore_index=True).to_csv("../../data/processed/journals_deduplicated.csv", index=False)
 
-print("Journals saved in data/processed/journals_deduplicated.csv")
+print("Journals saved in data/processed/journals_deduplicated.csv", flush=True)

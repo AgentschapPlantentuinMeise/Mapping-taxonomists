@@ -1,13 +1,21 @@
 import pandas as pd
 import numpy as np
-import pickle
 import re
-
+from pathlib import Path 
 
 # openAlex gives only inverted index of the abstract 
 # the: 1, 12, 14; quick: 2, 10, 51; brown: 3; dog: 4, 15; ...
 # convert into full text 
 def inverted_index_to_text(aii):
+    """
+    Convert OpenAlex abstract_inverted_index to full abstract text.
+    
+    Parameters:
+        aii (dict): Inverted index as returned by OpenAlex.
+    
+    Returns:
+        str: Full abstract string reconstructed from index.
+    """
     abstract = 50000 * [None,]
 
     for word, indices in aii.items():
@@ -22,7 +30,11 @@ def inverted_index_to_text(aii):
 
 
 # reduce size of backbone for easier searching
-def preprocess_backbone(path="../../data/external/backbone/Taxon.tsv", no_blanks=False):
+def preprocess_backbone(path=None, no_blanks=False):
+    if path is None:
+        this_dir = Path(__file__).resolve().parent
+        root_dir = this_dir.parents[1]
+        path = root_dir / "data" / "external" / "backbone" / "Taxon.tsv"
     # GBIF taxonomic bakcbone
     # backbone = pd.read_csv(path, sep="\t", on_bad_lines='skip')
     backbone = pd.read_csv(path, sep="\t", 
@@ -64,7 +76,7 @@ def preprocess_backbone(path="../../data/external/backbone/Taxon.tsv", no_blanks
 def parse_for_taxonomy(articles, backbone):
     all_names = set(backbone["canonicalName"])
     all_found_taxa = []
-
+    
     for article in articles[["id", "title", "abstract_full_text"]].itertuples():
         found = False
         taxa_list = []
@@ -83,7 +95,8 @@ def parse_for_taxonomy(articles, backbone):
             # find "G. species"
             for taxon in taxa_list:
                 # search for first letter of already found genus + probable species name
-                candidates = re.findall(taxon[0]+"\. [a-z]+", article.title)
+                #candidates = re.findall(taxon[0]+"\. [a-z]+", article.title)
+                candidates = re.findall(rf"{taxon[0]}\. [a-z]+", article.title)
 
                 for candidate in candidates:
                     candidate = taxon.split()[0] + " " + candidate[3:]
@@ -105,7 +118,8 @@ def parse_for_taxonomy(articles, backbone):
         if found:
             for taxon in taxa_list:
                 # search for first letter of already found genus + probable species name 
-                candidates.extend(re.findall(taxon[0]+"\. [a-z]+", article.abstract_full_text))
+                #candidates.extend(re.findall(taxon[0]+"\. [a-z]+", article.abstract_full_text))
+                candidates.extend(re.findall(rf"{taxon[0]}\. [a-z]+", article.abstract_full_text))
 
                 for candidate in candidates:
                     candidate = taxon.split()[0] + " " + candidate[3:]

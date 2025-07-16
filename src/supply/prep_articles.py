@@ -5,17 +5,25 @@ import prep_taxonomy
 import re
 import unicodedata
 import json
+from pathlib import Path
 
-def load_config(config_path="../../config.json"):
+def load_config(config_path=None):
     """
     Load the JSON configuration file.
 
     Parameters:
-        config_path (str): Path to the JSON config file.
+        config_path (str or Path): Path to the JSON config file. If None, use default.
 
     Returns:
         dict: Parsed configuration.
     """
+    if config_path is None:
+        # Resolve the default path relative to this script's location
+        this_dir = Path(__file__).resolve().parent
+        config_path = this_dir.parents[1] / "config" / "config.json"
+
+    config_path = Path(config_path)  # Ensure it's a Path object
+
     try:
         with open(config_path, 'r', encoding='utf-8') as file:
             config = json.load(file)
@@ -118,108 +126,165 @@ def flatten_works(df_input): # input: articles straight from openalex
     new_df = pd.DataFrame(new_rows, columns=new_cols)
     return df_input.merge(new_df, left_index=True, right_index=True)
 
+def filter_keywords(articles, config=None):
+    # Load and validate config
+    if config is None:
+        try:
+            config = load_config()
+            validate_config(config)
+        except Exception as e:
+            print(f"[CRITICAL] Configuration loading/validation failed: {e}")
+            return pd.DataFrame()
+    else:
+        try:
+            validate_config(config)
+        except Exception as e:
+            print(f"[CRITICAL] Configuration validation failed: {e}")
+            return pd.DataFrame()
 
-def filter_keywords(articles):
+    # Prepare keyword lists
+    single_words = config["keywords"]["single_word"]
+    two_words = config["keywords"]["two_word"]
+    concept_ids = set(config["concepts"])
+
+    # Ensure we work on a copy
+    articles = articles.copy()
+
+    # Normalize display_name (title)
+    articles["display_name_norm"] = articles["display_name"].fillna("").apply(normalize_text)
+
+    # Compile title pattern (single + two-word + nov.)
+    title_keywords = single_words + two_words + ["nov."]
+    title_pattern = "|".join(re.escape(k) for k in title_keywords)
+    mask_title = articles["display_name_norm"].str.contains(title_pattern, na=False)
+
+    # Process abstract_inverted_index to flat text
+    articles["abstract_text"] = articles["abstract_inverted_index"].apply(
+        lambda x: normalize_text(prep_taxonomy.inverted_index_to_text(x)) if isinstance(x, dict) else ""
+    )
+
+    # Compile abstract pattern
+    two_word_patterns = [
+        rf"\b{re.escape(w.split()[0])}\b(?:\s+\S+)?\s+\b{re.escape(w.split()[1])}\b"
+        for w in two_words if len(w.split()) == 2
+    ]
+    abstract_pattern = "|".join(two_word_patterns + [re.escape(k) for k in single_words + ["nov."]])
+    mask_abstract = articles["abstract_text"].str.contains(abstract_pattern, regex=True, na=False)
+
+    # Check concept IDs
+    mask_concepts = articles["concepts"].apply(
+        lambda c: any(con.get("id") in concept_ids for con in c) if isinstance(c, list) else False
+    )
+
+    # Combine all matches
+    combined_mask = mask_title | mask_abstract | mask_concepts
+    filtered = articles[combined_mask].drop_duplicates(subset="id", ignore_index=True)
+
+    # Debug output
+    print(f"[DEBUG] Matched on title: {mask_title.sum()}")
+    print(f"[DEBUG] Matched on abstract: {mask_abstract.sum()}")
+    print(f"[DEBUG] Matched on concepts: {mask_concepts.sum()}")
+    print(f"[DEBUG] Total unique matches: {len(filtered)}")
+
+    return filtered
+
+
+def filter_keywords_to_delete(articles, config=None):
+    print(f"[DEBUG] Starting filter_keywords with {len(articles)} articles", flush=True)
+
     # Load and validate configuration
-    try:
-        config = load_config("../../config.json")  # Ensure the path is correct
-        validate_config(config)
-    except Exception as e:
-        print(f"CRITICAL: Configuration loading/validation failed: {e}")
-        return
-    
+    if config is None:
+        try:
+            config = load_config()
+            validate_config(config)
+        except Exception as e:
+            print(f"[CRITICAL] Configuration loading/validation failed: {e}", flush=True)
+            return None
+    else:
+        try:
+            validate_config(config)
+        except Exception as e:
+            print(f"[CRITICAL] Configuration validation failed: {e}", flush=True)
+            return None
+
     queries1 = config['keywords']['single_word']
     queries2 = config['keywords']['two_word']
     concepts = config['concepts']
 
+    print(f"[DEBUG] Keywords: {len(queries1)} single-word, {len(queries2)} two-word | {len(concepts)} concepts", flush=True)
+
     keep = []
 
-    for article in articles.itertuples():
+    for idx, article in enumerate(articles.itertuples()):
         cont = False
+        if idx % 100 == 0:
+            print(f"[DEBUG] Processing article {idx + 1}/{len(articles)}", flush=True)
 
-        #--------------------
-        # 1) SEARCH TITLE
-        #--------------------
+        # === 1) SEARCH TITLE ===
         if article.display_name is not None:
-            # Normalize the display name
             display_name_norm = normalize_text(article.display_name)
 
-            # single-word queries + "nov."
             for query in queries1 + queries2 + ["nov."]:
                 query_norm = normalize_text(query)
                 if query_norm in display_name_norm:
                     keep.append(article)
                     cont = True
-                    break  # Found match in title -> keep article, stop searching
+                    #print(f"[MATCH] Title match: '{query}' in article {article.id}", flush=True)
+                    break
             if cont:
-                continue  # move on to next article
+                continue
 
-        #-----------------------
-        # 2) SEARCH ABSTRACT
-        #-----------------------
-        # If there's an abstract, we want to check the inverted index
+        # === 2) SEARCH ABSTRACT ===
         if article.abstract_inverted_index is not None:
-            # Normalize each token in the abstract keys
             abstract_words_norm = [
-                normalize_text(x).strip(",;.?!'()-]")  # strip punctuation on top of normalization
+                normalize_text(x).strip(",;.?!'()-]") 
                 for x in article.abstract_inverted_index.keys()
             ]
 
-            # (a) Check if "nov." is directly in the abstract tokens
             if "nov." in article.abstract_inverted_index:
-                # If the original key "nov." is present
                 keep.append(article)
+                #print(f"[MATCH] Abstract contains 'nov.': article {article.id}", flush=True)
                 continue
 
-            # single-word queries in the abstract tokens
             for query in queries1:
                 query_norm = normalize_text(query)
                 if query_norm in abstract_words_norm:
                     keep.append(article)
+                    #print(f"[MATCH] Abstract single-word: '{query}' in article {article.id}", flush=True)
                     cont = True
                     break
             if cont:
                 continue
 
-            # two-word queries in the full abstract text
-            # convert the entire abstract to a normalized string
-            # (assuming you have a utility like prep_taxonomy.inverted_index_to_text)
             abstract_full_text = prep_taxonomy.inverted_index_to_text(article.abstract_inverted_index)
             abstract_full_text_norm = normalize_text(abstract_full_text)
 
             for query in queries2:
                 query_norm = normalize_text(query)
-                # split into two words
                 words = query_norm.split()
                 if len(words) == 2:
-                    # Build a pattern that matches these two words as separate tokens
-                    # \b ensures word boundaries, re.escape avoids regex special chars
                     pattern = rf"\b{re.escape(words[0])}\b(?:\s+\S+)?\s+\b{re.escape(words[1])}\b"
                     if re.search(pattern, abstract_full_text_norm, re.IGNORECASE):
                         keep.append(article)
+                        #print(f"[MATCH] Abstract two-word: '{query}' in article {article.id}", flush=True)
                         cont = True
                         break
-                else:
-                    # If query is more or fewer than 2 words, you can handle differently
-                    continue
-
             if cont:
-                continue  # Move on to next article
+                continue
 
-        #---------------------------------
-        # 3) SEARCH CONCEPTS BY ID
-        #---------------------------------
-        # Convert each concept ID in the article to a list, and if
-        # any match the "concepts" list, keep the article
+        # === 3) SEARCH CONCEPTS ===
         if article.concepts:
             conc_ids = [art_conc["id"] for art_conc in article.concepts]
             for concept in concepts:
                 if concept in conc_ids:
                     keep.append(article)
-                    break  # no need to check the other concepts
+                    #print(f"[MATCH] Concept match: '{concept}' in article {article.id}", flush=True)
+                    break
 
-    # Finally, return a new DataFrame of kept articles
-    return pd.DataFrame(keep).drop_duplicates(subset="id", ignore_index=True).iloc[:, 1:]
+    df = pd.DataFrame(keep).drop_duplicates(subset="id", ignore_index=True).iloc[:, 1:]
+    print(f"[DEBUG] Completed filtering: {len(df)} articles matched", flush=True)
+    return df
+
 
 
 def filter_by_domain(articles_df, domain_id = "https://openalex.org/domains/1"):

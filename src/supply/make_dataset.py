@@ -4,10 +4,35 @@ import sys
 from datetime import datetime
 import os
 import glob
+import pandas as pd
+import json
+import argparse
+#sys.stdout.reconfigure(line_buffering=True)
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--config", type=str, required=True)
+args = parser.parse_args()
+
+with open(args.config, "r", encoding="utf-8") as f:
+    config = json.load(f)
+
+# Set root directory
+root_dir = Path(config.get("root_dir", Path(__file__).resolve().parents[1]))
+
+required_keys = ["root_dir"]
+missing = [key for key in required_keys if key not in config]
+if missing:
+    raise ValueError(f"Missing required config keys: {missing}")
+    
+if not hasattr(pd, "DataFrame"):
+    raise ImportError("pandas is not correctly loaded — check for naming conflicts (e.g., pandas.py).")
 
 def log(msg):
     """Print a timestamped log message."""
     print(f"[{datetime.now().isoformat(timespec='seconds')}] {msg}")
+
+log(f"Loaded config from: {args.config}")
 
 def run_script(script_relative_path):
     """Run a script using subprocess with proper error handling."""
