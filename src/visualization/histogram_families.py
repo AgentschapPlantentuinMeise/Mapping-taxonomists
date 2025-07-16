@@ -1,84 +1,81 @@
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
 
-# Load datasets
-articles = pd.read_pickle("../../data/processed/taxonomic_articles_with_subjects.pkl")
-#backbone = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip')
+# ── PATH SETUP ─────────────────────────────────────────────
 
-file_path = "../../data/external/backbone/Taxon.tsv"
+# Resolve root directory from script location
+this_file = Path(__file__).resolve()
+root_dir = this_file.parents[2]
 
-if not os.path.exists(file_path):
-    raise FileNotFoundError(f"The file {file_path} does not exist. Please check the path.")
+# Paths to input and output
+articles_path = root_dir / "data" / "processed" / "taxonomic_articles_with_subjects.pkl"
+backbone_path = root_dir / "data" / "external" / "backbone" / "Taxon.tsv"
+figures_dir = root_dir / "reports" / "figures"
+figures_dir.mkdir(parents=True, exist_ok=True)
 
-backbone = pd.read_csv(file_path, sep="\t", on_bad_lines='skip', low_memory=False)
+# Output files
+png_output = figures_dir / "FigS3.png"
+tif_output = figures_dir / "FigS3.tif"
 
-# Reduce the size of backbone for easier searching
+# ── LOAD DATA ─────────────────────────────────────────────
+
+# Load articles
+articles = pd.read_pickle(articles_path)
+
+# Check if backbone file exists
+if not backbone_path.exists():
+    raise FileNotFoundError(f"The file {backbone_path} does not exist. Please check the path.")
+
+# Load and filter backbone
+backbone = pd.read_csv(backbone_path, sep="\t", on_bad_lines='skip', low_memory=False)
 backbone = backbone[backbone["taxonomicStatus"] != "doubtful"]
-backbone = backbone[["canonicalName", "family"]]
-# Remove taxa with no known species name or family
-backbone = backbone.dropna().drop_duplicates(ignore_index=True).reset_index(drop=True)
+backbone = backbone[["canonicalName", "family"]].dropna().drop_duplicates(ignore_index=True)
 
-## Link Articles to Taxonomic Backbone
-articles["families"] = [list() for _ in range(len(articles.index))]
+# ── LINK ARTICLES TO FAMILIES ─────────────────────────────
 
-# Create a dictionary for quick family lookups
-seen_species = {}
+# Initialize families column
+articles["families"] = [[] for _ in range(len(articles))]
 
-for species in backbone.itertuples():
-    if species.canonicalName not in seen_species:
-        seen_species[species.canonicalName] = species.family
+# Create lookup for species → family
+seen_species = {row.canonicalName: row.family for row in backbone.itertuples()}
 
-# For each article, find families based on species
+# Fill families per article
 for i, article in articles.iterrows():
     for species in article["species_subject"]:
-        if species in seen_species:
-            family_name = seen_species[species]
-            if family_name not in article["families"]:
-                articles.at[i, "families"].append(family_name)
+        family = seen_species.get(species)
+        if family and family not in article["families"]:
+            articles.at[i, "families"].append(family)
 
-# Count occurrences of each family across all articles
+# ── AGGREGATE COUNTS AND PLOT ─────────────────────────────
+
+# Count family occurrences
 family_counts = {}
-
 for fam_list in articles["families"]:
     for family in fam_list:
-        if family in family_counts:
-            family_counts[family] += 1
-        else:
-            family_counts[family] = 1  # Start from 1
+        family_counts[family] = family_counts.get(family, 0) + 1
 
-# Create Histogram with Formatting Adjustments
-plt.clf()  # Clear the current figure
-fig, ax = plt.subplots(figsize=(7.5, 6.5))  # Set dimensions in inches
-
+# Plot histogram
+plt.clf()
+fig, ax = plt.subplots(figsize=(7.5, 6.5))
 ax.hist(family_counts.values(), bins=50, range=(0, 50))
 
-# Set axis labels with specified font size
+# Axis labels and styling
 ax.set_xlabel("Articles", fontsize=20, fontname="Arial")
 ax.set_ylabel("Families (%)", fontsize=20, fontname="Arial")
-
 ax.tick_params(axis='y', labelsize=18)
 ax.tick_params(axis='x', labelsize=18)
-
 for label in ax.get_xticklabels() + ax.get_yticklabels():
     label.set_fontname("Arial")
 
-# If you have a legend to add:
-#ax.legend(["Family Distribution"], loc="lower left", fontsize=16)
-
-#plt.title("Histogram of Articles per Family", fontsize=20)
-plt.tight_layout()  # Ensure everything fits well
-plt.savefig("../../reports/figures/histogram_families.png")
-
-output_path = "../../reports/figures/FigS3.tif"
-plt.savefig(output_path, dpi=600, format="tif", pil_kwargs={"compression": "tiff_lzw"})  # Use LZW compression to reduce file size
-
+plt.tight_layout()
+plt.savefig(png_output, format="png", dpi=300, bbox_inches="tight")
+plt.savefig(tif_output, format="tif", dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})
 plt.show()
 
-# Print the Top 10 Families
-top_10_families = sorted(family_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+# ── SUMMARY OUTPUT ─────────────────────────────────────────
 
-# Format the output
-formatted_families = ", ".join([f"{family}: {count}" for family, count in top_10_families])
-print(f"The top 10 families by number of articles are {formatted_families}.")
-
+# Print top 10 families
+top_10 = sorted(family_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+formatted_top = ", ".join([f"{fam}: {count}" for fam, count in top_10])
+print(f"The top 10 families by number of articles are {formatted_top}.")

@@ -23,7 +23,7 @@ def freq_countries(df):
 
 def plot_country_freqs(freqs, map_path, europe=False, dpi=300, relative=False):
     shapefile_path = external_dir / "naturalearth" / "ne_110m_admin_0_countries.shp"
-    print(f"[DEBUG] Loading shapefile from: {shapefile_path}")
+    #print(f"[DEBUG] Loading shapefile from: {shapefile_path}")
     worldmap = gpd.read_file(shapefile_path)
 
     if worldmap.crs is None:
@@ -51,8 +51,10 @@ def plot_country_freqs(freqs, map_path, europe=False, dpi=300, relative=False):
                         on="Alpha-3 code", how="left")
 
     worldmap["freq"] = worldmap["Alpha-2 code"].map(freqs)
-    worldmap["freq"].fillna(0, inplace=True)
+    #worldmap["freq"].fillna(0, inplace=True)
+    worldmap["freq"] = worldmap["freq"].fillna(0)
     worldmap.replace(0, np.nan, inplace=True)
+    
 
     if relative:
         worldmap = worldmap.rename(columns={"freq": "absolute_freq"})
