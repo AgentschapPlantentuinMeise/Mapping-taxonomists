@@ -51,7 +51,7 @@ The final dataset was saved in two formats: a complete list and a deduplicated l
 
 ### 2.  `get_articles.py` extracts articles about taxonomy from these journals
 
-show API URL!
+Documentation on the OpenAlex API can be found here [https://docs.openalex.org/](https://docs.openalex.org/)
 
 #### Data Collection
 We used the OpenAlex API to get articles published in the taxonomic journals found above. This query included several filters:
