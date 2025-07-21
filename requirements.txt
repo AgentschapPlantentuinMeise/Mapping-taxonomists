@@ -4,3 +4,7 @@ requests==2.31.0
 matplotlib==3.9.2
 seaborn==0.12.2
 SPARQLWrapper==2.0.0
+wordcloud==1.9.4
+geopandas==1.1.1
+matplotlib_venn==1.1.2
+pygbif==0.6.5

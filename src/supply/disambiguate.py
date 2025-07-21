@@ -75,12 +75,22 @@ for i, author in authors.iterrows():
 
 # === Disambiguation logic ===
 def match(a, b):
+    """
+    Determine whether two author records are likely to be the same person.
+    Matching requires same institution and either:
+    - same stripped name if order is missing, or
+    - at least one shared taxonomic order if available.
+    """
     if a.order == [] or b.order == []:
         return a.inst_id == b.inst_id and a.strippedName == b.strippedName
     else:
         return a.inst_id == b.inst_id and bool(set(a.order).intersection(set(b.order)))
 
 def cluster(matches):
+    """
+    Group overlapping matches into unique sets.
+    Uses connected components-like logic to merge overlapping matches into clusters.
+    """
     clusters = []
     for match in matches:
         overlapping = [i for i, group in enumerate(clusters) if set(match).intersection(group)]
@@ -115,6 +125,10 @@ merged_people = []
 m = 1
 
 def collect_values(df, person_ids, column):
+    """
+    For a given group of author IDs, collect the values of a specified column.
+    If all values are identical, return the single value, otherwise return a list.
+    """
     if not person_ids: return None
     values = []
     for pid in person_ids:

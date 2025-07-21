@@ -1,11 +1,30 @@
 import pandas as pd
 from pygbif import species
 import csv
+import json
+from pathlib import Path
+
+# === LOAD CONFIG ===
+config_path = Path(__file__).resolve().parents[2] / "config" / "config.json"
+with open(config_path, "r", encoding="utf-8") as f:
+    config = json.load(f)
+
+root_dir = Path(config["root_dir"])
+external_dir = root_dir / "data" / "external"
+processed_dir = root_dir / "data" / "processed"
+interim_dir = root_dir / "data" / "interim"
+
+# === FILE PATHS ===
+log_file = processed_dir / "unmatched_species.csv"
+backbone_file = external_dir / "backbone" / "Taxon.tsv"
+authors_file = processed_dir / "authors_disambiguated_truncated.pkl"
+order_output_pickle = processed_dir / "supply_and_demand_order_level.pkl"
+order_output_tsv = processed_dir / "supply_and_demand_order_level.tsv"
+tax_assignments_file = processed_dir / "taxAssignments.txt"
+otu_table_file = processed_dir / "otutable.tsv"
 
 # Global counter for the number of species processed
 species_processed_count = 0
-
-log_file = "unmatched_species.csv"
 
 # Create the CSV file with a header if it doesn't exist
 with open(log_file, "w", newline="") as f:
@@ -70,7 +89,8 @@ def get_canonical_name(name, kingdom=None, dataframe_name=None):
 
 ## BACKBONE
 
-backbone = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip', low_memory=False)
+#backbone = pd.read_csv("../../data/external/backbone/Taxon.tsv", sep="\t", on_bad_lines='skip', low_memory=False)
+backbone = pd.read_csv(backbone_file, sep="\t", on_bad_lines='skip', low_memory=False)
 backbone = backbone[backbone["taxonRank"]=="species"]
 
 # Check for trailing or leading spaces
@@ -99,7 +119,8 @@ backbone['lineage'] = (
 
 # version with dictionary, faster
 # get disambiguated, European authors of taxonomic articles
-authors = pd.read_pickle("../../data/processed/authors_disambiguated_truncated.pkl")
+#authors = pd.read_pickle("../../data/processed/authors_disambiguated_truncated.pkl")
+authors = pd.read_pickle(authors_file)
 
 # link the author's expertise to the taxonomic backbone
 available_species = set(backbone.index)
@@ -176,17 +197,29 @@ backbone = backbone.merge(sp_authors_df, on="canonicalName", how="left")
 
 ## DEMAND COUNTS
 
-redlist = pd.read_csv("../../data/external/IUCN_eu_region_tax_research_needed/assessments.csv")
+redlist_file = external_dir / "IUCN_eu_region_tax_research_needed/assessments.csv"
+#redlist = pd.read_csv("../../data/external/IUCN_eu_region_tax_research_needed/assessments.csv")
+redlist = pd.read_csv(redlist_file)
 redlist["scientificName"] = redlist["scientificName"].str.strip()
 
-cwr = pd.read_excel("../../data/external/crop wild relatives europe.xlsx", skiprows=1)
-horizon = pd.read_csv("../../data/external/IAS_horizon_scanning.tsv", sep="\t")
-birdDir = pd.read_csv("../../data/external/birds_directive_annexi+gbif.csv", sep=",")
-habitatsDir = pd.read_csv("../../data/external/habitats_directive_art_17_checklis+gbif.csv", sep=",")
-marineDir = pd.read_csv("../../data/external/MSFD_descriptor1+worms.csv", sep=",")
-iasListConcern = pd.read_csv("../../data/external/IAS_list_union_concern+gbif.csv", sep=",")
-pollinators = pd.read_csv("../../data/external/pollinators_sps_list_Reverte_et_al_insect_conservation&diversity_2023.csv", sep=",")
-redlistFull = pd.read_csv("../../data/external/european_red_list_2017_december.csv", sep=",")
+cwr_file = external_dir / "crop wild relatives europe.xlsx"
+horizon_file = external_dir / "IAS_horizon_scanning.tsv"
+birdDir_file = external_dir / "birds_directive_annexi+gbif.csv"
+habitatsDir_file = external_dir / "habitats_directive_art_17_checklis+gbif.csv"
+marineDir_file = external_dir / "MSFD_descriptor1+worms.csv"
+iasListConcern_file = external_dir / "IAS_list_union_concern+gbif.csv"
+pollinators_file = external_dir / "pollinators_sps_list_Reverte_et_al_insect_conservation&diversity_2023.csv"
+redlistFull_file = external_dir / "european_red_list_2017_december.csv"
+
+# Load data using defined paths
+cwr = pd.read_excel(cwr_file, skiprows=1)
+horizon = pd.read_csv(horizon_file, sep="\t")
+birdDir = pd.read_csv(birdDir_file, sep=",")
+habitatsDir = pd.read_csv(habitatsDir_file, sep=",")
+marineDir = pd.read_csv(marineDir_file, sep=",")
+iasListConcern = pd.read_csv(iasListConcern_file, sep=",")
+pollinators = pd.read_csv(pollinators_file, sep=",")
+redlistFull = pd.read_csv(redlistFull_file, sep=",")
 
 # 1. Convert NaN to empty strings in 'scientificName' 
 #redlistFull["scientificName"] = redlistFull["scientificName"].fillna("")

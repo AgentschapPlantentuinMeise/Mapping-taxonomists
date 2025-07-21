@@ -15,6 +15,9 @@ if not config_path.exists():
 
 with open(config_path, "r", encoding="utf-8") as f:
     config = json.load(f)
+    
+root_dir = Path(config["root_dir"])
+processed_dir = root_dir / "data" / "processed"
 
 # GET JOURNALS
 # 1. wikidata: journals with taxonomy (and similar concepts) as subject
@@ -30,7 +33,6 @@ query = download.build_sparql_query(["Q8269924", 	# taxonomy
 query2 = download.build_sparql_query(["Q3516404", 	# systematics
                                       "Q171184", 	# phylogenetics
                                       "Q115135896"])# animal phylogeny
-
 # get the results of the query
 results = download.get_sparql_results(query)
 results2 = download.get_sparql_results(query2)
@@ -62,7 +64,7 @@ WHERE {
     OPTIONAL{?item wdt:P2007 ?ZooBankPubID}
     OPTIONAL{?item wdt:P576 ?dissolved}
     OPTIONAL{?item wdt:P495 ?country}
-    
+
     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }"""
 
@@ -97,27 +99,49 @@ print("Preprocessing data... ", flush=True)
 prep_journals.get_values_wikidata(wikidata_subjects_results)
 prep_journals.get_values_wikidata(ipni_zoobank_results)
 
-print(wikidata_subjects_results.head(), flush=True)
-print(ipni_zoobank_results.head(), flush=True)
-
 # OpenAlex IDs
 openalex_results = prep_journals.homogenize_openalex(openalex_results)
 
+print(wikidata_subjects_results.columns)
+print(ipni_zoobank_results.columns)
+print(openalex_results.columns)
+
+print(openalex_results)
 # putting it together
 journals = pd.concat([wikidata_subjects_results, ipni_zoobank_results, openalex_results], 
                      ignore_index=True)
-journals.columns = ["wikidataURL", "openAlexID", "ISSN-L", "ISSN", 
-                    "ZooBankPubID", "country", "title", "IPNIpubID", "dissolvedYear", "source"]
+
+# Rename using actual column names to avoid misalignment
+journals = journals.rename(columns={
+    "item": "wikidataURL",
+    "itemLabel": "title",
+    "openAlexID": "openAlexID",
+    "issnL": "ISSN-L",
+    "issn": "ISSN",
+    "ZooBankPubID": "ZooBankPubID",
+    "country": "country",
+    "IPNIpubID": "IPNIpubID",
+    "dissolved": "dissolvedYear",
+})
+#journals.columns = ["wikidataURL", "openAlexID", "ISSN-L", "ISSN", 
+#                    "ZooBankPubID", "country", "title", "IPNIpubID", "dissolvedYear", "source"]
+
+journals = journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID",
+                     "openAlexID", "dissolvedYear", "source"]]
+
+print(journals.head())
 
 # translate dissolved year to True/False
 journals = prep_journals.dissolved_bool(journals)
 print("done!", flush=True)
 
 journals[["title", "wikidataURL", "ISSN-L", "IPNIpubID", "ZooBankPubID", "openAlexID", "dissolvedYear", 
-          "dissolved", "source"]].to_csv("../../data/processed/journals.csv", index=False)
+          "dissolved", "source"]].to_csv(processed_dir / "journals.csv", index=False)
 # remove duplicates with same wikidata ID and OpenALex ID
-journals[["title", "wikidataURL", "ISSN-L", "openAlexID", "dissolvedYear", 
-          "dissolved", "source"]].drop_duplicates(subset=["wikidataURL","openAlexID"],
-                                                  ignore_index=True).to_csv("../../data/processed/journals_deduplicated.csv", index=False)
+journals[["title", "wikidataURL", "ISSN-L", "openAlexID", "IPNIpubID", "ZooBankPubID", "dissolvedYear", 
+          "dissolved", "source"]].drop_duplicates(
+              subset=["wikidataURL", "openAlexID"],
+              ignore_index=True
+          ).to_csv(processed_dir / "journals_deduplicated.csv", index=False)
 
 print("Journals saved in data/processed/journals_deduplicated.csv", flush=True)

@@ -1,4 +1,14 @@
-# Functions to download data from OpenAlex (using API) and from Wikidata (using SPARQL queries) 
+"""
+Utility functions for retrieving and filtering journal and publication data from 
+OpenAlex and Wikidata (SPARQL endpoint). 
+
+Includes:
+- SPARQL query builder and execution for journals with taxonomic relevance.
+- OpenAlex API integration for sources and works.
+- Country filtering from a config file.
+- Retry logic for robust API access.
+"""
+
 import requests
 import numpy as np
 import pandas as pd
@@ -14,9 +24,19 @@ from pathlib import Path
 
 # BUILD SPARQL QUERIES TO FIND JOURNALS WITH ONE OF MANY TAXONOMIC SUBJECTS
 def build_sparql_query(subjects):
+    """
+    Build a SPARQL query to fetch journals associated with specific taxonomic subjects.
+    
+    Args:
+        subjects (list of str): Wikidata Q-codes representing subjects (e.g., taxonomy-related fields).
+    
+    Returns:
+        str: A SPARQL query string.
+    """
+    
     # instance of (P31) scientific (Q5633421) or academic journal (Q737498)
     query = """SELECT DISTINCT ?item ?itemLabel ?openAlexID ?issnL ?issn 
-    ?IPNIpubID ?ZooBankPubID ?IndexFungorumID ?dissolved ?country
+    ?IPNIpubID ?ZooBankPubID ?dissolved ?country
 WHERE {
     VALUES ?journaltype {wd:Q5633421 wd:Q737498}
     ?item wdt:P31/wdt:P279* ?journaltype .""" 

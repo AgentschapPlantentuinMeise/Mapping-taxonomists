@@ -21,7 +21,7 @@ def freq_countries(df):
     countries = df["inst_country_code"].dropna()
     return countries.value_counts().to_dict()
 
-def plot_country_freqs(freqs, map_path, europe=False, dpi=300, relative=False):
+def plot_country_freqs(freqs, map_path, europe=False, dpi=300, relative=False, panel_label=None):
     shapefile_path = external_dir / "naturalearth" / "ne_110m_admin_0_countries.shp"
     #print(f"[DEBUG] Loading shapefile from: {shapefile_path}")
     worldmap = gpd.read_file(shapefile_path)
@@ -65,21 +65,49 @@ def plot_country_freqs(freqs, map_path, europe=False, dpi=300, relative=False):
     cax = divider.append_axes("right", size="5%", pad=0.1)
     ax.set_xticks([])
     ax.set_yticks([])
+    if panel_label:
+        ax.text(
+            0.005, 0.97, panel_label, transform=ax.transAxes,
+            fontsize=32, fontweight='normal', va='top', ha='left'
+        )
 
     if europe:
         minx, miny, maxx, maxy = [-1500000, 4000000, 4300000, 8500000]
         ax.set_xlim(minx, maxx)
         ax.set_ylim(miny, maxy)
+        ax.set_frame_on(False)
 
-    cmap = alt_cmp if not relative else newcmp
+    #cmap = alt_cmp if not relative else newcmp
+    #cmap = plt.cm.viridis
+    
+    cmap_absolute = LinearSegmentedColormap.from_list("CB_Blues", [
+        "#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"
+    ], N=10)
+    
+    cmap_relative = LinearSegmentedColormap.from_list("CB_Purples", [
+        "#fcfbfd", "#efedf5", "#dadaeb", "#bcbddc", "#9e9ac8", "#807dba", "#6a51a3", "#54278f"
+    ], N=10)
+    
+    cmap = cmap_relative if relative else cmap_absolute
+
     label = "number of taxonomists" if not relative else "percentage of population"
-
-    worldmap.plot(column='freq', ax=ax, legend=True,
-                  missing_kwds={"color": "lightgrey"},
-                  legend_kwds={"label": label},
-                  cax=cax,
-                  cmap=cmap)
-
+    
+    worldmap.plot(
+        column='freq',
+        ax=ax,
+        legend=True,
+        missing_kwds={"color": "lightgrey"},
+        legend_kwds={"label": label},
+        cax=cax,
+        cmap=cmap,
+        edgecolor="black"
+    )
+    
+    ax.set_frame_on(False)
+    cax.set_ylabel(label, fontsize=16)
+    cax.tick_params(labelsize=14)
+    #ax.set_xlabel(label, fontsize=14, labelpad=12)
+    
     plt.tight_layout()
     output_file = str(map_path) + ".jpg"
     plt.savefig(output_file, dpi=dpi, bbox_inches="tight")
@@ -107,8 +135,12 @@ eu_authors_path = interim_dir / "country_taxonomic_authors_no_duplicates.pkl"
 eu_authors = pd.read_pickle(eu_authors_path)
 countries_freq = freq_countries(eu_authors)
 save_freq_data(countries_freq, reports_dir / "countries_freq_europe.csv")
-plot_country_freqs(countries_freq, reports_dir / "map_authors_europe", europe=True)
-plot_country_freqs(countries_freq, reports_dir / "map_authors_europe_relative", europe=True, relative=True)
+#plot_country_freqs(countries_freq, reports_dir / "map_authors_europe", europe=True)
+#plot_country_freqs(countries_freq, reports_dir / "map_authors_europe_relative", europe=True, relative=True)
+plot_country_freqs(countries_freq, reports_dir / "map_authors_europe", europe=True, panel_label="A")
+plot_country_freqs(countries_freq, reports_dir / "map_authors_europe_relative", europe=True, relative=True, panel_label="B")
+
+
 
 eujot_freq = freq_countries(eu_authors[eu_authors["source_issn_l"] == "2118-9773"])
 save_freq_data(eujot_freq, reports_dir / "countries_freq_eujot.csv")
