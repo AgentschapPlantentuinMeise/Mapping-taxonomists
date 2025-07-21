@@ -51,7 +51,7 @@ The final dataset was saved in two formats: a complete list and a deduplicated l
 
 ### 2.  `get_articles.py` extracts articles about taxonomy from these journals
 
-show API URL!
+Documentation on the OpenAlex API can be found here [https://docs.openalex.org/](https://docs.openalex.org/)
 
 #### Data Collection
 We used the OpenAlex API to get articles published in the taxonomic journals found above. This query included several filters:
@@ -92,7 +92,7 @@ This way, we added metadata to the articles, indicating which species or taxonom
    The script begins by loading a pre-processed dataset of taxonomic articles, which includes articles where taxonomic subjects, such as species, have been identified. This dataset is stored in the `taxonomic_articles_with_subjects.pkl` file and contains the necessary metadata, including author information.
 
 2. **Extracting Authors**:
-   The next step is to extract the **author information** from each article using the `get_authors` function from the custom `prep_authors` package. This function scans through the articles and compiles a list of all contributing authors.
+   The next step is to extract the **author information** from each article using the `get_authors` function from the custom `prep_authors` module. This function scans through the articles and compiles a list of all contributing authors.
 
 3. **Isolating Single Authors**:  
    Once the complete list of authors is generated, we use the `get_single_authors` function to filter out instances where an author is listed multiple times across different articles. This function ensures that each author appears only once in the output, allowing us to obtain a unique list of taxonomic authors.
@@ -107,18 +107,13 @@ This way, we added metadata to the articles, indicating which species or taxonom
 #### European Author Extraction
 The countries included in the analysis are listed by there two-letter ISO code (ISO 3166-1) in file `included_countries.txt`, in directory `.\src\data`.
 
-5. **Processing European Articles**:  
-   Although the section processing European taxonomic articles is commented out, the intended steps are as follows:
-   - A separate dataset of **European taxonomic articles** (stored in `european_taxonomic_articles_with_subjects.pkl`) would be loaded.
-   - Similar to the global workflow, the authors of these articles would be extracted using the `get_authors` function, and single authors would be isolated using `get_single_authors`.
-
-6. **Filtering by Country**:  
+5. **Filtering by Country**:  
    The key feature of this section is the extraction of authors based on their country of affiliation. The **`get_country_authors`** function filters the global author dataset to retain only those authors associated with specific countries (likely European countries). This allows for a geographically-targeted analysis of taxonomic research.
 
-7. **Deduplicating European Authors**:  
+6. **Deduplicating European Authors**:  
    The **`get_single_authors`** function is applied again, this time on the European dataset, to ensure that authors are uniquely represented. This deduplicated list of European authors is particularly valuable for generating insights into regional taxonomic research.
 
-8. **Storing European Author Data**:  
+7. **Storing European Author Data**:  
    The results for the European authors are saved in the following files:
    - **`country_authors_with_all_taxonomic_articles.pkl`**: This file contains all the authors from selected countries.
    - **`country_taxonomic_authors_no_duplicates.pkl`**: This file contains the deduplicated list of country-specific authors.
