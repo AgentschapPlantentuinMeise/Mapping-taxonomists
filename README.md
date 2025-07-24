@@ -5,7 +5,7 @@ This repository contains the scripts used to find European authors of taxonomic 
 Before starting you need to download the GBIF taxonomic backbone, unzip it and put the contents in the folder data/external/backbone
 You may also need to install SPARQLWrapper, geopandas and fiona to your Python installation, i.e. using `pip install SPARQLWrapper`
 
-## Notebook
+## mappingTaxonomists.ipynb
 It is possible to run the whole workflow one script after another. However, the Jupyter notebook mappingTaxonomists.ipynb allows you to run all the scripts in order.
 
 ## Configuration
