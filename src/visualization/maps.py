@@ -5,6 +5,7 @@ from matplotlib.colors import LinearSegmentedColormap, to_rgb
 import geopandas as gpd
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from pathlib import Path
+from scipy.stats import pearsonr
 
 # Define paths
 this_dir = Path(__file__).resolve().parent
@@ -148,3 +149,86 @@ plot_country_freqs(eujot_freq, reports_dir / "map_eujot", europe=True)
 plot_country_freqs(eujot_freq, reports_dir / "map_eujot_relative", europe=True, relative=True)
 
 print("Authors' institutions plotted onto world maps. Results in reports/figures.")
+
+
+def calculate_population_correlation(freqs_dict, population_file):
+    # Load population data
+    colnames = ["id", "Country", "Alpha-2 code", "Alpha-3 code", "pop_est"]
+    population_df = pd.read_csv(population_file, sep="\t", skiprows=1, names=colnames)
+
+    # Clean population data
+    population_df["Alpha-2 code"] = population_df["Alpha-2 code"].str.strip()
+    population_df["pop_est"] = pd.to_numeric(population_df["pop_est"], errors="coerce")
+    population_df = population_df.dropna(subset=["Alpha-2 code", "pop_est"])
+
+    # Convert frequency dictionary to DataFrame
+    freq_df = pd.DataFrame(list(freqs_dict.items()), columns=["Alpha-2 code", "freq"])
+    freq_df["Alpha-2 code"] = freq_df["Alpha-2 code"].str.strip()
+
+    # Merge on Alpha-2 ISO code
+    merged = pd.merge(freq_df, population_df[["Alpha-2 code", "pop_est"]], on="Alpha-2 code", how="inner")
+
+    # Drop any remaining NaNs
+    merged = merged.dropna(subset=["freq", "pop_est"])
+
+    # Report match stats
+    total_freq_countries = len(freq_df)
+    matched_countries = len(merged)
+    unmatched_countries = total_freq_countries - matched_countries
+    unmatched_codes = set(freq_df["Alpha-2 code"]) - set(merged["Alpha-2 code"])
+
+    print(f"[INFO] Total countries in frequency data: {total_freq_countries}")
+    print(f"[INFO] Countries matched with population data: {matched_countries}")
+    print(f"[INFO] Countries without population data: {unmatched_countries}")
+    if unmatched_codes:
+        print("[WARNING] Unmatched country codes:")
+        for code in sorted(unmatched_codes):
+            print(f"  - {code}")
+
+    # Compute correlation
+    corr_coef, p_value = pearsonr(merged["freq"], merged["pop_est"])
+    print(f"[RESULT] Pearson correlation coefficient: {corr_coef:.4f} (p = {p_value:.4g})")
+
+    return corr_coef, p_value, merged
+
+def plot_population_vs_frequency(freqs_dict, population_file):
+    # Load population data
+    colnames = ["id", "Country", "Alpha-2 code", "Alpha-3 code", "pop_est"]
+    population_df = pd.read_csv(population_file, sep="\t", skiprows=1, names=colnames)
+    population_df["Alpha-2 code"] = population_df["Alpha-2 code"].str.strip()
+    population_df["pop_est"] = pd.to_numeric(population_df["pop_est"], errors="coerce")
+    population_df = population_df.dropna(subset=["Alpha-2 code", "pop_est"])
+
+    # Frequency data
+    freq_df = pd.DataFrame(list(freqs_dict.items()), columns=["Alpha-2 code", "freq"])
+    freq_df["Alpha-2 code"] = freq_df["Alpha-2 code"].str.strip()
+
+    # Merge
+    merged = pd.merge(freq_df, population_df[["Alpha-2 code", "pop_est"]], on="Alpha-2 code", how="inner")
+    merged = merged.dropna(subset=["freq", "pop_est"])
+
+    # Correlation
+    corr_coef, p_value = pearsonr(merged["freq"], merged["pop_est"])
+
+    # Plot
+    plt.figure(figsize=(8, 6))
+    plt.scatter(merged["pop_est"], merged["freq"], alpha=0.7)
+    plt.xscale("log")
+    plt.yscale("log")
+    plt.xlabel("Population (log scale)", fontsize=12)
+    plt.ylabel("Taxonomist Frequency (log scale)", fontsize=12)
+    plt.title(
+        f"Population vs. Taxonomist Frequency\nPearson r = {corr_coef:.2f}, p = {p_value:.2g}",
+        fontsize=14
+    )
+    plt.grid(True, which="both", linestyle="--", linewidth=0.5)
+    plt.tight_layout()
+
+    # Optional: Save the plot
+    plot_path = reports_dir / "plot_population_vs_frequency.png"
+    plt.savefig(plot_path, dpi=300)
+    plt.close()
+
+population_file_path = external_dir / "country_codes_and_population.tsv"
+calculate_population_correlation(countries_freq, population_file_path)
+plot_population_vs_frequency(countries_freq, external_dir / "country_codes_and_population.tsv")
