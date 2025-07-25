@@ -1,3 +1,5 @@
+#As certain words had been used to select the articles in the first place in addition to the default stopwords of the package the following words were used: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, checklist, d, e, et, f, five, four, g, genera, genus, h, i, j, k, l, m, n, new, nov, novel, o, one, p, q, r, s, sp, species, t, taxon, taxonomic, taxonomy, three, two, u, v, w, x, y, z
+
 from wordcloud import WordCloud, STOPWORDS
 import pandas as pd
 import matplotlib.pyplot as plt
