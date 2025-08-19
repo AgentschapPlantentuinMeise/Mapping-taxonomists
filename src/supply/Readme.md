@@ -150,4 +150,4 @@ This script aims to disambiguate authors from taxonomic articles and link them t
       - `authors_disambiguated_truncated.pkl`
       - `authors_disambiguated_truncated.tsv`
      
-![A diagram of the connections between scripts that generate the data on the afiliations of taxonomists and the taxonomic groups they work on](../taxonomist_flow.png)
+![A diagram of the connections between scripts that generate the data on the afiliations of taxonomists and the taxonomic groups they work on](../../taxonomist_flow.png)
